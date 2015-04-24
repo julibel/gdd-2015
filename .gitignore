@@ -7,8 +7,8 @@ data/old/*
 *.user
 
 # Ignoring executable generated files
-src/*/*/bin/*
-src/*/*/obj/*
+src/*/bin/*
+src/*/obj/*
 
 # Ignoring log files
 data/BOBBY_TABLES_SCHEMA/batch_log.txt
