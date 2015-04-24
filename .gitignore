@@ -1,0 +1,14 @@
+# Ignoring source data files
+data/old/*
+
+# Ignoring user configuration files from Visual Studio
+# (Source: http://stackoverflow.com/questions/72298/should-i-add-the-visual-studio-suo-and-user-files-to-source-control )
+*.suo
+*.user
+
+# Ignoring executable generated files
+src/*/*/bin/*
+src/*/*/obj/*
+
+# Ignoring log files
+data/BOBBY_TABLES_SCHEMA/batch_log.txt
