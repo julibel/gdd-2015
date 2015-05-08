@@ -1,0 +1,28 @@
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\bin\Debug\PagoElectronico.exe.config
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.FormBase.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Properties.Resources.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.csproj.GenerateResource.Cache
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\bin\Debug\PagoElectronico.exe
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\bin\Debug\PagoElectronico.pdb
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.exe
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.pdb
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cliente.Alta.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cliente.Baja.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cliente.Modificacion.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cliente.Seleccion.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cuenta.Alta.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cuenta.Baja.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cuenta.Modificacion.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cuenta.Seleccion.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cuenta.ModificarCategoriaCuenta.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Cuenta.ModificarTipoCuentas.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Rol.Alta.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Rol.Baja.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Rol.Modificacion.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.ABM_Rol.Seleccion.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Consulta_Saldos.Saldo.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Consulta_Saldos.Seleccion.resources
+C:\Users\JuliBel\Downloads\Aplicacion Desktop\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Depositos.DepositoNuevo.resources
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\bin\Debug\PagoElectronico.exe.config
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.exe
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.pdb
