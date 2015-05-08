@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.paner_Filtros = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
             this.label_TipoCuenta = new System.Windows.Forms.Label();
             this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.label_Pais = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox_Nombre = new System.Windows.Forms.TextBox();
+            this.textBox_NumeroCuenta = new System.Windows.Forms.TextBox();
             this.button_Buscar = new System.Windows.Forms.Button();
             this.button_Limpiar = new System.Windows.Forms.Button();
-            this.button_cerrar = new System.Windows.Forms.Button();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             this.dataGridView_Seleccion = new System.Windows.Forms.DataGridView();
             this.paner_Filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
@@ -45,12 +45,12 @@
             // 
             // paner_Filtros
             // 
-            this.paner_Filtros.Controls.Add(this.comboBox2);
+            this.paner_Filtros.Controls.Add(this.comboBox_TipoCuenta);
             this.paner_Filtros.Controls.Add(this.label_TipoCuenta);
             this.paner_Filtros.Controls.Add(this.textBox_Pais);
             this.paner_Filtros.Controls.Add(this.label_Pais);
             this.paner_Filtros.Controls.Add(this.label_NumeroCuenta);
-            this.paner_Filtros.Controls.Add(this.textBox_Nombre);
+            this.paner_Filtros.Controls.Add(this.textBox_NumeroCuenta);
             this.paner_Filtros.Controls.Add(this.button_Buscar);
             this.paner_Filtros.Controls.Add(this.button_Limpiar);
             this.paner_Filtros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -62,18 +62,18 @@
             this.paner_Filtros.TabStop = false;
             this.paner_Filtros.Text = "Filtros de busqueda";
             // 
-            // comboBox2
+            // comboBox_TipoCuenta
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.comboBox_TipoCuenta.FormattingEnabled = true;
+            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
             "Oro",
             "Plata",
             "Bronce",
             "Gratuita"});
-            this.comboBox2.Location = new System.Drawing.Point(340, 97);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 30;
+            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(340, 97);
+            this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
+            this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_TipoCuenta.TabIndex = 30;
             // 
             // label_TipoCuenta
             // 
@@ -114,13 +114,13 @@
             this.label_NumeroCuenta.TabIndex = 24;
             this.label_NumeroCuenta.Text = "Numero de cuenta";
             // 
-            // textBox_Nombre
+            // textBox_NumeroCuenta
             // 
-            this.textBox_Nombre.Location = new System.Drawing.Point(340, 45);
-            this.textBox_Nombre.MaxLength = 255;
-            this.textBox_Nombre.Name = "textBox_Nombre";
-            this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Nombre.TabIndex = 23;
+            this.textBox_NumeroCuenta.Location = new System.Drawing.Point(340, 45);
+            this.textBox_NumeroCuenta.MaxLength = 255;
+            this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
+            this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
+            this.textBox_NumeroCuenta.TabIndex = 23;
             // 
             // button_Buscar
             // 
@@ -140,14 +140,15 @@
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             // 
-            // button_cerrar
+            // button_Cerrar
             // 
-            this.button_cerrar.Location = new System.Drawing.Point(747, 426);
-            this.button_cerrar.Name = "button_cerrar";
-            this.button_cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_cerrar.TabIndex = 39;
-            this.button_cerrar.Text = "Cerrar";
-            this.button_cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 39;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // dataGridView_Seleccion
             // 
@@ -165,7 +166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.button_cerrar);
+            this.Controls.Add(this.button_Cerrar);
             this.Controls.Add(this.paner_Filtros);
             this.Controls.Add(this.dataGridView_Seleccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -185,15 +186,15 @@
         #endregion
 
         private System.Windows.Forms.GroupBox paner_Filtros;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox_TipoCuenta;
         private System.Windows.Forms.Label label_TipoCuenta;
         private System.Windows.Forms.TextBox textBox_Pais;
         private System.Windows.Forms.Label label_Pais;
         private System.Windows.Forms.Label label_NumeroCuenta;
-        private System.Windows.Forms.TextBox textBox_Nombre;
+        private System.Windows.Forms.TextBox textBox_NumeroCuenta;
         private System.Windows.Forms.Button button_Buscar;
         private System.Windows.Forms.Button button_Limpiar;
-        private System.Windows.Forms.Button button_cerrar;
+        private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.DataGridView dataGridView_Seleccion;
     }
 }

@@ -25,5 +25,10 @@ namespace PagoElectronico.ABM_Cuenta
         {
 
         }
+
+        private void button_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label_Saldo = new System.Windows.Forms.Label();
-            this.textBox_Saldo = new System.Windows.Forms.TextBox();
+            this.textBox_SaldoActual = new System.Windows.Forms.TextBox();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
             this.dataGridView_Depositos = new System.Windows.Forms.DataGridView();
             this.dataGridView_Transferencias = new System.Windows.Forms.DataGridView();
@@ -37,7 +37,7 @@
             this.groupBox_Transferencias = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView_Retiros = new System.Windows.Forms.DataGridView();
-            this.button_cerrar = new System.Windows.Forms.Button();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             this.paner_Alta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Depositos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Transferencias)).BeginInit();
@@ -58,18 +58,18 @@
             this.label_Saldo.TabIndex = 3;
             this.label_Saldo.Text = "Saldo actual";
             // 
-            // textBox_Saldo
+            // textBox_SaldoActual
             // 
-            this.textBox_Saldo.Enabled = false;
-            this.textBox_Saldo.Location = new System.Drawing.Point(172, 53);
-            this.textBox_Saldo.MaxLength = 15;
-            this.textBox_Saldo.Name = "textBox_Saldo";
-            this.textBox_Saldo.Size = new System.Drawing.Size(123, 20);
-            this.textBox_Saldo.TabIndex = 2;
+            this.textBox_SaldoActual.Enabled = false;
+            this.textBox_SaldoActual.Location = new System.Drawing.Point(172, 53);
+            this.textBox_SaldoActual.MaxLength = 15;
+            this.textBox_SaldoActual.Name = "textBox_SaldoActual";
+            this.textBox_SaldoActual.Size = new System.Drawing.Size(123, 20);
+            this.textBox_SaldoActual.TabIndex = 2;
             // 
             // paner_Alta
             // 
-            this.paner_Alta.Controls.Add(this.textBox_Saldo);
+            this.paner_Alta.Controls.Add(this.textBox_SaldoActual);
             this.paner_Alta.Controls.Add(this.label_Saldo);
             this.paner_Alta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_Alta.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -143,14 +143,15 @@
             this.dataGridView_Retiros.Size = new System.Drawing.Size(383, 171);
             this.dataGridView_Retiros.TabIndex = 36;
             // 
-            // button_cerrar
+            // button_Cerrar
             // 
-            this.button_cerrar.Location = new System.Drawing.Point(747, 426);
-            this.button_cerrar.Name = "button_cerrar";
-            this.button_cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_cerrar.TabIndex = 40;
-            this.button_cerrar.Text = "Cerrar";
-            this.button_cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 40;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // Saldo
             // 
@@ -158,7 +159,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.button_cerrar);
+            this.Controls.Add(this.button_Cerrar);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox_Transferencias);
             this.Controls.Add(this.groupBox_Depositos);
@@ -185,7 +186,7 @@
         #endregion
 
         private System.Windows.Forms.Label label_Saldo;
-        private System.Windows.Forms.TextBox textBox_Saldo;
+        private System.Windows.Forms.TextBox textBox_SaldoActual;
         private System.Windows.Forms.GroupBox paner_Alta;
         private System.Windows.Forms.DataGridView dataGridView_Depositos;
         private System.Windows.Forms.DataGridView dataGridView_Transferencias;
@@ -193,6 +194,6 @@
         private System.Windows.Forms.GroupBox groupBox_Transferencias;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView_Retiros;
-        private System.Windows.Forms.Button button_cerrar;
+        private System.Windows.Forms.Button button_Cerrar;
     }
 }

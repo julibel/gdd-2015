@@ -42,6 +42,7 @@
             this.label_TipoDocumento = new System.Windows.Forms.Label();
             this.textBox_Documento = new System.Windows.Forms.TextBox();
             this.label_Mail = new System.Windows.Forms.Label();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
             this.paner_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +54,7 @@
             this.dataGridView_Seleccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
             this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
-            this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 259);
+            this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
             this.dataGridView_Seleccion.TabIndex = 15;
             // 
             // button_Buscar
@@ -194,12 +195,23 @@
             this.label_Mail.TabIndex = 27;
             this.label_Mail.Text = "EMail";
             // 
+            // button_Cerrar
+            // 
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 34;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
+            // 
             // Seleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
+            this.Controls.Add(this.button_Cerrar);
             this.Controls.Add(this.paner_Filtros);
             this.Controls.Add(this.dataGridView_Seleccion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -232,5 +244,6 @@
         private System.Windows.Forms.Label label_TipoDocumento;
         private System.Windows.Forms.TextBox textBox_Documento;
         private System.Windows.Forms.Label label_Mail;
+        private System.Windows.Forms.Button button_Cerrar;
     }
 }

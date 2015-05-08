@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button_Agregar = new System.Windows.Forms.Button();
@@ -43,9 +43,9 @@
             this.Elimnar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
-            this.button_limpiar = new System.Windows.Forms.Button();
-            this.button_guardar = new System.Windows.Forms.Button();
-            this.button_cerrar = new System.Windows.Forms.Button();
+            this.button_Limpiar = new System.Windows.Forms.Button();
+            this.button_Guardar = new System.Windows.Forms.Button();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             this.paner_Alta.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListaFuncionalidades)).BeginInit();
@@ -143,14 +143,14 @@
             this.dataGridView_ListaFuncionalidades.Location = new System.Drawing.Point(411, 19);
             this.dataGridView_ListaFuncionalidades.Name = "dataGridView_ListaFuncionalidades";
             this.dataGridView_ListaFuncionalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(378, 381);
+            this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(378, 373);
             this.dataGridView_ListaFuncionalidades.TabIndex = 3;
             // 
             // Funcionalidad
             // 
             this.Funcionalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.Funcionalidad.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Funcionalidad.DefaultCellStyle = dataGridViewCellStyle1;
             this.Funcionalidad.HeaderText = "Funcionalidad";
             this.Funcionalidad.Name = "Funcionalidad";
             this.Funcionalidad.ReadOnly = true;
@@ -158,8 +158,8 @@
             // Descripcion
             // 
             this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle2;
             this.Descripcion.HeaderText = "Descripcion";
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
@@ -190,32 +190,33 @@
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nombre.TabIndex = 0;
             // 
-            // button_limpiar
+            // button_Limpiar
             // 
-            this.button_limpiar.Location = new System.Drawing.Point(666, 426);
-            this.button_limpiar.Name = "button_limpiar";
-            this.button_limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_limpiar.TabIndex = 34;
-            this.button_limpiar.Text = "Limpiar";
-            this.button_limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
+            this.button_Limpiar.TabIndex = 34;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
             // 
-            // button_guardar
+            // button_Guardar
             // 
-            this.button_guardar.Location = new System.Drawing.Point(585, 424);
-            this.button_guardar.Name = "button_guardar";
-            this.button_guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_guardar.TabIndex = 33;
-            this.button_guardar.Text = "Guardar";
-            this.button_guardar.UseVisualStyleBackColor = true;
+            this.button_Guardar.Location = new System.Drawing.Point(585, 424);
+            this.button_Guardar.Name = "button_Guardar";
+            this.button_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.button_Guardar.TabIndex = 33;
+            this.button_Guardar.Text = "Guardar";
+            this.button_Guardar.UseVisualStyleBackColor = true;
             // 
-            // button_cerrar
+            // button_Cerrar
             // 
-            this.button_cerrar.Location = new System.Drawing.Point(747, 426);
-            this.button_cerrar.Name = "button_cerrar";
-            this.button_cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_cerrar.TabIndex = 32;
-            this.button_cerrar.Text = "Cerrar";
-            this.button_cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 32;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // Alta
             // 
@@ -223,9 +224,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.button_limpiar);
-            this.Controls.Add(this.button_guardar);
-            this.Controls.Add(this.button_cerrar);
+            this.Controls.Add(this.button_Limpiar);
+            this.Controls.Add(this.button_Guardar);
+            this.Controls.Add(this.button_Cerrar);
             this.Controls.Add(this.paner_Alta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -258,8 +259,8 @@
         private System.Windows.Forms.DataGridViewButtonColumn Elimnar;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.TextBox textBox_Nombre;
-        private System.Windows.Forms.Button button_limpiar;
-        private System.Windows.Forms.Button button_guardar;
-        private System.Windows.Forms.Button button_cerrar;
+        private System.Windows.Forms.Button button_Limpiar;
+        private System.Windows.Forms.Button button_Guardar;
+        private System.Windows.Forms.Button button_Cerrar;
     }
 }

@@ -37,8 +37,8 @@
             this.Elimnar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
-            this.button_borrar = new System.Windows.Forms.Button();
-            this.button_volver = new System.Windows.Forms.Button();
+            this.button_Borrar = new System.Windows.Forms.Button();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             this.paner_Alta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListaFuncionalidades)).BeginInit();
             this.SuspendLayout();
@@ -72,7 +72,7 @@
             this.dataGridView_ListaFuncionalidades.Location = new System.Drawing.Point(411, 19);
             this.dataGridView_ListaFuncionalidades.Name = "dataGridView_ListaFuncionalidades";
             this.dataGridView_ListaFuncionalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(379, 381);
+            this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(379, 373);
             this.dataGridView_ListaFuncionalidades.TabIndex = 3;
             // 
             // Funcionalidad
@@ -120,23 +120,24 @@
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nombre.TabIndex = 0;
             // 
-            // button_borrar
+            // button_Borrar
             // 
-            this.button_borrar.Location = new System.Drawing.Point(666, 426);
-            this.button_borrar.Name = "button_borrar";
-            this.button_borrar.Size = new System.Drawing.Size(75, 23);
-            this.button_borrar.TabIndex = 33;
-            this.button_borrar.Text = "Borrar";
-            this.button_borrar.UseVisualStyleBackColor = true;
+            this.button_Borrar.Location = new System.Drawing.Point(666, 426);
+            this.button_Borrar.Name = "button_Borrar";
+            this.button_Borrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Borrar.TabIndex = 33;
+            this.button_Borrar.Text = "Borrar";
+            this.button_Borrar.UseVisualStyleBackColor = true;
             // 
-            // button_volver
+            // button_Cerrar
             // 
-            this.button_volver.Location = new System.Drawing.Point(747, 426);
-            this.button_volver.Name = "button_volver";
-            this.button_volver.Size = new System.Drawing.Size(75, 23);
-            this.button_volver.TabIndex = 32;
-            this.button_volver.Text = "Cerrar";
-            this.button_volver.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 32;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // Baja
             // 
@@ -144,8 +145,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.button_borrar);
-            this.Controls.Add(this.button_volver);
+            this.Controls.Add(this.button_Borrar);
+            this.Controls.Add(this.button_Cerrar);
             this.Controls.Add(this.paner_Alta);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -170,7 +171,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn Elimnar;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.TextBox textBox_Nombre;
-        private System.Windows.Forms.Button button_borrar;
-        private System.Windows.Forms.Button button_volver;
+        private System.Windows.Forms.Button button_Borrar;
+        private System.Windows.Forms.Button button_Cerrar;
     }
 }

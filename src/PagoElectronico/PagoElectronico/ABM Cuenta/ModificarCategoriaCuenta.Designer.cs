@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_limpiar = new System.Windows.Forms.Button();
+            this.button_Limpiar = new System.Windows.Forms.Button();
             this.paner_TipoCuentas = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button_guardar = new System.Windows.Forms.Button();
-            this.button_cerrar = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox_TipoCuentaActual = new System.Windows.Forms.ComboBox();
             this.label_TipoCuenta = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox_Moneda = new System.Windows.Forms.ComboBox();
             this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox_Nombre = new System.Windows.Forms.TextBox();
+            this.textBox_NumeroCuenta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_TipoCuentaModificada = new System.Windows.Forms.ComboBox();
+            this.button_Guardar = new System.Windows.Forms.Button();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             this.paner_TipoCuentas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button_limpiar
+            // button_Limpiar
             // 
-            this.button_limpiar.Location = new System.Drawing.Point(666, 426);
-            this.button_limpiar.Name = "button_limpiar";
-            this.button_limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_limpiar.TabIndex = 32;
-            this.button_limpiar.Text = "Limpiar";
-            this.button_limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
+            this.button_Limpiar.TabIndex = 32;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
             // 
             // paner_TipoCuentas
             // 
-            this.paner_TipoCuentas.Controls.Add(this.comboBox2);
+            this.paner_TipoCuentas.Controls.Add(this.comboBox_TipoCuentaActual);
             this.paner_TipoCuentas.Controls.Add(this.label_TipoCuenta);
-            this.paner_TipoCuentas.Controls.Add(this.comboBox3);
+            this.paner_TipoCuentas.Controls.Add(this.comboBox_Moneda);
             this.paner_TipoCuentas.Controls.Add(this.textBox_Pais);
             this.paner_TipoCuentas.Controls.Add(this.label_Moneda);
             this.paner_TipoCuentas.Controls.Add(this.label_Pais);
             this.paner_TipoCuentas.Controls.Add(this.label_NumeroCuenta);
-            this.paner_TipoCuentas.Controls.Add(this.textBox_Nombre);
+            this.paner_TipoCuentas.Controls.Add(this.textBox_NumeroCuenta);
             this.paner_TipoCuentas.Controls.Add(this.label1);
-            this.paner_TipoCuentas.Controls.Add(this.comboBox1);
+            this.paner_TipoCuentas.Controls.Add(this.comboBox_TipoCuentaModificada);
             this.paner_TipoCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_TipoCuentas.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_TipoCuentas.Location = new System.Drawing.Point(12, 12);
@@ -75,59 +75,19 @@
             this.paner_TipoCuentas.TabStop = false;
             this.paner_TipoCuentas.Text = "Modificacion de categoria de cuenta";
             // 
-            // label1
+            // comboBox_TipoCuentaActual
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(217, 250);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(134, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Tipo de Cuenta modificada";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_TipoCuentaActual.Enabled = false;
+            this.comboBox_TipoCuentaActual.FormattingEnabled = true;
+            this.comboBox_TipoCuentaActual.Items.AddRange(new object[] {
             "Oro",
             "Plata",
             "Bronce",
             "Gratuita"});
-            this.comboBox1.Location = new System.Drawing.Point(357, 247);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 0;
-            // 
-            // button_guardar
-            // 
-            this.button_guardar.Location = new System.Drawing.Point(585, 426);
-            this.button_guardar.Name = "button_guardar";
-            this.button_guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_guardar.TabIndex = 31;
-            this.button_guardar.Text = "Guardar";
-            this.button_guardar.UseVisualStyleBackColor = true;
-            // 
-            // button_cerrar
-            // 
-            this.button_cerrar.Location = new System.Drawing.Point(747, 426);
-            this.button_cerrar.Name = "button_cerrar";
-            this.button_cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_cerrar.TabIndex = 30;
-            this.button_cerrar.Text = "Cerrar";
-            this.button_cerrar.UseVisualStyleBackColor = true;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Oro",
-            "Plata",
-            "Bronce",
-            "Gratuita"});
-            this.comboBox2.Location = new System.Drawing.Point(357, 220);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 30;
+            this.comboBox_TipoCuentaActual.Location = new System.Drawing.Point(357, 220);
+            this.comboBox_TipoCuentaActual.Name = "comboBox_TipoCuentaActual";
+            this.comboBox_TipoCuentaActual.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_TipoCuentaActual.TabIndex = 30;
             // 
             // label_TipoCuenta
             // 
@@ -138,16 +98,16 @@
             this.label_TipoCuenta.TabIndex = 29;
             this.label_TipoCuenta.Text = "Tipo de cuenta actual";
             // 
-            // comboBox3
+            // comboBox_Moneda
             // 
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.comboBox_Moneda.Enabled = false;
+            this.comboBox_Moneda.FormattingEnabled = true;
+            this.comboBox_Moneda.Items.AddRange(new object[] {
             "Dolares"});
-            this.comboBox3.Location = new System.Drawing.Point(357, 193);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 28;
+            this.comboBox_Moneda.Location = new System.Drawing.Point(357, 193);
+            this.comboBox_Moneda.Name = "comboBox_Moneda";
+            this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_Moneda.TabIndex = 28;
             // 
             // textBox_Pais
             // 
@@ -191,14 +151,55 @@
             this.label_NumeroCuenta.TabIndex = 24;
             this.label_NumeroCuenta.Text = "Numero de cuenta";
             // 
-            // textBox_Nombre
+            // textBox_NumeroCuenta
             // 
-            this.textBox_Nombre.Enabled = false;
-            this.textBox_Nombre.Location = new System.Drawing.Point(357, 140);
-            this.textBox_Nombre.MaxLength = 255;
-            this.textBox_Nombre.Name = "textBox_Nombre";
-            this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Nombre.TabIndex = 23;
+            this.textBox_NumeroCuenta.Enabled = false;
+            this.textBox_NumeroCuenta.Location = new System.Drawing.Point(357, 140);
+            this.textBox_NumeroCuenta.MaxLength = 255;
+            this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
+            this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
+            this.textBox_NumeroCuenta.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(217, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(134, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Tipo de Cuenta modificada";
+            // 
+            // comboBox_TipoCuentaModificada
+            // 
+            this.comboBox_TipoCuentaModificada.FormattingEnabled = true;
+            this.comboBox_TipoCuentaModificada.Items.AddRange(new object[] {
+            "Oro",
+            "Plata",
+            "Bronce",
+            "Gratuita"});
+            this.comboBox_TipoCuentaModificada.Location = new System.Drawing.Point(357, 247);
+            this.comboBox_TipoCuentaModificada.Name = "comboBox_TipoCuentaModificada";
+            this.comboBox_TipoCuentaModificada.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_TipoCuentaModificada.TabIndex = 0;
+            // 
+            // button_Guardar
+            // 
+            this.button_Guardar.Location = new System.Drawing.Point(585, 426);
+            this.button_Guardar.Name = "button_Guardar";
+            this.button_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.button_Guardar.TabIndex = 31;
+            this.button_Guardar.Text = "Guardar";
+            this.button_Guardar.UseVisualStyleBackColor = true;
+            // 
+            // button_Cerrar
+            // 
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 30;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // ModificarCategoriaCuenta
             // 
@@ -206,10 +207,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
-            this.Controls.Add(this.button_limpiar);
+            this.Controls.Add(this.button_Limpiar);
             this.Controls.Add(this.paner_TipoCuentas);
-            this.Controls.Add(this.button_guardar);
-            this.Controls.Add(this.button_cerrar);
+            this.Controls.Add(this.button_Guardar);
+            this.Controls.Add(this.button_Cerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -225,20 +226,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_limpiar;
+        private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.GroupBox paner_TipoCuentas;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button_guardar;
-        private System.Windows.Forms.Button button_cerrar;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox_TipoCuentaModificada;
+        private System.Windows.Forms.Button button_Guardar;
+        private System.Windows.Forms.Button button_Cerrar;
+        private System.Windows.Forms.ComboBox comboBox_TipoCuentaActual;
         private System.Windows.Forms.Label label_TipoCuenta;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox_Moneda;
         private System.Windows.Forms.TextBox textBox_Pais;
         private System.Windows.Forms.Label label_Moneda;
         private System.Windows.Forms.Label label_Pais;
         private System.Windows.Forms.Label label_NumeroCuenta;
-        private System.Windows.Forms.TextBox textBox_Nombre;
+        private System.Windows.Forms.TextBox textBox_NumeroCuenta;
 
     }
 }

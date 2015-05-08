@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_limpiar = new System.Windows.Forms.Button();
-            this.button_guardar = new System.Windows.Forms.Button();
-            this.button_cerrar = new System.Windows.Forms.Button();
+            this.button_Limpiar = new System.Windows.Forms.Button();
+            this.button_Guardar = new System.Windows.Forms.Button();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             this.groupBox_Usuario = new System.Windows.Forms.GroupBox();
             this.textBox_PreguntaSecreta = new System.Windows.Forms.TextBox();
             this.label_PreguntaSecreta = new System.Windows.Forms.Label();
@@ -40,12 +40,12 @@
             this.label_Password = new System.Windows.Forms.Label();
             this.label_Username = new System.Windows.Forms.Label();
             this.textBox_Username = new System.Windows.Forms.TextBox();
-            this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.groupBox_Alta = new System.Windows.Forms.GroupBox();
             this.textBox_Nacionalidad = new System.Windows.Forms.TextBox();
             this.label_Nacionalidad = new System.Windows.Forms.Label();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
             this.label_Localidad = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_Depto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Piso = new System.Windows.Forms.TextBox();
             this.label_Piso = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.radioButton_Lc = new System.Windows.Forms.RadioButton();
             this.radioButton_Dni = new System.Windows.Forms.RadioButton();
             this.textBox_Documento = new System.Windows.Forms.TextBox();
-            this.textBox_Direccion = new System.Windows.Forms.TextBox();
+            this.textBox_Domicilio = new System.Windows.Forms.TextBox();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.label_FechaNacimiento = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
@@ -73,37 +73,38 @@
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
             this.groupBox_Usuario.SuspendLayout();
-            this.paner_Alta.SuspendLayout();
+            this.groupBox_Alta.SuspendLayout();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_limpiar
+            // button_Limpiar
             // 
-            this.button_limpiar.Location = new System.Drawing.Point(661, 428);
-            this.button_limpiar.Name = "button_limpiar";
-            this.button_limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_limpiar.TabIndex = 25;
-            this.button_limpiar.Text = "Limpiar";
-            this.button_limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Location = new System.Drawing.Point(661, 428);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
+            this.button_Limpiar.TabIndex = 25;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
             // 
-            // button_guardar
+            // button_Guardar
             // 
-            this.button_guardar.Location = new System.Drawing.Point(580, 428);
-            this.button_guardar.Name = "button_guardar";
-            this.button_guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_guardar.TabIndex = 24;
-            this.button_guardar.Text = "Guardar";
-            this.button_guardar.UseVisualStyleBackColor = true;
+            this.button_Guardar.Location = new System.Drawing.Point(580, 428);
+            this.button_Guardar.Name = "button_Guardar";
+            this.button_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.button_Guardar.TabIndex = 24;
+            this.button_Guardar.Text = "Guardar";
+            this.button_Guardar.UseVisualStyleBackColor = true;
             // 
-            // button_cerrar
+            // button_Cerrar
             // 
-            this.button_cerrar.Location = new System.Drawing.Point(742, 428);
-            this.button_cerrar.Name = "button_cerrar";
-            this.button_cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_cerrar.TabIndex = 23;
-            this.button_cerrar.Text = "Cerrar";
-            this.button_cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Location = new System.Drawing.Point(742, 428);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 23;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // groupBox_Usuario
             // 
@@ -200,44 +201,44 @@
             this.textBox_Username.Size = new System.Drawing.Size(232, 20);
             this.textBox_Username.TabIndex = 11;
             // 
-            // paner_Alta
+            // groupBox_Alta
             // 
-            this.paner_Alta.Controls.Add(this.textBox_Nacionalidad);
-            this.paner_Alta.Controls.Add(this.label_Nacionalidad);
-            this.paner_Alta.Controls.Add(this.textBox_Localidad);
-            this.paner_Alta.Controls.Add(this.label_Localidad);
-            this.paner_Alta.Controls.Add(this.textBox1);
-            this.paner_Alta.Controls.Add(this.label1);
-            this.paner_Alta.Controls.Add(this.textBox_Piso);
-            this.paner_Alta.Controls.Add(this.label_Piso);
-            this.paner_Alta.Controls.Add(this.dateTimePicker_FechaNacimiento);
-            this.paner_Alta.Controls.Add(this.textBox_Mail);
-            this.paner_Alta.Controls.Add(this.textBox_Pais);
-            this.paner_Alta.Controls.Add(this.radioButton_Pas);
-            this.paner_Alta.Controls.Add(this.radioButton_Ci);
-            this.paner_Alta.Controls.Add(this.radioButton_Le);
-            this.paner_Alta.Controls.Add(this.radioButton_Lc);
-            this.paner_Alta.Controls.Add(this.radioButton_Dni);
-            this.paner_Alta.Controls.Add(this.textBox_Documento);
-            this.paner_Alta.Controls.Add(this.textBox_Direccion);
-            this.paner_Alta.Controls.Add(this.textBox_Apellido);
-            this.paner_Alta.Controls.Add(this.label_FechaNacimiento);
-            this.paner_Alta.Controls.Add(this.label_Pais);
-            this.paner_Alta.Controls.Add(this.label_Domicilio);
-            this.paner_Alta.Controls.Add(this.label_Mail);
-            this.paner_Alta.Controls.Add(this.label_TipoDocumento);
-            this.paner_Alta.Controls.Add(this.label_Documento);
-            this.paner_Alta.Controls.Add(this.label_Apellido);
-            this.paner_Alta.Controls.Add(this.label_Nombre);
-            this.paner_Alta.Controls.Add(this.textBox_Nombre);
-            this.paner_Alta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.paner_Alta.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.paner_Alta.Location = new System.Drawing.Point(12, 12);
-            this.paner_Alta.Name = "paner_Alta";
-            this.paner_Alta.Size = new System.Drawing.Size(395, 410);
-            this.paner_Alta.TabIndex = 26;
-            this.paner_Alta.TabStop = false;
-            this.paner_Alta.Text = "Datos del Cliente";
+            this.groupBox_Alta.Controls.Add(this.textBox_Nacionalidad);
+            this.groupBox_Alta.Controls.Add(this.label_Nacionalidad);
+            this.groupBox_Alta.Controls.Add(this.textBox_Localidad);
+            this.groupBox_Alta.Controls.Add(this.label_Localidad);
+            this.groupBox_Alta.Controls.Add(this.textBox_Depto);
+            this.groupBox_Alta.Controls.Add(this.label1);
+            this.groupBox_Alta.Controls.Add(this.textBox_Piso);
+            this.groupBox_Alta.Controls.Add(this.label_Piso);
+            this.groupBox_Alta.Controls.Add(this.dateTimePicker_FechaNacimiento);
+            this.groupBox_Alta.Controls.Add(this.textBox_Mail);
+            this.groupBox_Alta.Controls.Add(this.textBox_Pais);
+            this.groupBox_Alta.Controls.Add(this.radioButton_Pas);
+            this.groupBox_Alta.Controls.Add(this.radioButton_Ci);
+            this.groupBox_Alta.Controls.Add(this.radioButton_Le);
+            this.groupBox_Alta.Controls.Add(this.radioButton_Lc);
+            this.groupBox_Alta.Controls.Add(this.radioButton_Dni);
+            this.groupBox_Alta.Controls.Add(this.textBox_Documento);
+            this.groupBox_Alta.Controls.Add(this.textBox_Domicilio);
+            this.groupBox_Alta.Controls.Add(this.textBox_Apellido);
+            this.groupBox_Alta.Controls.Add(this.label_FechaNacimiento);
+            this.groupBox_Alta.Controls.Add(this.label_Pais);
+            this.groupBox_Alta.Controls.Add(this.label_Domicilio);
+            this.groupBox_Alta.Controls.Add(this.label_Mail);
+            this.groupBox_Alta.Controls.Add(this.label_TipoDocumento);
+            this.groupBox_Alta.Controls.Add(this.label_Documento);
+            this.groupBox_Alta.Controls.Add(this.label_Apellido);
+            this.groupBox_Alta.Controls.Add(this.label_Nombre);
+            this.groupBox_Alta.Controls.Add(this.textBox_Nombre);
+            this.groupBox_Alta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.groupBox_Alta.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox_Alta.Location = new System.Drawing.Point(12, 12);
+            this.groupBox_Alta.Name = "groupBox_Alta";
+            this.groupBox_Alta.Size = new System.Drawing.Size(395, 410);
+            this.groupBox_Alta.TabIndex = 26;
+            this.groupBox_Alta.TabStop = false;
+            this.groupBox_Alta.Text = "Datos del Cliente";
             // 
             // textBox_Nacionalidad
             // 
@@ -277,13 +278,13 @@
             this.label_Localidad.TabIndex = 26;
             this.label_Localidad.Text = "Localidad";
             // 
-            // textBox1
+            // textBox_Depto
             // 
-            this.textBox1.Location = new System.Drawing.Point(274, 220);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 25;
+            this.textBox_Depto.Location = new System.Drawing.Point(274, 220);
+            this.textBox_Depto.MaxLength = 50;
+            this.textBox_Depto.Name = "textBox_Depto";
+            this.textBox_Depto.Size = new System.Drawing.Size(94, 20);
+            this.textBox_Depto.TabIndex = 25;
             // 
             // label1
             // 
@@ -411,13 +412,13 @@
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
             this.textBox_Documento.TabIndex = 13;
             // 
-            // textBox_Direccion
+            // textBox_Domicilio
             // 
-            this.textBox_Direccion.Location = new System.Drawing.Point(136, 194);
-            this.textBox_Direccion.MaxLength = 255;
-            this.textBox_Direccion.Name = "textBox_Direccion";
-            this.textBox_Direccion.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Direccion.TabIndex = 11;
+            this.textBox_Domicilio.Location = new System.Drawing.Point(136, 194);
+            this.textBox_Domicilio.MaxLength = 255;
+            this.textBox_Domicilio.Name = "textBox_Domicilio";
+            this.textBox_Domicilio.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Domicilio.TabIndex = 11;
             // 
             // textBox_Apellido
             // 
@@ -558,10 +559,10 @@
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.groupBox_AsociarTarjetas);
-            this.Controls.Add(this.paner_Alta);
-            this.Controls.Add(this.button_limpiar);
-            this.Controls.Add(this.button_guardar);
-            this.Controls.Add(this.button_cerrar);
+            this.Controls.Add(this.groupBox_Alta);
+            this.Controls.Add(this.button_Limpiar);
+            this.Controls.Add(this.button_Guardar);
+            this.Controls.Add(this.button_Cerrar);
             this.Controls.Add(this.groupBox_Usuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -572,8 +573,8 @@
             this.Text = "Alta";
             this.groupBox_Usuario.ResumeLayout(false);
             this.groupBox_Usuario.PerformLayout();
-            this.paner_Alta.ResumeLayout(false);
-            this.paner_Alta.PerformLayout();
+            this.groupBox_Alta.ResumeLayout(false);
+            this.groupBox_Alta.PerformLayout();
             this.groupBox_AsociarTarjetas.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).EndInit();
             this.ResumeLayout(false);
@@ -582,16 +583,16 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_limpiar;
-        private System.Windows.Forms.Button button_guardar;
-        private System.Windows.Forms.Button button_cerrar;
+        private System.Windows.Forms.Button button_Limpiar;
+        private System.Windows.Forms.Button button_Guardar;
+        private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.GroupBox groupBox_Usuario;
-        private System.Windows.Forms.GroupBox paner_Alta;
+        private System.Windows.Forms.GroupBox groupBox_Alta;
         private System.Windows.Forms.TextBox textBox_Nacionalidad;
         private System.Windows.Forms.Label label_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Localidad;
         private System.Windows.Forms.Label label_Localidad;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Depto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_Piso;
         private System.Windows.Forms.Label label_Piso;
@@ -604,7 +605,7 @@
         private System.Windows.Forms.RadioButton radioButton_Lc;
         private System.Windows.Forms.RadioButton radioButton_Dni;
         private System.Windows.Forms.TextBox textBox_Documento;
-        private System.Windows.Forms.TextBox textBox_Direccion;
+        private System.Windows.Forms.TextBox textBox_Domicilio;
         private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.Label label_FechaNacimiento;
         private System.Windows.Forms.Label label_Pais;
