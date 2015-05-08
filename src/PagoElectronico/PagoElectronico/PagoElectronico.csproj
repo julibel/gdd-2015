@@ -220,6 +220,24 @@
     <Compile Include="Retiros\Retiro.Designer.cs">
       <DependentUpon>Retiro.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tarjeta Credito\Asociar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjeta Credito\Asociar.Designer.cs">
+      <DependentUpon>Asociar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjeta Credito\ModificarDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjeta Credito\ModificarDatos.Designer.cs">
+      <DependentUpon>ModificarDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tarjeta Credito\Seleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjeta Credito\Seleccion.Designer.cs">
+      <DependentUpon>Seleccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Transferencias\Transferencia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +328,15 @@
     </Compile>
     <EmbeddedResource Include="Retiros\Retiro.resx">
       <DependentUpon>Retiro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjeta Credito\Asociar.resx">
+      <DependentUpon>Asociar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjeta Credito\ModificarDatos.resx">
+      <DependentUpon>ModificarDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjeta Credito\Seleccion.resx">
+      <DependentUpon>Seleccion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Transferencias\Transferencia.resx">
       <DependentUpon>Transferencia.cs</DependentUpon>

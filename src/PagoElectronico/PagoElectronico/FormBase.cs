@@ -109,7 +109,10 @@ namespace PagoElectronico
 
         private void asociarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            if (ActiveMdiChild != null) ActiveMdiChild.Close();
+            Tarjeta_Credito.Asociar nuevo_form = new Tarjeta_Credito.Asociar();
+            nuevo_form.MdiParent = this;
+            nuevo_form.Show();
         }
 
         private void crearDepositoDeDineroToolStripMenuItem_Click(object sender, EventArgs e)
@@ -179,6 +182,22 @@ namespace PagoElectronico
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void desasociarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null) ActiveMdiChild.Close();
+            Tarjeta_Credito.Seleccion nuevo_form = new Tarjeta_Credito.Seleccion();
+            nuevo_form.MdiParent = this;
+            nuevo_form.Show();
+        }
+
+        private void modificarDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ActiveMdiChild != null) ActiveMdiChild.Close();
+            Tarjeta_Credito.Seleccion nuevo_form = new Tarjeta_Credito.Seleccion();
+            nuevo_form.MdiParent = this;
+            nuevo_form.Show();
         }
     }
 }

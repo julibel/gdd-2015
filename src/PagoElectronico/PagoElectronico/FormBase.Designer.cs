@@ -209,12 +209,14 @@
             this.desasociarToolStripMenuItem.Name = "desasociarToolStripMenuItem";
             this.desasociarToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.desasociarToolStripMenuItem.Text = "Desasociar";
+            this.desasociarToolStripMenuItem.Click += new System.EventHandler(this.desasociarToolStripMenuItem_Click);
             // 
             // modificarDatosToolStripMenuItem
             // 
             this.modificarDatosToolStripMenuItem.Name = "modificarDatosToolStripMenuItem";
             this.modificarDatosToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.modificarDatosToolStripMenuItem.Text = "Modificar datos";
+            this.modificarDatosToolStripMenuItem.Click += new System.EventHandler(this.modificarDatosToolStripMenuItem_Click);
             // 
             // operacionToolStripMenuItem
             // 
