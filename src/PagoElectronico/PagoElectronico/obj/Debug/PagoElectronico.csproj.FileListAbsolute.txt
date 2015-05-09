@@ -59,3 +59,4 @@ C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\De
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Tarjeta_Credito.Asociar.resources
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Tarjeta_Credito.ModificarDatos.resources
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Tarjeta_Credito.Seleccion.resources
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.csprojResolveAssemblyReference.cache

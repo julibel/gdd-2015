@@ -32,7 +32,6 @@ namespace PagoElectronico.ABM_Cliente
                                  MessageBoxIcon.Question);
 
 
-            Limpiar
         }
     }
 }
