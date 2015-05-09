@@ -30,5 +30,16 @@ namespace PagoElectronico.ABM_Cuenta
         {
             this.Close();
         }
+
+        private void button_Borrar_Click(object sender, EventArgs e)
+        {
+            // message box 
+            const string mensaje = "¿Está seguro que desea eliminar la Cuenta del sistema?";
+            const string resumen = "Eliminando Cuenta";
+
+            var resultado = MessageBox.Show(mensaje, resumen,
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+        }
     }
 }

@@ -20,5 +20,19 @@ namespace PagoElectronico.ABM_Cliente
         {
             this.Close();
         }
+
+        private void button_Borrar_Click(object sender, EventArgs e)
+        {
+            // message box 
+            const string mensaje = "¿Está seguro que desea eliminar al Cliente del sistema?";
+            const string resumen = "Eliminando Cliente";
+
+            var resultado = MessageBox.Show(mensaje, resumen,
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+
+            Limpiar
+        }
     }
 }

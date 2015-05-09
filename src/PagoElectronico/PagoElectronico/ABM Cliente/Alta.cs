@@ -20,5 +20,10 @@ namespace PagoElectronico.ABM_Cliente
         {
             this.Close();
         }
+
+        private void button_Guardar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

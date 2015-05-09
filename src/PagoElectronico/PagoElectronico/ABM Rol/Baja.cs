@@ -20,5 +20,18 @@ namespace PagoElectronico.ABM_Rol
         {
             this.Close();
         }
+
+        private void button_Borrar_Click(object sender, EventArgs e)
+        {
+            // message box 
+            const string mensaje = "¿Está seguro que desea eliminar el Rol del sistema?";
+            const string resumen = "Eliminando Rol";
+
+            var resultado = MessageBox.Show(mensaje, resumen,
+                                 MessageBoxButtons.YesNo,
+                                 MessageBoxIcon.Question);
+
+
+        }
     }
 }

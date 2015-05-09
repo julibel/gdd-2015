@@ -1,0 +1,23 @@
+Dudas
+
+
+- Donde se da la baja de usuarios? (abm usuario)
+
+
+- Proceso Login: opcion de que un cliente haga su propio alta de usuario y password
+
+- es necesario poner el numero de operacion para retiro, transferencia y deposito (ESTrategia) 
+
+- Nota: en el caso desasociar tarjeta pense en no crear un form, directamente desde el form de seleccion dar la posibilidad de desasociar en un message box
+
+
+1) MODEL (clases de todos los objetos del sistema, uno por tabla?) 
+2) aplicar Model a los form
+JULIAN	a) Retiros, Tarjeta Credito, Transferencia, Deposito, Facturacion, Consulta Saldo, Login y Form Base
+
+JULIETA	b) ABM Cliente, ABM Rol, ABM Cuenta, Listado, Modificar Contrasenia
+
+
+
+
+Conexiones a la base, metodos, funciones, demas..

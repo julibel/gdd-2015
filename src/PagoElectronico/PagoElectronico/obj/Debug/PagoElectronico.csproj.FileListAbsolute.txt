@@ -56,3 +56,6 @@ C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\De
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Retiros.Retiro.resources
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Transferencias.Transferencia.resources
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.csproj.GenerateResource.Cache
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Tarjeta_Credito.Asociar.resources
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Tarjeta_Credito.ModificarDatos.resources
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.Tarjeta_Credito.Seleccion.resources

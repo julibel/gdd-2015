@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.textBox_Calle = new System.Windows.Forms.TextBox();
+            this.label_Domicilio = new System.Windows.Forms.Label();
             this.textBox_Nacionalidad = new System.Windows.Forms.TextBox();
             this.label_Nacionalidad = new System.Windows.Forms.Label();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
@@ -39,18 +41,15 @@
             this.label_Piso = new System.Windows.Forms.Label();
             this.dateTimePicker_FechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.textBox_Mail = new System.Windows.Forms.TextBox();
-            this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.radioButton_Pas = new System.Windows.Forms.RadioButton();
             this.radioButton_Ci = new System.Windows.Forms.RadioButton();
             this.radioButton_Le = new System.Windows.Forms.RadioButton();
             this.radioButton_Lc = new System.Windows.Forms.RadioButton();
             this.radioButton_Dni = new System.Windows.Forms.RadioButton();
             this.textBox_Documento = new System.Windows.Forms.TextBox();
-            this.textBox_Domicilio = new System.Windows.Forms.TextBox();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.label_FechaNacimiento = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
-            this.label_Domicilio = new System.Windows.Forms.Label();
             this.label_Mail = new System.Windows.Forms.Label();
             this.label_TipoDocumento = new System.Windows.Forms.Label();
             this.label_Documento = new System.Windows.Forms.Label();
@@ -61,6 +60,7 @@
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
+            this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.paner_Alta.SuspendLayout();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
@@ -68,6 +68,9 @@
             // 
             // paner_Alta
             // 
+            this.paner_Alta.Controls.Add(this.comboBox_Pais);
+            this.paner_Alta.Controls.Add(this.textBox_Calle);
+            this.paner_Alta.Controls.Add(this.label_Domicilio);
             this.paner_Alta.Controls.Add(this.textBox_Nacionalidad);
             this.paner_Alta.Controls.Add(this.label_Nacionalidad);
             this.paner_Alta.Controls.Add(this.textBox_Localidad);
@@ -78,18 +81,15 @@
             this.paner_Alta.Controls.Add(this.label_Piso);
             this.paner_Alta.Controls.Add(this.dateTimePicker_FechaNacimiento);
             this.paner_Alta.Controls.Add(this.textBox_Mail);
-            this.paner_Alta.Controls.Add(this.textBox_Pais);
             this.paner_Alta.Controls.Add(this.radioButton_Pas);
             this.paner_Alta.Controls.Add(this.radioButton_Ci);
             this.paner_Alta.Controls.Add(this.radioButton_Le);
             this.paner_Alta.Controls.Add(this.radioButton_Lc);
             this.paner_Alta.Controls.Add(this.radioButton_Dni);
             this.paner_Alta.Controls.Add(this.textBox_Documento);
-            this.paner_Alta.Controls.Add(this.textBox_Domicilio);
             this.paner_Alta.Controls.Add(this.textBox_Apellido);
             this.paner_Alta.Controls.Add(this.label_FechaNacimiento);
             this.paner_Alta.Controls.Add(this.label_Pais);
-            this.paner_Alta.Controls.Add(this.label_Domicilio);
             this.paner_Alta.Controls.Add(this.label_Mail);
             this.paner_Alta.Controls.Add(this.label_TipoDocumento);
             this.paner_Alta.Controls.Add(this.label_Documento);
@@ -104,6 +104,25 @@
             this.paner_Alta.TabIndex = 32;
             this.paner_Alta.TabStop = false;
             this.paner_Alta.Text = "Datos del Cliente";
+            // 
+            // textBox_Calle
+            // 
+            this.textBox_Calle.Location = new System.Drawing.Point(136, 194);
+            this.textBox_Calle.MaxLength = 255;
+            this.textBox_Calle.Name = "textBox_Calle";
+            this.textBox_Calle.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Calle.TabIndex = 31;
+            // 
+            // label_Domicilio
+            // 
+            this.label_Domicilio.AutoSize = true;
+            this.label_Domicilio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Domicilio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Domicilio.Location = new System.Drawing.Point(100, 197);
+            this.label_Domicilio.Name = "label_Domicilio";
+            this.label_Domicilio.Size = new System.Drawing.Size(30, 13);
+            this.label_Domicilio.TabIndex = 30;
+            this.label_Domicilio.Text = "Calle";
             // 
             // textBox_Nacionalidad
             // 
@@ -202,15 +221,6 @@
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
             this.textBox_Mail.TabIndex = 20;
             // 
-            // textBox_Pais
-            // 
-            this.textBox_Pais.Enabled = false;
-            this.textBox_Pais.Location = new System.Drawing.Point(136, 272);
-            this.textBox_Pais.MaxLength = 50;
-            this.textBox_Pais.Name = "textBox_Pais";
-            this.textBox_Pais.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Pais.TabIndex = 19;
-            // 
             // radioButton_Pas
             // 
             this.radioButton_Pas.AutoSize = true;
@@ -290,15 +300,6 @@
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
             this.textBox_Documento.TabIndex = 13;
             // 
-            // textBox_Domicilio
-            // 
-            this.textBox_Domicilio.Enabled = false;
-            this.textBox_Domicilio.Location = new System.Drawing.Point(136, 194);
-            this.textBox_Domicilio.MaxLength = 255;
-            this.textBox_Domicilio.Name = "textBox_Domicilio";
-            this.textBox_Domicilio.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Domicilio.TabIndex = 11;
-            // 
             // textBox_Apellido
             // 
             this.textBox_Apellido.Enabled = false;
@@ -329,17 +330,6 @@
             this.label_Pais.Size = new System.Drawing.Size(93, 13);
             this.label_Pais.TabIndex = 8;
             this.label_Pais.Text = "Pais de residencia";
-            // 
-            // label_Domicilio
-            // 
-            this.label_Domicilio.AutoSize = true;
-            this.label_Domicilio.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Domicilio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Domicilio.Location = new System.Drawing.Point(81, 197);
-            this.label_Domicilio.Name = "label_Domicilio";
-            this.label_Domicilio.Size = new System.Drawing.Size(49, 13);
-            this.label_Domicilio.TabIndex = 7;
-            this.label_Domicilio.Text = "Domicilio";
             // 
             // label_Mail
             // 
@@ -413,6 +403,7 @@
             this.button_Borrar.TabIndex = 29;
             this.button_Borrar.Text = "Borrar";
             this.button_Borrar.UseVisualStyleBackColor = true;
+            this.button_Borrar.Click += new System.EventHandler(this.button_Borrar_Click);
             // 
             // button_Cerrar
             // 
@@ -442,6 +433,597 @@
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(383, 192);
             this.dataGridView_Tarjetas.TabIndex = 0;
+            // 
+            // comboBox_Pais
+            // 
+            this.comboBox_Pais.FormattingEnabled = true;
+            this.comboBox_Pais.Items.AddRange(new object[] {
+            "",
+            "",
+            "Afganistán",
+            "",
+            "",
+            "Albania",
+            "",
+            "",
+            "Alemania",
+            "",
+            "",
+            "Andorra",
+            "",
+            "",
+            "Angola",
+            "",
+            "",
+            "Antigua y Barbuda",
+            "",
+            "",
+            "Arabia Saudita",
+            "",
+            "",
+            "Argelia",
+            "",
+            "",
+            "Argentina",
+            "",
+            "",
+            "Armenia",
+            "",
+            "",
+            "Australia",
+            "",
+            "",
+            "Austria",
+            "",
+            "",
+            "Azerbaiyán",
+            "",
+            "",
+            "Bahamas",
+            "",
+            "",
+            "Bangladés",
+            "",
+            "",
+            "Barbados",
+            "",
+            "",
+            "Baréin",
+            "",
+            "",
+            "Bélgica",
+            "",
+            "",
+            "Belice",
+            "",
+            "",
+            "Benín",
+            "",
+            "",
+            "Bielorrusia",
+            "",
+            "",
+            "Birmania",
+            "",
+            "",
+            "Bolivia",
+            "",
+            "",
+            "Bosnia y Herzegovina",
+            "",
+            "",
+            "Botsuana",
+            "",
+            "",
+            "Brasil",
+            "",
+            "",
+            "Brunéi",
+            "",
+            "",
+            "Bulgaria",
+            "",
+            "",
+            "Burkina Faso",
+            "",
+            "",
+            "Burundi",
+            "",
+            "",
+            "Bután",
+            "",
+            "",
+            "Cabo Verde",
+            "",
+            "",
+            "Camboya",
+            "",
+            "",
+            "Camerún",
+            "",
+            "",
+            "Canadá",
+            "",
+            "",
+            "Catar",
+            "",
+            "",
+            "Chad",
+            "",
+            "",
+            "Chile",
+            "",
+            "",
+            "China",
+            "",
+            "",
+            "Chipre",
+            "",
+            "",
+            "Ciudad del Vaticano",
+            "",
+            "",
+            "Colombia",
+            "",
+            "",
+            "Comoras",
+            "",
+            "",
+            "Corea del Norte",
+            "",
+            "",
+            "Corea del Sur",
+            "",
+            "",
+            "Costa de Marfil",
+            "",
+            "",
+            "Costa Rica",
+            "",
+            "",
+            "Croacia",
+            "",
+            "",
+            "Cuba",
+            "",
+            "",
+            "Dinamarca",
+            "",
+            "",
+            "Dominica",
+            "",
+            "",
+            "Ecuador",
+            "",
+            "",
+            "Egipto",
+            "",
+            "",
+            "El Salvador",
+            "",
+            "",
+            "Emiratos Árabes Unidos",
+            "",
+            "",
+            "Eritrea",
+            "",
+            "",
+            "Eslovaquia",
+            "",
+            "",
+            "Eslovenia",
+            "",
+            "",
+            "España",
+            "",
+            "",
+            "Estados Unidos",
+            "",
+            "",
+            "Estonia",
+            "",
+            "",
+            "Etiopía",
+            "",
+            "",
+            "Filipinas",
+            "",
+            "",
+            "Finlandia",
+            "",
+            "",
+            "Fiyi",
+            "",
+            "",
+            "Francia",
+            "",
+            "",
+            "Gabón",
+            "",
+            "",
+            "Gambia",
+            "",
+            "",
+            "Georgia",
+            "",
+            "",
+            "Ghana",
+            "",
+            "",
+            "Granada",
+            "",
+            "",
+            "Grecia",
+            "",
+            "",
+            "Guatemala",
+            "",
+            "",
+            "Guyana",
+            "",
+            "",
+            "Guinea",
+            "",
+            "",
+            "Guinea ecuatorial",
+            "",
+            "",
+            "Guinea-Bisáu",
+            "",
+            "",
+            "Haití",
+            "",
+            "",
+            "Honduras",
+            "",
+            "",
+            "Hungría",
+            "",
+            "",
+            "India",
+            "",
+            "",
+            "Indonesia",
+            "",
+            "",
+            "Irak",
+            "",
+            "",
+            "Irán",
+            "",
+            "",
+            "Irlanda",
+            "",
+            "",
+            "Islandia",
+            "",
+            "",
+            "Islas Marshall",
+            "",
+            "",
+            "Islas Salomón",
+            "",
+            "",
+            "Israel",
+            "",
+            "",
+            "Italia",
+            "",
+            "",
+            "Jamaica",
+            "",
+            "",
+            "Japón",
+            "",
+            "",
+            "Jordania",
+            "",
+            "",
+            "Kazajistán",
+            "",
+            "",
+            "Kenia",
+            "",
+            "",
+            "Kirguistán",
+            "",
+            "",
+            "Kiribati",
+            "",
+            "",
+            "Kuwait",
+            "",
+            "",
+            "Laos",
+            "",
+            "",
+            "Lesoto",
+            "",
+            "",
+            "Letonia",
+            "",
+            "",
+            "Líbano",
+            "",
+            "",
+            "Liberia",
+            "",
+            "",
+            "Libia",
+            "",
+            "",
+            "Liechtenstein",
+            "",
+            "",
+            "Lituania",
+            "",
+            "",
+            "Luxemburgo",
+            "",
+            "",
+            "Madagascar",
+            "",
+            "",
+            "Malasia",
+            "",
+            "",
+            "Malaui",
+            "",
+            "",
+            "Maldivas",
+            "",
+            "",
+            "Malí",
+            "",
+            "",
+            "Malta",
+            "",
+            "",
+            "Marruecos",
+            "",
+            "",
+            "Mauricio",
+            "",
+            "",
+            "Mauritania",
+            "",
+            "",
+            "México",
+            "",
+            "",
+            "Micronesia",
+            "",
+            "",
+            "Moldavia",
+            "",
+            "",
+            "Mónaco",
+            "",
+            "",
+            "Mongolia",
+            "",
+            "",
+            "Montenegro",
+            "",
+            "",
+            "Mozambique",
+            "",
+            "",
+            "Namibia",
+            "",
+            "",
+            "Nauru",
+            "",
+            "",
+            "Nepal",
+            "",
+            "",
+            "Nicaragua",
+            "",
+            "",
+            "Níger",
+            "",
+            "",
+            "Nigeria",
+            "",
+            "",
+            "Noruega",
+            "",
+            "",
+            "Nueva Zelanda",
+            "",
+            "",
+            "Omán",
+            "",
+            "",
+            "Países Bajos",
+            "",
+            "",
+            "Pakistán",
+            "",
+            "",
+            "Palaos",
+            "",
+            "",
+            "Panamá",
+            "",
+            "",
+            "Papúa Nueva Guinea",
+            "",
+            "",
+            "Paraguay",
+            "",
+            "",
+            "Perú",
+            "",
+            "",
+            "Polonia",
+            "",
+            "",
+            "Portugal",
+            "",
+            "",
+            "Reino Unido",
+            "",
+            "",
+            "República Centroafricana",
+            "",
+            "",
+            "República Checa",
+            "",
+            "",
+            "República de Macedonia",
+            "",
+            "",
+            "República del Congo",
+            "",
+            "",
+            "República Democrática del Congo",
+            "",
+            "",
+            "República Dominicana",
+            "",
+            "",
+            "República Sudafricana",
+            "",
+            "",
+            "Ruanda",
+            "",
+            "",
+            "Rumanía",
+            "",
+            "",
+            "Rusia",
+            "",
+            "",
+            "Samoa",
+            "",
+            "",
+            "San Cristóbal y Nieves",
+            "",
+            "",
+            "San Marino",
+            "",
+            "",
+            "San Vicente y las Granadinas",
+            "",
+            "",
+            "Santa Lucía",
+            "",
+            "",
+            "Santo Tomé y Príncipe",
+            "",
+            "",
+            "Senegal",
+            "",
+            "",
+            "Serbia",
+            "",
+            "",
+            "Seychelles",
+            "",
+            "",
+            "Sierra Leona",
+            "",
+            "",
+            "Singapur",
+            "",
+            "",
+            "Siria",
+            "",
+            "",
+            "Somalia",
+            "",
+            "",
+            "Sri Lanka",
+            "",
+            "",
+            "Suazilandia",
+            "",
+            "",
+            "Sudán",
+            "",
+            "",
+            "Sudán del Sur",
+            "",
+            "",
+            "Suecia",
+            "",
+            "",
+            "Suiza",
+            "",
+            "",
+            "Surinam",
+            "",
+            "",
+            "Tailandia",
+            "",
+            "",
+            "Tanzania",
+            "",
+            "",
+            "Tayikistán",
+            "",
+            "",
+            "Timor Oriental",
+            "",
+            "",
+            "Togo",
+            "",
+            "",
+            "Tonga",
+            "",
+            "",
+            "Trinidad y Tobago",
+            "",
+            "",
+            "Túnez",
+            "",
+            "",
+            "Turkmenistán",
+            "",
+            "",
+            "Turquía",
+            "",
+            "",
+            "Tuvalu",
+            "",
+            "",
+            "Ucrania",
+            "",
+            "",
+            "Uganda",
+            "",
+            "",
+            "Uruguay",
+            "",
+            "",
+            "Uzbekistán",
+            "",
+            "",
+            "Vanuatu",
+            "",
+            "",
+            "Venezuela",
+            "",
+            "",
+            "Vietnam",
+            "",
+            "",
+            "Yemen",
+            "",
+            "",
+            "Yibuti",
+            "",
+            "",
+            "Zambia",
+            "",
+            "",
+            "Zimbabue"});
+            this.comboBox_Pais.Location = new System.Drawing.Point(136, 272);
+            this.comboBox_Pais.Name = "comboBox_Pais";
+            this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Pais.TabIndex = 32;
             // 
             // Baja
             // 
@@ -481,18 +1063,15 @@
         private System.Windows.Forms.Label label_Piso;
         private System.Windows.Forms.DateTimePicker dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.TextBox textBox_Mail;
-        private System.Windows.Forms.TextBox textBox_Pais;
         private System.Windows.Forms.RadioButton radioButton_Pas;
         private System.Windows.Forms.RadioButton radioButton_Ci;
         private System.Windows.Forms.RadioButton radioButton_Le;
         private System.Windows.Forms.RadioButton radioButton_Lc;
         private System.Windows.Forms.RadioButton radioButton_Dni;
         private System.Windows.Forms.TextBox textBox_Documento;
-        private System.Windows.Forms.TextBox textBox_Domicilio;
         private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.Label label_FechaNacimiento;
         private System.Windows.Forms.Label label_Pais;
-        private System.Windows.Forms.Label label_Domicilio;
         private System.Windows.Forms.Label label_Mail;
         private System.Windows.Forms.Label label_TipoDocumento;
         private System.Windows.Forms.Label label_Documento;
@@ -503,5 +1082,8 @@
         private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.GroupBox groupBox_AsociarTarjetas;
         private System.Windows.Forms.DataGridView dataGridView_Tarjetas;
+        private System.Windows.Forms.TextBox textBox_Calle;
+        private System.Windows.Forms.Label label_Domicilio;
+        private System.Windows.Forms.ComboBox comboBox_Pais;
     }
 }

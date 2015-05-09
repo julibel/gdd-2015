@@ -11,6 +11,14 @@ namespace PagoElectronico
 {
     public partial class FormBase : Form
     {
+         void LimpiarCampos()
+        {
+            foreach (var control in Controls.OfType<TextBox>())
+            {
+                control.Text = "";
+            }
+
+        }
      
         public FormBase()
         {

@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.button_Limpiar = new System.Windows.Forms.Button();
-            this.button_Guardar = new System.Windows.Forms.Button();
-            this.button_Cerrar = new System.Windows.Forms.Button();
-            this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_FechaVencimiento = new System.Windows.Forms.TextBox();
-            this.textBox_FechaEmision = new System.Windows.Forms.TextBox();
             this.textBox_CodigoSeguridad = new System.Windows.Forms.TextBox();
             this.textBox_NombreTitular = new System.Windows.Forms.TextBox();
             this.textBox_numeroTarjeta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox_FechaVencimiento = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
+            this.textBox_FechaEmision = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button_Limpiar = new System.Windows.Forms.Button();
+            this.button_Guardar = new System.Windows.Forms.Button();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,85 +67,6 @@
             this.groupBox1.TabIndex = 40;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la tarjeta de credito";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(244, 240);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 13);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Fecha de emision";
-            // 
-            // button_Limpiar
-            // 
-            this.button_Limpiar.Location = new System.Drawing.Point(666, 428);
-            this.button_Limpiar.Name = "button_Limpiar";
-            this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 44;
-            this.button_Limpiar.Text = "Limpiar";
-            this.button_Limpiar.UseVisualStyleBackColor = true;
-            // 
-            // button_Guardar
-            // 
-            this.button_Guardar.Location = new System.Drawing.Point(585, 428);
-            this.button_Guardar.Name = "button_Guardar";
-            this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 43;
-            this.button_Guardar.Text = "Guardar";
-            this.button_Guardar.UseVisualStyleBackColor = true;
-            // 
-            // button_Cerrar
-            // 
-            this.button_Cerrar.Location = new System.Drawing.Point(747, 428);
-            this.button_Cerrar.Name = "button_Cerrar";
-            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 42;
-            this.button_Cerrar.Text = "Cerrar";
-            this.button_Cerrar.UseVisualStyleBackColor = true;
-            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // comboBox_Emisor
-            // 
-            this.comboBox_Emisor.FormattingEnabled = true;
-            this.comboBox_Emisor.Location = new System.Drawing.Point(340, 210);
-            this.comboBox_Emisor.Name = "comboBox_Emisor";
-            this.comboBox_Emisor.Size = new System.Drawing.Size(186, 21);
-            this.comboBox_Emisor.TabIndex = 38;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(296, 213);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "Emisor";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(222, 266);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 13);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Fecha de vencimiento";
-            // 
-            // textBox_FechaVencimiento
-            // 
-            this.textBox_FechaVencimiento.Enabled = false;
-            this.textBox_FechaVencimiento.Location = new System.Drawing.Point(340, 263);
-            this.textBox_FechaVencimiento.Name = "textBox_FechaVencimiento";
-            this.textBox_FechaVencimiento.Size = new System.Drawing.Size(186, 20);
-            this.textBox_FechaVencimiento.TabIndex = 41;
-            // 
-            // textBox_FechaEmision
-            // 
-            this.textBox_FechaEmision.Enabled = false;
-            this.textBox_FechaEmision.Location = new System.Drawing.Point(340, 237);
-            this.textBox_FechaEmision.Name = "textBox_FechaEmision";
-            this.textBox_FechaEmision.Size = new System.Drawing.Size(186, 20);
-            this.textBox_FechaEmision.TabIndex = 35;
             // 
             // textBox_CodigoSeguridad
             // 
@@ -194,6 +115,91 @@
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 42;
             this.label3.Text = "Numero de tarjeta";
+            // 
+            // textBox_FechaVencimiento
+            // 
+            this.textBox_FechaVencimiento.Enabled = false;
+            this.textBox_FechaVencimiento.Location = new System.Drawing.Point(340, 263);
+            this.textBox_FechaVencimiento.Name = "textBox_FechaVencimiento";
+            this.textBox_FechaVencimiento.Size = new System.Drawing.Size(186, 20);
+            this.textBox_FechaVencimiento.TabIndex = 41;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(222, 266);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 13);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Fecha de vencimiento";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(296, 213);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 39;
+            this.label1.Text = "Emisor";
+            // 
+            // comboBox_Emisor
+            // 
+            this.comboBox_Emisor.FormattingEnabled = true;
+            this.comboBox_Emisor.Items.AddRange(new object[] {
+            "VISA",
+            "MASTERCARD",
+            "AMEX",
+            "CABAL",
+            "DINERS"});
+            this.comboBox_Emisor.Location = new System.Drawing.Point(340, 210);
+            this.comboBox_Emisor.Name = "comboBox_Emisor";
+            this.comboBox_Emisor.Size = new System.Drawing.Size(186, 21);
+            this.comboBox_Emisor.TabIndex = 38;
+            // 
+            // textBox_FechaEmision
+            // 
+            this.textBox_FechaEmision.Enabled = false;
+            this.textBox_FechaEmision.Location = new System.Drawing.Point(340, 237);
+            this.textBox_FechaEmision.Name = "textBox_FechaEmision";
+            this.textBox_FechaEmision.Size = new System.Drawing.Size(186, 20);
+            this.textBox_FechaEmision.TabIndex = 35;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(244, 240);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.TabIndex = 34;
+            this.label8.Text = "Fecha de emision";
+            // 
+            // button_Limpiar
+            // 
+            this.button_Limpiar.Location = new System.Drawing.Point(666, 428);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
+            this.button_Limpiar.TabIndex = 44;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
+            // 
+            // button_Guardar
+            // 
+            this.button_Guardar.Location = new System.Drawing.Point(585, 428);
+            this.button_Guardar.Name = "button_Guardar";
+            this.button_Guardar.Size = new System.Drawing.Size(75, 23);
+            this.button_Guardar.TabIndex = 43;
+            this.button_Guardar.Text = "Guardar";
+            this.button_Guardar.UseVisualStyleBackColor = true;
+            // 
+            // button_Cerrar
+            // 
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 428);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 42;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // Asociar
             // 
