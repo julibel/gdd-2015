@@ -11,6 +11,13 @@ namespace PagoElectronico.Listados
 {
     public partial class ListadoEstadistico : Form
     {
+        private void LimpiarCampos()
+        {
+            foreach (var control in this.groupBox_Consultas.Controls.OfType<ComboBox>()) control.Text = "";
+            numericUpDown_Anio.Value = 2015;
+        }
+
+
         public ListadoEstadistico()
         {
             InitializeComponent();
@@ -24,6 +31,16 @@ namespace PagoElectronico.Listados
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void numericUpDown_Anio_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -120,6 +120,7 @@
             this.button_Limpiar.TabIndex = 28;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Guardar
             // 
@@ -129,6 +130,7 @@
             this.button_Guardar.TabIndex = 27;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
+            this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
             // 
             // button_Cerrar
             // 

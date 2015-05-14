@@ -30,7 +30,6 @@
         {
             this.dataGridView_Resultado2 = new System.Windows.Forms.DataGridView();
             this.groupBox_Consultas = new System.Windows.Forms.GroupBox();
-            this.numericUpDown_Anio = new System.Windows.Forms.NumericUpDown();
             this.label_Trimestre = new System.Windows.Forms.Label();
             this.comboBox_TipoListado = new System.Windows.Forms.ComboBox();
             this.label_TipoListado = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@
             this.button_HacerConsulta = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.button_Limpiar = new System.Windows.Forms.Button();
+            this.numericUpDown_Anio = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resultado2)).BeginInit();
             this.groupBox_Consultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Anio)).BeginInit();
@@ -70,29 +70,6 @@
             this.groupBox_Consultas.TabStop = false;
             this.groupBox_Consultas.Text = "Consultas";
             this.groupBox_Consultas.Enter += new System.EventHandler(this.groupBox_Consultas_Enter);
-            // 
-            // numericUpDown_Anio
-            // 
-            this.numericUpDown_Anio.Location = new System.Drawing.Point(191, 34);
-            this.numericUpDown_Anio.Maximum = new decimal(new int[] {
-            2014,
-            0,
-            0,
-            0});
-            this.numericUpDown_Anio.Minimum = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.numericUpDown_Anio.Name = "numericUpDown_Anio";
-            this.numericUpDown_Anio.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown_Anio.TabIndex = 11;
-            this.numericUpDown_Anio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown_Anio.Value = new decimal(new int[] {
-            2014,
-            0,
-            0,
-            0});
             // 
             // label_Trimestre
             // 
@@ -176,6 +153,31 @@
             this.button_Limpiar.TabIndex = 1;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
+            // 
+            // numericUpDown_Anio
+            // 
+            this.numericUpDown_Anio.Location = new System.Drawing.Point(191, 34);
+            this.numericUpDown_Anio.Maximum = new decimal(new int[] {
+            2015,
+            0,
+            0,
+            0});
+            this.numericUpDown_Anio.Minimum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.numericUpDown_Anio.Name = "numericUpDown_Anio";
+            this.numericUpDown_Anio.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown_Anio.TabIndex = 11;
+            this.numericUpDown_Anio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown_Anio.Value = new decimal(new int[] {
+            2015,
+            0,
+            0,
+            0});
+            this.numericUpDown_Anio.ValueChanged += new System.EventHandler(this.numericUpDown_Anio_ValueChanged);
             // 
             // ListadoEstadistico
             // 
@@ -206,7 +208,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView_Resultado2;
         private System.Windows.Forms.GroupBox groupBox_Consultas;
-        private System.Windows.Forms.NumericUpDown numericUpDown_Anio;
         private System.Windows.Forms.Label label_Trimestre;
         private System.Windows.Forms.ComboBox comboBox_TipoListado;
         private System.Windows.Forms.Label label_TipoListado;
@@ -215,5 +216,6 @@
         private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_HacerConsulta;
+        private System.Windows.Forms.NumericUpDown numericUpDown_Anio;
     }
 }

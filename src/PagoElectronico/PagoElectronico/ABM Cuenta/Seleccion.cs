@@ -11,6 +11,13 @@ namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Seleccion : Form
     {
+        private void LimpiarCampos()
+        {
+            foreach (var control in this.paner_Filtros.Controls.OfType<TextBox>()) control.Text = "";
+            foreach (var control in this.paner_Filtros.Controls.OfType<ComboBox>()) control.Text = "";
+        }
+
+
         public Seleccion()
         {
             InitializeComponent();
@@ -19,6 +26,11 @@ namespace PagoElectronico.ABM_Cuenta
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
         }
     }
 }

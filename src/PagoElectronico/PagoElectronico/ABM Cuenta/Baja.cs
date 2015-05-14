@@ -16,6 +16,17 @@ namespace PagoElectronico.ABM_Cuenta
             InitializeComponent();
         }
 
+        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
+        {
+            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return resultado;
+
+        }
+        private void Mensaje_OK(String mensaje, String resumen)
+        {
+            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
         private void paner_DatosCuenta_Enter(object sender, EventArgs e)
         {
 
@@ -33,13 +44,17 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Borrar_Click(object sender, EventArgs e)
         {
-            // message box 
-            const string mensaje = "¿Está seguro que desea eliminar la Cuenta del sistema?";
-            const string resumen = "Eliminando Cuenta";
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar la Cuenta del sistema?", "Eliminar Cuenta");
+            if (resultado == DialogResult.Yes)
+            {
 
-            var resultado = MessageBox.Show(mensaje, resumen,
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Question);
+
+
+
+
+
+                Mensaje_OK("Los datos han sido eliminados con exito", "");
+            }
         }
     }
 }

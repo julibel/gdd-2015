@@ -63,9 +63,9 @@
             // 
             this.textBox_NuevaPassword.Location = new System.Drawing.Point(351, 221);
             this.textBox_NuevaPassword.Name = "textBox_NuevaPassword";
-            this.textBox_NuevaPassword.PasswordChar = '*';
             this.textBox_NuevaPassword.Size = new System.Drawing.Size(202, 20);
             this.textBox_NuevaPassword.TabIndex = 15;
+            this.textBox_NuevaPassword.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -80,9 +80,9 @@
             // 
             this.textBox_PasswordActual.Location = new System.Drawing.Point(351, 195);
             this.textBox_PasswordActual.Name = "textBox_PasswordActual";
-            this.textBox_PasswordActual.PasswordChar = '*';
             this.textBox_PasswordActual.Size = new System.Drawing.Size(202, 20);
             this.textBox_PasswordActual.TabIndex = 13;
+            this.textBox_PasswordActual.UseSystemPasswordChar = true;
             // 
             // label_Usuario
             // 
@@ -118,6 +118,7 @@
             this.button_Limpiar.TabIndex = 39;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Guardar
             // 
@@ -127,6 +128,7 @@
             this.button_Guardar.TabIndex = 38;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
+            this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
             // 
             // button_Cerrar
             // 
@@ -155,6 +157,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarContrasenia";
+            this.Load += new System.EventHandler(this.ModificarContrasenia_Load);
             this.paner_DatosCuenta.ResumeLayout(false);
             this.paner_DatosCuenta.PerformLayout();
             this.ResumeLayout(false);

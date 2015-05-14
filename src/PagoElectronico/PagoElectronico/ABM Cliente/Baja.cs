@@ -11,6 +11,18 @@ namespace PagoElectronico.ABM_Cliente
 {
     public partial class Baja : Form
     {
+        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
+        {
+            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return resultado;
+
+        }
+
+        private void Mensaje_OK(String mensaje, String resumen)
+        {
+            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
         public Baja()
         {
             InitializeComponent();
@@ -23,14 +35,22 @@ namespace PagoElectronico.ABM_Cliente
 
         private void button_Borrar_Click(object sender, EventArgs e)
         {
-            // message box 
-            const string mensaje = "¿Está seguro que desea eliminar al Cliente del sistema?";
-            const string resumen = "Eliminando Cliente";
 
-            var resultado = MessageBox.Show(mensaje, resumen,
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Question);
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar al Cliente del sistema?", "Eliminar Cliente");
+            if (resultado == DialogResult.Yes)
+            {
 
+
+
+
+
+
+                Mensaje_OK("Los datos han sido eliminados con exito", "");
+            }
+        }
+
+        private void Baja_Load(object sender, EventArgs e)
+        {
 
         }
     }

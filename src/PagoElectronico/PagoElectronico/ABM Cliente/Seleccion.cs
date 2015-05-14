@@ -11,6 +11,13 @@ namespace PagoElectronico.ABM_Cliente
 {
     public partial class Seleccion : Form
     {
+        private void LimpiarCampos()
+        {
+            foreach (var control in this.paner_Filtros.Controls.OfType<TextBox>()) control.Text = "";
+            comboBox_TipoDocumento.Text = "";
+            dataGridView_Seleccion.Rows.Clear();
+        }
+
         public Seleccion()
         {
             InitializeComponent();
@@ -19,6 +26,21 @@ namespace PagoElectronico.ABM_Cliente
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Seleccion_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_Limpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarCampos();
+        }
+
+        private void button_Buscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

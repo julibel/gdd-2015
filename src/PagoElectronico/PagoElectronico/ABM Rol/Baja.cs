@@ -11,6 +11,18 @@ namespace PagoElectronico.ABM_Rol
 {
     public partial class Baja : Form
     {
+        private void Mensaje_OK(String mensaje, String resumen)
+        {
+            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
+        {
+            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            return resultado;
+
+        }
+
         public Baja()
         {
             InitializeComponent();
@@ -23,14 +35,18 @@ namespace PagoElectronico.ABM_Rol
 
         private void button_Borrar_Click(object sender, EventArgs e)
         {
-            // message box 
-            const string mensaje = "¿Está seguro que desea eliminar el Rol del sistema?";
-            const string resumen = "Eliminando Rol";
 
-            var resultado = MessageBox.Show(mensaje, resumen,
-                                 MessageBoxButtons.YesNo,
-                                 MessageBoxIcon.Question);
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar al Rol del sistema?", "Eliminar Rol");
+            if (resultado == DialogResult.Yes)
+            {
 
+
+
+
+
+
+                Mensaje_OK("Los datos han sido eliminados con exito", "");
+            }
 
         }
     }

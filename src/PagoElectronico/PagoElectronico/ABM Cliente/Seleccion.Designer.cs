@@ -65,6 +65,7 @@
             this.button_Buscar.TabIndex = 14;
             this.button_Buscar.Text = "Buscar";
             this.button_Buscar.UseVisualStyleBackColor = true;
+            this.button_Buscar.Click += new System.EventHandler(this.button_Buscar_Click);
             // 
             // button_Limpiar
             // 
@@ -74,6 +75,7 @@
             this.button_Limpiar.TabIndex = 13;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // paner_Filtros
             // 
@@ -221,6 +223,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion";
+            this.Load += new System.EventHandler(this.Seleccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).EndInit();
             this.paner_Filtros.ResumeLayout(false);
             this.paner_Filtros.PerformLayout();
