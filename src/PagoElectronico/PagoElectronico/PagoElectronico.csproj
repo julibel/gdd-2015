@@ -210,7 +210,6 @@
     <Compile Include="Model\Cuenta.cs" />
     <Compile Include="Model\Emisor.cs" />
     <Compile Include="Model\Funcionalidad.cs" />
-    <Compile Include="Model\Moneda.cs" />
     <Compile Include="Model\Pais.cs" />
     <Compile Include="Model\Rol.cs" />
     <Compile Include="Model\Tarjeta.cs" />
