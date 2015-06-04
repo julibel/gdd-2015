@@ -7,22 +7,25 @@ namespace PagoElectronico.Model
 {
     public class Usuario
     {
-        private int ID;
-        private string _nombreUsuario;
-        private int _estado;
-        private int _intentos_fallidos;
-        private int _pregunta;
-        private List<Rol> _roles;
+        public int ID;
+        public string NombreUsuario;
+        public string Password;
+        public byte Estado;
+        public int Intentos_fallidos;
+        public string Pregunta;
+        public string Respuesta;
+        public List<int> Roles_list;
 
-        public Usuario(string nombre, List<Rol> roles)
+        public Usuario(int id,string nombre,string password,string pregunta,string respuesta,List<int> roles)
         {
-            _nombreUsuario = nombre;
-            _roles = roles;
-        }
-
-        public List<Rol> Roles()
-        {
-            return _roles;
+            ID = id;
+            NombreUsuario = nombre;
+            Password = password;
+            Estado = 1;
+            Intentos_fallidos = 0;
+            Pregunta = pregunta;
+            Respuesta = respuesta;
+            Roles_list = roles;
         }
 
     }

@@ -10,7 +10,7 @@ namespace PagoElectronico.Model
         public int ID { get; set; }
         public string Nombre { get; set; }
         public byte Habilitado { get; set; }
-        public List<int> Funcionalidades;
+        public List<int> Funcionalidades; 
 
         public Rol(string nombre)
         {

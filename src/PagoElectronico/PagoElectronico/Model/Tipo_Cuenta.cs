@@ -13,6 +13,12 @@ namespace PagoElectronico.Model
         public int Costo_Transaccion { get; set; }
 
 
-
+        public Tipo_Cuenta(int id, string nombre, int mantenimiento, int transaccion)
+        {
+            ID = id;
+            Nombre = nombre;
+            Costo_Mantenimiento = mantenimiento;
+            Costo_Transaccion = transaccion;
+        }
     }
 }
