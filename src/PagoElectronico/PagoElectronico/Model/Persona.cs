@@ -19,25 +19,44 @@ namespace PagoElectronico.Model
         // Documento
         // Mail
 
-        public long ID { get; set; }
+//        CREATE TABLE PERSONAS(
+
+
+//    NUMERO_DOC NUMERIC(10,0),
+//    NOMBRE VARCHAR(255),
+//    APELLIDO VARCHAR(255),
+//    PAIS INT,
+//    CALLE VARCHAR(255),
+//    NUMERO_DOM NUMERIC(5,0),
+//    PISO INT,
+//    DEPTO VARCHAR(10), --SIGUIENDO EL ESQUEMA DE LA MAESTRA
+//    LOCALIDAD INT,
+//    NACIONALIDAD INT,
+//    FECHA_NACIMIENTO DATE,
+//    MAIL VARCHAR(255),
+//    USUARIO INT	
+//)
+
+
+
+        public int ID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Documento { get; set; }
+        public string Documento { get; set; } //ver tipo de datos
         public int TipoDoc { get; set; } 
         public string Calle { get; set; }
         public int Piso { get; set; }
         public string Departamento { get; set; }
-        public string Localidad { get; set; }
+        public string Localidad { get; set; } 
         public int ID_Pais_Actual { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
         public int ID_Pais_Nacionalidad { get; set; }
         public string Mail { get; set; }
         public int Activo { get; set; }
-        public string Descripcion { get; set; }
 
 
         public Persona(int id, string nombre,string apellido, string doc, int tipo, string calle, int piso, string departamento,
-                       string loc,int id_pais_actual, DateTime fecha_nac, int id_pais_nacionalidad, string mail, int desc)
+                       string loc,int id_pais_actual, DateTime fecha_nac, int id_pais_nacionalidad, string mail)
         {
             ID = id;
             Nombre = nombre;
@@ -53,9 +72,7 @@ namespace PagoElectronico.Model
             ID_Pais_Nacionalidad = id_pais_actual;
             Mail = mail;
             Activo = 1;
-            Descripcion = desc;
-
-
+            
         }
 
 

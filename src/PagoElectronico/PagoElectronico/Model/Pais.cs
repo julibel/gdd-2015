@@ -10,7 +10,7 @@ namespace PagoElectronico.Model
         public int ID { get; set; }
         public string Nombre { get; set; }
 
-        public string Pais()
+        public string Nombre_Pais()
         {
             return Nombre;
         }

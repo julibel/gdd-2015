@@ -44,7 +44,6 @@
             this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.textBox_Calle = new System.Windows.Forms.TextBox();
             this.label_Domicilio = new System.Windows.Forms.Label();
-            this.textBox_Nacionalidad = new System.Windows.Forms.TextBox();
             this.label_Nacionalidad = new System.Windows.Forms.Label();
             this.textBox_Localidad = new System.Windows.Forms.TextBox();
             this.label_Localidad = new System.Windows.Forms.Label();
@@ -54,11 +53,6 @@
             this.label_Piso = new System.Windows.Forms.Label();
             this.dateTimePicker_FechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.textBox_Mail = new System.Windows.Forms.TextBox();
-            this.radioButton_Pas = new System.Windows.Forms.RadioButton();
-            this.radioButton_Ci = new System.Windows.Forms.RadioButton();
-            this.radioButton_Le = new System.Windows.Forms.RadioButton();
-            this.radioButton_Lc = new System.Windows.Forms.RadioButton();
-            this.radioButton_Dni = new System.Windows.Forms.RadioButton();
             this.textBox_Documento = new System.Windows.Forms.TextBox();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.label_FechaNacimiento = new System.Windows.Forms.Label();
@@ -72,6 +66,8 @@
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
+            this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.groupBox_Usuario.SuspendLayout();
             this.groupBox_Alta.SuspendLayout();
             this.groupBox_AsociarTarjetas.SuspendLayout();
@@ -205,10 +201,11 @@
             // 
             // groupBox_Alta
             // 
+            this.groupBox_Alta.Controls.Add(this.comboBox_Nacionalidad);
+            this.groupBox_Alta.Controls.Add(this.comboBox_Tipo_doc);
             this.groupBox_Alta.Controls.Add(this.comboBox_Pais);
             this.groupBox_Alta.Controls.Add(this.textBox_Calle);
             this.groupBox_Alta.Controls.Add(this.label_Domicilio);
-            this.groupBox_Alta.Controls.Add(this.textBox_Nacionalidad);
             this.groupBox_Alta.Controls.Add(this.label_Nacionalidad);
             this.groupBox_Alta.Controls.Add(this.textBox_Localidad);
             this.groupBox_Alta.Controls.Add(this.label_Localidad);
@@ -218,11 +215,6 @@
             this.groupBox_Alta.Controls.Add(this.label_Piso);
             this.groupBox_Alta.Controls.Add(this.dateTimePicker_FechaNacimiento);
             this.groupBox_Alta.Controls.Add(this.textBox_Mail);
-            this.groupBox_Alta.Controls.Add(this.radioButton_Pas);
-            this.groupBox_Alta.Controls.Add(this.radioButton_Ci);
-            this.groupBox_Alta.Controls.Add(this.radioButton_Le);
-            this.groupBox_Alta.Controls.Add(this.radioButton_Lc);
-            this.groupBox_Alta.Controls.Add(this.radioButton_Dni);
             this.groupBox_Alta.Controls.Add(this.textBox_Documento);
             this.groupBox_Alta.Controls.Add(this.textBox_Apellido);
             this.groupBox_Alta.Controls.Add(this.label_FechaNacimiento);
@@ -465,14 +457,6 @@
             this.label_Domicilio.TabIndex = 30;
             this.label_Domicilio.Text = "Calle";
             // 
-            // textBox_Nacionalidad
-            // 
-            this.textBox_Nacionalidad.Location = new System.Drawing.Point(136, 298);
-            this.textBox_Nacionalidad.MaxLength = 50;
-            this.textBox_Nacionalidad.Name = "textBox_Nacionalidad";
-            this.textBox_Nacionalidad.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Nacionalidad.TabIndex = 29;
-            // 
             // label_Nacionalidad
             // 
             this.label_Nacionalidad.AutoSize = true;
@@ -555,71 +539,6 @@
             this.textBox_Mail.Name = "textBox_Mail";
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
             this.textBox_Mail.TabIndex = 20;
-            // 
-            // radioButton_Pas
-            // 
-            this.radioButton_Pas.AutoSize = true;
-            this.radioButton_Pas.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Pas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Pas.Location = new System.Drawing.Point(315, 119);
-            this.radioButton_Pas.Name = "radioButton_Pas";
-            this.radioButton_Pas.Size = new System.Drawing.Size(46, 17);
-            this.radioButton_Pas.TabIndex = 5;
-            this.radioButton_Pas.TabStop = true;
-            this.radioButton_Pas.Text = "PAS";
-            this.radioButton_Pas.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Ci
-            // 
-            this.radioButton_Ci.AutoSize = true;
-            this.radioButton_Ci.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Ci.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Ci.Location = new System.Drawing.Point(186, 119);
-            this.radioButton_Ci.Name = "radioButton_Ci";
-            this.radioButton_Ci.Size = new System.Drawing.Size(35, 17);
-            this.radioButton_Ci.TabIndex = 2;
-            this.radioButton_Ci.TabStop = true;
-            this.radioButton_Ci.Text = "CI";
-            this.radioButton_Ci.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Le
-            // 
-            this.radioButton_Le.AutoSize = true;
-            this.radioButton_Le.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Le.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Le.Location = new System.Drawing.Point(271, 119);
-            this.radioButton_Le.Name = "radioButton_Le";
-            this.radioButton_Le.Size = new System.Drawing.Size(38, 17);
-            this.radioButton_Le.TabIndex = 4;
-            this.radioButton_Le.TabStop = true;
-            this.radioButton_Le.Text = "LE";
-            this.radioButton_Le.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Lc
-            // 
-            this.radioButton_Lc.AutoSize = true;
-            this.radioButton_Lc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Lc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Lc.Location = new System.Drawing.Point(227, 119);
-            this.radioButton_Lc.Name = "radioButton_Lc";
-            this.radioButton_Lc.Size = new System.Drawing.Size(38, 17);
-            this.radioButton_Lc.TabIndex = 3;
-            this.radioButton_Lc.TabStop = true;
-            this.radioButton_Lc.Text = "LC";
-            this.radioButton_Lc.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Dni
-            // 
-            this.radioButton_Dni.AutoSize = true;
-            this.radioButton_Dni.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Dni.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Dni.Location = new System.Drawing.Point(136, 119);
-            this.radioButton_Dni.Name = "radioButton_Dni";
-            this.radioButton_Dni.Size = new System.Drawing.Size(44, 17);
-            this.radioButton_Dni.TabIndex = 1;
-            this.radioButton_Dni.TabStop = true;
-            this.radioButton_Dni.Text = "DNI";
-            this.radioButton_Dni.UseVisualStyleBackColor = true;
             // 
             // textBox_Documento
             // 
@@ -750,6 +669,223 @@
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(383, 110);
             this.dataGridView_Tarjetas.TabIndex = 0;
             // 
+            // comboBox_Tipo_doc
+            // 
+            this.comboBox_Tipo_doc.FormattingEnabled = true;
+            this.comboBox_Tipo_doc.Items.AddRange(new object[] {
+            "DNI",
+            "CI",
+            "LC",
+            "LE",
+            "PAS"});
+            this.comboBox_Tipo_doc.Location = new System.Drawing.Point(136, 117);
+            this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
+            this.comboBox_Tipo_doc.Size = new System.Drawing.Size(129, 21);
+            this.comboBox_Tipo_doc.TabIndex = 33;
+            // 
+            // comboBox_Nacionalidad
+            // 
+            this.comboBox_Nacionalidad.FormattingEnabled = true;
+            this.comboBox_Nacionalidad.Items.AddRange(new object[] {
+            "Afganistán",
+            "Albania",
+            "Alemania",
+            "Andorra",
+            "Angola",
+            "Antigua y Barbuda",
+            "Arabia Saudita",
+            "Argelia",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaiyán",
+            "Bahamas",
+            "Bangladés",
+            "Barbados",
+            "Baréin",
+            "Bélgica",
+            "Belice",
+            "Benín",
+            "Bielorrusia",
+            "Birmania",
+            "Bolivia",
+            "Bosnia y Herzegovina",
+            "Botsuana",
+            "Brasil",
+            "Brunéi",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Bután",
+            "Cabo Verde",
+            "Camboya",
+            "Camerún",
+            "Canadá",
+            "Catar",
+            "Chad",
+            "Chile",
+            "China",
+            "Chipre",
+            "Ciudad del Vaticano",
+            "Colombia",
+            "Comoras",
+            "Corea del Norte",
+            "Corea del Sur",
+            "Costa de Marfil",
+            "Costa Rica",
+            "Croacia",
+            "Cuba",
+            "Dinamarca",
+            "Dominica",
+            "Ecuador",
+            "Egipto",
+            "El Salvador",
+            "Emiratos Árabes Unidos",
+            "Eritrea",
+            "Eslovaquia",
+            "Eslovenia",
+            "España",
+            "Estados Unidos",
+            "Estonia",
+            "Etiopía",
+            "Filipinas",
+            "Finlandia",
+            "Fiyi",
+            "Francia",
+            "Gabón",
+            "Gambia",
+            "Georgia",
+            "Ghana",
+            "Granada",
+            "Grecia",
+            "Guatemala",
+            "Guyana",
+            "Guinea",
+            "Guinea ecuatorial",
+            "Guinea-Bisáu",
+            "Haití",
+            "Honduras",
+            "Hungría",
+            "India",
+            "Indonesia",
+            "Irak",
+            "Irán",
+            "Irlanda",
+            "Islandia",
+            "Islas Marshall",
+            "Islas Salomón",
+            "Israel",
+            "Italia",
+            "Jamaica",
+            "Japón",
+            "Jordania",
+            "Kazajistán",
+            "Kenia",
+            "Kirguistán",
+            "Kiribati",
+            "Kuwait",
+            "Laos",
+            "Lesoto",
+            "Letonia",
+            "Líbano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Luxemburgo",
+            "Madagascar",
+            "Malasia",
+            "Malaui",
+            "Maldivas",
+            "Malí",
+            "Malta",
+            "Marruecos",
+            "Mauricio",
+            "Mauritania",
+            "México",
+            "Micronesia",
+            "Moldavia",
+            "Mónaco",
+            "Mongolia",
+            "Montenegro",
+            "Mozambique",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Nicaragua",
+            "Níger",
+            "Nigeria",
+            "Noruega",
+            "Nueva Zelanda",
+            "Omán",
+            "Países Bajos",
+            "Pakistán",
+            "Palaos",
+            "Panamá",
+            "Papúa Nueva Guinea",
+            "Paraguay",
+            "Perú",
+            "Polonia",
+            "Portugal",
+            "Reino Unido",
+            "República Centroafricana",
+            "República Checa",
+            "República de Macedonia",
+            "República del Congo",
+            "República Democrática del Congo",
+            "República Dominicana",
+            "República Sudafricana",
+            "Ruanda",
+            "Rumanía",
+            "Rusia",
+            "Samoa",
+            "San Cristóbal y Nieves",
+            "San Marino",
+            "San Vicente y las Granadinas",
+            "Santa Lucía",
+            "Santo Tomé y Príncipe",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leona",
+            "Singapur",
+            "Siria",
+            "Somalia",
+            "Sri Lanka",
+            "Suazilandia",
+            "Sudán",
+            "Sudán del Sur",
+            "Suecia",
+            "Suiza",
+            "Surinam",
+            "Tailandia",
+            "Tanzania",
+            "Tayikistán",
+            "Timor Oriental",
+            "Togo",
+            "Tonga",
+            "Trinidad y Tobago",
+            "Túnez",
+            "Turkmenistán",
+            "Turquía",
+            "Tuvalu",
+            "Ucrania",
+            "Uganda",
+            "Uruguay",
+            "Uzbekistán",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Yibuti",
+            "Zambia",
+            "Zimbabue"});
+            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(136, 298);
+            this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
+            this.comboBox_Nacionalidad.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Nacionalidad.TabIndex = 34;
+            // 
             // Alta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -787,7 +923,6 @@
         private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.GroupBox groupBox_Usuario;
         private System.Windows.Forms.GroupBox groupBox_Alta;
-        private System.Windows.Forms.TextBox textBox_Nacionalidad;
         private System.Windows.Forms.Label label_Nacionalidad;
         private System.Windows.Forms.TextBox textBox_Localidad;
         private System.Windows.Forms.Label label_Localidad;
@@ -797,11 +932,6 @@
         private System.Windows.Forms.Label label_Piso;
         private System.Windows.Forms.DateTimePicker dateTimePicker_FechaNacimiento;
         private System.Windows.Forms.TextBox textBox_Mail;
-        private System.Windows.Forms.RadioButton radioButton_Pas;
-        private System.Windows.Forms.RadioButton radioButton_Ci;
-        private System.Windows.Forms.RadioButton radioButton_Le;
-        private System.Windows.Forms.RadioButton radioButton_Lc;
-        private System.Windows.Forms.RadioButton radioButton_Dni;
         private System.Windows.Forms.TextBox textBox_Documento;
         private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.Label label_FechaNacimiento;
@@ -826,5 +956,7 @@
         private System.Windows.Forms.TextBox textBox_Calle;
         private System.Windows.Forms.Label label_Domicilio;
         private System.Windows.Forms.ComboBox comboBox_Pais;
+        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
+        private System.Windows.Forms.ComboBox comboBox_Tipo_doc;
     }
 }
