@@ -63,3 +63,6 @@ C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\bin\
 C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.exe
 C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.pdb
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\ResolveAssemblyReference.cache
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\bin\Debug\PagoElectronico.exe.config
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.exe
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Debug\PagoElectronico.pdb
