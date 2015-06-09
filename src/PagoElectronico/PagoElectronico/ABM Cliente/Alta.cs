@@ -41,9 +41,9 @@ namespace PagoElectronico.ABM_Cliente
 
         }
 
-        private bool ValidarNumeros()
+        private bool ValidarNumeros(string texto)
         {
-            return (!(textBox_Piso.Text.All(char.IsDigit) && textBox_Documento.Text.All(char.IsDigit)));
+            return (!texto.All(char.IsDigit));
         }
 
         private void Mensaje_OK(String mensaje, String resumen)
@@ -95,7 +95,8 @@ namespace PagoElectronico.ABM_Cliente
             if (ValidarDocumento() != null) listaDeErrores.Add(ValidarDocumento());
             if (ValidarEmail() != null) listaDeErrores.Add(ValidarEmail());
             if (ValidarDatosCompletos() != null) listaDeErrores.Add(ValidarDatosCompletos());
-            if (ValidarPiso() != null) listaDeErrores.Add(ValidarPiso());
+            if (ValidarNum("Piso", textBox_Piso.Text) != null) listaDeErrores.Add(ValidarNum("Piso", textBox_Piso.Text));
+            if (ValidarNum("Documento", textBox_Documento.Text) != null) listaDeErrores.Add(ValidarNum("Documento", textBox_Documento.Text));
 
             if (listaDeErrores.Count < 1) return true;
 
@@ -121,9 +122,9 @@ namespace PagoElectronico.ABM_Cliente
             return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario."): null;
         }
 
-        private Error ValidarPiso()
+        private Error ValidarNum(string campo, string texto)
         {
-            return (ValidarNumeros()) ? new Error("El campo Documento y el campo Piso deben ser un numeros") : null;
+            return (ValidarNumeros(texto)) ? new Error("El campo "+campo+" debe ser tipo numerico") : null;
         }
 
         private Persona GenerarCliente()
