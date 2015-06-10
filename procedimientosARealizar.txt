@@ -6,6 +6,9 @@ Aclaraciones:
 tipoDoc: 1)DNI - 2)CI - 3)LC - 4)LE - 5)PAS
 pais y nacionalidad devuelve el indice del pais segun la lista completa de paises del combobox. (como vamos a tratar el tema paises al final?)
 
+MARTIN: Podríamos pasar el string del país y yo desde la base manejo y busco si está, si no está lo genero, si está traigo el ID
+	Falta fecha_alta (por configuracion) para el USER y Numero de Domicilio
+
 
 La funcion debe ingresar una nueva persona, insertando un nuevo usuario y poniendo por default el rol en "cliente"
 
