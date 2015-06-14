@@ -11,6 +11,12 @@ namespace PagoElectronico.ABM_Rol
 {
     public partial class Alta : Form
     {
+        private bool CamposCorrectos()
+        {
+            return textBox_Nombre.Text != "" &&
+            dataGridView_ListaFuncionalidades.Rows.Count > 0;
+        }
+
         private void LimpiarCampos()
         {
             foreach (var control in this.groupBox1.Controls.OfType<TextBox>()) control.Text = "";
@@ -42,7 +48,11 @@ namespace PagoElectronico.ABM_Rol
 
         private void Alta_Load(object sender, EventArgs e)
         {
+            DataTable dt = CapaDAO.DAORol.dataFuncionalidades();
 
+            comboBox_Funcionalidad.ValueMember = "FUN_ID";
+            comboBox_Funcionalidad.DisplayMember = "NOMBRE";
+            comboBox_Funcionalidad.DataSource = dt;
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
@@ -52,10 +62,15 @@ namespace PagoElectronico.ABM_Rol
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
+            if (!CamposCorrectos())
+            {
+                Mensaje_OK("No están todos los datos obligatorios", "");
+                return;
+            }
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
             if (resultado == DialogResult.Yes)
             {
-
+                CapaDAO.DAORol.agregarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
 
 
 
@@ -64,6 +79,16 @@ namespace PagoElectronico.ABM_Rol
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
         
+        }
+
+        private void button_Agregar_Click(object sender, EventArgs e)
+        {
+            dataGridView_ListaFuncionalidades.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
+        }
+
+        private void dataGridView_ListaFuncionalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView_ListaFuncionalidades.Rows.RemoveAt(e.RowIndex);
         }
     }
 }
