@@ -117,7 +117,7 @@ namespace PagoElectronico.CapaDAO
                 cm.CommandText = "BOBBY_TABLES." + procedure;
                 if (_validateArgumentsAndParameters(args, values))
                 {
-                    _loadSqlCommand(args, values, cm);
+                    _loadSqlCommand(args, cm, values);
                 }
                 cm.ExecuteNonQuery();
             }
@@ -148,7 +148,7 @@ namespace PagoElectronico.CapaDAO
                 cm.CommandText = "BOBBY_TABLES." + procedure;
                 if (_validateArgumentsAndParameters(args, values))
                 {
-                    _loadSqlCommand(args, values, cm);
+                    _loadSqlCommand(args, cm, values);
                 }
                 dr = cm.ExecuteReader();
                 return dr.HasRows;
@@ -179,7 +179,7 @@ namespace PagoElectronico.CapaDAO
                 cm.CommandText = "BOBBY_TABLES." + procedure;
                 if (_validateArgumentsAndParameters(args, values))
                 {
-                    _loadSqlCommand(args, values, cm);
+                    _loadSqlCommand(args, cm, values);
                 }
                 cm.Parameters.Add("@RETURN_VALUE", SqlDbType.Int).Direction = ParameterDirection.ReturnValue;
                 cm.ExecuteNonQuery();
@@ -212,7 +212,7 @@ namespace PagoElectronico.CapaDAO
                 cm.CommandText = "BOBBY_TABLES." + procedure;
                 if (_validateArgumentsAndParameters(args, values))
                 {
-                    _loadSqlCommand(args, values, cm);
+                    _loadSqlCommand(args, cm, values);
                 }
                 dr = cm.ExecuteReader();
                 dt.Load(dr);
@@ -276,7 +276,7 @@ namespace PagoElectronico.CapaDAO
             }
             return false;
         }
-        private static void _loadSqlCommand(List<string> args, object[] values, SqlCommand cm)
+        private static void _loadSqlCommand(List<string> args, SqlCommand cm, params object[] values)
         {
             for (int i = 0; i < args.Count; i++)
             {
