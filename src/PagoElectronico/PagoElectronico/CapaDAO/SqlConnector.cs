@@ -185,7 +185,7 @@ namespace PagoElectronico.CapaDAO
                 cm.ExecuteNonQuery();
                 return (int)cm.Parameters["@RETURN_VALUE"].Value;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return -1;
             }
@@ -218,7 +218,7 @@ namespace PagoElectronico.CapaDAO
                 dt.Load(dr);
                 return dt;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
@@ -251,7 +251,7 @@ namespace PagoElectronico.CapaDAO
                 }
                 return args;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return null;
             }
