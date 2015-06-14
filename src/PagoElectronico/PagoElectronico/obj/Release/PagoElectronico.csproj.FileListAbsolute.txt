@@ -35,3 +35,40 @@ C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\
 C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.csproj.GenerateResource.Cache
 C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.exe
 C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.pdb
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\bin\Release\PagoElectronico.exe.config
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\bin\Release\PagoElectronico.exe
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\bin\Release\PagoElectronico.pdb
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\ResolveAssemblyReference.cache
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cliente.Alta.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cliente.Baja.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cliente.Modificacion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cliente.Seleccion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Alta.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Baja.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Modificacion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.ModificarCategoriaCuenta.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.ModificarTipoCuentas.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Seleccion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Rol.Alta.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Rol.Baja.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Rol.Modificacion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Rol.Seleccion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.Saldo.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.Seleccion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Depositos.DepositoNuevo.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Facturacion.Facturar.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Facturacion.Seleccionar_Operacion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.FormBase.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Listados.ListadoEstadistico.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Login.Autentificar.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Login.Login.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Modificar_contrasenia.ModificarContrasenia.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Properties.Resources.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Retiros.Retiro.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Tarjeta_Credito.Asociar.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Tarjeta_Credito.ModificarDatos.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Tarjeta_Credito.Seleccion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Transferencias.Transferencia.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.csproj.GenerateResource.Cache
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.exe
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.pdb

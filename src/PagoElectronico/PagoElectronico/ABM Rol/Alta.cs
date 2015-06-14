@@ -83,7 +83,17 @@ namespace PagoElectronico.ABM_Rol
 
         private void button_Agregar_Click(object sender, EventArgs e)
         {
-            dataGridView_ListaFuncionalidades.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
+            List<string> indices = new List<string>();
+
+            for (int i = 0; i < dataGridView_ListaFuncionalidades.Rows.Count; i++)
+            {
+                indices.Add(Convert.ToString(dataGridView_ListaFuncionalidades.Rows[i].Cells[0].Value));
+            }
+
+            if (!indices.Contains(Convert.ToString(comboBox_Funcionalidad.SelectedValue)))
+            {
+                dataGridView_ListaFuncionalidades.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
+            }
         }
 
         private void dataGridView_ListaFuncionalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
