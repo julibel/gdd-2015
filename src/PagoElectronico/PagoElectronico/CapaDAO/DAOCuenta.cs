@@ -12,9 +12,9 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("agregarCuenta", id_usuario, moneda, pais, tipo_cuenta);
         }
 
-        public static void modificarCuenta(int id, int id_usuario, int moneda, int pais, int tipo_cuenta)
+        public static void modificarTipoCuenta(int id, int costo)
         {
-            executeProcedure("modificarCuenta", id, id_usuario, moneda, pais, tipo_cuenta);
+            executeProcedure("modificarTipoCuenta", id, costo);
         }
     }
 }
