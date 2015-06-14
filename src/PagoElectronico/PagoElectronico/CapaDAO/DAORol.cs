@@ -48,6 +48,20 @@ namespace PagoElectronico.CapaDAO
 
             return dt;
         }
+/*
+        //GET
+        public static DataTable getRoles()
+        {
+            return retrieveDataTable("getRoles");
+        }
+
+        //Existe ROL
+        public static bool existeRol(string nombre)
+        {
+            var dt = retrieveDataTable("getRolNom", nombre);
+            return dt.Rows.Count > 0;
+        }
+*/
 
         public static DataTable dataFuncionalidades()
         {
@@ -91,5 +105,6 @@ namespace PagoElectronico.CapaDAO
             }       
             executeProcedure("AGREGAR_ROL",nombre,dataFuncs);
         }
+
     }
 }

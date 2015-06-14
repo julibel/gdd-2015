@@ -155,6 +155,7 @@
       <DependentUpon>Seleccion.cs</DependentUpon>
     </Compile>
     <Compile Include="CapaDAO\DAOCliente.cs" />
+    <Compile Include="CapaDAO\DAOCuenta.cs" />
     <Compile Include="CapaDAO\DAORol.cs" />
     <Compile Include="CapaDAO\SqlConnector.cs" />
     <Compile Include="Consulta Saldos\Saldo.cs">
