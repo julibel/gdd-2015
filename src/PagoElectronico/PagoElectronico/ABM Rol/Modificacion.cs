@@ -30,9 +30,29 @@ namespace PagoElectronico.ABM_Rol
 
         }
 
-        public Modificacion()
+        public Modificacion(string id)
         {
             InitializeComponent();
+
+            ArmarPorId(id);
+        }
+
+        private void ArmarPorId(string id)
+        {
+            DataTable rol = CapaDAO.DAORol.getRol(id);
+
+            textBox_Nombre.Text = Convert.ToString(rol.Rows[0]["NOMBRE"]);
+
+            DataTable dt = CapaDAO.DAORol.dataFuncionalidades();
+
+            comboBox_Funcionalidad.ValueMember = "FUN_ID";
+            comboBox_Funcionalidad.DisplayMember = "NOMBRE";
+            comboBox_Funcionalidad.DataSource = dt;
+
+            for (int i = 0; i < rol.Rows.Count; i++)
+            {
+                dataGridView_ListaFuncionalidades.Rows.Add(Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]), dt.Rows[Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]) - 1]["NOMBRE"]);
+            }
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -63,6 +83,21 @@ namespace PagoElectronico.ABM_Rol
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void button_Agregar_Click(object sender, EventArgs e)
+        {
+            List<string> indices = new List<string>();
+
+            for (int i = 0; i < dataGridView_ListaFuncionalidades.Rows.Count; i++)
+            {
+                indices.Add(Convert.ToString(dataGridView_ListaFuncionalidades.Rows[i].Cells[0].Value));
+            }
+
+            if (!indices.Contains(Convert.ToString(comboBox_Funcionalidad.SelectedValue)))
+            {
+                dataGridView_ListaFuncionalidades.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
+            }
         }
     }
 }

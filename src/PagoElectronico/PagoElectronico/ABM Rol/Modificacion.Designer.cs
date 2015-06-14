@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox_Funcionalidades = new System.Windows.Forms.ComboBox();
+            this.comboBox_Funcionalidad = new System.Windows.Forms.ComboBox();
             this.label_Funcionalidad = new System.Windows.Forms.Label();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_ListaFuncionalidades = new System.Windows.Forms.DataGridView();
-            this.Funcionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Elimnar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
+            this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Funcionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Elimnar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.paner_Alta.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListaFuncionalidades)).BeginInit();
@@ -61,7 +61,7 @@
             // 
             // button_Guardar
             // 
-            this.button_Guardar.Location = new System.Drawing.Point(585, 424);
+            this.button_Guardar.Location = new System.Drawing.Point(585, 426);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
             this.button_Guardar.TabIndex = 37;
@@ -96,7 +96,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox_Funcionalidades);
+            this.groupBox1.Controls.Add(this.comboBox_Funcionalidad);
             this.groupBox1.Controls.Add(this.label_Funcionalidad);
             this.groupBox1.Controls.Add(this.button_Agregar);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -107,13 +107,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Funcionalidad";
             // 
-            // comboBox_Funcionalidades
+            // comboBox_Funcionalidad
             // 
-            this.comboBox_Funcionalidades.FormattingEnabled = true;
-            this.comboBox_Funcionalidades.Location = new System.Drawing.Point(112, 67);
-            this.comboBox_Funcionalidades.Name = "comboBox_Funcionalidades";
-            this.comboBox_Funcionalidades.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Funcionalidades.TabIndex = 10;
+            this.comboBox_Funcionalidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Funcionalidad.FormattingEnabled = true;
+            this.comboBox_Funcionalidad.Location = new System.Drawing.Point(112, 67);
+            this.comboBox_Funcionalidad.Name = "comboBox_Funcionalidad";
+            this.comboBox_Funcionalidad.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Funcionalidad.TabIndex = 10;
             // 
             // label_Funcionalidad
             // 
@@ -135,6 +136,7 @@
             this.button_Agregar.TabIndex = 8;
             this.button_Agregar.Text = "Agregar";
             this.button_Agregar.UseVisualStyleBackColor = true;
+            this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
             // 
             // dataGridView_ListaFuncionalidades
             // 
@@ -143,8 +145,8 @@
             this.dataGridView_ListaFuncionalidades.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_ListaFuncionalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_ListaFuncionalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Indice,
             this.Funcionalidad,
-            this.Descripcion,
             this.Elimnar});
             this.dataGridView_ListaFuncionalidades.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridView_ListaFuncionalidades.Location = new System.Drawing.Point(411, 19);
@@ -152,31 +154,6 @@
             this.dataGridView_ListaFuncionalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(378, 370);
             this.dataGridView_ListaFuncionalidades.TabIndex = 3;
-            // 
-            // Funcionalidad
-            // 
-            this.Funcionalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            this.Funcionalidad.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Funcionalidad.HeaderText = "Funcionalidad";
-            this.Funcionalidad.Name = "Funcionalidad";
-            this.Funcionalidad.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // Elimnar
-            // 
-            this.Elimnar.HeaderText = "Eliminar";
-            this.Elimnar.Name = "Elimnar";
-            this.Elimnar.Text = "Eliminar Fila";
-            this.Elimnar.UseColumnTextForButtonValue = true;
             // 
             // label_Nombre
             // 
@@ -196,6 +173,33 @@
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nombre.TabIndex = 0;
+            // 
+            // Indice
+            // 
+            this.Indice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Indice.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Indice.HeaderText = "Índice";
+            this.Indice.Name = "Indice";
+            this.Indice.ReadOnly = true;
+            this.Indice.Visible = false;
+            this.Indice.Width = 117;
+            // 
+            // Funcionalidad
+            // 
+            this.Funcionalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Funcionalidad.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Funcionalidad.HeaderText = "Funcionalidad";
+            this.Funcionalidad.Name = "Funcionalidad";
+            this.Funcionalidad.ReadOnly = true;
+            // 
+            // Elimnar
+            // 
+            this.Elimnar.HeaderText = "Eliminar";
+            this.Elimnar.Name = "Elimnar";
+            this.Elimnar.Text = "Eliminar Fila";
+            this.Elimnar.UseColumnTextForButtonValue = true;
             // 
             // Modificacion
             // 
@@ -233,12 +237,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button_Agregar;
         private System.Windows.Forms.DataGridView dataGridView_ListaFuncionalidades;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Funcionalidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewButtonColumn Elimnar;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.TextBox textBox_Nombre;
-        private System.Windows.Forms.ComboBox comboBox_Funcionalidades;
+        private System.Windows.Forms.ComboBox comboBox_Funcionalidad;
         private System.Windows.Forms.Label label_Funcionalidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Funcionalidad;
+        private System.Windows.Forms.DataGridViewButtonColumn Elimnar;
     }
 }

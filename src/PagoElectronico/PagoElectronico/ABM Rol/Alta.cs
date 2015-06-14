@@ -72,10 +72,6 @@ namespace PagoElectronico.ABM_Rol
             {
                 CapaDAO.DAORol.agregarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
 
-
-
-
-
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
         

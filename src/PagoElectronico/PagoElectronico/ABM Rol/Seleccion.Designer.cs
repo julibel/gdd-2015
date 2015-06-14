@@ -30,6 +30,7 @@
         {
             this.groupBox_SeleccionarRol = new System.Windows.Forms.GroupBox();
             this.dataGridView_SeleccionRol = new System.Windows.Forms.DataGridView();
+            this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button_Cerrar = new System.Windows.Forms.Button();
@@ -54,12 +55,20 @@
             this.dataGridView_SeleccionRol.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView_SeleccionRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_SeleccionRol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Indice,
             this.Rol,
             this.Modificar});
             this.dataGridView_SeleccionRol.Location = new System.Drawing.Point(169, 53);
             this.dataGridView_SeleccionRol.Name = "dataGridView_SeleccionRol";
             this.dataGridView_SeleccionRol.Size = new System.Drawing.Size(472, 302);
             this.dataGridView_SeleccionRol.TabIndex = 19;
+            this.dataGridView_SeleccionRol.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_SeleccionRol_CellContentClick);
+            // 
+            // Indice
+            // 
+            this.Indice.HeaderText = "Índice";
+            this.Indice.Name = "Indice";
+            this.Indice.Visible = false;
             // 
             // Rol
             // 
@@ -99,6 +108,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion";
+            this.Load += new System.EventHandler(this.Seleccion_Load);
             this.groupBox_SeleccionarRol.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_SeleccionRol)).EndInit();
             this.ResumeLayout(false);
@@ -109,8 +119,9 @@
 
         private System.Windows.Forms.GroupBox groupBox_SeleccionarRol;
         private System.Windows.Forms.DataGridView dataGridView_SeleccionRol;
+        private System.Windows.Forms.Button button_Cerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewButtonColumn Modificar;
-        private System.Windows.Forms.Button button_Cerrar;
     }
 }
