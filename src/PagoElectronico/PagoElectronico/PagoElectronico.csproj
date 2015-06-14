@@ -153,6 +153,7 @@
     <Compile Include="ABM Rol\Seleccion.Designer.cs">
       <DependentUpon>Seleccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaDAO\SqlConnector.cs" />
     <Compile Include="Consulta Saldos\Saldo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +213,7 @@
     <Compile Include="Model\Campo.cs" />
     <Compile Include="Model\Encriptacion.cs" />
     <Compile Include="Model\Error.cs" />
+    <Compile Include="Model\Globals.cs" />
     <Compile Include="Model\ICampo.cs" />
     <Compile Include="Model\Persona.cs" />
     <Compile Include="Model\Cuenta.cs" />
@@ -392,7 +394,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ABM Usuario\" />
-    <Folder Include="CapaDAO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
