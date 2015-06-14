@@ -10,6 +10,45 @@ namespace PagoElectronico.CapaDAO
 {
     class DAORol:SqlConnector
     {
+
+        public static DataTable getRol(string id)
+        {
+            SqlConnection cn = new SqlConnection();
+            SqlCommand sc = new SqlCommand("SELECT ROL_ID, NOMBRE, FUNCIONALIDAD FROM BOBBY_TABLES.ROLES, BOBBY_TABLES.FUNCIONALIDADES_POR_ROL WHERE  ROL_ID = ROL AND ROL_ID = " + id);
+
+            CapaDAO.SqlConnector.conexionSql(cn, sc);
+
+            SqlDataReader reader;
+
+            reader = sc.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+
+            cn.Close();
+
+            return dt;
+        }
+
+        public static DataTable dataRoles()
+        {
+            SqlConnection cn = new SqlConnection();
+            SqlCommand sc = new SqlCommand("SELECT ROL_ID as Indice, NOMBRE as Rol FROM BOBBY_TABLES.ROLES");
+
+            CapaDAO.SqlConnector.conexionSql(cn, sc);
+
+            SqlDataReader reader;
+
+            reader = sc.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Indice", typeof(int));
+            dt.Columns.Add("Rol", typeof(string));
+            dt.Load(reader);
+
+            cn.Close();
+
+            return dt;
+        }
+
         public static DataTable dataFuncionalidades()
         {
             SqlConnection cn = new SqlConnection();
@@ -49,22 +88,7 @@ namespace PagoElectronico.CapaDAO
                 row["ITEM"] = Convert.ToString(num);
 
                 dataFuncs.Rows.Add(row);
-            }
-
-            
-            /*SqlConnection cn = new SqlConnection();
-            SqlCommand sc = new SqlCommand();
-
-            sc.CommandType = CommandType.StoredProcedure;
-            sc.CommandText = "BOBBY_TABLES.AGREGAR_ROL";
-            sc.Parameters.AddWithValue("@NOMBRE", nombre);
-            sc.Parameters.AddWithValue("@FUNCIONALIDADES", dataFuncs);
-
-            conexionSql(cn, sc);
-
-            sc.ExecuteNonQuery();
-            */
-            
+            }       
             executeProcedure("AGREGAR_ROL",nombre,dataFuncs);
         }
     }
