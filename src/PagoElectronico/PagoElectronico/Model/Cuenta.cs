@@ -14,8 +14,10 @@ namespace PagoElectronico.Model
         public DateTime Fecha_expiracion { get; set; }
         public int Saldo { get; set; }
         public int Estado { get; set; }
+        public int Pais { get; set; }
+        public int TipoCuenta { get; set; }
 
-        public Cuenta(int id, int id_usuario, DateTime fecha_alta, DateTime fecha_expiracion, int saldo)
+        public Cuenta(int id, int id_usuario, DateTime fecha_alta, DateTime fecha_expiracion, int saldo, int pais, int tipoCuenta)
         {
             ID = id;
             ID_Usuario = id_usuario;
@@ -24,6 +26,8 @@ namespace PagoElectronico.Model
             Fecha_expiracion = fecha_expiracion;
             Saldo = saldo;
             Estado = 1;
+            Pais = pais;
+            TipoCuenta = tipoCuenta;
         }
 
     }
