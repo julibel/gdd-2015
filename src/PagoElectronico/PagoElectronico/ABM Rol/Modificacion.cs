@@ -110,5 +110,10 @@ namespace PagoElectronico.ABM_Rol
                 dataGridView_ListaFuncionalidades.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
             }
         }
+
+        private void dataGridView_ListaFuncionalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView_ListaFuncionalidades.Rows.RemoveAt(e.RowIndex);
+        }
     }
 }

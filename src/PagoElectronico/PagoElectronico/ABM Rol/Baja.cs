@@ -69,5 +69,10 @@ namespace PagoElectronico.ABM_Rol
         {
 
         }
+
+        private void dataGridView_ListaFuncionalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
