@@ -11,14 +11,30 @@ namespace PagoElectronico.Login
 {
     public partial class Autentificar : Form
     {
-        public Autentificar()
+        private int rolID;
+
+        public Autentificar(string user, int rolID)
         {
             InitializeComponent();
+            textBox_Username.Text = user;
+            textBox_PreguntaSecreta.Text = CapaDAO.DAOLogin.getPregunta(user);
+            this.rolID = rolID;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_IniciarSesion_Click(object sender, EventArgs e)
+        {
+            if(CapaDAO.DAOLogin.iniciarSesionConRespuesta(textBox_Username.Text, rolID, textBox_RespuestaSecreta.Text))
+            {
+                new FormBase().Show();
+                this.Close();
+            }
+            else
+                MessageBox.Show("Respuesta incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

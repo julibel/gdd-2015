@@ -111,6 +111,7 @@
             this.button_IniciarSesion.TabIndex = 13;
             this.button_IniciarSesion.Text = "Iniciar sesion";
             this.button_IniciarSesion.UseVisualStyleBackColor = true;
+            this.button_IniciarSesion.Click += new System.EventHandler(this.button_IniciarSesion_Click);
             // 
             // button_Cerrar
             // 

@@ -48,11 +48,11 @@ namespace PagoElectronico.ABM_Rol
 
         private void Alta_Load(object sender, EventArgs e)
         {
-            DataTable dt = CapaDAO.DAORol.getFuncionalidades();
+            DataTable funcionalidades = CapaDAO.DAORol.getFuncionalidades();
 
             comboBox_Funcionalidad.ValueMember = "FUN_ID";
             comboBox_Funcionalidad.DisplayMember = "NOMBRE";
-            comboBox_Funcionalidad.DataSource = dt;
+            comboBox_Funcionalidad.DataSource = funcionalidades;
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)

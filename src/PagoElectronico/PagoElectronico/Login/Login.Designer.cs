@@ -35,6 +35,8 @@
             this.label_Contrasenia = new System.Windows.Forms.Label();
             this.label_Usuario = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBox_Roles = new System.Windows.Forms.ComboBox();
+            this.label_Rol = new System.Windows.Forms.Label();
             this.button_OlvidoContrasenia = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,6 +51,7 @@
             this.button_IniciarSesion.TabIndex = 11;
             this.button_IniciarSesion.Text = "Iniciar sesion";
             this.button_IniciarSesion.UseVisualStyleBackColor = true;
+            this.button_IniciarSesion.Click += new System.EventHandler(this.button_IniciarSesion_Click);
             // 
             // button_Cerrar
             // 
@@ -75,6 +78,7 @@
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(202, 20);
             this.textBox_Username.TabIndex = 8;
+            this.textBox_Username.TextChanged += new System.EventHandler(this.textBox_Username_TextChanged);
             // 
             // label_Contrasenia
             // 
@@ -96,6 +100,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox_Roles);
+            this.groupBox1.Controls.Add(this.label_Rol);
             this.groupBox1.Controls.Add(this.button_OlvidoContrasenia);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
@@ -109,19 +115,38 @@
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             // 
+            // comboBox_Roles
+            // 
+            this.comboBox_Roles.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Roles.FormattingEnabled = true;
+            this.comboBox_Roles.Location = new System.Drawing.Point(202, 225);
+            this.comboBox_Roles.Name = "comboBox_Roles";
+            this.comboBox_Roles.Size = new System.Drawing.Size(202, 21);
+            this.comboBox_Roles.TabIndex = 14;
+            // 
+            // label_Rol
+            // 
+            this.label_Rol.AutoSize = true;
+            this.label_Rol.Location = new System.Drawing.Point(155, 228);
+            this.label_Rol.Name = "label_Rol";
+            this.label_Rol.Size = new System.Drawing.Size(23, 13);
+            this.label_Rol.TabIndex = 13;
+            this.label_Rol.Text = "Rol";
+            // 
             // button_OlvidoContrasenia
             // 
             this.button_OlvidoContrasenia.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.button_OlvidoContrasenia.FlatAppearance.BorderSize = 0;
             this.button_OlvidoContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_OlvidoContrasenia.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_OlvidoContrasenia.Location = new System.Drawing.Point(275, 217);
+            this.button_OlvidoContrasenia.Location = new System.Drawing.Point(275, 253);
             this.button_OlvidoContrasenia.Name = "button_OlvidoContrasenia";
             this.button_OlvidoContrasenia.Size = new System.Drawing.Size(129, 23);
             this.button_OlvidoContrasenia.TabIndex = 12;
-            this.button_OlvidoContrasenia.Text = "¿Olvido su contrasenia?";
+            this.button_OlvidoContrasenia.Text = "¿Olvido su contraseña?";
             this.button_OlvidoContrasenia.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button_OlvidoContrasenia.UseVisualStyleBackColor = true;
+            this.button_OlvidoContrasenia.Click += new System.EventHandler(this.button_OlvidoContrasenia_Click);
             // 
             // label2
             // 
@@ -175,5 +200,7 @@
         private System.Windows.Forms.Button button_OlvidoContrasenia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_Rol;
+        private System.Windows.Forms.ComboBox comboBox_Roles;
     }
 }
