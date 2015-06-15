@@ -62,6 +62,17 @@ namespace PagoElectronico.ABM_Rol
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
+            if (CapaDAO.DAORol.existeRol(textBox_Nombre.Text))
+            {
+                var res = Mensaje_Pregunta("El Rol ya existe pero está desactivado ¿Desea activarlo?", "Activar Rol");
+                if (res == DialogResult.Yes)
+                {
+                    CapaDAO.DAORol.activarRol(textBox_Nombre.Text);
+                    Mensaje_OK("El Rol ha sido activado", "");
+                }
+                return;
+            }
+
             if (!CamposCorrectos())
             {
                 Mensaje_OK("No están todos los datos obligatorios", "");
@@ -72,7 +83,7 @@ namespace PagoElectronico.ABM_Rol
             {
                 CapaDAO.DAORol.agregarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
 
-                Mensaje_OK("Los datos han sido almacenados con exito", "");
+                Mensaje_OK("Los datos han sido almacenados con éxito", "");
             }
         }
 

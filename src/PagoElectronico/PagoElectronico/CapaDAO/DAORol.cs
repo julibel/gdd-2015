@@ -69,9 +69,19 @@ namespace PagoElectronico.CapaDAO
         }
 
 
-        public static void modificarRol(string nombre, DataGridViewRowCollection funcionalidades)
+        public static void modificarRol(int id, string nombre, DataGridViewRowCollection funcionalidades)
         {
-            
+            executeProcedure("MODIFICAR_ROL", id, nombre, crearData(funcionalidades));
+        }
+
+        public static void eliminarRol(int id)
+        {
+            executeProcedure("BAJA_ROL", id);
+        }
+
+        internal static void activarRol(string nombre)
+        {
+            executeProcedure("ACTIVAR_ROL", nombre);
         }
     }
 }

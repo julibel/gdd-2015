@@ -11,6 +11,8 @@ namespace PagoElectronico.ABM_Rol
 {
     public partial class Modificacion : Form
     {
+        private int idRol;
+
         private bool CamposCorrectos()
         {
             return textBox_Nombre.Text != "" &&
@@ -59,6 +61,8 @@ namespace PagoElectronico.ABM_Rol
             {
                 dataGridView_ListaFuncionalidades.Rows.Add(Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]), dt.Rows[Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]) - 1]["NOMBRE"]);
             }
+
+            this.idRol = Convert.ToInt32(id);
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -81,9 +85,9 @@ namespace PagoElectronico.ABM_Rol
             var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
             if (resultado == DialogResult.Yes)
             {
-                CapaDAO.DAORol.modificarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
+                CapaDAO.DAORol.modificarRol(idRol, textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
 
-                Mensaje_OK("Los datos han sido almacenados con exito", "");
+                Mensaje_OK("Los datos han sido actualizados con éxito", "");
             }
         }
 
@@ -105,6 +109,11 @@ namespace PagoElectronico.ABM_Rol
             {
                 dataGridView_ListaFuncionalidades.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
             }
+        }
+
+        private void dataGridView_ListaFuncionalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView_ListaFuncionalidades.Rows.RemoveAt(e.RowIndex);
         }
     }
 }
