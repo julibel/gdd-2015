@@ -55,14 +55,12 @@ namespace PagoElectronico.ABM_Rol
 
         private void button_Borrar_Click(object sender, EventArgs e)
         {
-
             var resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar el Rol del sistema?", "Eliminar Rol");
             if (resultado == DialogResult.Yes)
             {
                 CapaDAO.DAORol.eliminarRol(idRol);
                 Mensaje_OK("Los datos han sido eliminados con éxito", "");
             }
-
         }
 
         private void Baja_Load(object sender, EventArgs e)

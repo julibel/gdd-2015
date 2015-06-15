@@ -41,10 +41,9 @@ namespace PagoElectronico
 
             if (Globals.tieneFuncionalidad(idFun))
             {
-                MessageBox.Show("Tiene la funcionalidad");
-                return false;
+                return false;//Puede acceder
             }
-            MessageBox.Show("No posee acceso a esta la funcionalidad");
+            MessageBox.Show("No posee acceso a esta funcionalidad");
             return true;
         }
 
