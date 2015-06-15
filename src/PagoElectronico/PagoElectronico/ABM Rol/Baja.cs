@@ -23,9 +23,11 @@ namespace PagoElectronico.ABM_Rol
 
         }
 
-        public Baja()
+        public Baja(string id)
         {
             InitializeComponent();
+
+
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -47,6 +49,11 @@ namespace PagoElectronico.ABM_Rol
 
                 Mensaje_OK("Los datos han sido eliminados con exito", "");
             }
+
+        }
+
+        private void Baja_Load(object sender, EventArgs e)
+        {
 
         }
     }

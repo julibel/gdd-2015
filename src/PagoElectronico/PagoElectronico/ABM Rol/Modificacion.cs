@@ -11,6 +11,12 @@ namespace PagoElectronico.ABM_Rol
 {
     public partial class Modificacion : Form
     {
+        private bool CamposCorrectos()
+        {
+            return textBox_Nombre.Text != "" &&
+            dataGridView_ListaFuncionalidades.Rows.Count > 0;
+        }
+
         private void LimpiarCampos()
         {
             foreach (var control in this.groupBox1.Controls.OfType<ComboBox>()) control.Text = "";
@@ -43,7 +49,7 @@ namespace PagoElectronico.ABM_Rol
 
             textBox_Nombre.Text = Convert.ToString(rol.Rows[0]["NOMBRE"]);
 
-            DataTable dt = CapaDAO.DAORol.dataFuncionalidades();
+            DataTable dt = CapaDAO.DAORol.getFuncionalidades();
 
             comboBox_Funcionalidad.ValueMember = "FUN_ID";
             comboBox_Funcionalidad.DisplayMember = "NOMBRE";
@@ -67,14 +73,15 @@ namespace PagoElectronico.ABM_Rol
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
+            if (!CamposCorrectos())
+            {
+                Mensaje_OK("No están todos los datos obligatorios", "");
+                return;
+            }
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
             if (resultado == DialogResult.Yes)
             {
-
-
-
-
-
+                CapaDAO.DAORol.modificarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
 
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }

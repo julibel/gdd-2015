@@ -46,7 +46,7 @@ namespace PagoElectronico
         private void bajaToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Rol.Seleccion nuevo_form = new ABM_Rol.Seleccion();
+            ABM_Rol.Seleccion nuevo_form = new ABM_Rol.Seleccion(true);
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
         }
@@ -54,7 +54,7 @@ namespace PagoElectronico
         private void modificacionToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Rol.Seleccion nuevo_form = new ABM_Rol.Seleccion();
+            ABM_Rol.Seleccion nuevo_form = new ABM_Rol.Seleccion(false);
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
         }

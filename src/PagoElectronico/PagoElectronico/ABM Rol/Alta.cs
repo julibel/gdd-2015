@@ -48,7 +48,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void Alta_Load(object sender, EventArgs e)
         {
-            DataTable dt = CapaDAO.DAORol.dataFuncionalidades();
+            DataTable dt = CapaDAO.DAORol.getFuncionalidades();
 
             comboBox_Funcionalidad.ValueMember = "FUN_ID";
             comboBox_Funcionalidad.DisplayMember = "NOMBRE";
@@ -74,7 +74,6 @@ namespace PagoElectronico.ABM_Rol
 
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
-        
         }
 
         private void button_Agregar_Click(object sender, EventArgs e)

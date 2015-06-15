@@ -11,9 +11,17 @@ namespace PagoElectronico.ABM_Rol
 {
     public partial class Seleccion : Form
     {
-        public Seleccion()
+        private bool esBaja;
+
+        public Seleccion(bool esBaja)
         {
             InitializeComponent();
+            this.esBaja = esBaja;
+
+            if (esBaja)
+            {
+                dataGridView_SeleccionRol.Columns[2].HeaderText = "Eliminar";
+            }
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -23,7 +31,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void Seleccion_Load(object sender, EventArgs e)
         {
-            DataTable dt = CapaDAO.DAORol.dataRoles();
+            DataTable dt = CapaDAO.DAORol.getRoles();
 
             dataGridView_SeleccionRol.Rows.Add(dt.Rows.Count);
             Int32 i = 0;
@@ -40,9 +48,21 @@ namespace PagoElectronico.ABM_Rol
             string id;
 
             id = Convert.ToString(dataGridView_SeleccionRol.Rows[e.RowIndex].Cells[0].Value);
-
+            
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Rol.Modificacion nuevo_form = new ABM_Rol.Modificacion(id);
+
+            Form nuevo_form;
+            
+            if (esBaja)
+            {
+                nuevo_form = new ABM_Rol.Baja(id);
+            }
+            else
+            {
+                nuevo_form = new ABM_Rol.Modificacion(id);
+            }
+            
+            
             nuevo_form.MdiParent = this.MdiParent;
             nuevo_form.Show();
             this.Close();
