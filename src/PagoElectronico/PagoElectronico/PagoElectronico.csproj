@@ -154,6 +154,8 @@
     <Compile Include="ABM Rol\Seleccion.Designer.cs">
       <DependentUpon>Seleccion.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaDAO\DAOTarjeta.cs" />
+    <Compile Include="CapaDAO\DAODeposito.cs" />
     <Compile Include="CapaDAO\DAOConsultaSaldos.cs" />
     <Compile Include="CapaDAO\DAOLogin.cs" />
     <Compile Include="CapaDAO\DAOListado.cs" />

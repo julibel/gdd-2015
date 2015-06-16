@@ -73,6 +73,7 @@
             // 
             // textBox_Username
             // 
+            this.textBox_Username.Enabled = false;
             this.textBox_Username.Location = new System.Drawing.Point(222, 113);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(202, 20);
@@ -98,6 +99,7 @@
             // 
             // textBox_PreguntaSecreta
             // 
+            this.textBox_PreguntaSecreta.Enabled = false;
             this.textBox_PreguntaSecreta.Location = new System.Drawing.Point(222, 139);
             this.textBox_PreguntaSecreta.Name = "textBox_PreguntaSecreta";
             this.textBox_PreguntaSecreta.Size = new System.Drawing.Size(202, 20);

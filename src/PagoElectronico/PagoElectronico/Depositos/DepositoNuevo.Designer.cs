@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.paner_DatosCuenta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
             this.button_SeleccionarTarjeta = new System.Windows.Forms.Button();
             this.label_Tarjeta = new System.Windows.Forms.Label();
             this.textBox_TarjetaCredito = new System.Windows.Forms.TextBox();
@@ -40,7 +41,6 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +64,15 @@
             this.paner_DatosCuenta.TabStop = false;
             this.paner_DatosCuenta.Text = "Deposito de dinero";
             // 
+            // comboBox_Cuentas
+            // 
+            this.comboBox_Cuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Cuentas.FormattingEnabled = true;
+            this.comboBox_Cuentas.Location = new System.Drawing.Point(297, 156);
+            this.comboBox_Cuentas.Name = "comboBox_Cuentas";
+            this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Cuentas.TabIndex = 27;
+            // 
             // button_SeleccionarTarjeta
             // 
             this.button_SeleccionarTarjeta.Location = new System.Drawing.Point(535, 234);
@@ -72,6 +81,7 @@
             this.button_SeleccionarTarjeta.TabIndex = 26;
             this.button_SeleccionarTarjeta.Text = "Seleccionar";
             this.button_SeleccionarTarjeta.UseVisualStyleBackColor = true;
+            this.button_SeleccionarTarjeta.Click += new System.EventHandler(this.button_SeleccionarTarjeta_Click);
             // 
             // label_Tarjeta
             // 
@@ -86,6 +96,7 @@
             // 
             // textBox_TarjetaCredito
             // 
+            this.textBox_TarjetaCredito.Enabled = false;
             this.textBox_TarjetaCredito.Location = new System.Drawing.Point(297, 236);
             this.textBox_TarjetaCredito.MaxLength = 255;
             this.textBox_TarjetaCredito.Name = "textBox_TarjetaCredito";
@@ -96,8 +107,6 @@
             // 
             this.comboBox_Moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Moneda.FormattingEnabled = true;
-            this.comboBox_Moneda.Items.AddRange(new object[] {
-            "Dolares"});
             this.comboBox_Moneda.Location = new System.Drawing.Point(297, 209);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
@@ -172,15 +181,6 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
-            // comboBox_Cuentas
-            // 
-            this.comboBox_Cuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Cuentas.FormattingEnabled = true;
-            this.comboBox_Cuentas.Location = new System.Drawing.Point(297, 156);
-            this.comboBox_Cuentas.Name = "comboBox_Cuentas";
-            this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Cuentas.TabIndex = 27;
-            // 
             // DepositoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -198,6 +198,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepositoNuevo";
+            this.Load += new System.EventHandler(this.DepositoNuevo_Load);
             this.paner_DatosCuenta.ResumeLayout(false);
             this.paner_DatosCuenta.PerformLayout();
             this.ResumeLayout(false);

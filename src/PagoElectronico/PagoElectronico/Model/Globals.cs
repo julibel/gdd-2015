@@ -42,7 +42,7 @@ namespace PagoElectronico
             return isLogged;
         }
 
-        public static string getHashSha256(string text)
+        public static string getHashSHA256(string text)
         {
             byte[] bytes = Encoding.UTF8.GetBytes(text);
             SHA256Managed hashstring = new SHA256Managed();
@@ -53,6 +53,17 @@ namespace PagoElectronico
                 hashString += String.Format("{0:x2}", x);
             }
             return hashString;
+        }
+
+        public static string getHashSHA1(string str)
+        {
+            SHA1 sha1 = SHA1Managed.Create();
+            ASCIIEncoding encoding = new ASCIIEncoding();
+            byte[] stream = null;
+            StringBuilder sb = new StringBuilder();
+            stream = sha1.ComputeHash(encoding.GetBytes(str));
+            for (int i = 0; i < stream.Length; i++) sb.AppendFormat("{0:x2}", stream[i]);
+            return sb.ToString();
         }
 
 
