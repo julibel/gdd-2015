@@ -47,25 +47,18 @@ namespace PagoElectronico.CapaDAO
             return dt.Rows.Count > 0;
         }
         
-        public static List<Persona> getClientes(string nombre, string apellido, string email, int tipoDoc, string nroDoc)
+        public static DataTable getClientes(string nombre, string apellido, string email, int tipoDoc, string nroDoc)
         {
-            List<Persona> clientes = new List<Persona>();
-            DataTable table;
-            if (tipoDoc == 0)
-            {
-                table = retrieveDataTable("GET_CLIENTES", nombre, apellido, email, null, nroDoc);
-            }
-            else
-            {
-                table = retrieveDataTable("GET_CLIENTES", nombre, apellido, email, tipoDoc, nroDoc);
-            }
+            //List<Persona> clientes = new List<Persona>();
 
-            foreach (DataRow row in table.Rows)
+            DataTable table = retrieveDataTable("GET_CLIENTES", nombre, apellido, email, tipoDoc, nroDoc);
+
+            /*foreach (DataRow row in table.Rows)
             {
                 Persona cliente = dataRowToCliente(row);
                 clientes.Add(cliente);
-            }
-            return clientes;
+            }*/
+            return table;
         }
 
         public static Persona dataRowToCliente(DataRow row)

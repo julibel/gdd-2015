@@ -11,11 +11,13 @@ namespace PagoElectronico.ABM_Cliente
 {
     public partial class Seleccion : Form
     {
+        string nombre, apellido, doc, mail;
+        int tipoDoc;
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_Filtros.Controls.OfType<TextBox>()) control.Text = "";
             comboBox_TipoDocumento.Text = "";
-            dataGridView_Seleccion.Rows.Clear();
+            dataGridView_Seleccion.DataSource = new DataTable();
         }
 
         public Seleccion()
@@ -30,7 +32,7 @@ namespace PagoElectronico.ABM_Cliente
 
         private void Seleccion_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
@@ -40,7 +42,12 @@ namespace PagoElectronico.ABM_Cliente
 
         private void button_Buscar_Click(object sender, EventArgs e)
         {
-
+            nombre = textBox_Nombre.Text;
+            apellido = textBox_Apellido.Text;
+            mail = textBox_Mail.Text;
+            tipoDoc = comboBox_TipoDocumento.SelectedIndex + 1;
+            doc = textBox_Documento.Text;
+            dataGridView_Seleccion.DataSource = CapaDAO.DAOCliente.getClientes(nombre, apellido, mail, tipoDoc, doc);
         }
     }
 }
