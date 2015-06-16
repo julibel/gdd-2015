@@ -80,14 +80,17 @@
             this.textBox_CodigoSeguridad.Size = new System.Drawing.Size(67, 20);
             this.textBox_CodigoSeguridad.TabIndex = 46;
             this.textBox_CodigoSeguridad.Text = "997";
+            this.textBox_CodigoSeguridad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CodigoSeguridad_KeyPress);
             // 
             // textBox_numeroTarjeta
             // 
             this.textBox_numeroTarjeta.Location = new System.Drawing.Point(268, 123);
+            this.textBox_numeroTarjeta.MaxLength = 16;
             this.textBox_numeroTarjeta.Name = "textBox_numeroTarjeta";
             this.textBox_numeroTarjeta.Size = new System.Drawing.Size(249, 20);
             this.textBox_numeroTarjeta.TabIndex = 45;
             this.textBox_numeroTarjeta.Text = "5506001896744918";
+            this.textBox_numeroTarjeta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_numeroTarjeta_KeyPress);
             // 
             // label5
             // 

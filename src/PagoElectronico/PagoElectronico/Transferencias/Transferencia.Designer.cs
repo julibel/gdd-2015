@@ -36,14 +36,13 @@
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Importe = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox_CuentaOrigen = new System.Windows.Forms.TextBox();
-            this.button_SeleccionarCuentaOrigen = new System.Windows.Forms.Button();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Aceptar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox_CuentaDestino = new System.Windows.Forms.TextBox();
+            this.textBox_Destino = new System.Windows.Forms.TextBox();
             this.button_SeleccionarCuentaDestino = new System.Windows.Forms.Button();
+            this.comboBox_Origen = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -83,9 +82,8 @@
             // 
             // comboBox_Moneda
             // 
+            this.comboBox_Moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Moneda.FormattingEnabled = true;
-            this.comboBox_Moneda.Items.AddRange(new object[] {
-            "Dolares"});
             this.comboBox_Moneda.Location = new System.Drawing.Point(131, 220);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
@@ -98,6 +96,7 @@
             this.textBox_Importe.Name = "textBox_Importe";
             this.textBox_Importe.Size = new System.Drawing.Size(121, 20);
             this.textBox_Importe.TabIndex = 23;
+            this.textBox_Importe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Importe_KeyPress);
             // 
             // label_Moneda
             // 
@@ -123,31 +122,13 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox_CuentaOrigen);
-            this.groupBox2.Controls.Add(this.button_SeleccionarCuentaOrigen);
+            this.groupBox2.Controls.Add(this.comboBox_Origen);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(395, 198);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuenta origen";
-            // 
-            // textBox_CuentaOrigen
-            // 
-            this.textBox_CuentaOrigen.Location = new System.Drawing.Point(26, 90);
-            this.textBox_CuentaOrigen.MaxLength = 255;
-            this.textBox_CuentaOrigen.Name = "textBox_CuentaOrigen";
-            this.textBox_CuentaOrigen.Size = new System.Drawing.Size(262, 20);
-            this.textBox_CuentaOrigen.TabIndex = 0;
-            // 
-            // button_SeleccionarCuentaOrigen
-            // 
-            this.button_SeleccionarCuentaOrigen.Location = new System.Drawing.Point(294, 88);
-            this.button_SeleccionarCuentaOrigen.Name = "button_SeleccionarCuentaOrigen";
-            this.button_SeleccionarCuentaOrigen.Size = new System.Drawing.Size(75, 23);
-            this.button_SeleccionarCuentaOrigen.TabIndex = 23;
-            this.button_SeleccionarCuentaOrigen.Text = "Seleccionar";
-            this.button_SeleccionarCuentaOrigen.UseVisualStyleBackColor = true;
             // 
             // button_Limpiar
             // 
@@ -166,6 +147,7 @@
             this.button_Aceptar.TabIndex = 43;
             this.button_Aceptar.Text = "Aceptar";
             this.button_Aceptar.UseVisualStyleBackColor = true;
+            this.button_Aceptar.Click += new System.EventHandler(this.button_Aceptar_Click);
             // 
             // button_Cerrar
             // 
@@ -179,7 +161,7 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox_CuentaDestino);
+            this.groupBox3.Controls.Add(this.textBox_Destino);
             this.groupBox3.Controls.Add(this.button_SeleccionarCuentaDestino);
             this.groupBox3.Location = new System.Drawing.Point(12, 215);
             this.groupBox3.Name = "groupBox3";
@@ -188,13 +170,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cuenta destino";
             // 
-            // textBox_CuentaDestino
+            // textBox_Destino
             // 
-            this.textBox_CuentaDestino.Location = new System.Drawing.Point(26, 93);
-            this.textBox_CuentaDestino.MaxLength = 255;
-            this.textBox_CuentaDestino.Name = "textBox_CuentaDestino";
-            this.textBox_CuentaDestino.Size = new System.Drawing.Size(262, 20);
-            this.textBox_CuentaDestino.TabIndex = 0;
+            this.textBox_Destino.Location = new System.Drawing.Point(26, 93);
+            this.textBox_Destino.MaxLength = 255;
+            this.textBox_Destino.Name = "textBox_Destino";
+            this.textBox_Destino.Size = new System.Drawing.Size(262, 20);
+            this.textBox_Destino.TabIndex = 0;
             // 
             // button_SeleccionarCuentaDestino
             // 
@@ -204,6 +186,15 @@
             this.button_SeleccionarCuentaDestino.TabIndex = 23;
             this.button_SeleccionarCuentaDestino.Text = "Seleccionar";
             this.button_SeleccionarCuentaDestino.UseVisualStyleBackColor = true;
+            // 
+            // comboBox_Origen
+            // 
+            this.comboBox_Origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Origen.FormattingEnabled = true;
+            this.comboBox_Origen.Location = new System.Drawing.Point(26, 89);
+            this.comboBox_Origen.Name = "comboBox_Origen";
+            this.comboBox_Origen.Size = new System.Drawing.Size(262, 21);
+            this.comboBox_Origen.TabIndex = 1;
             // 
             // Transferencia
             // 
@@ -224,10 +215,10 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Transferencia";
+            this.Load += new System.EventHandler(this.Transferencia_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -244,13 +235,12 @@
         private System.Windows.Forms.Label label_Moneda;
         private System.Windows.Forms.Label label_Importe;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox_CuentaOrigen;
-        private System.Windows.Forms.Button button_SeleccionarCuentaOrigen;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Aceptar;
         private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox_CuentaDestino;
+        private System.Windows.Forms.TextBox textBox_Destino;
         private System.Windows.Forms.Button button_SeleccionarCuentaDestino;
+        private System.Windows.Forms.ComboBox comboBox_Origen;
     }
 }

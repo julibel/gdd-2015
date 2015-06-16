@@ -42,11 +42,16 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void button_Aceptar_Click(object sender, EventArgs e)
         {
+            if (textBox_numeroTarjeta.Text.Length < 16)
+            {
+                MessageBox.Show("El número de tarjeta es de 16 dígitos", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             int idTarjeta = CapaDAO.DAOTarjeta.getID(textBox_numeroTarjeta.Text, textBox_CodigoSeguridad.Text);
 
-            if (idTarjeta == 0)
+            if (idTarjeta <= 0)
             {
-                var resp = MessageBox.Show("No posee tal tarjeta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No posee tal tarjeta o expiró", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             tarjetaID = idTarjeta;
@@ -58,6 +63,19 @@ namespace PagoElectronico.Tarjeta_Credito
         {
             formCaller.Visible = true;
             this.Close();
+        }
+
+        private void textBox_numeroTarjeta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_CodigoSeguridad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            textBox_numeroTarjeta_KeyPress(sender, e);
         }
     }
 }

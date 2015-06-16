@@ -77,7 +77,7 @@ namespace PagoElectronico.Retiros
 
             string ret = CapaDAO.DAORetiro.realizarRetiro(Convert.ToInt64(comboBox_Cuentas.SelectedValue), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue), comboBox_Bancos.Text);
 
-            if (ret == "")
+            if (ret == "s")
                 MessageBox.Show("Saldo insuficiente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 textBox_Numero.Text = ret;
