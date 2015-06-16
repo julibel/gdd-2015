@@ -12,5 +12,10 @@ namespace PagoElectronico.CapaDAO
         {
             return retrieveDataTable("GET_BANCOS");
         }
+
+        public static string realizarRetiro(long cuenta, string fecha, double importe, int moneda, string banco)
+        {
+            return Convert.ToString(executeProcedureWithReturnValue("RETIRAR_EFECTIVO", cuenta, fecha, importe, moneda, banco));
+        }
     }
 }

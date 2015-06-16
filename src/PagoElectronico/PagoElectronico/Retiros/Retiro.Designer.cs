@@ -61,6 +61,7 @@
             this.button_Limpiar.TabIndex = 39;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Aceptar
             // 
@@ -70,6 +71,7 @@
             this.button_Aceptar.TabIndex = 38;
             this.button_Aceptar.Text = "Aceptar";
             this.button_Aceptar.UseVisualStyleBackColor = true;
+            this.button_Aceptar.Click += new System.EventHandler(this.button_Aceptar_Click);
             // 
             // button_Cerrar
             // 
@@ -160,6 +162,7 @@
             this.textBox_Numero.Name = "textBox_Numero";
             this.textBox_Numero.Size = new System.Drawing.Size(85, 20);
             this.textBox_Numero.TabIndex = 37;
+            this.textBox_Numero.Text = "A generar";
             // 
             // label10
             // 
@@ -203,6 +206,7 @@
             this.textBox_Importe.Name = "textBox_Importe";
             this.textBox_Importe.Size = new System.Drawing.Size(121, 20);
             this.textBox_Importe.TabIndex = 23;
+            this.textBox_Importe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Importe_KeyPress);
             // 
             // label_Moneda
             // 
