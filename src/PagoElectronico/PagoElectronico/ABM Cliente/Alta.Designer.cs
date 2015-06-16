@@ -66,18 +66,18 @@
             this.label_Nombre = new System.Windows.Forms.Label();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
-            this.button_Agregar = new System.Windows.Forms.Button();
-            this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
+            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
+            this.button_Agregar = new System.Windows.Forms.Button();
+            this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.groupBox_Usuario.SuspendLayout();
             this.groupBox_Alta.SuspendLayout();
             this.groupBox_AsociarTarjetas.SuspendLayout();
@@ -716,7 +716,7 @@
             // 
             // textBox_Depto
             // 
-            this.textBox_Depto.Location = new System.Drawing.Point(253, 228);
+            this.textBox_Depto.Location = new System.Drawing.Point(260, 220);
             this.textBox_Depto.MaxLength = 50;
             this.textBox_Depto.Name = "textBox_Depto";
             this.textBox_Depto.Size = new System.Drawing.Size(94, 20);
@@ -727,7 +727,7 @@
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(211, 231);
+            this.label1.Location = new System.Drawing.Point(218, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 24;
@@ -885,31 +885,21 @@
             this.groupBox_AsociarTarjetas.TabStop = false;
             this.groupBox_AsociarTarjetas.Text = "Asociar tarjetas de credito";
             // 
-            // button_Agregar
+            // maskedTextBox_numeroTarjeta
             // 
-            this.button_Agregar.Location = new System.Drawing.Point(321, 221);
-            this.button_Agregar.Name = "button_Agregar";
-            this.button_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.button_Agregar.TabIndex = 27;
-            this.button_Agregar.Text = "Agregar";
-            this.button_Agregar.UseVisualStyleBackColor = true;
-            this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
+            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(42, 181);
+            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
+            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
+            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(118, 20);
+            this.maskedTextBox_numeroTarjeta.TabIndex = 61;
             // 
-            // dataGridView_Tarjetas
+            // maskedTextBox_codigo
             // 
-            this.dataGridView_Tarjetas.AllowUserToAddRows = false;
-            this.dataGridView_Tarjetas.AllowUserToDeleteRows = false;
-            this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Tarjetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Numero,
-            this.Codigo,
-            this.Emisor,
-            this.Eliminar});
-            this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 28);
-            this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
-            this.dataGridView_Tarjetas.Size = new System.Drawing.Size(423, 120);
-            this.dataGridView_Tarjetas.TabIndex = 0;
-            this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick);
+            this.maskedTextBox_codigo.Location = new System.Drawing.Point(42, 221);
+            this.maskedTextBox_codigo.Mask = "999";
+            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
+            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
+            this.maskedTextBox_codigo.TabIndex = 60;
             // 
             // label5
             // 
@@ -953,6 +943,32 @@
             this.comboBox_Emisor.Size = new System.Drawing.Size(186, 21);
             this.comboBox_Emisor.TabIndex = 50;
             // 
+            // button_Agregar
+            // 
+            this.button_Agregar.Location = new System.Drawing.Point(321, 221);
+            this.button_Agregar.Name = "button_Agregar";
+            this.button_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.button_Agregar.TabIndex = 27;
+            this.button_Agregar.Text = "Agregar";
+            this.button_Agregar.UseVisualStyleBackColor = true;
+            this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
+            // 
+            // dataGridView_Tarjetas
+            // 
+            this.dataGridView_Tarjetas.AllowUserToAddRows = false;
+            this.dataGridView_Tarjetas.AllowUserToDeleteRows = false;
+            this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Tarjetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Numero,
+            this.Codigo,
+            this.Emisor,
+            this.Eliminar});
+            this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 28);
+            this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
+            this.dataGridView_Tarjetas.Size = new System.Drawing.Size(423, 120);
+            this.dataGridView_Tarjetas.TabIndex = 0;
+            this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick);
+            // 
             // Numero
             // 
             this.Numero.HeaderText = "Numero";
@@ -978,22 +994,6 @@
             this.Eliminar.ReadOnly = true;
             this.Eliminar.Text = "Eliminar fila";
             this.Eliminar.UseColumnTextForButtonValue = true;
-            // 
-            // maskedTextBox_codigo
-            // 
-            this.maskedTextBox_codigo.Location = new System.Drawing.Point(42, 221);
-            this.maskedTextBox_codigo.Mask = "999";
-            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
-            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
-            this.maskedTextBox_codigo.TabIndex = 60;
-            // 
-            // maskedTextBox_numeroTarjeta
-            // 
-            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(42, 181);
-            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
-            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
-            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(118, 20);
-            this.maskedTextBox_numeroTarjeta.TabIndex = 61;
             // 
             // Alta
             // 

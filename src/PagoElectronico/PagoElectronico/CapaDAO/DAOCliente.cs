@@ -21,7 +21,7 @@ namespace PagoElectronico.CapaDAO
                 cliente.Departamento,
                 cliente.Localidad,
                 cliente.Pais_Actual,
-                cliente.FechaDeNacimiento,
+                Convert.ToString(cliente.FechaDeNacimiento),
                 cliente.Pais_Nacionalidad,
                 cliente.Mail,
                 usuario.NombreUsuario,
