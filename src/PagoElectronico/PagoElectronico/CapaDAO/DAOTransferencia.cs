@@ -12,7 +12,7 @@ namespace PagoElectronico.CapaDAO
         {
             if (saldoSuficiente(origen, importe))
             {
-                executeProcedure("TRASNFERIR", origen, destino, fecha, importe, moneda);
+                executeProcedure("TRANSFERIR", origen, destino, fecha, importe, moneda);
                 return "";
             }
             else

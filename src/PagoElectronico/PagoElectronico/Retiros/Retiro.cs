@@ -80,7 +80,10 @@ namespace PagoElectronico.Retiros
             if (ret == "s")
                 MessageBox.Show("Saldo insuficiente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
+            {
                 textBox_Numero.Text = ret;
+                MessageBox.Show("El cheque fue generado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            }
         }
 
         private bool camposCorrectos()

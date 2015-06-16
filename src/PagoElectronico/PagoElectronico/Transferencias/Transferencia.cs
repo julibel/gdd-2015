@@ -62,6 +62,8 @@ namespace PagoElectronico.Transferencias
 
             if (ret == "s")
                 MessageBox.Show("Saldo insuficiente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                MessageBox.Show("La transferencia fue registrada correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private bool camposCorrectos()
@@ -80,6 +82,12 @@ namespace PagoElectronico.Transferencias
                 return false;
             }
             return comboBox_Origen.Text != "" && textBox_Destino.Text != "" && comboBox_Moneda.Text != "";
+        }
+
+        private void button_Limpiar_Click(object sender, EventArgs e)
+        {
+            textBox_Importe.Text = "";
+            textBox_Fecha.Text = Globals.getFechaSistema();
         }
 
     }

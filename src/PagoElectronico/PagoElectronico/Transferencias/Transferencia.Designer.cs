@@ -138,6 +138,7 @@
             this.button_Limpiar.TabIndex = 44;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Aceptar
             // 
@@ -172,11 +173,13 @@
             // 
             // textBox_Destino
             // 
+            this.textBox_Destino.Enabled = false;
             this.textBox_Destino.Location = new System.Drawing.Point(26, 93);
             this.textBox_Destino.MaxLength = 255;
             this.textBox_Destino.Name = "textBox_Destino";
             this.textBox_Destino.Size = new System.Drawing.Size(262, 20);
             this.textBox_Destino.TabIndex = 0;
+            this.textBox_Destino.Text = "1111111111111111";
             // 
             // button_SeleccionarCuentaDestino
             // 
