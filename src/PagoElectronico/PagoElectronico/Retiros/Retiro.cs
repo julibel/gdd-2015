@@ -20,5 +20,26 @@ namespace PagoElectronico.Retiros
         {
             this.Close();
         }
+
+        private void Retiro_Load(object sender, EventArgs e)
+        {
+            DataTable cuentas = CapaDAO.DAORetiro.getCuentas();
+            DataTable monedas = CapaDAO.DAORetiro.getMonedas();
+            DataTable bancos = CapaDAO.DAORetiro.getBancos();
+
+            comboBox_Cuentas.ValueMember = "CUE_ID";
+            comboBox_Cuentas.DisplayMember = "CUE_ID";
+            comboBox_Cuentas.DataSource = cuentas;
+
+            comboBox_Moneda.ValueMember = "MON_ID";
+            comboBox_Moneda.DisplayMember = "NOMBRE";
+            comboBox_Moneda.DataSource = monedas;
+
+            comboBox_Bancos.ValueMember = "BAN_ID";
+            comboBox_Bancos.DisplayMember = "NOMBRE";
+            comboBox_Bancos.DataSource = bancos;
+
+            textBox_Fecha.Text = Globals.getFechaSistema();
+        }
     }
 }

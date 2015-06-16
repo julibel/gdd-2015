@@ -121,7 +121,6 @@
             this.textBox_Importe.Size = new System.Drawing.Size(121, 20);
             this.textBox_Importe.TabIndex = 19;
             this.textBox_Importe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.textBox_Importe.TextChanged += new System.EventHandler(this.textBox_Importe_TextChanged);
             this.textBox_Importe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Importe_KeyPress);
             // 
             // label_Moneda

@@ -96,10 +96,5 @@ namespace PagoElectronico.Depositos
                 e.Handled = true;
             }
         }
-
-        private void textBox_Importe_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
