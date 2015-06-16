@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Cliente
 {
@@ -77,8 +78,8 @@ namespace PagoElectronico.ABM_Cliente
                 if (!Validaciones()) return;
                 try
                 {
-                   // DAOCliente.AgregarCliente(GenerarCliente());
-                    Mensaje_OK("Los datos han sido almacenados con exito", "");
+                   DAOCliente.AgregarCliente(GenerarCliente(),GenerarUsuario());
+                   Mensaje_OK("Los datos han sido almacenados con exito", "");
                 }
                 catch (Exception ex)
                 {
@@ -107,14 +108,12 @@ namespace PagoElectronico.ABM_Cliente
 
         private Error ValidarDocumento()
         {
-            //return DAOCliente.existeDni(tbDni.Text, cbTipoDoc.SelectedIndex + 1) ? new Error("El documento ingresado ya está asignado a un usuario registrado.") : null;
-            return null;
+            return DAOCliente.existeDni(textBox_Documento.Text, comboBox_Tipo_doc.SelectedIndex + 1) ? new Error("El documento ingresado ya está asignado a un usuario registrado.") : null;
         }
 
         private Error ValidarEmail()
         {
-            //return DAOCliente.existeTelefono(tbTelefono.Text) ? new Error("El email ingresado ya está asignado a un usuario registrado.") : null;
-            return null;
+            return DAOCliente.existeMail(textBox_Mail.Text) ? new Error("El email ingresado ya está asignado a un usuario registrado.") : null;
         }
 
         private Error ValidarDatosCompletos()
@@ -139,9 +138,9 @@ namespace PagoElectronico.ABM_Cliente
                     Convert.ToInt32(textBox_Piso.Text),
                     textBox_Depto.Text,
                     textBox_Localidad.Text,
-                    (int)(comboBox_Pais.SelectedIndex +1),
+                    comboBox_Pais.Text,
                     dateTimePicker_FechaNacimiento.Value,
-                    (int)(comboBox_Nacionalidad.SelectedIndex +1),
+                    comboBox_Nacionalidad.Text,
                     textBox_Mail.Text            
                     );
         }
