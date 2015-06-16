@@ -20,5 +20,10 @@ namespace PagoElectronico.Consulta_Saldos
         {
             this.Close();
         }
+
+        private void Seleccion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

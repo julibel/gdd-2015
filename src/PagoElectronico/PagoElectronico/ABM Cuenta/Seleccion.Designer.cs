@@ -37,8 +37,8 @@
             this.label_TipoCuenta = new System.Windows.Forms.Label();
             this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
             this.paner_Filtros = new System.Windows.Forms.GroupBox();
-            this.button_Cerrar = new System.Windows.Forms.Button();
             this.comboBox_Pais = new System.Windows.Forms.ComboBox();
+            this.button_Cerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
             this.paner_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -142,16 +142,6 @@
             this.paner_Filtros.TabIndex = 35;
             this.paner_Filtros.TabStop = false;
             this.paner_Filtros.Text = "Filtros de busqueda";
-            // 
-            // button_Cerrar
-            // 
-            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
-            this.button_Cerrar.Name = "button_Cerrar";
-            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 37;
-            this.button_Cerrar.Text = "Cerrar";
-            this.button_Cerrar.UseVisualStyleBackColor = true;
-            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
             // comboBox_Pais
             // 
@@ -356,6 +346,16 @@
             this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Pais.TabIndex = 34;
             // 
+            // button_Cerrar
+            // 
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 37;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
+            // 
             // Seleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -372,6 +372,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion";
+            this.Load += new System.EventHandler(this.Seleccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).EndInit();
             this.paner_Filtros.ResumeLayout(false);
             this.paner_Filtros.PerformLayout();

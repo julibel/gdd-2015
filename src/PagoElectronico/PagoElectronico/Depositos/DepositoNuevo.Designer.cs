@@ -30,9 +30,7 @@
         {
             this.paner_DatosCuenta = new System.Windows.Forms.GroupBox();
             this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
-            this.button_SeleccionarTarjeta = new System.Windows.Forms.Button();
             this.label_Tarjeta = new System.Windows.Forms.Label();
-            this.textBox_TarjetaCredito = new System.Windows.Forms.TextBox();
             this.comboBox_Moneda = new System.Windows.Forms.ComboBox();
             this.textBox_Importe = new System.Windows.Forms.TextBox();
             this.label_Moneda = new System.Windows.Forms.Label();
@@ -41,20 +39,20 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
+            this.comboBox_Tarjetas = new System.Windows.Forms.ComboBox();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // paner_DatosCuenta
             // 
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Cuentas);
-            this.paner_DatosCuenta.Controls.Add(this.button_SeleccionarTarjeta);
             this.paner_DatosCuenta.Controls.Add(this.label_Tarjeta);
-            this.paner_DatosCuenta.Controls.Add(this.textBox_TarjetaCredito);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.textBox_Importe);
             this.paner_DatosCuenta.Controls.Add(this.label_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Importe);
             this.paner_DatosCuenta.Controls.Add(this.label_NumeroCuenta);
+            this.paner_DatosCuenta.Controls.Add(this.comboBox_Tarjetas);
             this.paner_DatosCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_DatosCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_DatosCuenta.Location = new System.Drawing.Point(12, 12);
@@ -73,16 +71,6 @@
             this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Cuentas.TabIndex = 27;
             // 
-            // button_SeleccionarTarjeta
-            // 
-            this.button_SeleccionarTarjeta.Location = new System.Drawing.Point(535, 234);
-            this.button_SeleccionarTarjeta.Name = "button_SeleccionarTarjeta";
-            this.button_SeleccionarTarjeta.Size = new System.Drawing.Size(75, 23);
-            this.button_SeleccionarTarjeta.TabIndex = 26;
-            this.button_SeleccionarTarjeta.Text = "Seleccionar";
-            this.button_SeleccionarTarjeta.UseVisualStyleBackColor = true;
-            this.button_SeleccionarTarjeta.Click += new System.EventHandler(this.button_SeleccionarTarjeta_Click);
-            // 
             // label_Tarjeta
             // 
             this.label_Tarjeta.AutoSize = true;
@@ -93,16 +81,6 @@
             this.label_Tarjeta.Size = new System.Drawing.Size(91, 13);
             this.label_Tarjeta.TabIndex = 25;
             this.label_Tarjeta.Text = "Tarjeta de Credito";
-            // 
-            // textBox_TarjetaCredito
-            // 
-            this.textBox_TarjetaCredito.Enabled = false;
-            this.textBox_TarjetaCredito.Location = new System.Drawing.Point(297, 236);
-            this.textBox_TarjetaCredito.MaxLength = 255;
-            this.textBox_TarjetaCredito.Name = "textBox_TarjetaCredito";
-            this.textBox_TarjetaCredito.Size = new System.Drawing.Size(232, 20);
-            this.textBox_TarjetaCredito.TabIndex = 24;
-            this.textBox_TarjetaCredito.TextChanged += new System.EventHandler(this.textBox_TarjetaCredito_TextChanged);
             // 
             // comboBox_Moneda
             // 
@@ -186,6 +164,15 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
+            // comboBox_Tarjetas
+            // 
+            this.comboBox_Tarjetas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Tarjetas.FormattingEnabled = true;
+            this.comboBox_Tarjetas.Location = new System.Drawing.Point(297, 236);
+            this.comboBox_Tarjetas.Name = "comboBox_Tarjetas";
+            this.comboBox_Tarjetas.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Tarjetas.TabIndex = 28;
+            // 
             // DepositoNuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,9 +208,8 @@
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Guardar;
         private System.Windows.Forms.Button button_Cerrar;
-        private System.Windows.Forms.Button button_SeleccionarTarjeta;
         private System.Windows.Forms.Label label_Tarjeta;
-        private System.Windows.Forms.TextBox textBox_TarjetaCredito;
         private System.Windows.Forms.ComboBox comboBox_Cuentas;
+        private System.Windows.Forms.ComboBox comboBox_Tarjetas;
     }
 }

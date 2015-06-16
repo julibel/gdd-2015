@@ -43,11 +43,6 @@ D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_C
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cliente.Baja.resources
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cliente.Modificacion.resources
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cliente.Seleccion.resources
-D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Alta.resources
-D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Baja.resources
-D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Modificacion.resources
-D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.ModificarCategoriaCuenta.resources
-D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.ModificarTipoCuentas.resources
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Seleccion.resources
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Rol.Alta.resources
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Rol.Baja.resources
@@ -109,3 +104,9 @@ C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Re
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.csproj.GenerateResource.Cache
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.exe
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.pdb
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.Alta.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.Baja.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.Modificacion.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.ModificarCategoriaCuenta.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.ModificarTipoCuentas.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.SeleccionCliente.resources

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PagoElectronico.ABM_Cuenta
+namespace PagoElectronico.Consulta_Saldos
 {
     public partial class Baja : Form
     {

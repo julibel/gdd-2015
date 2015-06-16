@@ -6,26 +6,28 @@ using System.Data;
 
 namespace PagoElectronico.CapaDAO
 {
-    class DAOConsultaSaldos : SqlConnector
+    class DAOConsultaSaldos:DAOOperacion
     {
-        public static DataTable getUltimosDepositos(string id)
+        public static DataTable getUltimosDepositos(long cuentaID)
         {
-            return retrieveDataTable("GET_ULTIMOS_DEPOSITOS", Convert.ToInt32(id));
+            return retrieveDataTable("ULTIMOS_DEPOSITOS", cuentaID);
         }
 
-        public static DataTable getUltimasTransferencias(string id)
+        public static DataTable getUltimasTransferencias(long cuentaID)
         {
-            return retrieveDataTable("GET_ULTIMAS_TRANSFERENCIAS", Convert.ToInt32(id));
+            DataTable total = retrieveDataTable("ULTIMAS_TRANSFERENCIAS", cuentaID);
+
+            for (int i = 9; i < total.Rows.Count; i++)
+            {
+                total.Rows[i].Delete();
+            }
+
+            return total;
         }
 
-        public static DataTable getUltimosRetiros(string id)
+        public static DataTable getUltimosRetiros(long cuentaID)
         {
-            return retrieveDataTable("GET_ULTIMOS_RETIROS", Convert.ToInt32(id));
-        }
-
-        public static DataTable getSaldo(string id)
-        {
-            return retrieveDataTable("GET_SALDO", Convert.ToInt32(id));
+            return retrieveDataTable("ULTIMOS_RETIROS", cuentaID);
         }
     }
 }

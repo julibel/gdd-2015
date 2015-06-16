@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PagoElectronico.ABM_Cuenta
+namespace PagoElectronico.Consulta_Saldos
 {
-    public partial class Seleccion : Form
+    public partial class SeleccionCliente : Form
     {
         private void LimpiarCampos()
         {
@@ -18,7 +18,7 @@ namespace PagoElectronico.ABM_Cuenta
         }
 
 
-        public Seleccion()
+        public SeleccionCliente()
         {
             InitializeComponent();
         }
@@ -33,9 +33,19 @@ namespace PagoElectronico.ABM_Cuenta
             LimpiarCampos();
         }
 
-        private void Seleccion_Load(object sender, EventArgs e)
+        private void SeleccionCliente_Load(object sender, EventArgs e)
         {
+            comboBox_Cuentas.ValueMember = "CUE_ID";
+            comboBox_Cuentas.DisplayMember = "CUE_ID";
+            comboBox_Cuentas.DataSource = CapaDAO.DAOConsultaSaldos.getCuentas();
+        }
 
+        private void button_Aceptar_Click(object sender, EventArgs e)
+        {
+            Consulta_Saldos.Saldo saldoForm = new Consulta_Saldos.Saldo(Convert.ToInt64(comboBox_Cuentas.SelectedValue));
+            saldoForm.MdiParent = this.MdiParent;
+            saldoForm.Show();
+            this.Close();
         }
     }
 }

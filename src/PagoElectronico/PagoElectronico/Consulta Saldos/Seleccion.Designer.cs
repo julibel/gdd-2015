@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.paner_Filtros = new System.Windows.Forms.GroupBox();
+            this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
             this.label_TipoCuenta = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.dataGridView_Seleccion = new System.Windows.Forms.DataGridView();
-            this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.paner_Filtros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
             this.SuspendLayout();
@@ -61,96 +61,6 @@
             this.paner_Filtros.TabIndex = 37;
             this.paner_Filtros.TabStop = false;
             this.paner_Filtros.Text = "Filtros de busqueda";
-            // 
-            // comboBox_TipoCuenta
-            // 
-            this.comboBox_TipoCuenta.FormattingEnabled = true;
-            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
-            "Oro",
-            "Plata",
-            "Bronce",
-            "Gratuita"});
-            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(340, 97);
-            this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
-            this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_TipoCuenta.TabIndex = 30;
-            // 
-            // label_TipoCuenta
-            // 
-            this.label_TipoCuenta.AutoSize = true;
-            this.label_TipoCuenta.Location = new System.Drawing.Point(255, 100);
-            this.label_TipoCuenta.Name = "label_TipoCuenta";
-            this.label_TipoCuenta.Size = new System.Drawing.Size(79, 13);
-            this.label_TipoCuenta.TabIndex = 29;
-            this.label_TipoCuenta.Text = "Tipo de cuenta";
-            // 
-            // label_Pais
-            // 
-            this.label_Pais.AutoSize = true;
-            this.label_Pais.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Pais.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Pais.Location = new System.Drawing.Point(307, 74);
-            this.label_Pais.Name = "label_Pais";
-            this.label_Pais.Size = new System.Drawing.Size(27, 13);
-            this.label_Pais.TabIndex = 25;
-            this.label_Pais.Text = "Pais";
-            // 
-            // label_NumeroCuenta
-            // 
-            this.label_NumeroCuenta.AutoSize = true;
-            this.label_NumeroCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_NumeroCuenta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_NumeroCuenta.Location = new System.Drawing.Point(239, 48);
-            this.label_NumeroCuenta.Name = "label_NumeroCuenta";
-            this.label_NumeroCuenta.Size = new System.Drawing.Size(95, 13);
-            this.label_NumeroCuenta.TabIndex = 24;
-            this.label_NumeroCuenta.Text = "Numero de cuenta";
-            // 
-            // textBox_NumeroCuenta
-            // 
-            this.textBox_NumeroCuenta.Location = new System.Drawing.Point(340, 45);
-            this.textBox_NumeroCuenta.MaxLength = 255;
-            this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
-            this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
-            this.textBox_NumeroCuenta.TabIndex = 23;
-            // 
-            // button_Buscar
-            // 
-            this.button_Buscar.Location = new System.Drawing.Point(715, 125);
-            this.button_Buscar.Name = "button_Buscar";
-            this.button_Buscar.Size = new System.Drawing.Size(75, 23);
-            this.button_Buscar.TabIndex = 14;
-            this.button_Buscar.Text = "Buscar";
-            this.button_Buscar.UseVisualStyleBackColor = true;
-            // 
-            // button_Limpiar
-            // 
-            this.button_Limpiar.Location = new System.Drawing.Point(634, 125);
-            this.button_Limpiar.Name = "button_Limpiar";
-            this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 13;
-            this.button_Limpiar.Text = "Limpiar";
-            this.button_Limpiar.UseVisualStyleBackColor = true;
-            // 
-            // button_Cerrar
-            // 
-            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
-            this.button_Cerrar.Name = "button_Cerrar";
-            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 39;
-            this.button_Cerrar.Text = "Cerrar";
-            this.button_Cerrar.UseVisualStyleBackColor = true;
-            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // dataGridView_Seleccion
-            // 
-            this.dataGridView_Seleccion.AllowUserToAddRows = false;
-            this.dataGridView_Seleccion.AllowUserToDeleteRows = false;
-            this.dataGridView_Seleccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
-            this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
-            this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
-            this.dataGridView_Seleccion.TabIndex = 38;
             // 
             // comboBox_Pais
             // 
@@ -355,6 +265,96 @@
             this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Pais.TabIndex = 34;
             // 
+            // comboBox_TipoCuenta
+            // 
+            this.comboBox_TipoCuenta.FormattingEnabled = true;
+            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
+            "Oro",
+            "Plata",
+            "Bronce",
+            "Gratuita"});
+            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(340, 97);
+            this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
+            this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_TipoCuenta.TabIndex = 30;
+            // 
+            // label_TipoCuenta
+            // 
+            this.label_TipoCuenta.AutoSize = true;
+            this.label_TipoCuenta.Location = new System.Drawing.Point(255, 100);
+            this.label_TipoCuenta.Name = "label_TipoCuenta";
+            this.label_TipoCuenta.Size = new System.Drawing.Size(79, 13);
+            this.label_TipoCuenta.TabIndex = 29;
+            this.label_TipoCuenta.Text = "Tipo de cuenta";
+            // 
+            // label_Pais
+            // 
+            this.label_Pais.AutoSize = true;
+            this.label_Pais.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Pais.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Pais.Location = new System.Drawing.Point(307, 74);
+            this.label_Pais.Name = "label_Pais";
+            this.label_Pais.Size = new System.Drawing.Size(27, 13);
+            this.label_Pais.TabIndex = 25;
+            this.label_Pais.Text = "Pais";
+            // 
+            // label_NumeroCuenta
+            // 
+            this.label_NumeroCuenta.AutoSize = true;
+            this.label_NumeroCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_NumeroCuenta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_NumeroCuenta.Location = new System.Drawing.Point(239, 48);
+            this.label_NumeroCuenta.Name = "label_NumeroCuenta";
+            this.label_NumeroCuenta.Size = new System.Drawing.Size(95, 13);
+            this.label_NumeroCuenta.TabIndex = 24;
+            this.label_NumeroCuenta.Text = "Numero de cuenta";
+            // 
+            // textBox_NumeroCuenta
+            // 
+            this.textBox_NumeroCuenta.Location = new System.Drawing.Point(340, 45);
+            this.textBox_NumeroCuenta.MaxLength = 255;
+            this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
+            this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
+            this.textBox_NumeroCuenta.TabIndex = 23;
+            // 
+            // button_Buscar
+            // 
+            this.button_Buscar.Location = new System.Drawing.Point(715, 125);
+            this.button_Buscar.Name = "button_Buscar";
+            this.button_Buscar.Size = new System.Drawing.Size(75, 23);
+            this.button_Buscar.TabIndex = 14;
+            this.button_Buscar.Text = "Buscar";
+            this.button_Buscar.UseVisualStyleBackColor = true;
+            // 
+            // button_Limpiar
+            // 
+            this.button_Limpiar.Location = new System.Drawing.Point(634, 125);
+            this.button_Limpiar.Name = "button_Limpiar";
+            this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
+            this.button_Limpiar.TabIndex = 13;
+            this.button_Limpiar.Text = "Limpiar";
+            this.button_Limpiar.UseVisualStyleBackColor = true;
+            // 
+            // button_Cerrar
+            // 
+            this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
+            this.button_Cerrar.Name = "button_Cerrar";
+            this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
+            this.button_Cerrar.TabIndex = 39;
+            this.button_Cerrar.Text = "Cerrar";
+            this.button_Cerrar.UseVisualStyleBackColor = true;
+            this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
+            // 
+            // dataGridView_Seleccion
+            // 
+            this.dataGridView_Seleccion.AllowUserToAddRows = false;
+            this.dataGridView_Seleccion.AllowUserToDeleteRows = false;
+            this.dataGridView_Seleccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
+            this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
+            this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
+            this.dataGridView_Seleccion.TabIndex = 38;
+            // 
             // Seleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +371,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion";
+            this.Load += new System.EventHandler(this.Seleccion_Load);
             this.paner_Filtros.ResumeLayout(false);
             this.paner_Filtros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).EndInit();

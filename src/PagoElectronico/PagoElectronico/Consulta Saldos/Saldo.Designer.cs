@@ -82,19 +82,23 @@
             // 
             // dataGridView_Depositos
             // 
+            this.dataGridView_Depositos.AllowUserToAddRows = false;
+            this.dataGridView_Depositos.AllowUserToDeleteRows = false;
             this.dataGridView_Depositos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Depositos.Enabled = false;
             this.dataGridView_Depositos.Location = new System.Drawing.Point(6, 19);
             this.dataGridView_Depositos.Name = "dataGridView_Depositos";
+            this.dataGridView_Depositos.ReadOnly = true;
             this.dataGridView_Depositos.Size = new System.Drawing.Size(383, 170);
             this.dataGridView_Depositos.TabIndex = 36;
             // 
             // dataGridView_Transferencias
             // 
+            this.dataGridView_Transferencias.AllowUserToAddRows = false;
+            this.dataGridView_Transferencias.AllowUserToDeleteRows = false;
             this.dataGridView_Transferencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Transferencias.Enabled = false;
             this.dataGridView_Transferencias.Location = new System.Drawing.Point(6, 19);
             this.dataGridView_Transferencias.Name = "dataGridView_Transferencias";
+            this.dataGridView_Transferencias.ReadOnly = true;
             this.dataGridView_Transferencias.Size = new System.Drawing.Size(383, 250);
             this.dataGridView_Transferencias.TabIndex = 35;
             // 
@@ -136,10 +140,12 @@
             // 
             // dataGridView_Retiros
             // 
+            this.dataGridView_Retiros.AllowUserToAddRows = false;
+            this.dataGridView_Retiros.AllowUserToDeleteRows = false;
             this.dataGridView_Retiros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Retiros.Enabled = false;
             this.dataGridView_Retiros.Location = new System.Drawing.Point(6, 19);
             this.dataGridView_Retiros.Name = "dataGridView_Retiros";
+            this.dataGridView_Retiros.ReadOnly = true;
             this.dataGridView_Retiros.Size = new System.Drawing.Size(383, 171);
             this.dataGridView_Retiros.TabIndex = 36;
             // 
@@ -171,6 +177,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Saldo";
+            this.Load += new System.EventHandler(this.Saldo_Load);
             this.paner_Alta.ResumeLayout(false);
             this.paner_Alta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Depositos)).EndInit();

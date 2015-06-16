@@ -106,6 +106,12 @@
     <Compile Include="ABM Cuenta\Baja.Designer.cs">
       <DependentUpon>Baja.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABM Cuenta\Seleccion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABM Cuenta\Seleccion.Designer.cs">
+      <DependentUpon>Seleccion.cs</DependentUpon>
+    </Compile>
     <Compile Include="ABM Cuenta\ModificarCategoriaCuenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,11 +130,11 @@
     <Compile Include="ABM Cuenta\Modificacion.Designer.cs">
       <DependentUpon>Modificacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ABM Cuenta\Seleccion.cs">
+    <Compile Include="Consulta Saldos\SeleccionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ABM Cuenta\Seleccion.Designer.cs">
-      <DependentUpon>Seleccion.cs</DependentUpon>
+    <Compile Include="Consulta Saldos\SeleccionCliente.Designer.cs">
+      <DependentUpon>SeleccionCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="ABM Rol\Alta.cs">
       <SubType>Form</SubType>
@@ -293,6 +299,9 @@
     <EmbeddedResource Include="ABM Cuenta\Baja.resx">
       <DependentUpon>Baja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABM Cuenta\Seleccion.resx">
+      <DependentUpon>Seleccion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ABM Cuenta\Modificacion.resx">
       <DependentUpon>Modificacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,8 +311,8 @@
     <EmbeddedResource Include="ABM Cuenta\ModificarTipoCuentas.resx">
       <DependentUpon>ModificarTipoCuentas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ABM Cuenta\Seleccion.resx">
-      <DependentUpon>Seleccion.cs</DependentUpon>
+    <EmbeddedResource Include="Consulta Saldos\SeleccionCliente.resx">
+      <DependentUpon>SeleccionCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ABM Rol\Alta.resx">
       <DependentUpon>Alta.cs</DependentUpon>
