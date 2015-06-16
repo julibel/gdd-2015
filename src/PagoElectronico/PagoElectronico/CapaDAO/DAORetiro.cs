@@ -15,7 +15,21 @@ namespace PagoElectronico.CapaDAO
 
         public static string realizarRetiro(long cuenta, string fecha, double importe, int moneda, string banco)
         {
-            return Convert.ToString(executeProcedureWithReturnValue("RETIRAR_EFECTIVO", cuenta, fecha, importe, moneda, banco));
+            if (saldoSuficiente(cuenta, importe))
+                return Convert.ToString(executeProcedureWithReturnValue("RETIRAR_EFECTIVO", cuenta, fecha, importe, moneda, banco));
+            else
+                return "";
         }
+
+        private static bool saldoSuficiente(long cuenta, double importe)
+        {
+            return getSaldo(cuenta) >= importe;
+        }
+
+        private static double getSaldo(long cuenta)
+        {
+            return Convert.ToDouble(retrieveDataTable("GET_SALDO", cuenta).Rows[0][0]);
+        }
+
     }
 }

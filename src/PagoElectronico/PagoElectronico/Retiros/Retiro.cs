@@ -72,23 +72,33 @@ namespace PagoElectronico.Retiros
             if (textBox_Numero.Text != "A generar")
             {
                 MessageBox.Show("Limpie los datos de la última operación", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            textBox_Numero.Text = CapaDAO.DAORetiro.realizarRetiro(Convert.ToInt64(comboBox_Cuentas.SelectedValue), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue), comboBox_Bancos.Text);
+            string ret = CapaDAO.DAORetiro.realizarRetiro(Convert.ToInt64(comboBox_Cuentas.SelectedValue), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue), comboBox_Bancos.Text);
+
+            if (ret == "")
+                MessageBox.Show("Saldo insuficiente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+                textBox_Numero.Text = ret;
         }
 
         private bool camposCorrectos()
         {
             try
             {
-                return Convert.ToDouble(textBox_Importe.Text) > 0 && comboBox_Bancos.Text != ""
-                && comboBox_Cuentas.Text != "" && comboBox_Moneda.Text != "";
+                if (Convert.ToDouble(textBox_Importe.Text) <= 0)
+                {
+                    MessageBox.Show("El importe debe ser mayor a 0", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
             }
             catch (Exception)
             {
                 MessageBox.Show("El importe debe tener formato numérico", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             } 
+            return comboBox_Bancos.Text != "" && comboBox_Cuentas.Text != "" && comboBox_Moneda.Text != "";
         }
     }
 }
