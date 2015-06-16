@@ -34,7 +34,7 @@
             this.label_Tarjeta = new System.Windows.Forms.Label();
             this.textBox_TarjetaCredito = new System.Windows.Forms.TextBox();
             this.comboBox_Moneda = new System.Windows.Forms.ComboBox();
-            this.textBox_Pais = new System.Windows.Forms.TextBox();
+            this.textBox_Importe = new System.Windows.Forms.TextBox();
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Importe = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.paner_DatosCuenta.Controls.Add(this.label_Tarjeta);
             this.paner_DatosCuenta.Controls.Add(this.textBox_TarjetaCredito);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Moneda);
-            this.paner_DatosCuenta.Controls.Add(this.textBox_Pais);
+            this.paner_DatosCuenta.Controls.Add(this.textBox_Importe);
             this.paner_DatosCuenta.Controls.Add(this.label_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Importe);
             this.paner_DatosCuenta.Controls.Add(this.label_NumeroCuenta);
@@ -102,6 +102,7 @@
             this.textBox_TarjetaCredito.Name = "textBox_TarjetaCredito";
             this.textBox_TarjetaCredito.Size = new System.Drawing.Size(232, 20);
             this.textBox_TarjetaCredito.TabIndex = 24;
+            this.textBox_TarjetaCredito.TextChanged += new System.EventHandler(this.textBox_TarjetaCredito_TextChanged);
             // 
             // comboBox_Moneda
             // 
@@ -112,13 +113,16 @@
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
             this.comboBox_Moneda.TabIndex = 20;
             // 
-            // textBox_Pais
+            // textBox_Importe
             // 
-            this.textBox_Pais.Location = new System.Drawing.Point(297, 182);
-            this.textBox_Pais.MaxLength = 50;
-            this.textBox_Pais.Name = "textBox_Pais";
-            this.textBox_Pais.Size = new System.Drawing.Size(121, 20);
-            this.textBox_Pais.TabIndex = 19;
+            this.textBox_Importe.Location = new System.Drawing.Point(297, 182);
+            this.textBox_Importe.MaxLength = 50;
+            this.textBox_Importe.Name = "textBox_Importe";
+            this.textBox_Importe.Size = new System.Drawing.Size(121, 20);
+            this.textBox_Importe.TabIndex = 19;
+            this.textBox_Importe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_Importe.TextChanged += new System.EventHandler(this.textBox_Importe_TextChanged);
+            this.textBox_Importe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Importe_KeyPress);
             // 
             // label_Moneda
             // 
@@ -161,6 +165,7 @@
             this.button_Limpiar.TabIndex = 35;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Guardar
             // 
@@ -170,6 +175,7 @@
             this.button_Guardar.TabIndex = 34;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
+            this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
             // 
             // button_Cerrar
             // 
@@ -209,7 +215,7 @@
 
         private System.Windows.Forms.GroupBox paner_DatosCuenta;
         private System.Windows.Forms.ComboBox comboBox_Moneda;
-        private System.Windows.Forms.TextBox textBox_Pais;
+        private System.Windows.Forms.TextBox textBox_Importe;
         private System.Windows.Forms.Label label_Moneda;
         private System.Windows.Forms.Label label_Importe;
         private System.Windows.Forms.Label label_NumeroCuenta;

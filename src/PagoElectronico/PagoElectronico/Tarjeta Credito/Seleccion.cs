@@ -17,6 +17,11 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private int tarjetaID;
 
+        public int getIDTarjeta()
+        {
+            return tarjetaID;
+        }
+
         public Seleccion(Form caller, TextBox textTarjeta)
         {
             InitializeComponent();
@@ -44,8 +49,8 @@ namespace PagoElectronico.Tarjeta_Credito
                 var resp = MessageBox.Show("No posee tal tarjeta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            textCaller.Text = textBox_numeroTarjeta.Text;
             tarjetaID = idTarjeta;
+            textCaller.Text = textBox_numeroTarjeta.Text;
             Cerrar();
         }
 

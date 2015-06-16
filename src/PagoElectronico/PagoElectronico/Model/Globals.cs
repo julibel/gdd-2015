@@ -18,7 +18,7 @@ namespace PagoElectronico
 
         public static int userID
         {
-            get { return _userID; }
+            get { return 162; }//_userID; }
             set { _userID = value; }
         }
         public static string getConnectionString()

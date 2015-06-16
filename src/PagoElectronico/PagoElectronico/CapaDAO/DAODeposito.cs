@@ -8,14 +8,19 @@ namespace PagoElectronico.CapaDAO
 {
     class DAODeposito:SqlConnector
     {
-        internal static DataTable getCuentas()
+        public static DataTable getCuentas()
         {
             return retrieveDataTable("GET_CUENTAS_USUARIO", Globals.userID);
         }
 
-        internal static DataTable getMonedas()
+        public static DataTable getMonedas()
         {
             return retrieveDataTable("GET_MONEDAS");
+        }
+
+        public static void realizarDeposito(long cuenta, int tarjeta, double importe, int moneda)
+        {
+            executeProcedure("DEPOSITAR", cuenta, tarjeta, importe, moneda, Globals.getFechaSistema());
         }
     }
 }
