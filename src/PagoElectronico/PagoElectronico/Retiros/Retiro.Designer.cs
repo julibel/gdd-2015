@@ -28,22 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_Seleccionar = new System.Windows.Forms.Button();
-            this.label_NumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox_Cuenta = new System.Windows.Forms.TextBox();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Aceptar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.radioButton_Pas = new System.Windows.Forms.RadioButton();
-            this.radioButton_Ci = new System.Windows.Forms.RadioButton();
-            this.radioButton_Le = new System.Windows.Forms.RadioButton();
-            this.radioButton_Lc = new System.Windows.Forms.RadioButton();
-            this.radioButton_Dni = new System.Windows.Forms.RadioButton();
-            this.textBox_Documento = new System.Windows.Forms.TextBox();
-            this.label_TipoDocumento = new System.Windows.Forms.Label();
-            this.label_Documento = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox_Banco = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.label_Apellido = new System.Windows.Forms.Label();
@@ -57,38 +45,13 @@
             this.textBox_Importe = new System.Windows.Forms.TextBox();
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Importe = new System.Windows.Forms.Label();
+            this.comboBox_Bancos = new System.Windows.Forms.ComboBox();
+            this.label_NumeroCuenta = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // button_Seleccionar
-            // 
-            this.button_Seleccionar.Location = new System.Drawing.Point(301, 170);
-            this.button_Seleccionar.Name = "button_Seleccionar";
-            this.button_Seleccionar.Size = new System.Drawing.Size(75, 23);
-            this.button_Seleccionar.TabIndex = 23;
-            this.button_Seleccionar.Text = "Seleccionar";
-            this.button_Seleccionar.UseVisualStyleBackColor = true;
-            // 
-            // label_NumeroCuenta
-            // 
-            this.label_NumeroCuenta.AutoSize = true;
-            this.label_NumeroCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_NumeroCuenta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_NumeroCuenta.Location = new System.Drawing.Point(75, 175);
-            this.label_NumeroCuenta.Name = "label_NumeroCuenta";
-            this.label_NumeroCuenta.Size = new System.Drawing.Size(41, 13);
-            this.label_NumeroCuenta.TabIndex = 1;
-            this.label_NumeroCuenta.Text = "Cuenta";
-            // 
-            // textBox_Cuenta
-            // 
-            this.textBox_Cuenta.Location = new System.Drawing.Point(122, 172);
-            this.textBox_Cuenta.MaxLength = 255;
-            this.textBox_Cuenta.Name = "textBox_Cuenta";
-            this.textBox_Cuenta.Size = new System.Drawing.Size(173, 20);
-            this.textBox_Cuenta.TabIndex = 0;
             // 
             // button_Limpiar
             // 
@@ -118,104 +81,8 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
-            // radioButton_Pas
-            // 
-            this.radioButton_Pas.AutoSize = true;
-            this.radioButton_Pas.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Pas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Pas.Location = new System.Drawing.Point(301, 198);
-            this.radioButton_Pas.Name = "radioButton_Pas";
-            this.radioButton_Pas.Size = new System.Drawing.Size(46, 17);
-            this.radioButton_Pas.TabIndex = 33;
-            this.radioButton_Pas.TabStop = true;
-            this.radioButton_Pas.Text = "PAS";
-            this.radioButton_Pas.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Ci
-            // 
-            this.radioButton_Ci.AutoSize = true;
-            this.radioButton_Ci.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Ci.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Ci.Location = new System.Drawing.Point(172, 198);
-            this.radioButton_Ci.Name = "radioButton_Ci";
-            this.radioButton_Ci.Size = new System.Drawing.Size(35, 17);
-            this.radioButton_Ci.TabIndex = 28;
-            this.radioButton_Ci.TabStop = true;
-            this.radioButton_Ci.Text = "CI";
-            this.radioButton_Ci.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Le
-            // 
-            this.radioButton_Le.AutoSize = true;
-            this.radioButton_Le.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Le.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Le.Location = new System.Drawing.Point(257, 198);
-            this.radioButton_Le.Name = "radioButton_Le";
-            this.radioButton_Le.Size = new System.Drawing.Size(38, 17);
-            this.radioButton_Le.TabIndex = 32;
-            this.radioButton_Le.TabStop = true;
-            this.radioButton_Le.Text = "LE";
-            this.radioButton_Le.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Lc
-            // 
-            this.radioButton_Lc.AutoSize = true;
-            this.radioButton_Lc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Lc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Lc.Location = new System.Drawing.Point(213, 198);
-            this.radioButton_Lc.Name = "radioButton_Lc";
-            this.radioButton_Lc.Size = new System.Drawing.Size(38, 17);
-            this.radioButton_Lc.TabIndex = 30;
-            this.radioButton_Lc.TabStop = true;
-            this.radioButton_Lc.Text = "LC";
-            this.radioButton_Lc.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Dni
-            // 
-            this.radioButton_Dni.AutoSize = true;
-            this.radioButton_Dni.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Dni.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Dni.Location = new System.Drawing.Point(122, 198);
-            this.radioButton_Dni.Name = "radioButton_Dni";
-            this.radioButton_Dni.Size = new System.Drawing.Size(44, 17);
-            this.radioButton_Dni.TabIndex = 27;
-            this.radioButton_Dni.TabStop = true;
-            this.radioButton_Dni.Text = "DNI";
-            this.radioButton_Dni.UseVisualStyleBackColor = true;
-            // 
-            // textBox_Documento
-            // 
-            this.textBox_Documento.Location = new System.Drawing.Point(122, 221);
-            this.textBox_Documento.MaxLength = 18;
-            this.textBox_Documento.Name = "textBox_Documento";
-            this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
-            this.textBox_Documento.TabIndex = 34;
-            // 
-            // label_TipoDocumento
-            // 
-            this.label_TipoDocumento.AutoSize = true;
-            this.label_TipoDocumento.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_TipoDocumento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_TipoDocumento.Location = new System.Drawing.Point(19, 200);
-            this.label_TipoDocumento.Name = "label_TipoDocumento";
-            this.label_TipoDocumento.Size = new System.Drawing.Size(99, 13);
-            this.label_TipoDocumento.TabIndex = 31;
-            this.label_TipoDocumento.Text = "Tipo de documento";
-            // 
-            // label_Documento
-            // 
-            this.label_Documento.AutoSize = true;
-            this.label_Documento.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Documento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Documento.Location = new System.Drawing.Point(56, 224);
-            this.label_Documento.Name = "label_Documento";
-            this.label_Documento.Size = new System.Drawing.Size(62, 13);
-            this.label_Documento.TabIndex = 29;
-            this.label_Documento.Text = "Documento";
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox_Banco);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox_Apellido);
             this.groupBox1.Controls.Add(this.label_Apellido);
@@ -229,20 +96,13 @@
             this.groupBox1.Controls.Add(this.textBox_Importe);
             this.groupBox1.Controls.Add(this.label_Moneda);
             this.groupBox1.Controls.Add(this.label_Importe);
+            this.groupBox1.Controls.Add(this.comboBox_Bancos);
             this.groupBox1.Location = new System.Drawing.Point(425, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(397, 410);
             this.groupBox1.TabIndex = 35;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cheque";
-            // 
-            // textBox_Banco
-            // 
-            this.textBox_Banco.Location = new System.Drawing.Point(108, 274);
-            this.textBox_Banco.MaxLength = 255;
-            this.textBox_Banco.Name = "textBox_Banco";
-            this.textBox_Banco.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Banco.TabIndex = 43;
             // 
             // label1
             // 
@@ -329,9 +189,8 @@
             // 
             // comboBox_Moneda
             // 
+            this.comboBox_Moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Moneda.FormattingEnabled = true;
-            this.comboBox_Moneda.Items.AddRange(new object[] {
-            "Dolares"});
             this.comboBox_Moneda.Location = new System.Drawing.Point(108, 195);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
@@ -367,25 +226,45 @@
             this.label_Importe.TabIndex = 21;
             this.label_Importe.Text = "Importe";
             // 
+            // comboBox_Bancos
+            // 
+            this.comboBox_Bancos.FormattingEnabled = true;
+            this.comboBox_Bancos.Location = new System.Drawing.Point(109, 274);
+            this.comboBox_Bancos.MaxLength = 50;
+            this.comboBox_Bancos.Name = "comboBox_Bancos";
+            this.comboBox_Bancos.Size = new System.Drawing.Size(231, 21);
+            this.comboBox_Bancos.TabIndex = 44;
+            // 
+            // label_NumeroCuenta
+            // 
+            this.label_NumeroCuenta.AutoSize = true;
+            this.label_NumeroCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_NumeroCuenta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_NumeroCuenta.Location = new System.Drawing.Point(75, 175);
+            this.label_NumeroCuenta.Name = "label_NumeroCuenta";
+            this.label_NumeroCuenta.Size = new System.Drawing.Size(41, 13);
+            this.label_NumeroCuenta.TabIndex = 1;
+            this.label_NumeroCuenta.Text = "Cuenta";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton_Lc);
-            this.groupBox2.Controls.Add(this.textBox_Cuenta);
-            this.groupBox2.Controls.Add(this.radioButton_Pas);
             this.groupBox2.Controls.Add(this.label_NumeroCuenta);
-            this.groupBox2.Controls.Add(this.radioButton_Ci);
-            this.groupBox2.Controls.Add(this.button_Seleccionar);
-            this.groupBox2.Controls.Add(this.radioButton_Le);
-            this.groupBox2.Controls.Add(this.label_Documento);
-            this.groupBox2.Controls.Add(this.label_TipoDocumento);
-            this.groupBox2.Controls.Add(this.radioButton_Dni);
-            this.groupBox2.Controls.Add(this.textBox_Documento);
+            this.groupBox2.Controls.Add(this.comboBox_Cuentas);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(395, 410);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccionar cuenta para el retiro";
+            // 
+            // comboBox_Cuentas
+            // 
+            this.comboBox_Cuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Cuentas.FormattingEnabled = true;
+            this.comboBox_Cuentas.Location = new System.Drawing.Point(122, 171);
+            this.comboBox_Cuentas.Name = "comboBox_Cuentas";
+            this.comboBox_Cuentas.Size = new System.Drawing.Size(173, 21);
+            this.comboBox_Cuentas.TabIndex = 2;
             // 
             // Retiro
             // 
@@ -405,6 +284,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Retiro";
+            this.Load += new System.EventHandler(this.Retiro_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -415,22 +295,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button_Seleccionar;
-        private System.Windows.Forms.Label label_NumeroCuenta;
-        private System.Windows.Forms.TextBox textBox_Cuenta;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Aceptar;
         private System.Windows.Forms.Button button_Cerrar;
-        private System.Windows.Forms.RadioButton radioButton_Pas;
-        private System.Windows.Forms.RadioButton radioButton_Ci;
-        private System.Windows.Forms.RadioButton radioButton_Le;
-        private System.Windows.Forms.RadioButton radioButton_Lc;
-        private System.Windows.Forms.RadioButton radioButton_Dni;
-        private System.Windows.Forms.TextBox textBox_Documento;
-        private System.Windows.Forms.Label label_TipoDocumento;
-        private System.Windows.Forms.Label label_Documento;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox_Moneda;
         private System.Windows.Forms.TextBox textBox_Importe;
         private System.Windows.Forms.Label label_Moneda;
@@ -439,12 +307,15 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox_Fecha;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox_Banco;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.Label label_Apellido;
         private System.Windows.Forms.Label label_Nombre;
         private System.Windows.Forms.TextBox textBox_Nombre;
+        private System.Windows.Forms.Label label_NumeroCuenta;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBox_Cuentas;
+        private System.Windows.Forms.ComboBox comboBox_Bancos;
 
     }
 }

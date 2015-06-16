@@ -30,6 +30,7 @@
         {
             this.dataGridView_Resultado2 = new System.Windows.Forms.DataGridView();
             this.groupBox_Consultas = new System.Windows.Forms.GroupBox();
+            this.numericUpDown_Anio = new System.Windows.Forms.NumericUpDown();
             this.label_Trimestre = new System.Windows.Forms.Label();
             this.comboBox_TipoListado = new System.Windows.Forms.ComboBox();
             this.label_TipoListado = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.button_HacerConsulta = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.button_Limpiar = new System.Windows.Forms.Button();
-            this.numericUpDown_Anio = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resultado2)).BeginInit();
             this.groupBox_Consultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Anio)).BeginInit();
@@ -71,6 +71,31 @@
             this.groupBox_Consultas.Text = "Consultas";
             this.groupBox_Consultas.Enter += new System.EventHandler(this.groupBox_Consultas_Enter);
             // 
+            // numericUpDown_Anio
+            // 
+            this.numericUpDown_Anio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.numericUpDown_Anio.Location = new System.Drawing.Point(191, 34);
+            this.numericUpDown_Anio.Maximum = new decimal(new int[] {
+            2030,
+            0,
+            0,
+            0});
+            this.numericUpDown_Anio.Minimum = new decimal(new int[] {
+            1980,
+            0,
+            0,
+            0});
+            this.numericUpDown_Anio.Name = "numericUpDown_Anio";
+            this.numericUpDown_Anio.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown_Anio.TabIndex = 11;
+            this.numericUpDown_Anio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericUpDown_Anio.Value = new decimal(new int[] {
+            2015,
+            0,
+            0,
+            0});
+            this.numericUpDown_Anio.ValueChanged += new System.EventHandler(this.numericUpDown_Anio_ValueChanged);
+            // 
             // label_Trimestre
             // 
             this.label_Trimestre.AutoSize = true;
@@ -82,12 +107,13 @@
             // 
             // comboBox_TipoListado
             // 
+            this.comboBox_TipoListado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TipoListado.FormattingEnabled = true;
             this.comboBox_TipoListado.Items.AddRange(new object[] {
-            "Clientes con alguna cuenta inhabilitada por no pagar los costos de transaccion",
+            "Clientes con más cuentas inhabilitadas por no pagar las facturas",
             "Clientes con mayor cantidad de comisiones facturadas en todas sus cuentas",
             "Clientes con mayor cantidad de transacciones realizadas entre cuentras propias",
-            "Paises con mayor cantidad de movimientos",
+            "Países con mayor cantidad de movimientos",
             "Total facturado para los distintos tipos de cuentas"});
             this.comboBox_TipoListado.Location = new System.Drawing.Point(191, 60);
             this.comboBox_TipoListado.Name = "comboBox_TipoListado";
@@ -105,16 +131,18 @@
             // 
             // comboBox_Trimestre
             // 
+            this.comboBox_Trimestre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Trimestre.FormattingEnabled = true;
             this.comboBox_Trimestre.Items.AddRange(new object[] {
-            "1ro",
-            "2do",
-            "3ro",
-            "4to"});
+            "Primero",
+            "Segundo",
+            "Tercero",
+            "Cuarto"});
             this.comboBox_Trimestre.Location = new System.Drawing.Point(373, 33);
             this.comboBox_Trimestre.Name = "comboBox_Trimestre";
             this.comboBox_Trimestre.Size = new System.Drawing.Size(127, 21);
             this.comboBox_Trimestre.TabIndex = 5;
+            this.comboBox_Trimestre.SelectedIndexChanged += new System.EventHandler(this.comboBox_Trimestre_SelectedIndexChanged);
             // 
             // label_Anio
             // 
@@ -133,6 +161,7 @@
             this.button_HacerConsulta.TabIndex = 0;
             this.button_HacerConsulta.Text = "Hacer consulta";
             this.button_HacerConsulta.UseVisualStyleBackColor = true;
+            this.button_HacerConsulta.Click += new System.EventHandler(this.button_HacerConsulta_Click);
             // 
             // button_Cerrar
             // 
@@ -154,30 +183,6 @@
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
-            // 
-            // numericUpDown_Anio
-            // 
-            this.numericUpDown_Anio.Location = new System.Drawing.Point(191, 34);
-            this.numericUpDown_Anio.Maximum = new decimal(new int[] {
-            2015,
-            0,
-            0,
-            0});
-            this.numericUpDown_Anio.Minimum = new decimal(new int[] {
-            1980,
-            0,
-            0,
-            0});
-            this.numericUpDown_Anio.Name = "numericUpDown_Anio";
-            this.numericUpDown_Anio.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown_Anio.TabIndex = 11;
-            this.numericUpDown_Anio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown_Anio.Value = new decimal(new int[] {
-            2015,
-            0,
-            0,
-            0});
-            this.numericUpDown_Anio.ValueChanged += new System.EventHandler(this.numericUpDown_Anio_ValueChanged);
             // 
             // ListadoEstadistico
             // 

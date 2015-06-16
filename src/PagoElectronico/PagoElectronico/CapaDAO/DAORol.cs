@@ -3,7 +3,6 @@ using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 using System.Text;
 
 namespace PagoElectronico.CapaDAO

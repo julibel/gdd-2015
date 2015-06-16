@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.paner_DatosCuenta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
             this.button_SeleccionarTarjeta = new System.Windows.Forms.Button();
             this.label_Tarjeta = new System.Windows.Forms.Label();
             this.textBox_TarjetaCredito = new System.Windows.Forms.TextBox();
-            this.button_SeleccionarCuenta = new System.Windows.Forms.Button();
             this.comboBox_Moneda = new System.Windows.Forms.ComboBox();
-            this.textBox_Pais = new System.Windows.Forms.TextBox();
+            this.textBox_Importe = new System.Windows.Forms.TextBox();
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Importe = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox_Cuenta = new System.Windows.Forms.TextBox();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
@@ -47,16 +46,15 @@
             // 
             // paner_DatosCuenta
             // 
+            this.paner_DatosCuenta.Controls.Add(this.comboBox_Cuentas);
             this.paner_DatosCuenta.Controls.Add(this.button_SeleccionarTarjeta);
             this.paner_DatosCuenta.Controls.Add(this.label_Tarjeta);
             this.paner_DatosCuenta.Controls.Add(this.textBox_TarjetaCredito);
-            this.paner_DatosCuenta.Controls.Add(this.button_SeleccionarCuenta);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Moneda);
-            this.paner_DatosCuenta.Controls.Add(this.textBox_Pais);
+            this.paner_DatosCuenta.Controls.Add(this.textBox_Importe);
             this.paner_DatosCuenta.Controls.Add(this.label_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Importe);
             this.paner_DatosCuenta.Controls.Add(this.label_NumeroCuenta);
-            this.paner_DatosCuenta.Controls.Add(this.textBox_Cuenta);
             this.paner_DatosCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_DatosCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_DatosCuenta.Location = new System.Drawing.Point(12, 12);
@@ -66,6 +64,15 @@
             this.paner_DatosCuenta.TabStop = false;
             this.paner_DatosCuenta.Text = "Deposito de dinero";
             // 
+            // comboBox_Cuentas
+            // 
+            this.comboBox_Cuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Cuentas.FormattingEnabled = true;
+            this.comboBox_Cuentas.Location = new System.Drawing.Point(297, 156);
+            this.comboBox_Cuentas.Name = "comboBox_Cuentas";
+            this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Cuentas.TabIndex = 27;
+            // 
             // button_SeleccionarTarjeta
             // 
             this.button_SeleccionarTarjeta.Location = new System.Drawing.Point(535, 234);
@@ -74,6 +81,7 @@
             this.button_SeleccionarTarjeta.TabIndex = 26;
             this.button_SeleccionarTarjeta.Text = "Seleccionar";
             this.button_SeleccionarTarjeta.UseVisualStyleBackColor = true;
+            this.button_SeleccionarTarjeta.Click += new System.EventHandler(this.button_SeleccionarTarjeta_Click);
             // 
             // label_Tarjeta
             // 
@@ -88,38 +96,32 @@
             // 
             // textBox_TarjetaCredito
             // 
+            this.textBox_TarjetaCredito.Enabled = false;
             this.textBox_TarjetaCredito.Location = new System.Drawing.Point(297, 236);
             this.textBox_TarjetaCredito.MaxLength = 255;
             this.textBox_TarjetaCredito.Name = "textBox_TarjetaCredito";
             this.textBox_TarjetaCredito.Size = new System.Drawing.Size(232, 20);
             this.textBox_TarjetaCredito.TabIndex = 24;
-            // 
-            // button_SeleccionarCuenta
-            // 
-            this.button_SeleccionarCuenta.Location = new System.Drawing.Point(535, 154);
-            this.button_SeleccionarCuenta.Name = "button_SeleccionarCuenta";
-            this.button_SeleccionarCuenta.Size = new System.Drawing.Size(75, 23);
-            this.button_SeleccionarCuenta.TabIndex = 23;
-            this.button_SeleccionarCuenta.Text = "Seleccionar";
-            this.button_SeleccionarCuenta.UseVisualStyleBackColor = true;
+            this.textBox_TarjetaCredito.TextChanged += new System.EventHandler(this.textBox_TarjetaCredito_TextChanged);
             // 
             // comboBox_Moneda
             // 
+            this.comboBox_Moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Moneda.FormattingEnabled = true;
-            this.comboBox_Moneda.Items.AddRange(new object[] {
-            "Dolares"});
             this.comboBox_Moneda.Location = new System.Drawing.Point(297, 209);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
             this.comboBox_Moneda.TabIndex = 20;
             // 
-            // textBox_Pais
+            // textBox_Importe
             // 
-            this.textBox_Pais.Location = new System.Drawing.Point(297, 182);
-            this.textBox_Pais.MaxLength = 50;
-            this.textBox_Pais.Name = "textBox_Pais";
-            this.textBox_Pais.Size = new System.Drawing.Size(121, 20);
-            this.textBox_Pais.TabIndex = 19;
+            this.textBox_Importe.Location = new System.Drawing.Point(297, 182);
+            this.textBox_Importe.MaxLength = 50;
+            this.textBox_Importe.Name = "textBox_Importe";
+            this.textBox_Importe.Size = new System.Drawing.Size(121, 20);
+            this.textBox_Importe.TabIndex = 19;
+            this.textBox_Importe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_Importe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Importe_KeyPress);
             // 
             // label_Moneda
             // 
@@ -154,14 +156,6 @@
             this.label_NumeroCuenta.TabIndex = 1;
             this.label_NumeroCuenta.Text = "Cuenta";
             // 
-            // textBox_Cuenta
-            // 
-            this.textBox_Cuenta.Location = new System.Drawing.Point(297, 156);
-            this.textBox_Cuenta.MaxLength = 255;
-            this.textBox_Cuenta.Name = "textBox_Cuenta";
-            this.textBox_Cuenta.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Cuenta.TabIndex = 0;
-            // 
             // button_Limpiar
             // 
             this.button_Limpiar.Location = new System.Drawing.Point(666, 428);
@@ -170,6 +164,7 @@
             this.button_Limpiar.TabIndex = 35;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Guardar
             // 
@@ -179,6 +174,7 @@
             this.button_Guardar.TabIndex = 34;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
+            this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
             // 
             // button_Cerrar
             // 
@@ -207,6 +203,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DepositoNuevo";
+            this.Load += new System.EventHandler(this.DepositoNuevo_Load);
             this.paner_DatosCuenta.ResumeLayout(false);
             this.paner_DatosCuenta.PerformLayout();
             this.ResumeLayout(false);
@@ -217,17 +214,16 @@
 
         private System.Windows.Forms.GroupBox paner_DatosCuenta;
         private System.Windows.Forms.ComboBox comboBox_Moneda;
-        private System.Windows.Forms.TextBox textBox_Pais;
+        private System.Windows.Forms.TextBox textBox_Importe;
         private System.Windows.Forms.Label label_Moneda;
         private System.Windows.Forms.Label label_Importe;
         private System.Windows.Forms.Label label_NumeroCuenta;
-        private System.Windows.Forms.TextBox textBox_Cuenta;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Guardar;
         private System.Windows.Forms.Button button_Cerrar;
-        private System.Windows.Forms.Button button_SeleccionarCuenta;
         private System.Windows.Forms.Button button_SeleccionarTarjeta;
         private System.Windows.Forms.Label label_Tarjeta;
         private System.Windows.Forms.TextBox textBox_TarjetaCredito;
+        private System.Windows.Forms.ComboBox comboBox_Cuentas;
     }
 }
