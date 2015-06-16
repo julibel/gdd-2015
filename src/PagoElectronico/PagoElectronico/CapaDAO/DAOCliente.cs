@@ -9,9 +9,9 @@ namespace PagoElectronico.CapaDAO
 {
     public class DAOCliente : SqlConnector
     {
-        public static void AgregarCliente(Persona cliente,Usuario usuario)
+        public static int AgregarCliente(Persona cliente,Usuario usuario)
         {
-            executeProcedure("AGREGAR_CLIENTE", 
+            int id = executeProcedureWithReturnValue("AGREGAR_CLIENTE", 
                 cliente.Nombre, 
                 cliente.Apellido, 
                 cliente.Documento, 
@@ -30,9 +30,11 @@ namespace PagoElectronico.CapaDAO
                 usuario.Pregunta,
                 usuario.Respuesta
                 );
+            
+            return id;
+            
         }
-
-
+        
         public static bool existeDni(string dni, int tipo)
         {
             var dt = retrieveDataTable("GET_CLIENTE_DNI", dni, tipo);

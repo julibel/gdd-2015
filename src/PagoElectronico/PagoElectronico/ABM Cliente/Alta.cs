@@ -72,19 +72,37 @@ namespace PagoElectronico.ABM_Cliente
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
+           
+
             var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
             if (resultado == DialogResult.Yes)
             {
                 if (!Validaciones()) return;
-                try
-                {
-                   DAOCliente.AgregarCliente(GenerarCliente(),GenerarUsuario());
+                //try
+                //{
+                   int id = DAOCliente.AgregarCliente(GenerarCliente(),GenerarUsuario());
+
+             
+
+                   //lista tarjeta
+                   var lista_tarjetas = new List<Tarjeta>();
+
+                   for (int i = 0; i < dataGridView_Tarjetas.Rows.Count; i++)
+                   {
+                       lista_tarjetas.Add(GenerarTarjeta(dataGridView_Tarjetas.Rows[i]));
+                   }
+
+
+                   foreach (var tarjeta in lista_tarjetas)
+                   {
+                       DAOTarjeta.AgregarTarjeta(tarjeta, id);
+                   }
                    Mensaje_OK("Los datos han sido almacenados con exito", "");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR.-" + ex.Message);
-                }       
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("ERROR.-" + ex.Message);
+                //}       
             }
         
         }
@@ -129,7 +147,7 @@ namespace PagoElectronico.ABM_Cliente
         private Persona GenerarCliente()
         {
             return new Persona(
-                    0,//id??
+                    0,
                     textBox_Nombre.Text,
                     textBox_Apellido.Text,
                     textBox_Documento.Text,
@@ -145,6 +163,15 @@ namespace PagoElectronico.ABM_Cliente
                     );
         }
 
+        private Tarjeta GenerarTarjeta(DataGridViewRow row)
+        {
+            return new Tarjeta(
+                Convert.ToInt32(row.Cells[0].Value),
+                Convert.ToInt32(row.Cells[1].Value),
+                Convert.ToString(row.Cells[3].Value)
+                );
+        }
+
         private Usuario GenerarUsuario()
         {
             var listaDeRoles = new List<int>();
@@ -154,7 +181,7 @@ namespace PagoElectronico.ABM_Cliente
                 Encriptacion.Encriptar(textBox_Password.Text),
                 textBox_PreguntaSecreta.Text,
                 Encriptacion.Encriptar(textBox_RespuestaSecreta.Text),
-                listaDeRoles//listaDeRoles.Add(DAOCliente.ObtenerRoles())
+                listaDeRoles
                 );
 
         }
@@ -177,6 +204,71 @@ namespace PagoElectronico.ABM_Cliente
         private void comboBox_Pais_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private Error ValidarTarjeta()
+        {
+            return (ValidarDatosTarjeta()) ? new Error("Complete todos los campos de la tarjeta") : null;
+        }
+        private Error ValidarLong()
+        {
+            return (ValidarLongitud()) ? new Error("Debe ingresar un numero de tarjeta de 16 digitos") : null;
+        }
+
+
+        private void button_Agregar_Click(object sender, EventArgs e)
+        {
+            var listaDeErrores2 = new List<Error>();
+            if (ValidarTarjeta() != null) listaDeErrores2.Add(ValidarTarjeta());
+            if (ValidarLong() != null) listaDeErrores2.Add(ValidarLong());
+
+            if (listaDeErrores2.Count < 1)
+            {
+                string columna1 = maskedTextBox_numeroTarjeta.Text;
+                string columna2 = maskedTextBox_codigo.Text;
+                string columna3 = Convert.ToString(comboBox_Emisor.Text);
+              
+                string[] row = { columna1, columna2, columna3 };
+                dataGridView_Tarjetas.Rows.Add(row);
+            }
+            else
+            {
+                var mensaje = listaDeErrores2.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
+                MessageBox.Show(mensaje);
+            }
+
+
+        }
+
+        private bool ValidarDatosTarjeta()
+        {
+            bool vacio = false;
+
+            foreach (var control in this.groupBox_AsociarTarjetas.Controls.OfType<MaskedTextBox>())
+            {
+                if (control.Text == String.Empty) vacio = true;
+            }
+
+            if (comboBox_Emisor.Text == String.Empty)
+            {
+                vacio = true;
+            }
+
+            return vacio;
+        }
+        private bool ValidarLongitud()
+        {
+            bool vacio = false;
+            if (maskedTextBox_numeroTarjeta.Text.Length < 16)
+            {
+                vacio = true;
+            }
+            return vacio;
+        }
+
+        private void dataGridView_Tarjetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
         }
     }
 }

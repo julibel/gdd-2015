@@ -41,6 +41,8 @@
             this.label_Username = new System.Windows.Forms.Label();
             this.textBox_Username = new System.Windows.Forms.TextBox();
             this.groupBox_Alta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
+            this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
             this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.textBox_Calle = new System.Windows.Forms.TextBox();
             this.label_Domicilio = new System.Windows.Forms.Label();
@@ -66,8 +68,16 @@
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
-            this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
+            this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Emisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.groupBox_Usuario.SuspendLayout();
             this.groupBox_Alta.SuspendLayout();
             this.groupBox_AsociarTarjetas.SuspendLayout();
@@ -114,16 +124,16 @@
             this.groupBox_Usuario.Controls.Add(this.label_Password);
             this.groupBox_Usuario.Controls.Add(this.label_Username);
             this.groupBox_Usuario.Controls.Add(this.textBox_Username);
-            this.groupBox_Usuario.Location = new System.Drawing.Point(422, 12);
+            this.groupBox_Usuario.Location = new System.Drawing.Point(382, 12);
             this.groupBox_Usuario.Name = "groupBox_Usuario";
-            this.groupBox_Usuario.Size = new System.Drawing.Size(395, 204);
+            this.groupBox_Usuario.Size = new System.Drawing.Size(435, 134);
             this.groupBox_Usuario.TabIndex = 22;
             this.groupBox_Usuario.TabStop = false;
             this.groupBox_Usuario.Text = "Datos de Usuario";
             // 
             // textBox_PreguntaSecreta
             // 
-            this.textBox_PreguntaSecreta.Location = new System.Drawing.Point(132, 97);
+            this.textBox_PreguntaSecreta.Location = new System.Drawing.Point(152, 70);
             this.textBox_PreguntaSecreta.MaxLength = 255;
             this.textBox_PreguntaSecreta.Name = "textBox_PreguntaSecreta";
             this.textBox_PreguntaSecreta.Size = new System.Drawing.Size(232, 20);
@@ -134,7 +144,7 @@
             this.label_PreguntaSecreta.AutoSize = true;
             this.label_PreguntaSecreta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label_PreguntaSecreta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_PreguntaSecreta.Location = new System.Drawing.Point(38, 100);
+            this.label_PreguntaSecreta.Location = new System.Drawing.Point(58, 73);
             this.label_PreguntaSecreta.Name = "label_PreguntaSecreta";
             this.label_PreguntaSecreta.Size = new System.Drawing.Size(88, 13);
             this.label_PreguntaSecreta.TabIndex = 19;
@@ -142,7 +152,7 @@
             // 
             // textBox_RespuestaSecreta
             // 
-            this.textBox_RespuestaSecreta.Location = new System.Drawing.Point(132, 123);
+            this.textBox_RespuestaSecreta.Location = new System.Drawing.Point(152, 96);
             this.textBox_RespuestaSecreta.MaxLength = 255;
             this.textBox_RespuestaSecreta.Name = "textBox_RespuestaSecreta";
             this.textBox_RespuestaSecreta.Size = new System.Drawing.Size(232, 20);
@@ -154,7 +164,7 @@
             this.label_RespuestaSecreta.AutoSize = true;
             this.label_RespuestaSecreta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label_RespuestaSecreta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_RespuestaSecreta.Location = new System.Drawing.Point(30, 126);
+            this.label_RespuestaSecreta.Location = new System.Drawing.Point(50, 99);
             this.label_RespuestaSecreta.Name = "label_RespuestaSecreta";
             this.label_RespuestaSecreta.Size = new System.Drawing.Size(96, 13);
             this.label_RespuestaSecreta.TabIndex = 17;
@@ -162,7 +172,7 @@
             // 
             // textBox_Password
             // 
-            this.textBox_Password.Location = new System.Drawing.Point(132, 71);
+            this.textBox_Password.Location = new System.Drawing.Point(152, 44);
             this.textBox_Password.MaxLength = 255;
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.Size = new System.Drawing.Size(232, 20);
@@ -174,7 +184,7 @@
             this.label_Password.AutoSize = true;
             this.label_Password.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label_Password.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Password.Location = new System.Drawing.Point(73, 74);
+            this.label_Password.Location = new System.Drawing.Point(93, 47);
             this.label_Password.Name = "label_Password";
             this.label_Password.Size = new System.Drawing.Size(53, 13);
             this.label_Password.TabIndex = 13;
@@ -185,7 +195,7 @@
             this.label_Username.AutoSize = true;
             this.label_Username.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label_Username.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Username.Location = new System.Drawing.Point(71, 48);
+            this.label_Username.Location = new System.Drawing.Point(91, 21);
             this.label_Username.Name = "label_Username";
             this.label_Username.Size = new System.Drawing.Size(55, 13);
             this.label_Username.TabIndex = 12;
@@ -193,7 +203,7 @@
             // 
             // textBox_Username
             // 
-            this.textBox_Username.Location = new System.Drawing.Point(132, 45);
+            this.textBox_Username.Location = new System.Drawing.Point(152, 18);
             this.textBox_Username.MaxLength = 255;
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(232, 20);
@@ -229,459 +239,10 @@
             this.groupBox_Alta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.groupBox_Alta.Location = new System.Drawing.Point(12, 12);
             this.groupBox_Alta.Name = "groupBox_Alta";
-            this.groupBox_Alta.Size = new System.Drawing.Size(395, 410);
+            this.groupBox_Alta.Size = new System.Drawing.Size(364, 410);
             this.groupBox_Alta.TabIndex = 26;
             this.groupBox_Alta.TabStop = false;
             this.groupBox_Alta.Text = "Datos del Cliente";
-            // 
-            // comboBox_Pais
-            // 
-            this.comboBox_Pais.FormattingEnabled = true;
-            this.comboBox_Pais.Items.AddRange(new object[] {
-            "Afganistán",
-            "Albania",
-            "Alemania",
-            "Andorra",
-            "Angola",
-            "Antigua y Barbuda",
-            "Arabia Saudita",
-            "Argelia",
-            "Argentina",
-            "Armenia",
-            "Australia",
-            "Austria",
-            "Azerbaiyán",
-            "Bahamas",
-            "Bangladés",
-            "Barbados",
-            "Baréin",
-            "Bélgica",
-            "Belice",
-            "Benín",
-            "Bielorrusia",
-            "Birmania",
-            "Bolivia",
-            "Bosnia y Herzegovina",
-            "Botsuana",
-            "Brasil",
-            "Brunéi",
-            "Bulgaria",
-            "Burkina Faso",
-            "Burundi",
-            "Bután",
-            "Cabo Verde",
-            "Camboya",
-            "Camerún",
-            "Canadá",
-            "Catar",
-            "Chad",
-            "Chile",
-            "China",
-            "Chipre",
-            "Ciudad del Vaticano",
-            "Colombia",
-            "Comoras",
-            "Corea del Norte",
-            "Corea del Sur",
-            "Costa de Marfil",
-            "Costa Rica",
-            "Croacia",
-            "Cuba",
-            "Dinamarca",
-            "Dominica",
-            "Ecuador",
-            "Egipto",
-            "El Salvador",
-            "Emiratos Árabes Unidos",
-            "Eritrea",
-            "Eslovaquia",
-            "Eslovenia",
-            "España",
-            "Estados Unidos",
-            "Estonia",
-            "Etiopía",
-            "Filipinas",
-            "Finlandia",
-            "Fiyi",
-            "Francia",
-            "Gabón",
-            "Gambia",
-            "Georgia",
-            "Ghana",
-            "Granada",
-            "Grecia",
-            "Guatemala",
-            "Guyana",
-            "Guinea",
-            "Guinea ecuatorial",
-            "Guinea-Bisáu",
-            "Haití",
-            "Honduras",
-            "Hungría",
-            "India",
-            "Indonesia",
-            "Irak",
-            "Irán",
-            "Irlanda",
-            "Islandia",
-            "Islas Marshall",
-            "Islas Salomón",
-            "Israel",
-            "Italia",
-            "Jamaica",
-            "Japón",
-            "Jordania",
-            "Kazajistán",
-            "Kenia",
-            "Kirguistán",
-            "Kiribati",
-            "Kuwait",
-            "Laos",
-            "Lesoto",
-            "Letonia",
-            "Líbano",
-            "Liberia",
-            "Libia",
-            "Liechtenstein",
-            "Lituania",
-            "Luxemburgo",
-            "Madagascar",
-            "Malasia",
-            "Malaui",
-            "Maldivas",
-            "Malí",
-            "Malta",
-            "Marruecos",
-            "Mauricio",
-            "Mauritania",
-            "México",
-            "Micronesia",
-            "Moldavia",
-            "Mónaco",
-            "Mongolia",
-            "Montenegro",
-            "Mozambique",
-            "Namibia",
-            "Nauru",
-            "Nepal",
-            "Nicaragua",
-            "Níger",
-            "Nigeria",
-            "Noruega",
-            "Nueva Zelanda",
-            "Omán",
-            "Países Bajos",
-            "Pakistán",
-            "Palaos",
-            "Panamá",
-            "Papúa Nueva Guinea",
-            "Paraguay",
-            "Perú",
-            "Polonia",
-            "Portugal",
-            "Reino Unido",
-            "República Centroafricana",
-            "República Checa",
-            "República de Macedonia",
-            "República del Congo",
-            "República Democrática del Congo",
-            "República Dominicana",
-            "República Sudafricana",
-            "Ruanda",
-            "Rumanía",
-            "Rusia",
-            "Samoa",
-            "San Cristóbal y Nieves",
-            "San Marino",
-            "San Vicente y las Granadinas",
-            "Santa Lucía",
-            "Santo Tomé y Príncipe",
-            "Senegal",
-            "Serbia",
-            "Seychelles",
-            "Sierra Leona",
-            "Singapur",
-            "Siria",
-            "Somalia",
-            "Sri Lanka",
-            "Suazilandia",
-            "Sudán",
-            "Sudán del Sur",
-            "Suecia",
-            "Suiza",
-            "Surinam",
-            "Tailandia",
-            "Tanzania",
-            "Tayikistán",
-            "Timor Oriental",
-            "Togo",
-            "Tonga",
-            "Trinidad y Tobago",
-            "Túnez",
-            "Turkmenistán",
-            "Turquía",
-            "Tuvalu",
-            "Ucrania",
-            "Uganda",
-            "Uruguay",
-            "Uzbekistán",
-            "Vanuatu",
-            "Venezuela",
-            "Vietnam",
-            "Yemen",
-            "Yibuti",
-            "Zambia",
-            "Zimbabue"});
-            this.comboBox_Pais.Location = new System.Drawing.Point(136, 271);
-            this.comboBox_Pais.Name = "comboBox_Pais";
-            this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Pais.TabIndex = 32;
-            this.comboBox_Pais.SelectedIndexChanged += new System.EventHandler(this.comboBox_Pais_SelectedIndexChanged);
-            // 
-            // textBox_Calle
-            // 
-            this.textBox_Calle.Location = new System.Drawing.Point(136, 194);
-            this.textBox_Calle.MaxLength = 255;
-            this.textBox_Calle.Name = "textBox_Calle";
-            this.textBox_Calle.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Calle.TabIndex = 31;
-            // 
-            // label_Domicilio
-            // 
-            this.label_Domicilio.AutoSize = true;
-            this.label_Domicilio.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Domicilio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Domicilio.Location = new System.Drawing.Point(100, 197);
-            this.label_Domicilio.Name = "label_Domicilio";
-            this.label_Domicilio.Size = new System.Drawing.Size(30, 13);
-            this.label_Domicilio.TabIndex = 30;
-            this.label_Domicilio.Text = "Calle";
-            // 
-            // label_Nacionalidad
-            // 
-            this.label_Nacionalidad.AutoSize = true;
-            this.label_Nacionalidad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Nacionalidad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Nacionalidad.Location = new System.Drawing.Point(61, 301);
-            this.label_Nacionalidad.Name = "label_Nacionalidad";
-            this.label_Nacionalidad.Size = new System.Drawing.Size(69, 13);
-            this.label_Nacionalidad.TabIndex = 28;
-            this.label_Nacionalidad.Text = "Nacionalidad";
-            // 
-            // textBox_Localidad
-            // 
-            this.textBox_Localidad.Location = new System.Drawing.Point(136, 246);
-            this.textBox_Localidad.MaxLength = 50;
-            this.textBox_Localidad.Name = "textBox_Localidad";
-            this.textBox_Localidad.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Localidad.TabIndex = 27;
-            // 
-            // label_Localidad
-            // 
-            this.label_Localidad.AutoSize = true;
-            this.label_Localidad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Localidad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Localidad.Location = new System.Drawing.Point(77, 249);
-            this.label_Localidad.Name = "label_Localidad";
-            this.label_Localidad.Size = new System.Drawing.Size(53, 13);
-            this.label_Localidad.TabIndex = 26;
-            this.label_Localidad.Text = "Localidad";
-            // 
-            // textBox_Depto
-            // 
-            this.textBox_Depto.Location = new System.Drawing.Point(274, 220);
-            this.textBox_Depto.MaxLength = 50;
-            this.textBox_Depto.Name = "textBox_Depto";
-            this.textBox_Depto.Size = new System.Drawing.Size(94, 20);
-            this.textBox_Depto.TabIndex = 25;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(232, 223);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Depto";
-            // 
-            // textBox_Piso
-            // 
-            this.textBox_Piso.Location = new System.Drawing.Point(136, 220);
-            this.textBox_Piso.MaxLength = 50;
-            this.textBox_Piso.Name = "textBox_Piso";
-            this.textBox_Piso.Size = new System.Drawing.Size(90, 20);
-            this.textBox_Piso.TabIndex = 23;
-            // 
-            // label_Piso
-            // 
-            this.label_Piso.AutoSize = true;
-            this.label_Piso.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Piso.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Piso.Location = new System.Drawing.Point(103, 223);
-            this.label_Piso.Name = "label_Piso";
-            this.label_Piso.Size = new System.Drawing.Size(27, 13);
-            this.label_Piso.TabIndex = 22;
-            this.label_Piso.Text = "Piso";
-            // 
-            // dateTimePicker_FechaNacimiento
-            // 
-            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(136, 324);
-            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
-            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(232, 20);
-            this.dateTimePicker_FechaNacimiento.TabIndex = 21;
-            // 
-            // textBox_Mail
-            // 
-            this.textBox_Mail.Location = new System.Drawing.Point(136, 168);
-            this.textBox_Mail.MaxLength = 255;
-            this.textBox_Mail.Name = "textBox_Mail";
-            this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Mail.TabIndex = 20;
-            // 
-            // textBox_Documento
-            // 
-            this.textBox_Documento.Location = new System.Drawing.Point(136, 142);
-            this.textBox_Documento.MaxLength = 18;
-            this.textBox_Documento.Name = "textBox_Documento";
-            this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
-            this.textBox_Documento.TabIndex = 13;
-            // 
-            // textBox_Apellido
-            // 
-            this.textBox_Apellido.Location = new System.Drawing.Point(136, 93);
-            this.textBox_Apellido.MaxLength = 255;
-            this.textBox_Apellido.Name = "textBox_Apellido";
-            this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Apellido.TabIndex = 10;
-            // 
-            // label_FechaNacimiento
-            // 
-            this.label_FechaNacimiento.AutoSize = true;
-            this.label_FechaNacimiento.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_FechaNacimiento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_FechaNacimiento.Location = new System.Drawing.Point(24, 326);
-            this.label_FechaNacimiento.Name = "label_FechaNacimiento";
-            this.label_FechaNacimiento.Size = new System.Drawing.Size(106, 13);
-            this.label_FechaNacimiento.TabIndex = 9;
-            this.label_FechaNacimiento.Text = "Fecha de nacimiento";
-            // 
-            // label_Pais
-            // 
-            this.label_Pais.AutoSize = true;
-            this.label_Pais.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Pais.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Pais.Location = new System.Drawing.Point(37, 275);
-            this.label_Pais.Name = "label_Pais";
-            this.label_Pais.Size = new System.Drawing.Size(93, 13);
-            this.label_Pais.TabIndex = 8;
-            this.label_Pais.Text = "Pais de residencia";
-            // 
-            // label_Mail
-            // 
-            this.label_Mail.AutoSize = true;
-            this.label_Mail.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Mail.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Mail.Location = new System.Drawing.Point(97, 171);
-            this.label_Mail.Name = "label_Mail";
-            this.label_Mail.Size = new System.Drawing.Size(33, 13);
-            this.label_Mail.TabIndex = 5;
-            this.label_Mail.Text = "EMail";
-            // 
-            // label_TipoDocumento
-            // 
-            this.label_TipoDocumento.AutoSize = true;
-            this.label_TipoDocumento.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_TipoDocumento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_TipoDocumento.Location = new System.Drawing.Point(33, 121);
-            this.label_TipoDocumento.Name = "label_TipoDocumento";
-            this.label_TipoDocumento.Size = new System.Drawing.Size(99, 13);
-            this.label_TipoDocumento.TabIndex = 4;
-            this.label_TipoDocumento.Text = "Tipo de documento";
-            // 
-            // label_Documento
-            // 
-            this.label_Documento.AutoSize = true;
-            this.label_Documento.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Documento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Documento.Location = new System.Drawing.Point(70, 145);
-            this.label_Documento.Name = "label_Documento";
-            this.label_Documento.Size = new System.Drawing.Size(62, 13);
-            this.label_Documento.TabIndex = 3;
-            this.label_Documento.Text = "Documento";
-            // 
-            // label_Apellido
-            // 
-            this.label_Apellido.AutoSize = true;
-            this.label_Apellido.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Apellido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Apellido.Location = new System.Drawing.Point(88, 96);
-            this.label_Apellido.Name = "label_Apellido";
-            this.label_Apellido.Size = new System.Drawing.Size(44, 13);
-            this.label_Apellido.TabIndex = 2;
-            this.label_Apellido.Text = "Apellido";
-            // 
-            // label_Nombre
-            // 
-            this.label_Nombre.AutoSize = true;
-            this.label_Nombre.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_Nombre.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_Nombre.Location = new System.Drawing.Point(88, 70);
-            this.label_Nombre.Name = "label_Nombre";
-            this.label_Nombre.Size = new System.Drawing.Size(44, 13);
-            this.label_Nombre.TabIndex = 1;
-            this.label_Nombre.Text = "Nombre";
-            // 
-            // textBox_Nombre
-            // 
-            this.textBox_Nombre.Location = new System.Drawing.Point(136, 67);
-            this.textBox_Nombre.MaxLength = 255;
-            this.textBox_Nombre.Name = "textBox_Nombre";
-            this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Nombre.TabIndex = 0;
-            // 
-            // groupBox_AsociarTarjetas
-            // 
-            this.groupBox_AsociarTarjetas.Controls.Add(this.button_Agregar);
-            this.groupBox_AsociarTarjetas.Controls.Add(this.dataGridView_Tarjetas);
-            this.groupBox_AsociarTarjetas.Location = new System.Drawing.Point(422, 222);
-            this.groupBox_AsociarTarjetas.Name = "groupBox_AsociarTarjetas";
-            this.groupBox_AsociarTarjetas.Size = new System.Drawing.Size(395, 198);
-            this.groupBox_AsociarTarjetas.TabIndex = 23;
-            this.groupBox_AsociarTarjetas.TabStop = false;
-            this.groupBox_AsociarTarjetas.Text = "Asociar tarjetas de credito";
-            // 
-            // button_Agregar
-            // 
-            this.button_Agregar.Location = new System.Drawing.Point(314, 146);
-            this.button_Agregar.Name = "button_Agregar";
-            this.button_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.button_Agregar.TabIndex = 27;
-            this.button_Agregar.Text = "Agregar";
-            this.button_Agregar.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView_Tarjetas
-            // 
-            this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 30);
-            this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
-            this.dataGridView_Tarjetas.Size = new System.Drawing.Size(383, 110);
-            this.dataGridView_Tarjetas.TabIndex = 0;
-            // 
-            // comboBox_Tipo_doc
-            // 
-            this.comboBox_Tipo_doc.FormattingEnabled = true;
-            this.comboBox_Tipo_doc.Items.AddRange(new object[] {
-            "DNI",
-            "CI",
-            "LC",
-            "LE",
-            "PAS"});
-            this.comboBox_Tipo_doc.Location = new System.Drawing.Point(136, 117);
-            this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
-            this.comboBox_Tipo_doc.Size = new System.Drawing.Size(129, 21);
-            this.comboBox_Tipo_doc.TabIndex = 33;
             // 
             // comboBox_Nacionalidad
             // 
@@ -881,10 +442,558 @@
             "Yibuti",
             "Zambia",
             "Zimbabue"});
-            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(136, 298);
+            this.comboBox_Nacionalidad.Location = new System.Drawing.Point(122, 298);
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Nacionalidad.TabIndex = 34;
+            // 
+            // comboBox_Tipo_doc
+            // 
+            this.comboBox_Tipo_doc.FormattingEnabled = true;
+            this.comboBox_Tipo_doc.Items.AddRange(new object[] {
+            "DNI",
+            "CI",
+            "LC",
+            "LE",
+            "PAS"});
+            this.comboBox_Tipo_doc.Location = new System.Drawing.Point(122, 117);
+            this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
+            this.comboBox_Tipo_doc.Size = new System.Drawing.Size(129, 21);
+            this.comboBox_Tipo_doc.TabIndex = 33;
+            // 
+            // comboBox_Pais
+            // 
+            this.comboBox_Pais.FormattingEnabled = true;
+            this.comboBox_Pais.Items.AddRange(new object[] {
+            "Afganistán",
+            "Albania",
+            "Alemania",
+            "Andorra",
+            "Angola",
+            "Antigua y Barbuda",
+            "Arabia Saudita",
+            "Argelia",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaiyán",
+            "Bahamas",
+            "Bangladés",
+            "Barbados",
+            "Baréin",
+            "Bélgica",
+            "Belice",
+            "Benín",
+            "Bielorrusia",
+            "Birmania",
+            "Bolivia",
+            "Bosnia y Herzegovina",
+            "Botsuana",
+            "Brasil",
+            "Brunéi",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Bután",
+            "Cabo Verde",
+            "Camboya",
+            "Camerún",
+            "Canadá",
+            "Catar",
+            "Chad",
+            "Chile",
+            "China",
+            "Chipre",
+            "Ciudad del Vaticano",
+            "Colombia",
+            "Comoras",
+            "Corea del Norte",
+            "Corea del Sur",
+            "Costa de Marfil",
+            "Costa Rica",
+            "Croacia",
+            "Cuba",
+            "Dinamarca",
+            "Dominica",
+            "Ecuador",
+            "Egipto",
+            "El Salvador",
+            "Emiratos Árabes Unidos",
+            "Eritrea",
+            "Eslovaquia",
+            "Eslovenia",
+            "España",
+            "Estados Unidos",
+            "Estonia",
+            "Etiopía",
+            "Filipinas",
+            "Finlandia",
+            "Fiyi",
+            "Francia",
+            "Gabón",
+            "Gambia",
+            "Georgia",
+            "Ghana",
+            "Granada",
+            "Grecia",
+            "Guatemala",
+            "Guyana",
+            "Guinea",
+            "Guinea ecuatorial",
+            "Guinea-Bisáu",
+            "Haití",
+            "Honduras",
+            "Hungría",
+            "India",
+            "Indonesia",
+            "Irak",
+            "Irán",
+            "Irlanda",
+            "Islandia",
+            "Islas Marshall",
+            "Islas Salomón",
+            "Israel",
+            "Italia",
+            "Jamaica",
+            "Japón",
+            "Jordania",
+            "Kazajistán",
+            "Kenia",
+            "Kirguistán",
+            "Kiribati",
+            "Kuwait",
+            "Laos",
+            "Lesoto",
+            "Letonia",
+            "Líbano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Luxemburgo",
+            "Madagascar",
+            "Malasia",
+            "Malaui",
+            "Maldivas",
+            "Malí",
+            "Malta",
+            "Marruecos",
+            "Mauricio",
+            "Mauritania",
+            "México",
+            "Micronesia",
+            "Moldavia",
+            "Mónaco",
+            "Mongolia",
+            "Montenegro",
+            "Mozambique",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Nicaragua",
+            "Níger",
+            "Nigeria",
+            "Noruega",
+            "Nueva Zelanda",
+            "Omán",
+            "Países Bajos",
+            "Pakistán",
+            "Palaos",
+            "Panamá",
+            "Papúa Nueva Guinea",
+            "Paraguay",
+            "Perú",
+            "Polonia",
+            "Portugal",
+            "Reino Unido",
+            "República Centroafricana",
+            "República Checa",
+            "República de Macedonia",
+            "República del Congo",
+            "República Democrática del Congo",
+            "República Dominicana",
+            "República Sudafricana",
+            "Ruanda",
+            "Rumanía",
+            "Rusia",
+            "Samoa",
+            "San Cristóbal y Nieves",
+            "San Marino",
+            "San Vicente y las Granadinas",
+            "Santa Lucía",
+            "Santo Tomé y Príncipe",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leona",
+            "Singapur",
+            "Siria",
+            "Somalia",
+            "Sri Lanka",
+            "Suazilandia",
+            "Sudán",
+            "Sudán del Sur",
+            "Suecia",
+            "Suiza",
+            "Surinam",
+            "Tailandia",
+            "Tanzania",
+            "Tayikistán",
+            "Timor Oriental",
+            "Togo",
+            "Tonga",
+            "Trinidad y Tobago",
+            "Túnez",
+            "Turkmenistán",
+            "Turquía",
+            "Tuvalu",
+            "Ucrania",
+            "Uganda",
+            "Uruguay",
+            "Uzbekistán",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Yibuti",
+            "Zambia",
+            "Zimbabue"});
+            this.comboBox_Pais.Location = new System.Drawing.Point(122, 271);
+            this.comboBox_Pais.Name = "comboBox_Pais";
+            this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Pais.TabIndex = 32;
+            this.comboBox_Pais.SelectedIndexChanged += new System.EventHandler(this.comboBox_Pais_SelectedIndexChanged);
+            // 
+            // textBox_Calle
+            // 
+            this.textBox_Calle.Location = new System.Drawing.Point(122, 194);
+            this.textBox_Calle.MaxLength = 255;
+            this.textBox_Calle.Name = "textBox_Calle";
+            this.textBox_Calle.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Calle.TabIndex = 31;
+            // 
+            // label_Domicilio
+            // 
+            this.label_Domicilio.AutoSize = true;
+            this.label_Domicilio.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Domicilio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Domicilio.Location = new System.Drawing.Point(86, 197);
+            this.label_Domicilio.Name = "label_Domicilio";
+            this.label_Domicilio.Size = new System.Drawing.Size(30, 13);
+            this.label_Domicilio.TabIndex = 30;
+            this.label_Domicilio.Text = "Calle";
+            // 
+            // label_Nacionalidad
+            // 
+            this.label_Nacionalidad.AutoSize = true;
+            this.label_Nacionalidad.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Nacionalidad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Nacionalidad.Location = new System.Drawing.Point(47, 301);
+            this.label_Nacionalidad.Name = "label_Nacionalidad";
+            this.label_Nacionalidad.Size = new System.Drawing.Size(69, 13);
+            this.label_Nacionalidad.TabIndex = 28;
+            this.label_Nacionalidad.Text = "Nacionalidad";
+            // 
+            // textBox_Localidad
+            // 
+            this.textBox_Localidad.Location = new System.Drawing.Point(122, 246);
+            this.textBox_Localidad.MaxLength = 50;
+            this.textBox_Localidad.Name = "textBox_Localidad";
+            this.textBox_Localidad.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Localidad.TabIndex = 27;
+            // 
+            // label_Localidad
+            // 
+            this.label_Localidad.AutoSize = true;
+            this.label_Localidad.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Localidad.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Localidad.Location = new System.Drawing.Point(63, 249);
+            this.label_Localidad.Name = "label_Localidad";
+            this.label_Localidad.Size = new System.Drawing.Size(53, 13);
+            this.label_Localidad.TabIndex = 26;
+            this.label_Localidad.Text = "Localidad";
+            // 
+            // textBox_Depto
+            // 
+            this.textBox_Depto.Location = new System.Drawing.Point(253, 228);
+            this.textBox_Depto.MaxLength = 50;
+            this.textBox_Depto.Name = "textBox_Depto";
+            this.textBox_Depto.Size = new System.Drawing.Size(94, 20);
+            this.textBox_Depto.TabIndex = 25;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(211, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Depto";
+            // 
+            // textBox_Piso
+            // 
+            this.textBox_Piso.Location = new System.Drawing.Point(122, 220);
+            this.textBox_Piso.MaxLength = 50;
+            this.textBox_Piso.Name = "textBox_Piso";
+            this.textBox_Piso.Size = new System.Drawing.Size(90, 20);
+            this.textBox_Piso.TabIndex = 23;
+            // 
+            // label_Piso
+            // 
+            this.label_Piso.AutoSize = true;
+            this.label_Piso.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Piso.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Piso.Location = new System.Drawing.Point(89, 223);
+            this.label_Piso.Name = "label_Piso";
+            this.label_Piso.Size = new System.Drawing.Size(27, 13);
+            this.label_Piso.TabIndex = 22;
+            this.label_Piso.Text = "Piso";
+            // 
+            // dateTimePicker_FechaNacimiento
+            // 
+            this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(122, 324);
+            this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
+            this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(232, 20);
+            this.dateTimePicker_FechaNacimiento.TabIndex = 21;
+            // 
+            // textBox_Mail
+            // 
+            this.textBox_Mail.Location = new System.Drawing.Point(122, 168);
+            this.textBox_Mail.MaxLength = 255;
+            this.textBox_Mail.Name = "textBox_Mail";
+            this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Mail.TabIndex = 20;
+            // 
+            // textBox_Documento
+            // 
+            this.textBox_Documento.Location = new System.Drawing.Point(122, 142);
+            this.textBox_Documento.MaxLength = 18;
+            this.textBox_Documento.Name = "textBox_Documento";
+            this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
+            this.textBox_Documento.TabIndex = 13;
+            // 
+            // textBox_Apellido
+            // 
+            this.textBox_Apellido.Location = new System.Drawing.Point(122, 93);
+            this.textBox_Apellido.MaxLength = 255;
+            this.textBox_Apellido.Name = "textBox_Apellido";
+            this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Apellido.TabIndex = 10;
+            // 
+            // label_FechaNacimiento
+            // 
+            this.label_FechaNacimiento.AutoSize = true;
+            this.label_FechaNacimiento.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_FechaNacimiento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_FechaNacimiento.Location = new System.Drawing.Point(10, 326);
+            this.label_FechaNacimiento.Name = "label_FechaNacimiento";
+            this.label_FechaNacimiento.Size = new System.Drawing.Size(106, 13);
+            this.label_FechaNacimiento.TabIndex = 9;
+            this.label_FechaNacimiento.Text = "Fecha de nacimiento";
+            // 
+            // label_Pais
+            // 
+            this.label_Pais.AutoSize = true;
+            this.label_Pais.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Pais.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Pais.Location = new System.Drawing.Point(23, 275);
+            this.label_Pais.Name = "label_Pais";
+            this.label_Pais.Size = new System.Drawing.Size(93, 13);
+            this.label_Pais.TabIndex = 8;
+            this.label_Pais.Text = "Pais de residencia";
+            // 
+            // label_Mail
+            // 
+            this.label_Mail.AutoSize = true;
+            this.label_Mail.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Mail.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Mail.Location = new System.Drawing.Point(83, 171);
+            this.label_Mail.Name = "label_Mail";
+            this.label_Mail.Size = new System.Drawing.Size(33, 13);
+            this.label_Mail.TabIndex = 5;
+            this.label_Mail.Text = "EMail";
+            // 
+            // label_TipoDocumento
+            // 
+            this.label_TipoDocumento.AutoSize = true;
+            this.label_TipoDocumento.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_TipoDocumento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_TipoDocumento.Location = new System.Drawing.Point(19, 121);
+            this.label_TipoDocumento.Name = "label_TipoDocumento";
+            this.label_TipoDocumento.Size = new System.Drawing.Size(99, 13);
+            this.label_TipoDocumento.TabIndex = 4;
+            this.label_TipoDocumento.Text = "Tipo de documento";
+            // 
+            // label_Documento
+            // 
+            this.label_Documento.AutoSize = true;
+            this.label_Documento.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Documento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Documento.Location = new System.Drawing.Point(56, 145);
+            this.label_Documento.Name = "label_Documento";
+            this.label_Documento.Size = new System.Drawing.Size(62, 13);
+            this.label_Documento.TabIndex = 3;
+            this.label_Documento.Text = "Documento";
+            // 
+            // label_Apellido
+            // 
+            this.label_Apellido.AutoSize = true;
+            this.label_Apellido.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Apellido.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Apellido.Location = new System.Drawing.Point(74, 96);
+            this.label_Apellido.Name = "label_Apellido";
+            this.label_Apellido.Size = new System.Drawing.Size(44, 13);
+            this.label_Apellido.TabIndex = 2;
+            this.label_Apellido.Text = "Apellido";
+            // 
+            // label_Nombre
+            // 
+            this.label_Nombre.AutoSize = true;
+            this.label_Nombre.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Nombre.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Nombre.Location = new System.Drawing.Point(74, 70);
+            this.label_Nombre.Name = "label_Nombre";
+            this.label_Nombre.Size = new System.Drawing.Size(44, 13);
+            this.label_Nombre.TabIndex = 1;
+            this.label_Nombre.Text = "Nombre";
+            // 
+            // textBox_Nombre
+            // 
+            this.textBox_Nombre.Location = new System.Drawing.Point(122, 67);
+            this.textBox_Nombre.MaxLength = 255;
+            this.textBox_Nombre.Name = "textBox_Nombre";
+            this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Nombre.TabIndex = 0;
+            // 
+            // groupBox_AsociarTarjetas
+            // 
+            this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox_numeroTarjeta);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox_codigo);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.label5);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.label3);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.label6);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.comboBox_Emisor);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.button_Agregar);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.dataGridView_Tarjetas);
+            this.groupBox_AsociarTarjetas.Location = new System.Drawing.Point(382, 152);
+            this.groupBox_AsociarTarjetas.Name = "groupBox_AsociarTarjetas";
+            this.groupBox_AsociarTarjetas.Size = new System.Drawing.Size(435, 268);
+            this.groupBox_AsociarTarjetas.TabIndex = 23;
+            this.groupBox_AsociarTarjetas.TabStop = false;
+            this.groupBox_AsociarTarjetas.Text = "Asociar tarjetas de credito";
+            // 
+            // button_Agregar
+            // 
+            this.button_Agregar.Location = new System.Drawing.Point(321, 221);
+            this.button_Agregar.Name = "button_Agregar";
+            this.button_Agregar.Size = new System.Drawing.Size(75, 23);
+            this.button_Agregar.TabIndex = 27;
+            this.button_Agregar.Text = "Agregar";
+            this.button_Agregar.UseVisualStyleBackColor = true;
+            this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
+            // 
+            // dataGridView_Tarjetas
+            // 
+            this.dataGridView_Tarjetas.AllowUserToAddRows = false;
+            this.dataGridView_Tarjetas.AllowUserToDeleteRows = false;
+            this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Tarjetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Numero,
+            this.Codigo,
+            this.Emisor,
+            this.Eliminar});
+            this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 28);
+            this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
+            this.dataGridView_Tarjetas.Size = new System.Drawing.Size(423, 120);
+            this.dataGridView_Tarjetas.TabIndex = 0;
+            this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(39, 205);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.TabIndex = 56;
+            this.label5.Text = "Codigo de Seguridad";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(39, 165);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(91, 13);
+            this.label3.TabIndex = 54;
+            this.label3.Text = "Numero de tarjeta";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(207, 162);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(38, 13);
+            this.label6.TabIndex = 51;
+            this.label6.Text = "Emisor";
+            // 
+            // comboBox_Emisor
+            // 
+            this.comboBox_Emisor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Emisor.FormattingEnabled = true;
+            this.comboBox_Emisor.Items.AddRange(new object[] {
+            "VISA",
+            "MASTERCARD",
+            "AMEX",
+            "CABAL",
+            "DINERS"});
+            this.comboBox_Emisor.Location = new System.Drawing.Point(210, 178);
+            this.comboBox_Emisor.Name = "comboBox_Emisor";
+            this.comboBox_Emisor.Size = new System.Drawing.Size(186, 21);
+            this.comboBox_Emisor.TabIndex = 50;
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Emisor
+            // 
+            this.Emisor.HeaderText = "Emisor";
+            this.Emisor.Name = "Emisor";
+            this.Emisor.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar fila";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
+            // maskedTextBox_codigo
+            // 
+            this.maskedTextBox_codigo.Location = new System.Drawing.Point(42, 221);
+            this.maskedTextBox_codigo.Mask = "999";
+            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
+            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
+            this.maskedTextBox_codigo.TabIndex = 60;
+            // 
+            // maskedTextBox_numeroTarjeta
+            // 
+            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(42, 181);
+            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
+            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
+            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(118, 20);
+            this.maskedTextBox_numeroTarjeta.TabIndex = 61;
             // 
             // Alta
             // 
@@ -911,6 +1020,7 @@
             this.groupBox_Alta.ResumeLayout(false);
             this.groupBox_Alta.PerformLayout();
             this.groupBox_AsociarTarjetas.ResumeLayout(false);
+            this.groupBox_AsociarTarjetas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).EndInit();
             this.ResumeLayout(false);
 
@@ -958,5 +1068,15 @@
         private System.Windows.Forms.ComboBox comboBox_Pais;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.ComboBox comboBox_Tipo_doc;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox comboBox_Emisor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Emisor;
+        private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_numeroTarjeta;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_codigo;
     }
 }
