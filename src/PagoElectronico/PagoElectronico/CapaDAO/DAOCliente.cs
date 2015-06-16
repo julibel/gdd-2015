@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using PagoElectronico.Model;
 
 namespace PagoElectronico.CapaDAO
@@ -42,6 +43,44 @@ namespace PagoElectronico.CapaDAO
         {
             var dt = retrieveDataTable("GET_CLIENTE_MAIL", mail);
             return dt.Rows.Count > 0;
+        }
+        
+        public static List<Persona> getClientes(string nombre, string apellido, string email, int tipoDoc, string nroDoc)
+        {
+            List<Persona> clientes = new List<Persona>();
+            DataTable table;
+            if (tipoDoc == 0)
+            {
+                table = retrieveDataTable("GET_CLIENTES", nombre, apellido, email, null, nroDoc);
+            }
+            else
+            {
+                table = retrieveDataTable("GET_CLIENTES", nombre, apellido, email, tipoDoc, nroDoc);
+            }
+
+            foreach (DataRow row in table.Rows)
+            {
+                Persona cliente = dataRowToCliente(row);
+                clientes.Add(cliente);
+            }
+            return clientes;
+        }
+
+        public static Persona dataRowToCliente(DataRow row)
+        {
+            return new Persona(Convert.ToInt32(row["ID"]),
+                                row["NOMBRE"] as string,
+                                row["APELLIDO"] as string,
+                                row["NUMERO_DOC"] as string,
+                                Convert.ToInt32(row["TIPO"]),
+                                row["CALLE"] as string,
+                                Convert.ToInt32(row["PISO"]),
+                                row["DEPTO"] as string,
+                                row["LOCALIDAD"] as string,
+                                row["PAIS"] as string,
+                                Convert.ToDateTime(row["FECHA_NACIMIENTO"]),
+                                row["NACIONALIDAD"] as string,
+                                row["MAIL"] as string);
         }
 
     }
