@@ -17,6 +17,8 @@ namespace PagoElectronico.ABM_Cuenta
         {
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<ComboBox>()) control.Text = "";
+            comboBox_Moneda.SelectedValue = -1;
+            comboBox_TipoCuenta.SelectedValue = -1;
         }
 
         private void Mensaje_OK(String mensaje, String resumen)
@@ -53,6 +55,7 @@ namespace PagoElectronico.ABM_Cuenta
             {
                 CapaDAO.DAOCuenta.agregarCuenta(seleccion.id, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
+                LimpiarCampos();
             }
         }
 
@@ -79,6 +82,8 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_TipoCuenta.ValueMember = "TIP_ID";
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
             comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
+
+            LimpiarCampos();
         }
 
         private void button1_Click(object sender, EventArgs e)
