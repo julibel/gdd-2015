@@ -38,15 +38,15 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
+            this.comboBox_Numero_Tarjeta = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.comboBox_Numero_Tarjeta);
             this.groupBox1.Controls.Add(this.maskedTextBox_codigo);
-            this.groupBox1.Controls.Add(this.maskedTextBox_numeroTarjeta);
             this.groupBox1.Controls.Add(this.textBox_NombreTitular);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
@@ -139,14 +139,6 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
-            // maskedTextBox_numeroTarjeta
-            // 
-            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(337, 154);
-            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
-            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
-            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(114, 20);
-            this.maskedTextBox_numeroTarjeta.TabIndex = 63;
-            // 
             // maskedTextBox_codigo
             // 
             this.maskedTextBox_codigo.Location = new System.Drawing.Point(337, 210);
@@ -154,6 +146,14 @@
             this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
             this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
             this.maskedTextBox_codigo.TabIndex = 64;
+            // 
+            // comboBox_Numero_Tarjeta
+            // 
+            this.comboBox_Numero_Tarjeta.FormattingEnabled = true;
+            this.comboBox_Numero_Tarjeta.Location = new System.Drawing.Point(338, 157);
+            this.comboBox_Numero_Tarjeta.Name = "comboBox_Numero_Tarjeta";
+            this.comboBox_Numero_Tarjeta.Size = new System.Drawing.Size(248, 21);
+            this.comboBox_Numero_Tarjeta.TabIndex = 65;
             // 
             // ModificarDatos
             // 
@@ -190,7 +190,7 @@
         private System.Windows.Forms.Button button_Guardar;
         private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox_numeroTarjeta;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_codigo;
+        private System.Windows.Forms.ComboBox comboBox_Numero_Tarjeta;
     }
 }
