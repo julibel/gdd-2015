@@ -50,6 +50,7 @@
             this.button_Aceptar.TabIndex = 31;
             this.button_Aceptar.Text = "Aceptar";
             this.button_Aceptar.UseVisualStyleBackColor = true;
+            this.button_Aceptar.Click += new System.EventHandler(this.button_Aceptar_Click);
             // 
             // button_Cerrar
             // 
