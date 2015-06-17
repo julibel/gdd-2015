@@ -122,5 +122,6 @@ namespace PagoElectronico.ABM_Cuenta
            comboBox_TipoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["TIPO"]);
            textBox_TipoCuentaActual.Text = Convert.ToString(cuenta.Rows[0]["TIP_NOM"]);
         }
+
     }
 }
