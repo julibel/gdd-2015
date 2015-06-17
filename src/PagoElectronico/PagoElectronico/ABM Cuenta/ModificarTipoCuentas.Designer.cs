@@ -42,11 +42,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_CostTranActual = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox_VigenciaModificada = new System.Windows.Forms.TextBox();
+            this.textBox_VigenciaActual = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.paner_TipoCuentas.SuspendLayout();
             this.SuspendLayout();
             // 
             // paner_TipoCuentas
             // 
+            this.paner_TipoCuentas.Controls.Add(this.label4);
+            this.paner_TipoCuentas.Controls.Add(this.label5);
+            this.paner_TipoCuentas.Controls.Add(this.textBox_VigenciaModificada);
+            this.paner_TipoCuentas.Controls.Add(this.textBox_VigenciaActual);
             this.paner_TipoCuentas.Controls.Add(this.textBox_CostoTranModificado);
             this.paner_TipoCuentas.Controls.Add(this.label2);
             this.paner_TipoCuentas.Controls.Add(this.textBox_CostTranActual);
@@ -68,7 +76,7 @@
             // 
             // textBox_CostoMantModificado
             // 
-            this.textBox_CostoMantModificado.Location = new System.Drawing.Point(282, 245);
+            this.textBox_CostoMantModificado.Location = new System.Drawing.Point(286, 270);
             this.textBox_CostoMantModificado.Name = "textBox_CostoMantModificado";
             this.textBox_CostoMantModificado.Size = new System.Drawing.Size(121, 20);
             this.textBox_CostoMantModificado.TabIndex = 5;
@@ -77,7 +85,7 @@
             // label_CostoModificado
             // 
             this.label_CostoModificado.AutoSize = true;
-            this.label_CostoModificado.Location = new System.Drawing.Point(117, 248);
+            this.label_CostoModificado.Location = new System.Drawing.Point(121, 273);
             this.label_CostoModificado.Name = "label_CostoModificado";
             this.label_CostoModificado.Size = new System.Drawing.Size(159, 13);
             this.label_CostoModificado.TabIndex = 4;
@@ -86,7 +94,7 @@
             // textBox_CostoMantActual
             // 
             this.textBox_CostoMantActual.Enabled = false;
-            this.textBox_CostoMantActual.Location = new System.Drawing.Point(282, 219);
+            this.textBox_CostoMantActual.Location = new System.Drawing.Point(286, 244);
             this.textBox_CostoMantActual.Name = "textBox_CostoMantActual";
             this.textBox_CostoMantActual.Size = new System.Drawing.Size(121, 20);
             this.textBox_CostoMantActual.TabIndex = 3;
@@ -94,7 +102,7 @@
             // label_CostoActual
             // 
             this.label_CostoActual.AutoSize = true;
-            this.label_CostoActual.Location = new System.Drawing.Point(139, 222);
+            this.label_CostoActual.Location = new System.Drawing.Point(143, 247);
             this.label_CostoActual.Name = "label_CostoActual";
             this.label_CostoActual.Size = new System.Drawing.Size(137, 13);
             this.label_CostoActual.TabIndex = 2;
@@ -103,7 +111,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(300, 171);
+            this.label1.Location = new System.Drawing.Point(311, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 13);
             this.label1.TabIndex = 1;
@@ -148,7 +156,7 @@
             "Plata",
             "Bronce",
             "Gratuita"});
-            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(386, 168);
+            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(397, 118);
             this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
             this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
             this.comboBox_TipoCuenta.TabIndex = 23;
@@ -156,7 +164,7 @@
             // 
             // textBox_CostoTranModificado
             // 
-            this.textBox_CostoTranModificado.Location = new System.Drawing.Point(569, 245);
+            this.textBox_CostoTranModificado.Location = new System.Drawing.Point(573, 270);
             this.textBox_CostoTranModificado.Name = "textBox_CostoTranModificado";
             this.textBox_CostoTranModificado.Size = new System.Drawing.Size(121, 20);
             this.textBox_CostoTranModificado.TabIndex = 27;
@@ -165,7 +173,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(417, 248);
+            this.label2.Location = new System.Drawing.Point(421, 273);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(146, 13);
             this.label2.TabIndex = 26;
@@ -174,7 +182,7 @@
             // textBox_CostTranActual
             // 
             this.textBox_CostTranActual.Enabled = false;
-            this.textBox_CostTranActual.Location = new System.Drawing.Point(569, 219);
+            this.textBox_CostTranActual.Location = new System.Drawing.Point(573, 244);
             this.textBox_CostTranActual.Name = "textBox_CostTranActual";
             this.textBox_CostTranActual.Size = new System.Drawing.Size(121, 20);
             this.textBox_CostTranActual.TabIndex = 25;
@@ -182,11 +190,45 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(439, 222);
+            this.label3.Location = new System.Drawing.Point(443, 247);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 13);
             this.label3.TabIndex = 24;
             this.label3.Text = "Costo transaccion actual";
+            // 
+            // textBox_VigenciaModificada
+            // 
+            this.textBox_VigenciaModificada.Location = new System.Drawing.Point(397, 198);
+            this.textBox_VigenciaModificada.Name = "textBox_VigenciaModificada";
+            this.textBox_VigenciaModificada.Size = new System.Drawing.Size(121, 20);
+            this.textBox_VigenciaModificada.TabIndex = 29;
+            this.textBox_VigenciaModificada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_VigenciaModificada_KeyPress);
+            // 
+            // textBox_VigenciaActual
+            // 
+            this.textBox_VigenciaActual.Enabled = false;
+            this.textBox_VigenciaActual.Location = new System.Drawing.Point(397, 172);
+            this.textBox_VigenciaActual.Name = "textBox_VigenciaActual";
+            this.textBox_VigenciaActual.Size = new System.Drawing.Size(121, 20);
+            this.textBox_VigenciaActual.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(289, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Vigencia modificado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(311, 175);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Vigencia actual";
             // 
             // ModificarTipoCuentas
             // 
@@ -228,5 +270,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_CostTranActual;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox_VigenciaModificada;
+        private System.Windows.Forms.TextBox textBox_VigenciaActual;
     }
 }

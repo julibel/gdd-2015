@@ -54,7 +54,7 @@ namespace PagoElectronico.ABM_Cuenta
 
                 //try
                 //{
-                    CapaDAO.DAOCuenta.modificarCostosTipo(Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToDouble(textBox_CostoMantModificado.Text), Convert.ToDouble(textBox_CostoTranModificado.Text));
+                    CapaDAO.DAOCuenta.modificarCostosTipo(Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToDouble(textBox_CostoMantModificado.Text), Convert.ToDouble(textBox_CostoTranModificado.Text),Convert.ToInt32(textBox_VigenciaModificada.Text));
                     Mensaje_OK("Los datos han sido almacenados con exito", "");
                     LimpiarCampos();
                 //}
@@ -110,7 +110,7 @@ namespace PagoElectronico.ABM_Cuenta
             DataTable cuenta = CapaDAO.DAOCuenta.getCostoTipo(Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
             textBox_CostoMantActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_MANTENIMIENTO"]);
             textBox_CostTranActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_TRANSACCION"]);
-           
+            textBox_VigenciaActual.Text = Convert.ToString(cuenta.Rows[0]["VIGENCIA"]);
            
         }
 
@@ -135,6 +135,14 @@ namespace PagoElectronico.ABM_Cuenta
             }
 
             if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_VigenciaModificada_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
             }

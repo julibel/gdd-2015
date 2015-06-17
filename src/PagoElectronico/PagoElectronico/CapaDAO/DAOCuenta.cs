@@ -19,9 +19,9 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("MODIFICAR_CUENTA", id, cliente, moneda, pais, tipo_cuenta, estado, Globals.getFechaSistema());
         }
 
-        public static void modificarCostosTipo(int idTipo, double costoMant, double costoTransf)
+        public static void modificarCostosTipo(int idTipo, double costoMant, double costoTransf, int vigencia)
         {
-            executeProcedure("MODIFICAR_COSTOS_TIPO", idTipo, costoMant, costoTransf,10);
+            executeProcedure("MODIFICAR_COSTOS_TIPO", idTipo, costoMant, costoTransf,vigencia);
         }
 
         public static void bajaCuenta(long numero, int pais, int moneda, int tipoCuenta)
