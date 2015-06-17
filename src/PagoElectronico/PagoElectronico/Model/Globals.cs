@@ -10,7 +10,7 @@ namespace PagoElectronico
     class Globals
     {
         private static int _userID = 0;
-        private static string username;
+        private static string _username;
         private static List<int> funcionalidades = new List<int>();
 
         private static string connectionString = ConfigurationManager.ConnectionStrings["GD1C2015"].ConnectionString;
@@ -20,6 +20,11 @@ namespace PagoElectronico
         {
             get { return 162; }//_userID; }
             set { _userID = value; }
+        }
+        public static string username
+        {
+            get { return "huilen_ramírez@gmail.com"; }
+            set{_username = value;}
         }
         public static string getConnectionString()
         {
