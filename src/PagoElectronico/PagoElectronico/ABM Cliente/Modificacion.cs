@@ -35,11 +35,12 @@ namespace PagoElectronico.ABM_Cliente
             foreach(Tarjeta tarjeta in tarjetas)
             {
                 string columna1 = tarjeta.ID.ToString();
-                string columna2 = "xxxx-xxxx-xxxx-xxxx";
-                string columna3 = tarjeta.cod_seguridad.ToString();
-                string columna4 = tarjeta.Emisor;
+                string columna2 = tarjeta.cod_seguridad.ToString();
+                string columna3 = "xxxxxxxxxxxxxxxx";
+                string columna4 = "xxx";
+                string columna5 = tarjeta.Emisor;
 
-                string[] row = { columna1, columna2, columna3, columna4 };
+                string[] row = { columna1, columna2, columna3, columna4, columna5 };
                 dataGridView_Tarjetas.Rows.Add(row);
             }
             
@@ -216,8 +217,8 @@ namespace PagoElectronico.ABM_Cliente
         private Tarjeta GenerarTarjeta(DataGridViewRow row)
         {
             return new Tarjeta(
-                Convert.ToInt64(row.Cells[1].Value),
-                Convert.ToInt32(row.Cells[2].Value),
+                Convert.ToInt64(row.Cells[2].Value),
+                Convert.ToInt32(row.Cells[3].Value),
                 Convert.ToString(row.Cells[4].Value)
                 );
         }
@@ -245,9 +246,10 @@ namespace PagoElectronico.ABM_Cliente
             if (listaDeErrores2.Count < 1)
             {
                 string columna1 = "0";
-                string columna2 = maskedTextBox_numeroTarjeta.Text;
-                string columna3 = maskedTextBox_codigo.Text;
-                string columna4 = Convert.ToString(comboBox_Emisor.Text);
+                string columna2 = maskedTextBox_numeroTarjeta.Text.Substring(12,4);
+                string columna3 = maskedTextBox_numeroTarjeta.Text;
+                string columna4 = maskedTextBox_codigo.Text;
+                string columna5 = Convert.ToString(comboBox_Emisor.Text);
 
                 string[] row = { columna1, columna2, columna3, columna4 };
                 dataGridView_Tarjetas.Rows.Add(row);
@@ -297,11 +299,12 @@ namespace PagoElectronico.ABM_Cliente
             if (listaDeErrores2.Count < 1)
             {
                 string columna1 = "0";
-                string columna2 = maskedTextBox_numeroTarjeta.Text;
-                string columna3 = maskedTextBox_codigo.Text;
-                string columna4 = Convert.ToString(comboBox_Emisor.Text);
+                string columna2 = maskedTextBox_numeroTarjeta.Text.Substring(12, 4);
+                string columna3 = maskedTextBox_numeroTarjeta.Text;
+                string columna4 = maskedTextBox_codigo.Text;
+                string columna5 = Convert.ToString(comboBox_Emisor.Text);
 
-                string[] row = { columna1, columna2, columna3, columna4 };
+                string[] row = { columna1, columna2, columna3, columna4, columna5 };
                 dataGridView_Tarjetas.Rows.Add(row);
             }
             else

@@ -34,13 +34,14 @@ namespace PagoElectronico.CapaDAO
                 );
         }
 
+
         public static Tarjeta dataRowToTarjetas(DataRow tarjeta)
         {
             return new Tarjeta(
                 Convert.ToInt32(tarjeta["TAR_ID"]),
                Convert.ToInt32(tarjeta["CLIENTE"]),
-               Convert.ToInt32(tarjeta["LIMPIO"]),
-               tarjeta["EMISOR"] as string
+               Convert.ToInt32(tarjeta["NUMERO_TARJETA"].ToString().Substring(12, 4)),
+               tarjeta["NOMBRE"] as string
                );
         }
 
