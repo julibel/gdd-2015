@@ -12,6 +12,7 @@ namespace PagoElectronico.ABM_Cliente
 {
     public partial class Baja : Form
     {
+        private int id_cliente;
         private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
         {
             var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -27,6 +28,7 @@ namespace PagoElectronico.ABM_Cliente
         public Baja(Persona cliente, DataTable tarjetas)
         {
             InitializeComponent();
+            id_cliente = cliente.ID;
             textBox_Calle.Text = cliente.Calle;
             textBox_Apellido.Text = cliente.Apellido;
             textBox_Depto.Text = cliente.Departamento;
@@ -55,11 +57,7 @@ namespace PagoElectronico.ABM_Cliente
             if (resultado == DialogResult.Yes)
             {
 
-
-
-
-
-
+                CapaDAO.DAOCliente.bajarCliente(id_cliente);
                 Mensaje_OK("Los datos han sido eliminados con exito", "");
             }
         }
