@@ -31,6 +31,7 @@
             this.dataGridView_ListadoOperaciones = new System.Windows.Forms.DataGridView();
             this.button_Aceptar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListadoOperaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,6 +40,8 @@
             this.dataGridView_ListadoOperaciones.AllowUserToAddRows = false;
             this.dataGridView_ListadoOperaciones.AllowUserToDeleteRows = false;
             this.dataGridView_ListadoOperaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_ListadoOperaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Seleccionar});
             this.dataGridView_ListadoOperaciones.Location = new System.Drawing.Point(12, 12);
             this.dataGridView_ListadoOperaciones.Name = "dataGridView_ListadoOperaciones";
             this.dataGridView_ListadoOperaciones.ReadOnly = true;
@@ -64,6 +67,12 @@
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
             // 
             // Seleccionar_Operacion
             // 
@@ -92,5 +101,6 @@
         private System.Windows.Forms.DataGridView dataGridView_ListadoOperaciones;
         private System.Windows.Forms.Button button_Aceptar;
         private System.Windows.Forms.Button button_Cerrar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Seleccionar;
     }
 }

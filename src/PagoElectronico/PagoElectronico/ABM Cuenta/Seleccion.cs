@@ -13,6 +13,10 @@ namespace PagoElectronico.ABM_Cuenta
     {
         private bool esBaja;
 
+        private int cuenta;
+
+        private Form caller;
+
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_Filtros.Controls.OfType<TextBox>()) control.Text = "";
@@ -26,6 +30,12 @@ namespace PagoElectronico.ABM_Cuenta
         {
             InitializeComponent();
             esBaja = baja;
+        }
+
+        public Seleccion(Form form)
+        {
+            InitializeComponent();
+            caller = form;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

@@ -177,7 +177,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_IniciarSesion);
             this.Controls.Add(this.button_Cerrar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

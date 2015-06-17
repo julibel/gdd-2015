@@ -59,7 +59,7 @@ namespace PagoElectronico.CapaDAO
 
         private static int getUserID(string user)
         {
-            return executeProcedureWithReturnValue("GET_USUARIO_ID", user);
+            return executeProcedureWithReturnValue("GET_ID_USUARIO", user);
         }
 
         private static List<int> getFuncionalidades(int rolID)

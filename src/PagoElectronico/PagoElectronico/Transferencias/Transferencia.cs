@@ -90,5 +90,10 @@ namespace PagoElectronico.Transferencias
             textBox_Fecha.Text = Globals.getFechaSistema();
         }
 
+        private void button_SeleccionarCuentaDestino_Click(object sender, EventArgs e)
+        {
+            ABM_Cuenta.Seleccion selec = new ABM_Cuenta.Seleccion(this);
+        }
+
     }
 }

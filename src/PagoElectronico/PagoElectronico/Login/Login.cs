@@ -11,19 +11,14 @@ namespace PagoElectronico.Login
 {
     public partial class Login : Form
     {
-        private FormBase fBase;
-
-        public Login(FormBase fBase)
+        public Login()
         {
             InitializeComponent();
-            fBase.Visible = false;
-            this.fBase = fBase;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-            fBase.Close();
         }
 
         private void button_OlvidoContrasenia_Click(object sender, EventArgs e)
@@ -35,7 +30,9 @@ namespace PagoElectronico.Login
             {
                 if (CapaDAO.DAOLogin.existeUsuario(user))
                 {
-                    new Autentificar(user, rol).Show();
+                    Autentificar autentificar = new Autentificar(user, rol);
+                    autentificar.MdiParent = this.MdiParent;
+                    autentificar.Show();
                     this.Close();
                 }
                 else
@@ -56,7 +53,6 @@ namespace PagoElectronico.Login
 
             if (CapaDAO.DAOLogin.iniciarSesionConPassword(user, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
             {
-                fBase.Visible = true;
                 this.Close();
             }
             else

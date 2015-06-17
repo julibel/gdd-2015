@@ -36,13 +36,13 @@
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Importe = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox_Origen = new System.Windows.Forms.ComboBox();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Aceptar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.textBox_Destino = new System.Windows.Forms.TextBox();
             this.button_SeleccionarCuentaDestino = new System.Windows.Forms.Button();
-            this.comboBox_Origen = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -130,6 +130,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Cuenta origen";
             // 
+            // comboBox_Origen
+            // 
+            this.comboBox_Origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Origen.FormattingEnabled = true;
+            this.comboBox_Origen.Location = new System.Drawing.Point(26, 89);
+            this.comboBox_Origen.Name = "comboBox_Origen";
+            this.comboBox_Origen.Size = new System.Drawing.Size(262, 21);
+            this.comboBox_Origen.TabIndex = 1;
+            // 
             // button_Limpiar
             // 
             this.button_Limpiar.Location = new System.Drawing.Point(666, 427);
@@ -189,15 +198,7 @@
             this.button_SeleccionarCuentaDestino.TabIndex = 23;
             this.button_SeleccionarCuentaDestino.Text = "Seleccionar";
             this.button_SeleccionarCuentaDestino.UseVisualStyleBackColor = true;
-            // 
-            // comboBox_Origen
-            // 
-            this.comboBox_Origen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Origen.FormattingEnabled = true;
-            this.comboBox_Origen.Location = new System.Drawing.Point(26, 89);
-            this.comboBox_Origen.Name = "comboBox_Origen";
-            this.comboBox_Origen.Size = new System.Drawing.Size(262, 21);
-            this.comboBox_Origen.TabIndex = 1;
+            this.button_SeleccionarCuentaDestino.Click += new System.EventHandler(this.button_SeleccionarCuentaDestino_Click);
             // 
             // Transferencia
             // 

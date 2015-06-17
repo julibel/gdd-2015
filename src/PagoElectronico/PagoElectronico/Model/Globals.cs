@@ -9,22 +9,12 @@ namespace PagoElectronico
 {
     class Globals
     {
-        private static int _userID = 0;
-        private static string _username;
+        public static int userID = 0;
+        public static string username;
         private static List<int> funcionalidades = new List<int>();
 
         private static string connectionString = ConfigurationManager.ConnectionStrings["GD1C2015"].ConnectionString;
 
-        public static int userID
-        {
-            get { return _userID; }
-            set { _userID = value; }
-        }
-        public static string username
-        {
-            get { return _username; }
-            set{_username = value;}
-        }
         public static string getConnectionString()
         {
             return connectionString;
@@ -60,10 +50,11 @@ namespace PagoElectronico
         }
 
 
-        public static void setUser(int userID, string user, List<int> funcs)
+        public static void setUser(int id, string name, List<int> funcs)
         {
-            _userID = userID;
-            _username = user;
+            MessageBox.Show(id.ToString() + ' ' + name);
+            userID = id;
+            username = name;
             funcionalidades = funcs;
         }
 
