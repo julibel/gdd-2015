@@ -42,9 +42,7 @@
             this.radioButton_MASTERCARD = new System.Windows.Forms.RadioButton();
             this.radioButton_VISA = new System.Windows.Forms.RadioButton();
             this.radioButton_AMEX = new System.Windows.Forms.RadioButton();
-            this.textBox_CodigoSeguridad = new System.Windows.Forms.TextBox();
             this.textBox_NombreTitular = new System.Windows.Forms.TextBox();
-            this.textBox_numeroTarjeta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,6 +51,8 @@
             this.button_Seleccionar = new System.Windows.Forms.Button();
             this.dataGridView_ComisionesARendir = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ComisionesARendir)).BeginInit();
@@ -75,6 +75,7 @@
             this.textBox_Numero.Name = "textBox_Numero";
             this.textBox_Numero.Size = new System.Drawing.Size(85, 20);
             this.textBox_Numero.TabIndex = 33;
+            this.textBox_Numero.Text = "A generar";
             // 
             // label8
             // 
@@ -101,6 +102,7 @@
             this.button_Limpiar.TabIndex = 28;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Aceptar
             // 
@@ -110,6 +112,7 @@
             this.button_Aceptar.TabIndex = 27;
             this.button_Aceptar.Text = "Aceptar";
             this.button_Aceptar.UseVisualStyleBackColor = true;
+            this.button_Aceptar.Click += new System.EventHandler(this.button_Aceptar_Click);
             // 
             // button_Cerrar
             // 
@@ -139,12 +142,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.maskedTextBox_numeroTarjeta);
+            this.groupBox2.Controls.Add(this.maskedTextBox_codigo);
             this.groupBox2.Controls.Add(this.radioButton_MASTERCARD);
             this.groupBox2.Controls.Add(this.radioButton_VISA);
             this.groupBox2.Controls.Add(this.radioButton_AMEX);
-            this.groupBox2.Controls.Add(this.textBox_CodigoSeguridad);
             this.groupBox2.Controls.Add(this.textBox_NombreTitular);
-            this.groupBox2.Controls.Add(this.textBox_numeroTarjeta);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
@@ -188,26 +191,12 @@
             this.radioButton_AMEX.TabStop = true;
             this.radioButton_AMEX.UseVisualStyleBackColor = true;
             // 
-            // textBox_CodigoSeguridad
-            // 
-            this.textBox_CodigoSeguridad.Location = new System.Drawing.Point(131, 138);
-            this.textBox_CodigoSeguridad.Name = "textBox_CodigoSeguridad";
-            this.textBox_CodigoSeguridad.Size = new System.Drawing.Size(67, 20);
-            this.textBox_CodigoSeguridad.TabIndex = 14;
-            // 
             // textBox_NombreTitular
             // 
             this.textBox_NombreTitular.Location = new System.Drawing.Point(131, 112);
             this.textBox_NombreTitular.Name = "textBox_NombreTitular";
             this.textBox_NombreTitular.Size = new System.Drawing.Size(249, 20);
             this.textBox_NombreTitular.TabIndex = 12;
-            // 
-            // textBox_numeroTarjeta
-            // 
-            this.textBox_numeroTarjeta.Location = new System.Drawing.Point(131, 82);
-            this.textBox_numeroTarjeta.Name = "textBox_numeroTarjeta";
-            this.textBox_numeroTarjeta.Size = new System.Drawing.Size(249, 20);
-            this.textBox_numeroTarjeta.TabIndex = 10;
             // 
             // label5
             // 
@@ -258,6 +247,7 @@
             this.button_Seleccion.TabIndex = 35;
             this.button_Seleccion.Text = "Seleccionar";
             this.button_Seleccion.UseVisualStyleBackColor = true;
+            this.button_Seleccion.Click += new System.EventHandler(this.button_Seleccion_Click);
             // 
             // button_Seleccionar
             // 
@@ -291,6 +281,22 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de factura";
             // 
+            // maskedTextBox_numeroTarjeta
+            // 
+            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(131, 82);
+            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
+            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
+            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(249, 20);
+            this.maskedTextBox_numeroTarjeta.TabIndex = 63;
+            // 
+            // maskedTextBox_codigo
+            // 
+            this.maskedTextBox_codigo.Location = new System.Drawing.Point(131, 138);
+            this.maskedTextBox_codigo.Mask = "999";
+            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
+            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
+            this.maskedTextBox_codigo.TabIndex = 62;
+            // 
             // Facturar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -310,6 +316,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Facturar";
+            this.Load += new System.EventHandler(this.Facturar_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -338,14 +345,14 @@
         private System.Windows.Forms.RadioButton radioButton_MASTERCARD;
         private System.Windows.Forms.RadioButton radioButton_VISA;
         private System.Windows.Forms.RadioButton radioButton_AMEX;
-        private System.Windows.Forms.TextBox textBox_CodigoSeguridad;
         private System.Windows.Forms.TextBox textBox_NombreTitular;
-        private System.Windows.Forms.TextBox textBox_numeroTarjeta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_Seleccionar;
         private System.Windows.Forms.Button button_Seleccion;
         private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_numeroTarjeta;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_codigo;
     }
 }
