@@ -43,6 +43,7 @@
             this.textBox_Documento = new System.Windows.Forms.TextBox();
             this.label_Mail = new System.Windows.Forms.Label();
             this.button_Cerrar = new System.Windows.Forms.Button();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
             this.paner_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -52,10 +53,13 @@
             this.dataGridView_Seleccion.AllowUserToAddRows = false;
             this.dataGridView_Seleccion.AllowUserToDeleteRows = false;
             this.dataGridView_Seleccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Seleccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Seleccionar});
             this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
             this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
             this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
             this.dataGridView_Seleccion.TabIndex = 15;
+            this.dataGridView_Seleccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Seleccion_CellContentClick);
             // 
             // button_Buscar
             // 
@@ -207,6 +211,13 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Text = "Seleccionar";
+            this.Seleccionar.UseColumnTextForButtonValue = true;
+            // 
             // Seleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,5 +259,6 @@
         private System.Windows.Forms.TextBox textBox_Documento;
         private System.Windows.Forms.Label label_Mail;
         private System.Windows.Forms.Button button_Cerrar;
+        private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
     }
 }

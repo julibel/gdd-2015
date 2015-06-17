@@ -6,11 +6,13 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
 
 namespace PagoElectronico.ABM_Cliente
 {
     public partial class Modificacion : Form
     {
+        private Persona cliente;
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_Alta.Controls.OfType<TextBox>()) control.Text = "";
@@ -32,9 +34,10 @@ namespace PagoElectronico.ABM_Cliente
 
         }
 
-        public Modificacion()
+        public Modificacion(Persona cliente)
         {
             InitializeComponent();
+            this.cliente = cliente;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

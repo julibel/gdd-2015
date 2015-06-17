@@ -49,14 +49,16 @@ namespace PagoElectronico.Model
         public string Departamento { get; set; }
         public string Localidad { get; set; } 
         public string Pais_Actual { get; set; }
+        public int Paid_Actual_Id { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
         public string Pais_Nacionalidad { get; set; }
+        public int Paid_Nacionalidad_Id { get; set; }
         public string Mail { get; set; }
         public int Activo { get; set; }
 
 
         public Persona(int id, string nombre,string apellido, string doc, int tipo, string calle, int piso, string departamento,
-                       string loc,string pais_actual, DateTime fecha_nac, string pais_nacionalidad, string mail)
+                       string loc,string pais_actual, int pais_actual_id, DateTime fecha_nac, string pais_nacionalidad, int pais_nacionalidad_id, string mail)
         {
             ID = id;
             Nombre = nombre;
@@ -68,8 +70,10 @@ namespace PagoElectronico.Model
             Departamento = departamento;
             Localidad = loc;
             Pais_Actual = pais_actual;
+            Paid_Actual_Id = pais_actual_id;
             FechaDeNacimiento = fecha_nac;
             Pais_Nacionalidad = pais_actual;
+            Paid_Nacionalidad_Id = pais_nacionalidad_id;
             Mail = mail;
             Activo = 1;
             
