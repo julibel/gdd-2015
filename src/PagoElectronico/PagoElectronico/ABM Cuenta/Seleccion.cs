@@ -58,6 +58,8 @@ namespace PagoElectronico.ABM_Cuenta
                 form = new ABM_Cuenta.Baja(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
             else
                 form = new ABM_Cuenta.Modificacion(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
+
+            form.MdiParent = this.MdiParent;
             form.Show();
             this.Close();
         }

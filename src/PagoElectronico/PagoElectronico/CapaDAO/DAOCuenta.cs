@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using PagoElectronico.Model;
+using System.Data;
 
 namespace PagoElectronico.CapaDAO
 {
@@ -33,14 +34,39 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("MODIFICAR_CATERGORIA_CUENTA", numero, pais, tipoCuenta);
         }
 
-        internal static object getTiposCuenta()
+        public static object getTiposCuenta()
         {
             return retrieveDataTable("GET_TIPOS_CUENTA");
         }
 
-        internal static object getCuentas(string numero, string pais, int tipo)
+        public static object getCuentas(string numero, string pais, int tipo)
         {
             return retrieveDataTable("FIND_CUENTAS", numero, pais, tipo);
+        }
+
+        public static DataTable getCuenta(long cuenta)
+        {
+            return retrieveDataTable("GET_CUENTA", cuenta);
+        }
+
+        public static DataTable getPaises()
+        {
+            return retrieveDataTable("GET_PAISES");
+        }
+
+        public static DataTable getMonedas()
+        {
+            return DAOOperacion.getMonedas();
+        }
+
+        public static void eliminarCuenta(long cuenta)
+        {
+            executeProcedure("BAJA_CUENTA", cuenta, Globals.getFechaSistema());
+        }
+
+        internal static DataTable getEstadosCuenta()
+        {
+            return retrieveDataTable("GET_ESTADOS");
         }
     }
 }
