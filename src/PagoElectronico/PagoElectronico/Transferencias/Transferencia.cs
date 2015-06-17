@@ -11,6 +11,8 @@ namespace PagoElectronico.Transferencias
 {
     public partial class Transferencia : Form
     {
+        private ABM_Cuenta.Seleccion selec;
+
         public Transferencia()
         {
             InitializeComponent();
@@ -92,7 +94,9 @@ namespace PagoElectronico.Transferencias
 
         private void button_SeleccionarCuentaDestino_Click(object sender, EventArgs e)
         {
-            ABM_Cuenta.Seleccion selec = new ABM_Cuenta.Seleccion(this);
+            selec = new ABM_Cuenta.Seleccion(this, textBox_Destino);
+            selec.MdiParent = this.MdiParent;
+            selec.Show();
         }
 
     }

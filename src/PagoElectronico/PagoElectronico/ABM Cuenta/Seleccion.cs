@@ -13,7 +13,7 @@ namespace PagoElectronico.ABM_Cuenta
     {
         private bool esBaja;
 
-        private int cuenta;
+        private TextBox destino;
 
         private Form caller;
 
@@ -32,14 +32,37 @@ namespace PagoElectronico.ABM_Cuenta
             esBaja = baja;
         }
 
-        public Seleccion(Form form)
+        public Seleccion(Form form, TextBox destino)
         {
             InitializeComponent();
             caller = form;
+            caller.Visible = false;
+            this.destino = destino;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
+            cerrar(null);
+        }
+
+        private void cerrar(DataGridViewCellEventArgs e)
+        {
+            if (caller != null)
+            {
+                destino.Text = Convert.ToString(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value);
+                caller.Visible = true;
+            }
+            else
+            {
+                Form form;
+                if (esBaja)
+                    form = new ABM_Cuenta.Baja(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
+                else
+                    form = new ABM_Cuenta.Modificacion(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
+
+                form.MdiParent = this.MdiParent;
+                form.Show();
+            }
             this.Close();
         }
 
@@ -63,15 +86,7 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void dataGridView_Seleccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Form form;
-            if (esBaja)
-                form = new ABM_Cuenta.Baja(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
-            else
-                form = new ABM_Cuenta.Modificacion(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
-
-            form.MdiParent = this.MdiParent;
-            form.Show();
-            this.Close();
+            cerrar(e);
         }
     }
 }

@@ -188,7 +188,6 @@
             this.textBox_Destino.Name = "textBox_Destino";
             this.textBox_Destino.Size = new System.Drawing.Size(262, 20);
             this.textBox_Destino.TabIndex = 0;
-            this.textBox_Destino.Text = "1111111111111111";
             // 
             // button_SeleccionarCuentaDestino
             // 
