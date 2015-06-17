@@ -58,5 +58,10 @@ namespace PagoElectronico.CapaDAO
         {
             return DAOOperacion.getMonedas();
         }
+
+        public static void eliminarCuenta(long cuenta)
+        {
+            executeProcedure("BAJA_CUENTA", cuenta, Globals.getFechaSistema());
+        }
     }
 }

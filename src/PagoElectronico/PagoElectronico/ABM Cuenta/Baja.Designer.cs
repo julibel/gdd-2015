@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.paner_DatosCuenta = new System.Windows.Forms.GroupBox();
+            this.textBox_Tipo_Cuenta = new System.Windows.Forms.TextBox();
+            this.textBox_Moneda = new System.Windows.Forms.TextBox();
+            this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.label_TipoCuenta = new System.Windows.Forms.Label();
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
@@ -36,23 +39,19 @@
             this.textBox_NumeroCuenta = new System.Windows.Forms.TextBox();
             this.button_Borrar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.textBox_pais = new System.Windows.Forms.TextBox();
-            this.textBox_Moneda = new System.Windows.Forms.TextBox();
-            this.textBox_tipo_cuenta = new System.Windows.Forms.TextBox();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // paner_DatosCuenta
             // 
-            this.paner_DatosCuenta.Controls.Add(this.textBox_tipo_cuenta);
+            this.paner_DatosCuenta.Controls.Add(this.textBox_Tipo_Cuenta);
             this.paner_DatosCuenta.Controls.Add(this.textBox_Moneda);
-            this.paner_DatosCuenta.Controls.Add(this.textBox_pais);
+            this.paner_DatosCuenta.Controls.Add(this.textBox_Pais);
             this.paner_DatosCuenta.Controls.Add(this.label_TipoCuenta);
             this.paner_DatosCuenta.Controls.Add(this.label_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Pais);
             this.paner_DatosCuenta.Controls.Add(this.label_NumeroCuenta);
             this.paner_DatosCuenta.Controls.Add(this.textBox_NumeroCuenta);
-            this.paner_DatosCuenta.Enabled = false;
             this.paner_DatosCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_DatosCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_DatosCuenta.Location = new System.Drawing.Point(12, 12);
@@ -62,6 +61,33 @@
             this.paner_DatosCuenta.TabStop = false;
             this.paner_DatosCuenta.Text = "Datos de la cuenta";
             this.paner_DatosCuenta.Enter += new System.EventHandler(this.paner_DatosCuenta_Enter);
+            // 
+            // textBox_Tipo_Cuenta
+            // 
+            this.textBox_Tipo_Cuenta.Enabled = false;
+            this.textBox_Tipo_Cuenta.Location = new System.Drawing.Point(340, 235);
+            this.textBox_Tipo_Cuenta.MaxLength = 255;
+            this.textBox_Tipo_Cuenta.Name = "textBox_Tipo_Cuenta";
+            this.textBox_Tipo_Cuenta.Size = new System.Drawing.Size(121, 20);
+            this.textBox_Tipo_Cuenta.TabIndex = 25;
+            // 
+            // textBox_Moneda
+            // 
+            this.textBox_Moneda.Enabled = false;
+            this.textBox_Moneda.Location = new System.Drawing.Point(340, 208);
+            this.textBox_Moneda.MaxLength = 255;
+            this.textBox_Moneda.Name = "textBox_Moneda";
+            this.textBox_Moneda.Size = new System.Drawing.Size(121, 20);
+            this.textBox_Moneda.TabIndex = 24;
+            // 
+            // textBox_Pais
+            // 
+            this.textBox_Pais.Enabled = false;
+            this.textBox_Pais.Location = new System.Drawing.Point(340, 181);
+            this.textBox_Pais.MaxLength = 255;
+            this.textBox_Pais.Name = "textBox_Pais";
+            this.textBox_Pais.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Pais.TabIndex = 23;
             // 
             // label_TipoCuenta
             // 
@@ -134,33 +160,6 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
-            // textBox_pais
-            // 
-            this.textBox_pais.Enabled = false;
-            this.textBox_pais.Location = new System.Drawing.Point(340, 181);
-            this.textBox_pais.MaxLength = 255;
-            this.textBox_pais.Name = "textBox_pais";
-            this.textBox_pais.Size = new System.Drawing.Size(232, 20);
-            this.textBox_pais.TabIndex = 23;
-            // 
-            // textBox_Moneda
-            // 
-            this.textBox_Moneda.Enabled = false;
-            this.textBox_Moneda.Location = new System.Drawing.Point(340, 208);
-            this.textBox_Moneda.MaxLength = 255;
-            this.textBox_Moneda.Name = "textBox_Moneda";
-            this.textBox_Moneda.Size = new System.Drawing.Size(121, 20);
-            this.textBox_Moneda.TabIndex = 24;
-            // 
-            // textBox_tipo_cuenta
-            // 
-            this.textBox_tipo_cuenta.Enabled = false;
-            this.textBox_tipo_cuenta.Location = new System.Drawing.Point(340, 235);
-            this.textBox_tipo_cuenta.MaxLength = 255;
-            this.textBox_tipo_cuenta.Name = "textBox_tipo_cuenta";
-            this.textBox_tipo_cuenta.Size = new System.Drawing.Size(121, 20);
-            this.textBox_tipo_cuenta.TabIndex = 25;
-            // 
             // Baja
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -194,8 +193,8 @@
         private System.Windows.Forms.TextBox textBox_NumeroCuenta;
         private System.Windows.Forms.Button button_Borrar;
         private System.Windows.Forms.Button button_Cerrar;
-        private System.Windows.Forms.TextBox textBox_tipo_cuenta;
+        private System.Windows.Forms.TextBox textBox_Tipo_Cuenta;
         private System.Windows.Forms.TextBox textBox_Moneda;
-        private System.Windows.Forms.TextBox textBox_pais;
+        private System.Windows.Forms.TextBox textBox_Pais;
     }
 }
