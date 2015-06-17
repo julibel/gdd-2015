@@ -11,14 +11,27 @@ namespace PagoElectronico.Facturacion
 {
     public partial class Seleccionar_Operacion : Form
     {
-        public Seleccionar_Operacion()
+
+        private Form caller;
+        
+
+        public Seleccionar_Operacion(Form caller)
         {
             InitializeComponent();
+            this.caller = caller;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button_Aceptar_Click(object sender, EventArgs e)
+        {
+            var listaDeId = new List<int>();
+
+
+            //caller.lista = listaDeId;
         }
     }
 }
