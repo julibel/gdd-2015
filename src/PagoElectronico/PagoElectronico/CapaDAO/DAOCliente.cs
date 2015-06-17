@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using PagoElectronico.Model;
+using System.Windows.Forms;
 
 namespace PagoElectronico.CapaDAO
 {
@@ -21,8 +22,10 @@ namespace PagoElectronico.CapaDAO
                 cliente.Departamento,
                 cliente.Localidad,
                 cliente.Pais_Actual,
+                0,
                 cliente.FechaDeNacimiento.ToString("yyyy-MM-dd HH:mm:ss"),
                 cliente.Pais_Nacionalidad,
+                0,
                 cliente.Mail,
                 usuario.NombreUsuario,
                 usuario.Password,
@@ -51,7 +54,7 @@ namespace PagoElectronico.CapaDAO
         {
             //List<Persona> clientes = new List<Persona>();
 
-            DataTable table = retrieveDataTable("GET_CLIENTES", nombre, apellido, email, tipoDoc, nroDoc);
+            DataTable table = retrieveDataTable("FIND_CLIENTES", nombre, apellido, email, tipoDoc, nroDoc);
 
             /*foreach (DataRow row in table.Rows)
             {
@@ -61,21 +64,40 @@ namespace PagoElectronico.CapaDAO
             return table;
         }
 
-        public static Persona dataRowToCliente(DataRow row)
+        public static Persona dataRowToCliente(DataGridViewRow row)
         {
-            return new Persona(Convert.ToInt32(row["ID"]),
-                                row["NOMBRE"] as string,
-                                row["APELLIDO"] as string,
-                                row["NUMERO_DOC"] as string,
-                                Convert.ToInt32(row["TIPO"]),
-                                row["CALLE"] as string,
-                                Convert.ToInt32(row["PISO"]),
-                                row["DEPTO"] as string,
-                                row["LOCALIDAD"] as string,
-                                row["PAIS"] as string,
-                                Convert.ToDateTime(row["FECHA_NACIMIENTO"]),
-                                row["NACIONALIDAD"] as string,
-                                row["MAIL"] as string);
+            return new Persona(Convert.ToInt32(row.Cells[1]),//id
+                                Convert.ToString(row.Cells[4]),//nombre
+                                Convert.ToString(row.Cells[5]),//apellido
+                                Convert.ToString(row.Cells[3]),//numero doc
+                                Convert.ToInt32(row.Cells[2]), //tipo_dni
+                                Convert.ToString(row.Cells[7]),//calle
+                                Convert.ToInt32(row.Cells[8]),//piso
+                                Convert.ToString(row.Cells[9]),//departamento
+                                Convert.ToString(row.Cells[10]),//localidad
+                                "pais",
+                                Convert.ToInt32(row.Cells[11]),//pais_actual
+                                Convert.ToDateTime(row.Cells[12]),//fecha_nac
+                                "pais",
+                                Convert.ToInt32(row.Cells[13]),//pais_nacionalidad
+                                Convert.ToString(row.Cells[14])//mail
+                                );
+
+//    CLI_ID INT IDENTITY(1,1) PRIMARY KEY,
+//    TIPO_DOC INT,
+//    NUMERO_DOC VARCHAR(10),
+//    NOMBRE VARCHAR(255),
+//    APELLIDO VARCHAR(255),
+//    PAIS INT,
+//    CALLE VARCHAR(255),
+//    PISO INT,
+//    DEPTO VARCHAR(10),
+//    LOCALIDAD VARCHAR(60),
+//    NACIONALIDAD INT,
+//    FECHA_NACIMIENTO DATETIME,
+//    MAIL VARCHAR(255),
+//    USUARIO INT	
+//)
         }
 
     }
