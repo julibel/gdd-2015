@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
 
 namespace PagoElectronico.ABM_Cliente
 {
@@ -23,9 +24,10 @@ namespace PagoElectronico.ABM_Cliente
             MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
-        public Baja()
+        public Baja(Persona cliente)
         {
             InitializeComponent();
+
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

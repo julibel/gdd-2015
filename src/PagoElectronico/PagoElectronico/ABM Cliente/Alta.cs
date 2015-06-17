@@ -78,8 +78,8 @@ namespace PagoElectronico.ABM_Cliente
             if (resultado == DialogResult.Yes)
             {
                 if (!Validaciones()) return;
-                //try
-                //{
+                try
+                {
                    int id = DAOCliente.AgregarCliente(GenerarCliente(),GenerarUsuario());
 
              
@@ -98,11 +98,11 @@ namespace PagoElectronico.ABM_Cliente
                        DAOTarjeta.AgregarTarjeta(tarjeta, id);
                    }
                    Mensaje_OK("Los datos han sido almacenados con exito", "");
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("ERROR.-" + ex.Message);
-                //}       
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("ERROR.-" + ex.Message);
+                }       
             }
         
         }
@@ -157,8 +157,10 @@ namespace PagoElectronico.ABM_Cliente
                     textBox_Depto.Text,
                     textBox_Localidad.Text,
                     comboBox_Pais.Text,
+                    0,
                     dateTimePicker_FechaNacimiento.Value,
                     comboBox_Nacionalidad.Text,
+                    0,
                     textBox_Mail.Text            
                     );
         }
