@@ -61,5 +61,10 @@ namespace PagoElectronico.ABM_Cuenta
         {
             LimpiarCampos();
         }
+
+        private void Modificacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

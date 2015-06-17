@@ -385,6 +385,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificacion";
+            this.Load += new System.EventHandler(this.Modificacion_Load);
             this.paner_DatosCuenta.ResumeLayout(false);
             this.paner_DatosCuenta.PerformLayout();
             this.ResumeLayout(false);
