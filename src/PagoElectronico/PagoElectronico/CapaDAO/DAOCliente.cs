@@ -35,6 +35,27 @@ namespace PagoElectronico.CapaDAO
             return id;
             
         }
+
+        public static void ModificarCliente(Persona cliente, int id)
+        {
+            executeProcedure("MODIFICAR_CLIENTE",
+                id,
+                cliente.Nombre,
+                cliente.Apellido,
+                cliente.Documento,
+                cliente.TipoDoc,
+                cliente.Calle,
+                cliente.Piso,
+                cliente.Departamento,
+                cliente.Localidad,
+                cliente.Pais_Actual,
+                cliente.FechaDeNacimiento.ToString("yyyy-MM-dd HH:mm:ss"),
+                cliente.Pais_Nacionalidad,
+                cliente.Mail
+                );
+
+
+        }
         
         public static bool existeDni(string dni, int tipo)
         {
@@ -133,5 +154,7 @@ namespace PagoElectronico.CapaDAO
          {
              return retrieveDataTable("GET_TARJETAS_CLIENTE", id);
          }
+
+         
     }
 }

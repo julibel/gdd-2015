@@ -34,6 +34,15 @@ namespace PagoElectronico.Model
             Emisor = emisor;
           
         }
+
+        public Tarjeta(int id, int id_persona, int cod_seg, string emisor)
+        {
+            ID = id;
+            ID_Persona = id_persona;
+            cod_seguridad = cod_seg;
+            Emisor = emisor;
+
+        }
   
     }
 }

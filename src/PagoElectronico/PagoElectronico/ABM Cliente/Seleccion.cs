@@ -13,6 +13,14 @@ namespace PagoElectronico.ABM_Cliente
 {
     public partial class Seleccion : Form
     {
+        private Form caller = null;
+
+        private TextBox text;
+
+        public int id;
+
+        private string clienteNom;
+
         string nombre, apellido, doc, mail;
         int tipoDoc = 0;
         private bool esBaja;
@@ -39,8 +47,28 @@ namespace PagoElectronico.ABM_Cliente
             }
         }
 
+        public Seleccion(Form caller, TextBox textbox)
+        {
+            InitializeComponent();
+            this.caller = caller;
+            this.text = textbox;
+            caller.Visible = false;
+        }
+
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
+            cerrar();
+        }
+
+        private void cerrar()
+        {
+            if (caller == null)
+                this.Close();
+            else
+            {
+                text.Text = clienteNom;
+                caller.Visible = true;
+            }
             this.Close();
         }
 
@@ -73,24 +101,35 @@ namespace PagoElectronico.ABM_Cliente
             DataTable table = CapaDAO.DAOCliente.getCliente(id);
             DataTable tarjetas = CapaDAO.DAOCliente.getTarjetasCliente(id);
             Persona cliente = DAOCliente.dataRowToCliente(table.Rows[0]);
-          
+
+            this.id = cliente.ID;
+            clienteNom = cliente.Nombre + ' ' + cliente.Apellido;
 
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
 
-            Form nuevo_form;
-
-            if (esBaja)
+            if (caller == null)
             {
-                nuevo_form = new ABM_Cliente.Baja(cliente, tarjetas);
-            }
-            else
-            {
-                nuevo_form = new ABM_Cliente.Modificacion(cliente);
-            }
+                Form nuevo_form;
+                
+                if (esBaja)
+                {
+                    nuevo_form = new ABM_Cliente.Baja(cliente, tarjetas);
+                }
+                else
+                {
+                    List<Tarjeta> listaTarjetas = new List<Tarjeta>();
+                    foreach (DataRow row in tarjetas.Rows)
+                    {
+                        Tarjeta tarjeta = DAOTarjeta.dataRowToTarjetas(row);
+                        listaTarjetas.Add(tarjeta);
+                    }
+                    nuevo_form = new ABM_Cliente.Modificacion(cliente, listaTarjetas);
+                }
 
 
-            nuevo_form.Show();
-            this.Close();
+                nuevo_form.Show();
+            }
+            cerrar();
         }
     }
 }

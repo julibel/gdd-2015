@@ -111,7 +111,6 @@ namespace PagoElectronico.ABM_Cuenta
             textBox_CostoMantActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_MANTENIMIENTO"]);
             textBox_CostTranActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_TRANSACCION"]);
             textBox_VigenciaActual.Text = Convert.ToString(cuenta.Rows[0]["VIGENCIA"]);
-           
         }
 
         private void textBox_CostoMantModificado_KeyPress(object sender, KeyPressEventArgs e)
