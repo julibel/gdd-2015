@@ -11,6 +11,8 @@ namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Modificacion : Form
     {
+        private long cuenta;
+
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
@@ -29,9 +31,10 @@ namespace PagoElectronico.ABM_Cuenta
 
         }
 
-        public Modificacion()
+        public Modificacion(long cuentaID)
         {
             InitializeComponent();
+            cuenta = cuentaID;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
