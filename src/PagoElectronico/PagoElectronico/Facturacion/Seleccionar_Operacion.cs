@@ -13,6 +13,8 @@ namespace PagoElectronico.Facturacion
     {
 
         private Form caller;
+
+        private DataTable comisiones;
         
 
         public Seleccionar_Operacion(Form caller)
@@ -32,6 +34,11 @@ namespace PagoElectronico.Facturacion
 
 
             //caller.lista = listaDeId;
+        }
+
+        private void Seleccionar_Operacion_Load(object sender, EventArgs e)
+        {
+            dataGridView_ListadoOperaciones.DataSource = CapaDAO.DAOFactura.getComisiones();
         }
     }
 }

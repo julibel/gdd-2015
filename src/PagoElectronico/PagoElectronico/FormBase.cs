@@ -39,8 +39,7 @@ namespace PagoElectronico
         private bool noPuedeIngresar(int idFun)
         {
             if (idFun == 118) return true;
-            return false; //Hardcodeo para poder seguir trabajando en lo demás
-
+            
             if (Globals.tieneFuncionalidad(idFun))
             {
                 return false;//Puede acceder
@@ -151,7 +150,7 @@ namespace PagoElectronico
 
         private void crearDepositoDeDineroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(12)) return;
+            if (noPuedeIngresar(14)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Depositos.DepositoNuevo nuevo_form = new Depositos.DepositoNuevo();
             nuevo_form.MdiParent = this;
@@ -160,7 +159,7 @@ namespace PagoElectronico
 
         private void retirarEfectivoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(13)) return;
+            if (noPuedeIngresar(15)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Retiros.Retiro nuevo_form = new Retiros.Retiro();
             nuevo_form.MdiParent = this;
@@ -169,7 +168,7 @@ namespace PagoElectronico
 
         private void transferirEntreCuentasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(14)) return;
+            if (noPuedeIngresar(16)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Transferencias.Transferencia nuevo_form = new Transferencias.Transferencia();
             nuevo_form.MdiParent = this;
@@ -178,7 +177,7 @@ namespace PagoElectronico
 
         private void facturarCostosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(15)) return;
+            if (noPuedeIngresar(17)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Facturacion.Facturar nuevo_form = new Facturacion.Facturar();
             nuevo_form.MdiParent = this;
@@ -204,7 +203,7 @@ namespace PagoElectronico
 
         private void modificarContraseniaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(17)) return;
+            if (noPuedeIngresar(19)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Modificar_contrasenia.ModificarContrasenia nuevo_form = new Modificar_contrasenia.ModificarContrasenia();
             nuevo_form.MdiParent = this;
@@ -213,7 +212,7 @@ namespace PagoElectronico
 
         private void modificarCategoriaDeCuentasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(18)) return;
+            if (noPuedeIngresar(20)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             ABM_Cuenta.ModificarCategoriaCuenta nuevo_form = new ABM_Cuenta.ModificarCategoriaCuenta();
             nuevo_form.MdiParent = this;
@@ -222,7 +221,7 @@ namespace PagoElectronico
 
         private void listadoEstadisticoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(19)) return;
+            if (noPuedeIngresar(21)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Listados.ListadoEstadistico nuevo_form = new Listados.ListadoEstadistico();
             nuevo_form.MdiParent = this;
@@ -236,7 +235,7 @@ namespace PagoElectronico
 
         private void desasociarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(20)) return;
+            if (noPuedeIngresar(12)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Tarjeta_Credito.Seleccion nuevo_form = new Tarjeta_Credito.Seleccion();
             nuevo_form.MdiParent = this;
@@ -245,7 +244,7 @@ namespace PagoElectronico
 
         private void modificarDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (noPuedeIngresar(21)) return;
+            if (noPuedeIngresar(13)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Tarjeta_Credito.Seleccion nuevo_form = new Tarjeta_Credito.Seleccion();
             nuevo_form.MdiParent = this;

@@ -11,14 +11,19 @@ namespace PagoElectronico.Login
 {
     public partial class Login : Form
     {
-        public Login()
+        private FormBase fBase;
+
+        public Login(FormBase fBase)
         {
             InitializeComponent();
+            fBase.Visible = false;
+            this.fBase = fBase;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+            fBase.Close();
         }
 
         private void button_OlvidoContrasenia_Click(object sender, EventArgs e)
@@ -42,15 +47,16 @@ namespace PagoElectronico.Login
 
         private void button_IniciarSesion_Click(object sender, EventArgs e)
         {
-            if (!CapaDAO.DAOLogin.existeUsuario(textBox_Username.Text))
+            string user = textBox_Username.Text;
+            if (!CapaDAO.DAOLogin.existeUsuario(user))
             {
                 MessageBox.Show("El usuario no existe", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
-            if (CapaDAO.DAOLogin.iniciarSesionConPassword(textBox_Username.Text, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
+            if (CapaDAO.DAOLogin.iniciarSesionConPassword(user, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
             {
-                new FormBase().Show();
+                fBase.Visible = true;
                 this.Close();
             }
             else

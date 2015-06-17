@@ -12,7 +12,7 @@ namespace PagoElectronico.Facturacion
 {
     public partial class Facturar : Form
     {
-        private Form caller;
+        private Seleccionar_Operacion seleccionar;
 
         public Facturar()
         {
@@ -152,11 +152,12 @@ namespace PagoElectronico.Facturacion
 
         private void button_Seleccion_Click(object sender, EventArgs e)
         {
-            Form nuevo_form;
+            seleccionar = new Seleccionar_Operacion(this);
 
-            nuevo_form = new Facturacion.Seleccionar_Operacion(this);
-          
-            nuevo_form.Show();
+            seleccionar.MdiParent = this.MdiParent;
+
+            this.Visible = false;
+            seleccionar.Show();
            
         }
 

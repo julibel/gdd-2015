@@ -14,11 +14,10 @@ namespace PagoElectronico
         private static List<int> funcionalidades = new List<int>();
 
         private static string connectionString = ConfigurationManager.ConnectionStrings["GD1C2015"].ConnectionString;
-        private static bool isLogged = false;
 
         public static int userID
         {
-            get { return 176; }//_userID; }
+            get { return _userID; }
             set { _userID = value; }
         }
         public static string username
@@ -31,20 +30,9 @@ namespace PagoElectronico
             return connectionString;
         }
 
-        public static string /*DateTime*/ getFechaSistema() //Dijimos de manejarla como string?
+        public static string getFechaSistema() 
         {
             return ConfigurationManager.AppSettings["fechaSistema"];
-            //return Convert.ToDateTime(ConfigurationManager.AppSettings["fechaSistema"]);
-        }
-
-        public static void setAdminLoggeado(bool status)
-        {
-            isLogged = status;
-        }
-
-        public static bool adminLoggeado()
-        {
-            return isLogged;
         }
 
         public static string getHashSHA256(string text)

@@ -28,6 +28,7 @@ namespace PagoElectronico.CapaDAO
         {
             if (executeProcedureWithReturnValue("PASSWORD_CORRECTA", user, Globals.getHashSHA256(pass)) != 0)
             {
+                loginCorrecto(user);
                 return iniciarSesion(user, rol);
             }
             loginIncorrecto(user);
@@ -65,11 +66,10 @@ namespace PagoElectronico.CapaDAO
         {
             DataTable funcs = retrieveDataTable("GET_FUNCIONALIDADES_ROL", rolID);
             List<int> funcionalidades = new List<int>();
-            MessageBox.Show("Acá llegué: " + Convert.ToString(rolID));
+
             for (int i = 0; i < funcs.Rows.Count; i++)
             {
                 funcionalidades.Add((int)funcs.Rows[i][0]);
-                MessageBox.Show(Convert.ToString(funcs.Rows[i][0]));
             }
             return funcionalidades;
         }

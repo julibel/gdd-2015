@@ -130,6 +130,7 @@
     <Compile Include="ABM Cuenta\Modificacion.Designer.cs">
       <DependentUpon>Modificacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="CapaDAO\DAOFactura.cs" />
     <Compile Include="Consulta Saldos\SeleccionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
