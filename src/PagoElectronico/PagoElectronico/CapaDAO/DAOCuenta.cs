@@ -19,7 +19,7 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("MODIFICAR_CUENTA", id, cliente, moneda, pais, tipo_cuenta, estado, Globals.getFechaSistema());
         }
 
-        public static void modificarCostosTipo(int idTipo, float costoMant, float costoTransf)
+        public static void modificarCostosTipo(int idTipo, double costoMant, double costoTransf)
         {
             executeProcedure("MODIFICAR_COSTOS_TIPO", idTipo, costoMant, costoTransf);
         }
@@ -34,10 +34,16 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("MODIFICAR_TIPO_CUENTA", numero, tipo, Globals.getFechaSistema());
         }
 
+        public static DataTable getCostoTipo(int id)
+        {
+            return retrieveDataTable("GET_COSTOS_TIPOS",id);
+        }
+
         public static object getTiposCuenta()
         {
             return retrieveDataTable("GET_TIPOS_CUENTA");
         }
+
 
         public static object getCuentas(string numero, string pais, int tipo, bool esBaja)
         {
