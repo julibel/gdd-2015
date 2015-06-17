@@ -17,7 +17,6 @@ namespace PagoElectronico.ABM_Cuenta
         {
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<ComboBox>()) control.Text = "";
-            textBox_Numero.Text = "A generar";
         }
 
         private void Mensaje_OK(String mensaje, String resumen)
@@ -52,7 +51,7 @@ namespace PagoElectronico.ABM_Cuenta
             var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-                textBox_Numero.Text = Convert.ToString(CapaDAO.DAOCuenta.agregarCuenta(seleccion.id, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue)));
+                CapaDAO.DAOCuenta.agregarCuenta(seleccion.id, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
         }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.paner_DatosCuenta = new System.Windows.Forms.GroupBox();
-            this.textBox_Numero = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,7 +38,6 @@
             this.comboBox_Moneda = new System.Windows.Forms.ComboBox();
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
-            this.label_NumeroCuenta = new System.Windows.Forms.Label();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
@@ -48,7 +46,6 @@
             // 
             // paner_DatosCuenta
             // 
-            this.paner_DatosCuenta.Controls.Add(this.textBox_Numero);
             this.paner_DatosCuenta.Controls.Add(this.button1);
             this.paner_DatosCuenta.Controls.Add(this.label2);
             this.paner_DatosCuenta.Controls.Add(this.textBox1);
@@ -58,7 +55,6 @@
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Pais);
-            this.paner_DatosCuenta.Controls.Add(this.label_NumeroCuenta);
             this.paner_DatosCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_DatosCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_DatosCuenta.Location = new System.Drawing.Point(12, 12);
@@ -67,14 +63,6 @@
             this.paner_DatosCuenta.TabIndex = 32;
             this.paner_DatosCuenta.TabStop = false;
             this.paner_DatosCuenta.Text = "Datos de la cuenta";
-            // 
-            // textBox_Numero
-            // 
-            this.textBox_Numero.Location = new System.Drawing.Point(340, 125);
-            this.textBox_Numero.Name = "textBox_Numero";
-            this.textBox_Numero.Size = new System.Drawing.Size(135, 20);
-            this.textBox_Numero.TabIndex = 39;
-            this.textBox_Numero.Text = "A generar";
             // 
             // button1
             // 
@@ -356,17 +344,6 @@
             this.label_Pais.TabIndex = 8;
             this.label_Pais.Text = "Pais";
             // 
-            // label_NumeroCuenta
-            // 
-            this.label_NumeroCuenta.AutoSize = true;
-            this.label_NumeroCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label_NumeroCuenta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_NumeroCuenta.Location = new System.Drawing.Point(239, 128);
-            this.label_NumeroCuenta.Name = "label_NumeroCuenta";
-            this.label_NumeroCuenta.Size = new System.Drawing.Size(95, 13);
-            this.label_NumeroCuenta.TabIndex = 1;
-            this.label_NumeroCuenta.Text = "Numero de cuenta";
-            // 
             // button_Limpiar
             // 
             this.button_Limpiar.Location = new System.Drawing.Point(661, 428);
@@ -426,7 +403,6 @@
         private System.Windows.Forms.GroupBox paner_DatosCuenta;
         private System.Windows.Forms.Label label_Moneda;
         private System.Windows.Forms.Label label_Pais;
-        private System.Windows.Forms.Label label_NumeroCuenta;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Guardar;
         private System.Windows.Forms.Button button_Cerrar;
@@ -437,6 +413,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox_Numero;
     }
 }

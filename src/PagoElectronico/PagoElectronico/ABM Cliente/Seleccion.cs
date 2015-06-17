@@ -102,7 +102,7 @@ namespace PagoElectronico.ABM_Cliente
             DataTable tarjetas = CapaDAO.DAOCliente.getTarjetasCliente(id);
             Persona cliente = DAOCliente.dataRowToCliente(table.Rows[0]);
 
-            id = cliente.ID;
+            this.id = cliente.ID;
             clienteNom = cliente.Nombre + ' ' + cliente.Apellido;
 
             if (ActiveMdiChild != null) ActiveMdiChild.Close();

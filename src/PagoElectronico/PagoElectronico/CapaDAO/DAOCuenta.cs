@@ -10,10 +10,9 @@ namespace PagoElectronico.CapaDAO
 {
     class DAOCuenta:SqlConnector
     {
-        public static int agregarCuenta(int cliente, string pais, int moneda, int tipo)
+        public static void agregarCuenta(int cliente, string pais, int moneda, int tipo)
         {
-            MessageBox.Show(cliente.ToString());
-            return executeProcedureWithReturnValue("AGREGAR_CUENTA", cliente, moneda, pais, tipo, Globals.getFechaSistema());
+            executeProcedure("AGREGAR_CUENTA", cliente, moneda, pais, tipo, Globals.getFechaSistema());
         }
 
         public static void modificarCuenta(long id, int cliente, int moneda, int pais, int tipo_cuenta, int estado)
