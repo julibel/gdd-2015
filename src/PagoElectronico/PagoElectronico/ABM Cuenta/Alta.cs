@@ -26,7 +26,6 @@ namespace PagoElectronico.ABM_Cuenta
         {
             var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return resultado;
-
         }
 
         public Alta()
@@ -41,17 +40,23 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
+            if (!camposCorrectos())
+            {
+                MessageBox.Show("No están todos los datos obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-
-
-
-
-
-
+                CapaDAO.DAOCuenta.agregarCuenta(maskedTextBox_Numero.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
+        }
+
+        private bool camposCorrectos()
+        {
+            return comboBox_Pais.Text != "" && comboBox_Moneda.Text != "" && comboBox_TipoCuenta.Text != "";
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
@@ -61,7 +66,17 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void Alta_Load(object sender, EventArgs e)
         {
+            comboBox_Moneda.ValueMember = "MON_ID";
+            comboBox_Moneda.DisplayMember = "NOMBRE";
+            comboBox_Moneda.DataSource = CapaDAO.DAOCuenta.getMonedas();
 
+            comboBox_Pais.ValueMember = "PAI_ID";
+            comboBox_Pais.DisplayMember = "NOMBRE";
+            comboBox_Pais.DataSource = CapaDAO.DAOCuenta.getPaises();
+
+            comboBox_TipoCuenta.ValueMember = "TIP_ID";
+            comboBox_TipoCuenta.DisplayMember = "NOMBRE";
+            comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
         }
     }
 }

@@ -36,15 +36,17 @@
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox_NumeroCuenta = new System.Windows.Forms.TextBox();
+            this.maskedTextBox_Numero = new System.Windows.Forms.MaskedTextBox();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // paner_DatosCuenta
             // 
+            this.paner_DatosCuenta.Controls.Add(this.label1);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Pais);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_TipoCuenta);
             this.paner_DatosCuenta.Controls.Add(this.label_TipoCuenta);
@@ -52,7 +54,7 @@
             this.paner_DatosCuenta.Controls.Add(this.label_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Pais);
             this.paner_DatosCuenta.Controls.Add(this.label_NumeroCuenta);
-            this.paner_DatosCuenta.Controls.Add(this.textBox_NumeroCuenta);
+            this.paner_DatosCuenta.Controls.Add(this.maskedTextBox_Numero);
             this.paner_DatosCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_DatosCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_DatosCuenta.Location = new System.Drawing.Point(12, 12);
@@ -262,17 +264,13 @@
             "Zimbabue"});
             this.comboBox_Pais.Location = new System.Drawing.Point(340, 181);
             this.comboBox_Pais.Name = "comboBox_Pais";
-            this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Pais.Size = new System.Drawing.Size(135, 21);
             this.comboBox_Pais.TabIndex = 33;
             // 
             // comboBox_TipoCuenta
             // 
+            this.comboBox_TipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TipoCuenta.FormattingEnabled = true;
-            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
-            "Oro",
-            "Plata",
-            "Bronce",
-            "Gratuita"});
             this.comboBox_TipoCuenta.Location = new System.Drawing.Point(340, 235);
             this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
             this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
@@ -289,9 +287,8 @@
             // 
             // comboBox_Moneda
             // 
+            this.comboBox_Moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Moneda.FormattingEnabled = true;
-            this.comboBox_Moneda.Items.AddRange(new object[] {
-            "Dolares"});
             this.comboBox_Moneda.Location = new System.Drawing.Point(340, 208);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
@@ -330,13 +327,13 @@
             this.label_NumeroCuenta.TabIndex = 1;
             this.label_NumeroCuenta.Text = "Numero de cuenta";
             // 
-            // textBox_NumeroCuenta
+            // maskedTextBox_Numero
             // 
-            this.textBox_NumeroCuenta.Location = new System.Drawing.Point(340, 155);
-            this.textBox_NumeroCuenta.MaxLength = 255;
-            this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
-            this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
-            this.textBox_NumeroCuenta.TabIndex = 0;
+            this.maskedTextBox_Numero.Location = new System.Drawing.Point(340, 155);
+            this.maskedTextBox_Numero.Mask = "999999999999999999";
+            this.maskedTextBox_Numero.Name = "maskedTextBox_Numero";
+            this.maskedTextBox_Numero.Size = new System.Drawing.Size(135, 20);
+            this.maskedTextBox_Numero.TabIndex = 34;
             // 
             // button_Limpiar
             // 
@@ -368,6 +365,15 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(490, 158);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 13);
+            this.label1.TabIndex = 35;
+            this.label1.Text = "Se autogenerará si no se ingresa";
+            // 
             // Alta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,7 +404,6 @@
         private System.Windows.Forms.Label label_Moneda;
         private System.Windows.Forms.Label label_Pais;
         private System.Windows.Forms.Label label_NumeroCuenta;
-        private System.Windows.Forms.TextBox textBox_NumeroCuenta;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Guardar;
         private System.Windows.Forms.Button button_Cerrar;
@@ -406,5 +411,7 @@
         private System.Windows.Forms.ComboBox comboBox_TipoCuenta;
         private System.Windows.Forms.Label label_TipoCuenta;
         private System.Windows.Forms.ComboBox comboBox_Pais;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_Numero;
+        private System.Windows.Forms.Label label1;
     }
 }
