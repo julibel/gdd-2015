@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 using PagoElectronico.Model;
-using System.Data;
 
 namespace PagoElectronico.CapaDAO
 {
     class DAOCuenta:SqlConnector
     {
-        public static void agregarCuenta(Cuenta cuenta)
+        public static int agregarCuenta(int cliente, string pais, int moneda, int tipo)
         {
-            executeProcedure("AGREGAR_CUENTA", cuenta.ID_Usuario, cuenta.Moneda, cuenta.Pais, cuenta.TipoCuenta);
+            MessageBox.Show(cliente.ToString());
+            return executeProcedureWithReturnValue("AGREGAR_CUENTA", cliente, moneda, pais, tipo, Globals.getFechaSistema());
         }
 
         public static void modificarCuenta(long id, int cliente, int moneda, int pais, int tipo_cuenta, int estado)
@@ -74,7 +76,7 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("BAJA_CUENTA", cuenta, Globals.getFechaSistema());
         }
 
-        internal static DataTable getEstadosCuenta()
+        public static DataTable getEstadosCuenta()
         {
             return retrieveDataTable("GET_ESTADOS");
         }

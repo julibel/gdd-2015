@@ -11,10 +11,13 @@ namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Alta : Form
     {
+        private ABM_Cliente.Seleccion seleccion;
+
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<ComboBox>()) control.Text = "";
+            textBox_Numero.Text = "A generar";
         }
 
         private void Mensaje_OK(String mensaje, String resumen)
@@ -49,7 +52,7 @@ namespace PagoElectronico.ABM_Cuenta
             var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-                CapaDAO.DAOCuenta.agregarCuenta(maskedTextBox_Numero.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
+                textBox_Numero.Text = Convert.ToString(CapaDAO.DAOCuenta.agregarCuenta(seleccion.id, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue)));
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
         }
@@ -77,6 +80,14 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_TipoCuenta.ValueMember = "TIP_ID";
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
             comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            seleccion = new ABM_Cliente.Seleccion(this, textBox1);
+            seleccion.MdiParent = this.MdiParent;
+            this.Visible = false;
+            seleccion.Show();
         }
     }
 }

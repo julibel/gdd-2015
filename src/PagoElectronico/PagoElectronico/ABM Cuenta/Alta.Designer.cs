@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.paner_DatosCuenta = new System.Windows.Forms.GroupBox();
+            this.textBox_Numero = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
             this.label_TipoCuenta = new System.Windows.Forms.Label();
@@ -36,17 +40,18 @@
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
-            this.maskedTextBox_Numero = new System.Windows.Forms.MaskedTextBox();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // paner_DatosCuenta
             // 
-            this.paner_DatosCuenta.Controls.Add(this.label1);
+            this.paner_DatosCuenta.Controls.Add(this.textBox_Numero);
+            this.paner_DatosCuenta.Controls.Add(this.button1);
+            this.paner_DatosCuenta.Controls.Add(this.label2);
+            this.paner_DatosCuenta.Controls.Add(this.textBox1);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Pais);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_TipoCuenta);
             this.paner_DatosCuenta.Controls.Add(this.label_TipoCuenta);
@@ -54,7 +59,6 @@
             this.paner_DatosCuenta.Controls.Add(this.label_Moneda);
             this.paner_DatosCuenta.Controls.Add(this.label_Pais);
             this.paner_DatosCuenta.Controls.Add(this.label_NumeroCuenta);
-            this.paner_DatosCuenta.Controls.Add(this.maskedTextBox_Numero);
             this.paner_DatosCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_DatosCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_DatosCuenta.Location = new System.Drawing.Point(12, 12);
@@ -63,6 +67,42 @@
             this.paner_DatosCuenta.TabIndex = 32;
             this.paner_DatosCuenta.TabStop = false;
             this.paner_DatosCuenta.Text = "Datos de la cuenta";
+            // 
+            // textBox_Numero
+            // 
+            this.textBox_Numero.Location = new System.Drawing.Point(340, 125);
+            this.textBox_Numero.Name = "textBox_Numero";
+            this.textBox_Numero.Size = new System.Drawing.Size(135, 20);
+            this.textBox_Numero.TabIndex = 39;
+            this.textBox_Numero.Text = "A generar";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(514, 149);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 38;
+            this.button1.Text = "Seleccionar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(295, 158);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Cliente";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(340, 151);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(157, 20);
+            this.textBox1.TabIndex = 36;
             // 
             // comboBox_Pais
             // 
@@ -321,19 +361,11 @@
             this.label_NumeroCuenta.AutoSize = true;
             this.label_NumeroCuenta.ForeColor = System.Drawing.SystemColors.ControlText;
             this.label_NumeroCuenta.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label_NumeroCuenta.Location = new System.Drawing.Point(239, 158);
+            this.label_NumeroCuenta.Location = new System.Drawing.Point(239, 128);
             this.label_NumeroCuenta.Name = "label_NumeroCuenta";
             this.label_NumeroCuenta.Size = new System.Drawing.Size(95, 13);
             this.label_NumeroCuenta.TabIndex = 1;
             this.label_NumeroCuenta.Text = "Numero de cuenta";
-            // 
-            // maskedTextBox_Numero
-            // 
-            this.maskedTextBox_Numero.Location = new System.Drawing.Point(340, 155);
-            this.maskedTextBox_Numero.Mask = "999999999999999999";
-            this.maskedTextBox_Numero.Name = "maskedTextBox_Numero";
-            this.maskedTextBox_Numero.Size = new System.Drawing.Size(135, 20);
-            this.maskedTextBox_Numero.TabIndex = 34;
             // 
             // button_Limpiar
             // 
@@ -364,15 +396,6 @@
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(490, 158);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 13);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "Se autogenerará si no se ingresa";
             // 
             // Alta
             // 
@@ -411,7 +434,9 @@
         private System.Windows.Forms.ComboBox comboBox_TipoCuenta;
         private System.Windows.Forms.Label label_TipoCuenta;
         private System.Windows.Forms.ComboBox comboBox_Pais;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox_Numero;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox_Numero;
     }
 }
