@@ -24,10 +24,23 @@ namespace PagoElectronico.ABM_Cliente
             MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
-        public Baja(Persona cliente)
+        public Baja(Persona cliente, DataTable tarjetas)
         {
             InitializeComponent();
-
+            textBox_Calle.Text = cliente.Calle;
+            textBox_Apellido.Text = cliente.Apellido;
+            textBox_Depto.Text = cliente.Departamento;
+            textBox_Documento.Text = cliente.Documento;
+            textBox_Fecha_Nacimiento.Text = cliente.FechaDeNacimiento.ToString();
+            textBox_Localidad.Text = cliente.Localidad;
+            textBox_Mail.Text = cliente.Mail;
+            textBox_Nacionalidad.Text = cliente.Pais_Nacionalidad;
+            textBox_Nombre.Text = cliente.Nombre;
+            textBox_Pais.Text = cliente.Pais_Actual;
+            textBox_Piso.Text = cliente.Piso.ToString();
+            comboBox_Tipo_doc.SelectedIndex = cliente.TipoDoc - 1;
+            dataGridView_Tarjetas.DataSource = tarjetas;
+            
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

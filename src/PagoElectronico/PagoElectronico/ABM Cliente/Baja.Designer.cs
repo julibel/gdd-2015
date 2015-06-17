@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.textBox_Calle = new System.Windows.Forms.TextBox();
             this.label_Domicilio = new System.Windows.Forms.Label();
             this.textBox_Nacionalidad = new System.Windows.Forms.TextBox();
@@ -40,11 +41,6 @@
             this.textBox_Piso = new System.Windows.Forms.TextBox();
             this.label_Piso = new System.Windows.Forms.Label();
             this.textBox_Mail = new System.Windows.Forms.TextBox();
-            this.radioButton_Pas = new System.Windows.Forms.RadioButton();
-            this.radioButton_Ci = new System.Windows.Forms.RadioButton();
-            this.radioButton_Le = new System.Windows.Forms.RadioButton();
-            this.radioButton_Lc = new System.Windows.Forms.RadioButton();
-            this.radioButton_Dni = new System.Windows.Forms.RadioButton();
             this.textBox_Documento = new System.Windows.Forms.TextBox();
             this.textBox_Apellido = new System.Windows.Forms.TextBox();
             this.label_FechaNacimiento = new System.Windows.Forms.Label();
@@ -59,8 +55,8 @@
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
-            this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.textBox_Fecha_Nacimiento = new System.Windows.Forms.TextBox();
+            this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
             this.paner_Alta.SuspendLayout();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
@@ -68,6 +64,7 @@
             // 
             // paner_Alta
             // 
+            this.paner_Alta.Controls.Add(this.comboBox_Tipo_doc);
             this.paner_Alta.Controls.Add(this.textBox_Fecha_Nacimiento);
             this.paner_Alta.Controls.Add(this.textBox_Pais);
             this.paner_Alta.Controls.Add(this.textBox_Calle);
@@ -81,11 +78,6 @@
             this.paner_Alta.Controls.Add(this.textBox_Piso);
             this.paner_Alta.Controls.Add(this.label_Piso);
             this.paner_Alta.Controls.Add(this.textBox_Mail);
-            this.paner_Alta.Controls.Add(this.radioButton_Pas);
-            this.paner_Alta.Controls.Add(this.radioButton_Ci);
-            this.paner_Alta.Controls.Add(this.radioButton_Le);
-            this.paner_Alta.Controls.Add(this.radioButton_Lc);
-            this.paner_Alta.Controls.Add(this.radioButton_Dni);
             this.paner_Alta.Controls.Add(this.textBox_Documento);
             this.paner_Alta.Controls.Add(this.textBox_Apellido);
             this.paner_Alta.Controls.Add(this.label_FechaNacimiento);
@@ -105,8 +97,18 @@
             this.paner_Alta.TabStop = false;
             this.paner_Alta.Text = "Datos del Cliente";
             // 
+            // textBox_Pais
+            // 
+            this.textBox_Pais.Enabled = false;
+            this.textBox_Pais.Location = new System.Drawing.Point(136, 272);
+            this.textBox_Pais.MaxLength = 50;
+            this.textBox_Pais.Name = "textBox_Pais";
+            this.textBox_Pais.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Pais.TabIndex = 32;
+            // 
             // textBox_Calle
             // 
+            this.textBox_Calle.Enabled = false;
             this.textBox_Calle.Location = new System.Drawing.Point(136, 194);
             this.textBox_Calle.MaxLength = 255;
             this.textBox_Calle.Name = "textBox_Calle";
@@ -212,76 +214,6 @@
             this.textBox_Mail.Name = "textBox_Mail";
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
             this.textBox_Mail.TabIndex = 20;
-            // 
-            // radioButton_Pas
-            // 
-            this.radioButton_Pas.AutoSize = true;
-            this.radioButton_Pas.Enabled = false;
-            this.radioButton_Pas.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Pas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Pas.Location = new System.Drawing.Point(315, 119);
-            this.radioButton_Pas.Name = "radioButton_Pas";
-            this.radioButton_Pas.Size = new System.Drawing.Size(46, 17);
-            this.radioButton_Pas.TabIndex = 5;
-            this.radioButton_Pas.TabStop = true;
-            this.radioButton_Pas.Text = "PAS";
-            this.radioButton_Pas.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Ci
-            // 
-            this.radioButton_Ci.AutoSize = true;
-            this.radioButton_Ci.Enabled = false;
-            this.radioButton_Ci.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Ci.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Ci.Location = new System.Drawing.Point(186, 119);
-            this.radioButton_Ci.Name = "radioButton_Ci";
-            this.radioButton_Ci.Size = new System.Drawing.Size(35, 17);
-            this.radioButton_Ci.TabIndex = 2;
-            this.radioButton_Ci.TabStop = true;
-            this.radioButton_Ci.Text = "CI";
-            this.radioButton_Ci.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Le
-            // 
-            this.radioButton_Le.AutoSize = true;
-            this.radioButton_Le.Enabled = false;
-            this.radioButton_Le.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Le.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Le.Location = new System.Drawing.Point(271, 119);
-            this.radioButton_Le.Name = "radioButton_Le";
-            this.radioButton_Le.Size = new System.Drawing.Size(38, 17);
-            this.radioButton_Le.TabIndex = 4;
-            this.radioButton_Le.TabStop = true;
-            this.radioButton_Le.Text = "LE";
-            this.radioButton_Le.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Lc
-            // 
-            this.radioButton_Lc.AutoSize = true;
-            this.radioButton_Lc.Enabled = false;
-            this.radioButton_Lc.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Lc.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Lc.Location = new System.Drawing.Point(227, 119);
-            this.radioButton_Lc.Name = "radioButton_Lc";
-            this.radioButton_Lc.Size = new System.Drawing.Size(38, 17);
-            this.radioButton_Lc.TabIndex = 3;
-            this.radioButton_Lc.TabStop = true;
-            this.radioButton_Lc.Text = "LC";
-            this.radioButton_Lc.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Dni
-            // 
-            this.radioButton_Dni.AutoSize = true;
-            this.radioButton_Dni.Enabled = false;
-            this.radioButton_Dni.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radioButton_Dni.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radioButton_Dni.Location = new System.Drawing.Point(136, 119);
-            this.radioButton_Dni.Name = "radioButton_Dni";
-            this.radioButton_Dni.Size = new System.Drawing.Size(44, 17);
-            this.radioButton_Dni.TabIndex = 1;
-            this.radioButton_Dni.TabStop = true;
-            this.radioButton_Dni.Text = "DNI";
-            this.radioButton_Dni.UseVisualStyleBackColor = true;
             // 
             // textBox_Documento
             // 
@@ -420,20 +352,11 @@
             // dataGridView_Tarjetas
             // 
             this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Tarjetas.Enabled = false;
             this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 95);
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
+            this.dataGridView_Tarjetas.ReadOnly = true;
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(383, 192);
             this.dataGridView_Tarjetas.TabIndex = 0;
-            // 
-            // textBox_Pais
-            // 
-            this.textBox_Pais.Enabled = false;
-            this.textBox_Pais.Location = new System.Drawing.Point(136, 272);
-            this.textBox_Pais.MaxLength = 50;
-            this.textBox_Pais.Name = "textBox_Pais";
-            this.textBox_Pais.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Pais.TabIndex = 32;
             // 
             // textBox_Fecha_Nacimiento
             // 
@@ -443,6 +366,21 @@
             this.textBox_Fecha_Nacimiento.Name = "textBox_Fecha_Nacimiento";
             this.textBox_Fecha_Nacimiento.Size = new System.Drawing.Size(232, 20);
             this.textBox_Fecha_Nacimiento.TabIndex = 33;
+            // 
+            // comboBox_Tipo_doc
+            // 
+            this.comboBox_Tipo_doc.Enabled = false;
+            this.comboBox_Tipo_doc.FormattingEnabled = true;
+            this.comboBox_Tipo_doc.Items.AddRange(new object[] {
+            "DNI",
+            "CI",
+            "LC",
+            "LE",
+            "PAS"});
+            this.comboBox_Tipo_doc.Location = new System.Drawing.Point(136, 118);
+            this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
+            this.comboBox_Tipo_doc.Size = new System.Drawing.Size(129, 21);
+            this.comboBox_Tipo_doc.TabIndex = 34;
             // 
             // Baja
             // 
@@ -482,11 +420,6 @@
         private System.Windows.Forms.TextBox textBox_Piso;
         private System.Windows.Forms.Label label_Piso;
         private System.Windows.Forms.TextBox textBox_Mail;
-        private System.Windows.Forms.RadioButton radioButton_Pas;
-        private System.Windows.Forms.RadioButton radioButton_Ci;
-        private System.Windows.Forms.RadioButton radioButton_Le;
-        private System.Windows.Forms.RadioButton radioButton_Lc;
-        private System.Windows.Forms.RadioButton radioButton_Dni;
         private System.Windows.Forms.TextBox textBox_Documento;
         private System.Windows.Forms.TextBox textBox_Apellido;
         private System.Windows.Forms.Label label_FechaNacimiento;
@@ -503,7 +436,8 @@
         private System.Windows.Forms.DataGridView dataGridView_Tarjetas;
         private System.Windows.Forms.TextBox textBox_Calle;
         private System.Windows.Forms.Label label_Domicilio;
-        private System.Windows.Forms.TextBox textBox_Fecha_Nacimiento;
         private System.Windows.Forms.TextBox textBox_Pais;
+        private System.Windows.Forms.ComboBox comboBox_Tipo_doc;
+        private System.Windows.Forms.TextBox textBox_Fecha_Nacimiento;
     }
 }

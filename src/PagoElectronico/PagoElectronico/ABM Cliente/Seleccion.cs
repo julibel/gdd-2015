@@ -31,7 +31,11 @@ namespace PagoElectronico.ABM_Cliente
 
             if (esBaja)
             {
-                dataGridView_Seleccion.Columns[2].HeaderText = "Eliminar";
+                dataGridView_Seleccion.Columns[0].HeaderText = "Eliminar";
+            }
+            else
+            {
+                dataGridView_Seleccion.Columns[0].HeaderText = "Modificar";
             }
         }
 
@@ -65,7 +69,10 @@ namespace PagoElectronico.ABM_Cliente
 
         private void dataGridView_Seleccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Persona cliente = DAOCliente.dataRowToCliente(dataGridView_Seleccion.Rows[e.RowIndex]);
+            int id = Convert.ToInt32(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value);
+            DataTable table = CapaDAO.DAOCliente.getCliente(id);
+            DataTable tarjetas = CapaDAO.DAOCliente.getTarjetasCliente(id);
+            Persona cliente = DAOCliente.dataRowToCliente(table.Rows[0]);
           
 
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
@@ -74,7 +81,7 @@ namespace PagoElectronico.ABM_Cliente
 
             if (esBaja)
             {
-                nuevo_form = new ABM_Cliente.Baja(cliente);
+                nuevo_form = new ABM_Cliente.Baja(cliente, tarjetas);
             }
             else
             {

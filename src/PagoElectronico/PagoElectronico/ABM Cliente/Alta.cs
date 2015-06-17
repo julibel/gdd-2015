@@ -168,7 +168,7 @@ namespace PagoElectronico.ABM_Cliente
         private Tarjeta GenerarTarjeta(DataGridViewRow row)
         {
             return new Tarjeta(
-                Convert.ToInt32(row.Cells[0].Value),
+                Convert.ToInt64(row.Cells[0].Value),
                 Convert.ToInt32(row.Cells[1].Value),
                 Convert.ToString(row.Cells[3].Value)
                 );

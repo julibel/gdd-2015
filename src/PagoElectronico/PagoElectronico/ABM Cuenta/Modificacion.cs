@@ -95,7 +95,6 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_Pais.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["PAIS"]);
             comboBox_TipoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["TIPO"]);
             comboBox_EstadoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["ESTADO"]);
-            
         }
     }
 }

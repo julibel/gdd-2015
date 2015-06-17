@@ -110,3 +110,4 @@ D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_C
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.Modificacion.resources
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.ModificarTipoCuentas.resources
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.ModificarCategoriaCuenta.resources
+C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.SeleccionCliente.resources
