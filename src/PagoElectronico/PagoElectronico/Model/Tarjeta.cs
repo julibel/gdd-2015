@@ -35,6 +35,7 @@ namespace PagoElectronico.Model
           
         }
 
+
         public Tarjeta(int id, int id_persona, int cod_seg, string emisor)
         {
             ID = id;

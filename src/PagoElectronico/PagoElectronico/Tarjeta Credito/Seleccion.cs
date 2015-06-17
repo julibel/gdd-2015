@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Tarjeta_Credito
 {
@@ -24,6 +26,9 @@ namespace PagoElectronico.Tarjeta_Credito
 
         public Seleccion(Form caller, TextBox textTarjeta)
         {
+            comboBox_Numero_Tarjeta.ValueMember = "NUMERO_TARJETA".Substring(12, 16);
+            comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
+            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId(Globals.userID));
             InitializeComponent();
             formCaller = caller;
             textCaller = textTarjeta;
@@ -32,6 +37,10 @@ namespace PagoElectronico.Tarjeta_Credito
 
         public Seleccion()
         {
+            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId(Globals.userID));
+            comboBox_Numero_Tarjeta.ValueMember = "NUMERO_TARJETA";
+            comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
+            
             InitializeComponent();
         }
 
@@ -42,12 +51,7 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void button_Aceptar_Click(object sender, EventArgs e)
         {
-            if (textBox_numeroTarjeta.Text.Length < 16)
-            {
-                MessageBox.Show("El número de tarjeta es de 16 dígitos", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            int idTarjeta = CapaDAO.DAOTarjeta.getID(textBox_numeroTarjeta.Text, textBox_CodigoSeguridad.Text);
+            int idTarjeta = CapaDAO.DAOTarjeta.getID(comboBox_Numero_Tarjeta.SelectedValue.ToString(), textBox_CodigoSeguridad.Text);
 
             if (idTarjeta <= 0)
             {
@@ -55,7 +59,7 @@ namespace PagoElectronico.Tarjeta_Credito
                 return;
             }
             tarjetaID = idTarjeta;
-            textCaller.Text = textBox_numeroTarjeta.Text;
+            textCaller.Text = comboBox_Numero_Tarjeta.SelectedValue.ToString();
             Cerrar();
         }
 

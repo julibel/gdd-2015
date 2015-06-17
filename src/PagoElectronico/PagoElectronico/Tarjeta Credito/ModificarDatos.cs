@@ -15,7 +15,7 @@ namespace PagoElectronico.Tarjeta_Credito
     {
         public ModificarDatos()
         {
-
+            
             InitializeComponent();
         }
 

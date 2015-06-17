@@ -32,9 +32,9 @@
             this.button_Aceptar = new System.Windows.Forms.Button();
             this.paner_DatosCuenta = new System.Windows.Forms.GroupBox();
             this.textBox_CodigoSeguridad = new System.Windows.Forms.TextBox();
-            this.textBox_numeroTarjeta = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_Numero_Tarjeta = new System.Windows.Forms.ComboBox();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,8 +60,8 @@
             // 
             // paner_DatosCuenta
             // 
+            this.paner_DatosCuenta.Controls.Add(this.comboBox_Numero_Tarjeta);
             this.paner_DatosCuenta.Controls.Add(this.textBox_CodigoSeguridad);
-            this.paner_DatosCuenta.Controls.Add(this.textBox_numeroTarjeta);
             this.paner_DatosCuenta.Controls.Add(this.label5);
             this.paner_DatosCuenta.Controls.Add(this.label3);
             this.paner_DatosCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -82,16 +82,6 @@
             this.textBox_CodigoSeguridad.Text = "997";
             this.textBox_CodigoSeguridad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CodigoSeguridad_KeyPress);
             // 
-            // textBox_numeroTarjeta
-            // 
-            this.textBox_numeroTarjeta.Location = new System.Drawing.Point(268, 123);
-            this.textBox_numeroTarjeta.MaxLength = 16;
-            this.textBox_numeroTarjeta.Name = "textBox_numeroTarjeta";
-            this.textBox_numeroTarjeta.Size = new System.Drawing.Size(249, 20);
-            this.textBox_numeroTarjeta.TabIndex = 45;
-            this.textBox_numeroTarjeta.Text = "5506001896744918";
-            this.textBox_numeroTarjeta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_numeroTarjeta_KeyPress);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -109,6 +99,14 @@
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 43;
             this.label3.Text = "Numero de tarjeta";
+            // 
+            // comboBox_Numero_Tarjeta
+            // 
+            this.comboBox_Numero_Tarjeta.FormattingEnabled = true;
+            this.comboBox_Numero_Tarjeta.Location = new System.Drawing.Point(268, 123);
+            this.comboBox_Numero_Tarjeta.Name = "comboBox_Numero_Tarjeta";
+            this.comboBox_Numero_Tarjeta.Size = new System.Drawing.Size(248, 21);
+            this.comboBox_Numero_Tarjeta.TabIndex = 66;
             // 
             // Seleccion
             // 
@@ -138,8 +136,8 @@
         private System.Windows.Forms.Button button_Aceptar;
         private System.Windows.Forms.GroupBox paner_DatosCuenta;
         private System.Windows.Forms.TextBox textBox_CodigoSeguridad;
-        private System.Windows.Forms.TextBox textBox_numeroTarjeta;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox_Numero_Tarjeta;
     }
 }

@@ -63,13 +63,14 @@
             this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
+            this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ult_Digitos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.paner_Alta = new System.Windows.Forms.GroupBox();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
             this.paner_Alta.SuspendLayout();
@@ -617,6 +618,7 @@
             this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Tarjetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
+            this.Ult_Digitos,
             this.Numero,
             this.Codigo,
             this.Emisor,
@@ -626,37 +628,6 @@
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(403, 212);
             this.dataGridView_Tarjetas.TabIndex = 0;
             this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick_1);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Emisor
-            // 
-            this.Emisor.HeaderText = "Emisor";
-            this.Emisor.Name = "Emisor";
-            this.Emisor.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar fila";
-            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // paner_Alta
             // 
@@ -896,6 +867,42 @@
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Nacionalidad.TabIndex = 36;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Ult_Digitos
+            // 
+            this.Ult_Digitos.HeaderText = "Ult_Digitos";
+            this.Ult_Digitos.Name = "Ult_Digitos";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Emisor
+            // 
+            this.Emisor.HeaderText = "Emisor";
+            this.Emisor.Name = "Emisor";
+            this.Emisor.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar fila";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
             // Modificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -962,11 +969,12 @@
         private System.Windows.Forms.Button button_Agregar;
         private System.Windows.Forms.DataGridView dataGridView_Tarjetas;
         private System.Windows.Forms.GroupBox paner_Alta;
+        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ult_Digitos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Emisor;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
     }
 }
