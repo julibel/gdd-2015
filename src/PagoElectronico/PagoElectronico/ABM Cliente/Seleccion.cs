@@ -57,6 +57,9 @@ namespace PagoElectronico.ABM_Cliente
             mail = textBox_Mail.Text;
             tipoDoc = comboBox_TipoDocumento.SelectedIndex + 1;
             doc = textBox_Documento.Text;
+            
+            
+            
             dataGridView_Seleccion.DataSource = CapaDAO.DAOCliente.getClientes(nombre, apellido, mail, tipoDoc, doc);
         }
 

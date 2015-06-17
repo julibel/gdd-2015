@@ -49,12 +49,12 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("GET_CUENTA", cuenta);
         }
 
-        public static object getPaises()
+        public static DataTable getPaises()
         {
             return retrieveDataTable("GET_PAISES");
         }
 
-        public static object getMonedas()
+        public static DataTable getMonedas()
         {
             return DAOOperacion.getMonedas();
         }
@@ -62,6 +62,11 @@ namespace PagoElectronico.CapaDAO
         public static void eliminarCuenta(long cuenta)
         {
             executeProcedure("BAJA_CUENTA", cuenta, Globals.getFechaSistema());
+        }
+
+        internal static DataTable getEstadosCuenta()
+        {
+            return retrieveDataTable("GET_ESTADOS");
         }
     }
 }

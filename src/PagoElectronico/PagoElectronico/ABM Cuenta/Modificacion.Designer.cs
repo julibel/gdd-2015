@@ -40,11 +40,15 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
+            this.comboBox_EstadoCuenta = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
             // paner_DatosCuenta
             // 
+            this.paner_DatosCuenta.Controls.Add(this.label1);
+            this.paner_DatosCuenta.Controls.Add(this.comboBox_EstadoCuenta);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_Pais);
             this.paner_DatosCuenta.Controls.Add(this.comboBox_TipoCuenta);
             this.paner_DatosCuenta.Controls.Add(this.label_TipoCuenta);
@@ -370,6 +374,29 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
+            // comboBox_EstadoCuenta
+            // 
+            this.comboBox_EstadoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_EstadoCuenta.FormattingEnabled = true;
+            this.comboBox_EstadoCuenta.Items.AddRange(new object[] {
+            "Oro",
+            "Plata",
+            "Bronce",
+            "Gratuita"});
+            this.comboBox_EstadoCuenta.Location = new System.Drawing.Point(340, 262);
+            this.comboBox_EstadoCuenta.Name = "comboBox_EstadoCuenta";
+            this.comboBox_EstadoCuenta.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_EstadoCuenta.TabIndex = 35;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(294, 265);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Estado";
+            // 
             // Modificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,5 +435,7 @@
         private System.Windows.Forms.Button button_Guardar;
         private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.ComboBox comboBox_Pais;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox_EstadoCuenta;
     }
 }
