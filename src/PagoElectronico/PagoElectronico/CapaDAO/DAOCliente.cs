@@ -22,10 +22,8 @@ namespace PagoElectronico.CapaDAO
                 cliente.Departamento,
                 cliente.Localidad,
                 cliente.Pais_Actual,
-                0,
                 cliente.FechaDeNacimiento.ToString("yyyy-MM-dd HH:mm:ss"),
                 cliente.Pais_Nacionalidad,
-                0,
                 cliente.Mail,
                 usuario.NombreUsuario,
                 usuario.Password,
@@ -49,6 +47,11 @@ namespace PagoElectronico.CapaDAO
             var dt = retrieveDataTable("GET_CLIENTE_MAIL", mail);
             return dt.Rows.Count > 0;
         }
+
+        public static DataTable getCliente(int id)
+        {
+            return retrieveDataTable("GET_CLIENTE", id);
+        }
         
         public static DataTable getClientes(string nombre, string apellido, string email, int tipoDoc, string nroDoc)
         {
@@ -64,6 +67,31 @@ namespace PagoElectronico.CapaDAO
             return table;
         }
 
+        public static void bajarCliente(int id)
+        {
+            executeProcedure("BAJA_CLIENTE", id);
+        }
+
+         public static Persona dataRowToCliente(DataRow row)
+        {
+
+            return new Persona(Convert.ToInt32(row["CLI_ID"]),
+                                row["NOMBRE"] as string,
+                                row["APELLIDO"] as string,
+                               row["NUMERO_DOC"] as string,
+                                Convert.ToInt32(row["TIPO_DOC"]),
+                                row["CALLE"] as string,
+                                Convert.ToInt32(row["PISO"]),
+                                row["DEPTO"] as string,
+                                row["LOCALIDAD"] as string,
+                                "pais",
+                                Convert.ToInt32(row["PAIS"]),
+                               Convert.ToDateTime(row["FECHA_NACIMIENTO"]),
+                               "pais",
+                                Convert.ToInt32(row["NACIONALIDAD"]),
+                               row["MAIL"] as string);
+      }
+        /*
         public static Persona dataRowToCliente(DataGridViewRow row)
         {
             return new Persona(Convert.ToInt32(row.Cells[1]),//id
@@ -76,11 +104,11 @@ namespace PagoElectronico.CapaDAO
                                 Convert.ToString(row.Cells[9]),//departamento
                                 Convert.ToString(row.Cells[10]),//localidad
                                 "pais",
-                                Convert.ToInt32(row.Cells[11]),//pais_actual
-                                Convert.ToDateTime(row.Cells[12]),//fecha_nac
+                                Convert.ToInt32(row.Cells[6]),//pais_actual
+                               DateTime.Today,// Convert.ToDateTime(row.Cells[12]),//fecha_nac
                                 "pais",
-                                Convert.ToInt32(row.Cells[13]),//pais_nacionalidad
-                                Convert.ToString(row.Cells[14])//mail
+                                Convert.ToInt32(row.Cells[11]),//pais_nacionalidad
+                                Convert.ToString(row.Cells[13])//mail
                                 );
 
 //    CLI_ID INT IDENTITY(1,1) PRIMARY KEY,
@@ -99,6 +127,11 @@ namespace PagoElectronico.CapaDAO
 //    USUARIO INT	
 //)
         }
+        */
 
+         public static DataTable getTarjetasCliente(int id)
+         {
+             return retrieveDataTable("GET_TARJETAS_CLIENTE", id);
+         }
     }
 }

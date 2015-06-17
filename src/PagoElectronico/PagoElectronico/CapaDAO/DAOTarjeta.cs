@@ -28,7 +28,8 @@ namespace PagoElectronico.CapaDAO
                 id,
                 tarjeta.cod_seguridad,
                 tarjeta.Emisor,
-                Globals.getFechaSistema()                
+                Globals.getFechaSistema(),
+                Globals.getFechaSistema() 
                 );
         }
     }
