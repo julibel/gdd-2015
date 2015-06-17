@@ -11,7 +11,7 @@ namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Modificacion : Form
     {
-        private long cuenta;
+        private long cuenta = 0;
 
         private void LimpiarCampos()
         {
@@ -60,6 +60,27 @@ namespace PagoElectronico.ABM_Cuenta
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void Modificacion_Load(object sender, EventArgs e)
+        {
+            comboBox_Moneda.ValueMember = "MON_ID";
+            comboBox_Moneda.DisplayMember = "NOMBRE";
+            comboBox_Moneda.DataSource = CapaDAO.DAOCuenta.getMonedas();
+
+            comboBox_Pais.ValueMember = "PAI_ID";
+            comboBox_Pais.DisplayMember = "NOMBRE";
+            comboBox_Pais.DataSource = CapaDAO.DAOCuenta.getPaises();
+
+            comboBox_TipoCuenta.ValueMember = "TIP_ID";
+            comboBox_TipoCuenta.DisplayMember = "NOMBRE";
+            comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
+            
+            DataTable cuenta = CapaDAO.DAOCuenta.getCuenta(this.cuenta);
+            textBox_NumeroCuenta.Text = Convert.ToString(cuenta.Rows[0]["CUE_ID"]);
+            comboBox_Moneda.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["MONEDA"]);
+            comboBox_Pais.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["PAIS"]);
+            comboBox_TipoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["TIPO"]);
         }
     }
 }

@@ -267,6 +267,7 @@
             // 
             // comboBox_TipoCuenta
             // 
+            this.comboBox_TipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TipoCuenta.FormattingEnabled = true;
             this.comboBox_TipoCuenta.Items.AddRange(new object[] {
             "Oro",
@@ -289,6 +290,7 @@
             // 
             // comboBox_Moneda
             // 
+            this.comboBox_Moneda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Moneda.FormattingEnabled = true;
             this.comboBox_Moneda.Items.AddRange(new object[] {
             "Dolares"});
@@ -385,6 +387,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificacion";
+            this.Load += new System.EventHandler(this.Modificacion_Load);
             this.paner_DatosCuenta.ResumeLayout(false);
             this.paner_DatosCuenta.PerformLayout();
             this.ResumeLayout(false);
