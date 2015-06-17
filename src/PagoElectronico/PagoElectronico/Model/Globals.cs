@@ -22,7 +22,7 @@ namespace PagoElectronico
         }
         public static string username
         {
-            get { return "juli"; }
+            get { return _username; }
             set{_username = value;}
         }
         public static string getConnectionString()
@@ -63,7 +63,7 @@ namespace PagoElectronico
         public static void setUser(int userID, string user, List<int> funcs)
         {
             _userID = userID;
-            username = user;
+            _username = user;
             funcionalidades = funcs;
         }
 

@@ -33,7 +33,7 @@ namespace PagoElectronico
 
         private void FormBase_Load(object sender, EventArgs e)
         {
-
+            new Login.Login(this).Show();
         }
 
         private bool noPuedeIngresar(int idFun)
