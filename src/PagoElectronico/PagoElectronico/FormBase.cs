@@ -116,7 +116,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(8)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            Consulta_Saldos.Seleccion nuevo_form = new Consulta_Saldos.Seleccion();
+            ABM_Cuenta.Seleccion nuevo_form = new ABM_Cuenta.Seleccion(true);
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
         }
@@ -125,7 +125,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(9)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            Consulta_Saldos.Seleccion nuevo_form = new Consulta_Saldos.Seleccion();
+            ABM_Cuenta.Seleccion nuevo_form = new ABM_Cuenta.Seleccion(false);
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
         }
