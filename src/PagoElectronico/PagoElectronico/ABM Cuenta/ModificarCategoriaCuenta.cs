@@ -57,5 +57,13 @@ namespace PagoElectronico.ABM_Cuenta
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
         }
+
+        private void ModificarCategoriaCuenta_Load(object sender, EventArgs e)
+        {
+            comboBox_Cuentas.ValueMember = "CUE_ID";
+            comboBox_Cuentas.DisplayMember = "CUE_ID";
+            comboBox_Cuentas.DataSource = CapaDAO.DAOOperacion.getCuentas();
+
+        }
     }
 }

@@ -55,9 +55,13 @@ namespace PagoElectronico.ABM_Cuenta
         {
             Form form;
             if (esBaja)
-                form = new ABM_Cuenta.Baja(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1]));
+                form = new ABM_Cuenta.Baja(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
             else
-                form = new ABM_Cuenta.Modificacion();
+                form = new ABM_Cuenta.Modificacion(Convert.ToInt64(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value));
+
+            form.MdiParent = this.MdiParent;
+            form.Show();
+            this.Close();
         }
     }
 }

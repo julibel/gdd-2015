@@ -36,12 +36,12 @@
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Pais = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
-            this.textBox_NumeroCuenta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_TipoCuentaModificada = new System.Windows.Forms.ComboBox();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.comboBox_Pais = new System.Windows.Forms.ComboBox();
+            this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
+            this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.paner_TipoCuentas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,14 +57,14 @@
             // 
             // paner_TipoCuentas
             // 
-            this.paner_TipoCuentas.Controls.Add(this.comboBox_Pais);
+            this.paner_TipoCuentas.Controls.Add(this.textBox_Pais);
+            this.paner_TipoCuentas.Controls.Add(this.comboBox_Cuentas);
             this.paner_TipoCuentas.Controls.Add(this.textBox_TipoCuentaActual);
             this.paner_TipoCuentas.Controls.Add(this.textBox_Moneda);
             this.paner_TipoCuentas.Controls.Add(this.label_TipoCuenta);
             this.paner_TipoCuentas.Controls.Add(this.label_Moneda);
             this.paner_TipoCuentas.Controls.Add(this.label_Pais);
             this.paner_TipoCuentas.Controls.Add(this.label_NumeroCuenta);
-            this.paner_TipoCuentas.Controls.Add(this.textBox_NumeroCuenta);
             this.paner_TipoCuentas.Controls.Add(this.label1);
             this.paner_TipoCuentas.Controls.Add(this.comboBox_TipoCuentaModificada);
             this.paner_TipoCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -134,15 +134,6 @@
             this.label_NumeroCuenta.TabIndex = 24;
             this.label_NumeroCuenta.Text = "Numero de cuenta";
             // 
-            // textBox_NumeroCuenta
-            // 
-            this.textBox_NumeroCuenta.Enabled = false;
-            this.textBox_NumeroCuenta.Location = new System.Drawing.Point(357, 140);
-            this.textBox_NumeroCuenta.MaxLength = 255;
-            this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
-            this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
-            this.textBox_NumeroCuenta.TabIndex = 23;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -185,208 +176,22 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
-            // comboBox_Pais
+            // comboBox_Cuentas
             // 
-            this.comboBox_Pais.FormattingEnabled = true;
-            this.comboBox_Pais.Items.AddRange(new object[] {
-            "Afganistán",
-            "Albania",
-            "Alemania",
-            "Andorra",
-            "Angola",
-            "Antigua y Barbuda",
-            "Arabia Saudita",
-            "Argelia",
-            "Argentina",
-            "Armenia",
-            "Australia",
-            "Austria",
-            "Azerbaiyán",
-            "Bahamas",
-            "Bangladés",
-            "Barbados",
-            "Baréin",
-            "Bélgica",
-            "Belice",
-            "Benín",
-            "Bielorrusia",
-            "Birmania",
-            "Bolivia",
-            "Bosnia y Herzegovina",
-            "Botsuana",
-            "Brasil",
-            "Brunéi",
-            "Bulgaria",
-            "Burkina Faso",
-            "Burundi",
-            "Bután",
-            "Cabo Verde",
-            "Camboya",
-            "Camerún",
-            "Canadá",
-            "Catar",
-            "Chad",
-            "Chile",
-            "China",
-            "Chipre",
-            "Ciudad del Vaticano",
-            "Colombia",
-            "Comoras",
-            "Corea del Norte",
-            "Corea del Sur",
-            "Costa de Marfil",
-            "Costa Rica",
-            "Croacia",
-            "Cuba",
-            "Dinamarca",
-            "Dominica",
-            "Ecuador",
-            "Egipto",
-            "El Salvador",
-            "Emiratos Árabes Unidos",
-            "Eritrea",
-            "Eslovaquia",
-            "Eslovenia",
-            "España",
-            "Estados Unidos",
-            "Estonia",
-            "Etiopía",
-            "Filipinas",
-            "Finlandia",
-            "Fiyi",
-            "Francia",
-            "Gabón",
-            "Gambia",
-            "Georgia",
-            "Ghana",
-            "Granada",
-            "Grecia",
-            "Guatemala",
-            "Guyana",
-            "Guinea",
-            "Guinea ecuatorial",
-            "Guinea-Bisáu",
-            "Haití",
-            "Honduras",
-            "Hungría",
-            "India",
-            "Indonesia",
-            "Irak",
-            "Irán",
-            "Irlanda",
-            "Islandia",
-            "Islas Marshall",
-            "Islas Salomón",
-            "Israel",
-            "Italia",
-            "Jamaica",
-            "Japón",
-            "Jordania",
-            "Kazajistán",
-            "Kenia",
-            "Kirguistán",
-            "Kiribati",
-            "Kuwait",
-            "Laos",
-            "Lesoto",
-            "Letonia",
-            "Líbano",
-            "Liberia",
-            "Libia",
-            "Liechtenstein",
-            "Lituania",
-            "Luxemburgo",
-            "Madagascar",
-            "Malasia",
-            "Malaui",
-            "Maldivas",
-            "Malí",
-            "Malta",
-            "Marruecos",
-            "Mauricio",
-            "Mauritania",
-            "México",
-            "Micronesia",
-            "Moldavia",
-            "Mónaco",
-            "Mongolia",
-            "Montenegro",
-            "Mozambique",
-            "Namibia",
-            "Nauru",
-            "Nepal",
-            "Nicaragua",
-            "Níger",
-            "Nigeria",
-            "Noruega",
-            "Nueva Zelanda",
-            "Omán",
-            "Países Bajos",
-            "Pakistán",
-            "Palaos",
-            "Panamá",
-            "Papúa Nueva Guinea",
-            "Paraguay",
-            "Perú",
-            "Polonia",
-            "Portugal",
-            "Reino Unido",
-            "República Centroafricana",
-            "República Checa",
-            "República de Macedonia",
-            "República del Congo",
-            "República Democrática del Congo",
-            "República Dominicana",
-            "República Sudafricana",
-            "Ruanda",
-            "Rumanía",
-            "Rusia",
-            "Samoa",
-            "San Cristóbal y Nieves",
-            "San Marino",
-            "San Vicente y las Granadinas",
-            "Santa Lucía",
-            "Santo Tomé y Príncipe",
-            "Senegal",
-            "Serbia",
-            "Seychelles",
-            "Sierra Leona",
-            "Singapur",
-            "Siria",
-            "Somalia",
-            "Sri Lanka",
-            "Suazilandia",
-            "Sudán",
-            "Sudán del Sur",
-            "Suecia",
-            "Suiza",
-            "Surinam",
-            "Tailandia",
-            "Tanzania",
-            "Tayikistán",
-            "Timor Oriental",
-            "Togo",
-            "Tonga",
-            "Trinidad y Tobago",
-            "Túnez",
-            "Turkmenistán",
-            "Turquía",
-            "Tuvalu",
-            "Ucrania",
-            "Uganda",
-            "Uruguay",
-            "Uzbekistán",
-            "Vanuatu",
-            "Venezuela",
-            "Vietnam",
-            "Yemen",
-            "Yibuti",
-            "Zambia",
-            "Zimbabue"});
-            this.comboBox_Pais.Location = new System.Drawing.Point(357, 166);
-            this.comboBox_Pais.Name = "comboBox_Pais";
-            this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Pais.TabIndex = 34;
+            this.comboBox_Cuentas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Cuentas.FormattingEnabled = true;
+            this.comboBox_Cuentas.Location = new System.Drawing.Point(357, 139);
+            this.comboBox_Cuentas.Name = "comboBox_Cuentas";
+            this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Cuentas.TabIndex = 35;
+            // 
+            // textBox_Pais
+            // 
+            this.textBox_Pais.Enabled = false;
+            this.textBox_Pais.Location = new System.Drawing.Point(357, 167);
+            this.textBox_Pais.Name = "textBox_Pais";
+            this.textBox_Pais.Size = new System.Drawing.Size(121, 20);
+            this.textBox_Pais.TabIndex = 36;
             // 
             // ModificarCategoriaCuenta
             // 
@@ -405,6 +210,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarCategoriaCuenta";
+            this.Load += new System.EventHandler(this.ModificarCategoriaCuenta_Load);
             this.paner_TipoCuentas.ResumeLayout(false);
             this.paner_TipoCuentas.PerformLayout();
             this.ResumeLayout(false);
@@ -423,10 +229,10 @@
         private System.Windows.Forms.Label label_Moneda;
         private System.Windows.Forms.Label label_Pais;
         private System.Windows.Forms.Label label_NumeroCuenta;
-        private System.Windows.Forms.TextBox textBox_NumeroCuenta;
         private System.Windows.Forms.TextBox textBox_TipoCuentaActual;
         private System.Windows.Forms.TextBox textBox_Moneda;
-        private System.Windows.Forms.ComboBox comboBox_Pais;
+        private System.Windows.Forms.ComboBox comboBox_Cuentas;
+        private System.Windows.Forms.TextBox textBox_Pais;
 
     }
 }

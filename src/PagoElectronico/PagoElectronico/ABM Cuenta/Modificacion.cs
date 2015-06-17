@@ -11,6 +11,8 @@ namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Modificacion : Form
     {
+        private long cuenta = 0;
+
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
@@ -29,9 +31,10 @@ namespace PagoElectronico.ABM_Cuenta
 
         }
 
-        public Modificacion()
+        public Modificacion(long cuentaID)
         {
             InitializeComponent();
+            cuenta = cuentaID;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -57,6 +60,32 @@ namespace PagoElectronico.ABM_Cuenta
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
+        }
+
+        private void Modificacion_Load(object sender, EventArgs e)
+        {
+            comboBox_Moneda.ValueMember = "MON_ID";
+            comboBox_Moneda.DisplayMember = "NOMBRE";
+            comboBox_Moneda.DataSource = CapaDAO.DAOCuenta.getMonedas();
+
+            comboBox_Pais.ValueMember = "PAI_ID";
+            comboBox_Pais.DisplayMember = "NOMBRE";
+            comboBox_Pais.DataSource = CapaDAO.DAOCuenta.getPaises();
+
+            comboBox_TipoCuenta.ValueMember = "TIP_ID";
+            comboBox_TipoCuenta.DisplayMember = "NOMBRE";
+            comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
+
+            comboBox_EstadoCuenta.ValueMember = "EST_ID";
+            comboBox_EstadoCuenta.DisplayMember = "NOMBRE";
+            comboBox_EstadoCuenta.DataSource = CapaDAO.DAOCuenta.getEstadosCuenta();
+            
+            DataTable cuenta = CapaDAO.DAOCuenta.getCuenta(this.cuenta);
+            textBox_NumeroCuenta.Text = Convert.ToString(cuenta.Rows[0]["CUE_ID"]);
+            comboBox_Moneda.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["MONEDA"]);
+            comboBox_Pais.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["PAIS"]);
+            comboBox_TipoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["TIPO"]);
+            comboBox_EstadoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["ESTADO"]);
         }
     }
 }
