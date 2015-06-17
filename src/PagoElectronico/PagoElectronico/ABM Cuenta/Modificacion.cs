@@ -13,6 +13,8 @@ namespace PagoElectronico.ABM_Cuenta
     {
         private long cuenta = 0;
 
+        private int cliente = 0;
+
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
@@ -44,17 +46,23 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
+            if (!camposCorrectos())
+            {
+                MessageBox.Show("No están todos los datos obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-
-
-
-
-
-
+                CapaDAO.DAOCuenta.modificarCuenta(cuenta, cliente, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_Pais.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToInt32(comboBox_EstadoCuenta.SelectedValue));
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
+        }
+
+        private bool camposCorrectos()
+        {
+            return textBox_NumeroCuenta.Text != "" && comboBox_Pais.Text != "" && comboBox_Moneda.Text != "" && comboBox_TipoCuenta.Text != "" && comboBox_EstadoCuenta.Text != "";
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
@@ -81,6 +89,7 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_EstadoCuenta.DataSource = CapaDAO.DAOCuenta.getEstadosCuenta();
             
             DataTable cuenta = CapaDAO.DAOCuenta.getCuenta(this.cuenta);
+            cliente = Convert.ToInt32(cuenta.Rows[0]["CLIENTE"]);
             textBox_NumeroCuenta.Text = Convert.ToString(cuenta.Rows[0]["CUE_ID"]);
             comboBox_Moneda.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["MONEDA"]);
             comboBox_Pais.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["PAIS"]);
