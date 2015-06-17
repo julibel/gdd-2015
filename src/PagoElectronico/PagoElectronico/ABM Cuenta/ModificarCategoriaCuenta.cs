@@ -15,7 +15,7 @@ namespace PagoElectronico.ABM_Cuenta
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_TipoCuentas.Controls.OfType<TextBox>()) control.Text = "";
-            foreach (var control in this.paner_TipoCuentas.Controls.OfType<ComboBox>()) control.Text = "";
+            foreach (var control in this.paner_TipoCuentas.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
         }
 
         private void Mensaje_OK(String mensaje, String resumen)
@@ -61,10 +61,6 @@ namespace PagoElectronico.ABM_Cuenta
                 {
                     MessageBox.Show("ERROR.-" + ex.Message);
                 } 
-
-
-
-                Mensaje_OK("Los datos han sido almacenados con exito", "");
             }
         }
 
@@ -110,22 +106,21 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
             comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
 
+            comboBox_Cuentas.SelectedIndex = -1;
         }
 
         private void comboBox_Cuentas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox_Cuentas.SelectedValue == null)
+            {
+                LimpiarCampos();
+                return;
+            }
            DataTable cuenta = CapaDAO.DAOCuenta.getCuenta(Convert.ToInt64(comboBox_Cuentas.SelectedValue));
            textBox_Moneda.Text = Convert.ToString(cuenta.Rows[0]["MON_NOM"]);
            textBox_Pais.Text = Convert.ToString(cuenta.Rows[0]["PAI_NOM"]);
            comboBox_TipoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["TIPO"]);
-           textBox_TipoCuentaActual.Text = comboBox_TipoCuenta.Text;
-           comboBox_TipoCuenta.SelectedIndex = 0;
-           
-        }
-
-        private void comboBox_TipoCuenta_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+           textBox_TipoCuentaActual.Text = Convert.ToString(cuenta.Rows[0]["TIP_NOM"]);
         }
     }
 }

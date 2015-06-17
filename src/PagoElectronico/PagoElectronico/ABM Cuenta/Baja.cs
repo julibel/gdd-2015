@@ -41,7 +41,7 @@ namespace PagoElectronico.ABM_Cuenta
             textBox_NumeroCuenta.Text = Convert.ToString(cuenta.Rows[0]["CUE_ID"]);
             textBox_Moneda.Text = Convert.ToString(cuenta.Rows[0]["MON_NOM"]);
             textBox_Pais.Text = Convert.ToString(cuenta.Rows[0]["PAI_NOM"]);
-            textBox_Tipo_Cuenta.Text = Convert.ToString(cuenta.Rows[0]["TIPO"]);
+            textBox_Tipo_Cuenta.Text = Convert.ToString(cuenta.Rows[0]["TIP_NOM"]);
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

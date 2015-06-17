@@ -30,6 +30,7 @@
         {
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.paner_TipoCuentas = new System.Windows.Forms.GroupBox();
+            this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
             this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
             this.textBox_TipoCuentaActual = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
             this.paner_TipoCuentas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,6 +76,20 @@
             this.paner_TipoCuentas.TabStop = false;
             this.paner_TipoCuentas.Text = "Modificacion de categoria de cuenta";
             // 
+            // comboBox_TipoCuenta
+            // 
+            this.comboBox_TipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_TipoCuenta.FormattingEnabled = true;
+            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
+            "Oro",
+            "Plata",
+            "Bronce",
+            "Gratuita"});
+            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(357, 247);
+            this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
+            this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_TipoCuenta.TabIndex = 37;
+            // 
             // textBox_Pais
             // 
             this.textBox_Pais.Enabled = false;
@@ -93,6 +107,7 @@
             this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Cuentas.TabIndex = 35;
             this.comboBox_Cuentas.SelectedIndexChanged += new System.EventHandler(this.comboBox_Cuentas_SelectedIndexChanged);
+            this.comboBox_Cuentas.TextChanged += new System.EventHandler(this.comboBox_Cuentas_SelectedIndexChanged);
             // 
             // textBox_TipoCuentaActual
             // 
@@ -180,21 +195,6 @@
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // comboBox_TipoCuenta
-            // 
-            this.comboBox_TipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_TipoCuenta.FormattingEnabled = true;
-            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
-            "Oro",
-            "Plata",
-            "Bronce",
-            "Gratuita"});
-            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(357, 247);
-            this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
-            this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_TipoCuenta.TabIndex = 37;
-            this.comboBox_TipoCuenta.SelectedIndexChanged += new System.EventHandler(this.comboBox_TipoCuenta_SelectedIndexChanged);
             // 
             // ModificarCategoriaCuenta
             // 
