@@ -47,7 +47,7 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Buscar_Click(object sender, EventArgs e)
         {
-            dataGridView_Seleccion.DataSource = CapaDAO.DAOCuenta.getCuentas(textBox_NumeroCuenta.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
+            dataGridView_Seleccion.DataSource = CapaDAO.DAOCuenta.getCuentas(textBox_NumeroCuenta.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), esBaja);
             dataGridView_Seleccion.Columns[0].Visible = true;
         }
 
