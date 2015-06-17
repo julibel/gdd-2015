@@ -14,7 +14,7 @@ namespace PagoElectronico.Facturacion
 
         private Form caller;
 
-        private DataTable comisiones;
+        //private DataTable comisiones;
         
 
         public Seleccionar_Operacion(Form caller)

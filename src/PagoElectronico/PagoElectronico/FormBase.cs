@@ -41,14 +41,22 @@ namespace PagoElectronico
 
         private bool noPuedeIngresar(int idFun)
         {
-            if (idFun == 118) return true;
-            
+            if (!puedeIngresar(idFun))
+            {
+                MessageBox.Show("No posee acceso a esta funcionalidad");
+                return false;
+            }
+            else
+                return true;
+        }
+
+        private bool puedeIngresar(int idFun)
+        {
             if (Globals.tieneFuncionalidad(idFun))
             {
-                return false;//Puede acceder
+                return true;//Puede acceder
             }
-            MessageBox.Show("No posee acceso a esta funcionalidad");
-            return true;
+            return false;
         }
 
 
@@ -190,15 +198,19 @@ namespace PagoElectronico
         private void consultaDeSaldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form nuevo_form = null;
-            if (noPuedeIngresar(18) && !noPuedeIngresar(118))
+            if (!puedeIngresar(18) && puedeIngresar(118))
             {
                 nuevo_form = new Consulta_Saldos.Seleccion();
             }
-            else if (noPuedeIngresar(118) && !noPuedeIngresar(18))
+            else if (!puedeIngresar(118) && puedeIngresar(18))
             {
                 nuevo_form = new Consulta_Saldos.SeleccionCliente();
             }
-            if (nuevo_form == null) return;
+            if (nuevo_form == null)
+            {
+                noPuedeIngresar(18);
+                return;
+            }
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
