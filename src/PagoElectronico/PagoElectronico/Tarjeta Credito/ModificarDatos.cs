@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Tarjeta_Credito
 {
@@ -13,13 +15,13 @@ namespace PagoElectronico.Tarjeta_Credito
     {
         public ModificarDatos()
         {
+
             InitializeComponent();
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
     }
 }

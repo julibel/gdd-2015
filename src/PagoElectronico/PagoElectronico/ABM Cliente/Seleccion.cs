@@ -110,14 +110,20 @@ namespace PagoElectronico.ABM_Cliente
             if (caller == null)
             {
                 Form nuevo_form;
-
+                
                 if (esBaja)
                 {
                     nuevo_form = new ABM_Cliente.Baja(cliente, tarjetas);
                 }
                 else
                 {
-                    nuevo_form = new ABM_Cliente.Modificacion(cliente);
+                    List<Tarjeta> listaTarjetas = new List<Tarjeta>();
+                    foreach (DataRow row in tarjetas.Rows)
+                    {
+                        Tarjeta tarjeta = DAOTarjeta.dataRowToTarjetas(row);
+                        listaTarjetas.Add(tarjeta);
+                    }
+                    nuevo_form = new ABM_Cliente.Modificacion(cliente, listaTarjetas);
                 }
 
 

@@ -30,7 +30,7 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox_NombreTitular = new System.Windows.Forms.TextBox();
-            this.textBox_numeroTarjeta = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,16 +38,16 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_CodigoSeguridad = new System.Windows.Forms.TextBox();
+            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox_CodigoSeguridad);
+            this.groupBox1.Controls.Add(this.maskedTextBox_codigo);
+            this.groupBox1.Controls.Add(this.maskedTextBox_numeroTarjeta);
             this.groupBox1.Controls.Add(this.textBox_NombreTitular);
-            this.groupBox1.Controls.Add(this.textBox_numeroTarjeta);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -67,12 +67,14 @@
             this.textBox_NombreTitular.Size = new System.Drawing.Size(249, 20);
             this.textBox_NombreTitular.TabIndex = 46;
             // 
-            // textBox_numeroTarjeta
+            // label5
             // 
-            this.textBox_numeroTarjeta.Location = new System.Drawing.Point(337, 154);
-            this.textBox_numeroTarjeta.Name = "textBox_numeroTarjeta";
-            this.textBox_numeroTarjeta.Size = new System.Drawing.Size(249, 20);
-            this.textBox_numeroTarjeta.TabIndex = 45;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(225, 213);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.TabIndex = 44;
+            this.label5.Text = "Codigo de Seguridad";
             // 
             // label4
             // 
@@ -137,21 +139,21 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
-            // label5
+            // maskedTextBox_numeroTarjeta
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(225, 213);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
-            this.label5.TabIndex = 44;
-            this.label5.Text = "Codigo de Seguridad";
+            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(337, 154);
+            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
+            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
+            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(114, 20);
+            this.maskedTextBox_numeroTarjeta.TabIndex = 63;
             // 
-            // textBox_CodigoSeguridad
+            // maskedTextBox_codigo
             // 
-            this.textBox_CodigoSeguridad.Location = new System.Drawing.Point(337, 210);
-            this.textBox_CodigoSeguridad.Name = "textBox_CodigoSeguridad";
-            this.textBox_CodigoSeguridad.Size = new System.Drawing.Size(67, 20);
-            this.textBox_CodigoSeguridad.TabIndex = 47;
+            this.maskedTextBox_codigo.Location = new System.Drawing.Point(337, 210);
+            this.maskedTextBox_codigo.Mask = "999";
+            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
+            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
+            this.maskedTextBox_codigo.TabIndex = 64;
             // 
             // ModificarDatos
             // 
@@ -180,7 +182,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBox_NombreTitular;
-        private System.Windows.Forms.TextBox textBox_numeroTarjeta;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -188,7 +189,8 @@
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Guardar;
         private System.Windows.Forms.Button button_Cerrar;
-        private System.Windows.Forms.TextBox textBox_CodigoSeguridad;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_numeroTarjeta;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_codigo;
     }
 }
