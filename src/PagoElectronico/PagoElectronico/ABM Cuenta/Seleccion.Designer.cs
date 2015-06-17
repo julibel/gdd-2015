@@ -39,6 +39,7 @@
             this.paner_Filtros = new System.Windows.Forms.GroupBox();
             this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.button_Cerrar = new System.Windows.Forms.Button();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
             this.paner_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -48,10 +49,13 @@
             this.dataGridView_Seleccion.AllowUserToAddRows = false;
             this.dataGridView_Seleccion.AllowUserToDeleteRows = false;
             this.dataGridView_Seleccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Seleccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Seleccionar});
             this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
             this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
             this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
             this.dataGridView_Seleccion.TabIndex = 34;
+            this.dataGridView_Seleccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Seleccion_CellContentClick);
             // 
             // button_Limpiar
             // 
@@ -71,6 +75,7 @@
             this.button_Buscar.TabIndex = 14;
             this.button_Buscar.Text = "Buscar";
             this.button_Buscar.UseVisualStyleBackColor = true;
+            this.button_Buscar.Click += new System.EventHandler(this.button_Buscar_Click);
             // 
             // textBox_NumeroCuenta
             // 
@@ -113,12 +118,8 @@
             // 
             // comboBox_TipoCuenta
             // 
+            this.comboBox_TipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TipoCuenta.FormattingEnabled = true;
-            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
-            "Oro",
-            "Plata",
-            "Bronce",
-            "Gratuita"});
             this.comboBox_TipoCuenta.Location = new System.Drawing.Point(340, 97);
             this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
             this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
@@ -356,6 +357,16 @@
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
             // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccionar.Text = "Seleccionar";
+            this.Seleccionar.UseColumnTextForButtonValue = true;
+            this.Seleccionar.Visible = false;
+            // 
             // Seleccion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +404,7 @@
         private System.Windows.Forms.GroupBox paner_Filtros;
         private System.Windows.Forms.Button button_Cerrar;
         private System.Windows.Forms.ComboBox comboBox_Pais;
+        private System.Windows.Forms.DataGridViewButtonColumn Seleccionar;
 
 
     }

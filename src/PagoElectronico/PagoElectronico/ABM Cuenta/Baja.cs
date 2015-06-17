@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PagoElectronico.Consulta_Saldos
+namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Baja : Form
     {
-        public Baja()
+        private long cuenta;
+
+        public Baja(long cuentaID)
         {
             InitializeComponent();
+            cuenta = cuentaID;
         }
 
         private DialogResult Mensaje_Pregunta(String mensaje, String resumen)

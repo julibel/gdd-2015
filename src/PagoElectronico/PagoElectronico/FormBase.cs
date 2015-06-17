@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico;
 
 namespace PagoElectronico
 {
@@ -107,7 +108,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(7)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            Consulta_Saldos.Alta nuevo_form = new Consulta_Saldos.Alta();
+            ABM_Cuenta.Alta nuevo_form = new ABM_Cuenta.Alta();
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
         }
@@ -134,7 +135,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(10)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            Consulta_Saldos.ModificarTipoCuentas nuevo_form = new Consulta_Saldos.ModificarTipoCuentas();
+            ABM_Cuenta.ModificarTipoCuentas nuevo_form = new ABM_Cuenta.ModificarTipoCuentas();
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
         }
@@ -214,7 +215,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(18)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            Consulta_Saldos.ModificarCategoriaCuenta nuevo_form = new Consulta_Saldos.ModificarCategoriaCuenta();
+            ABM_Cuenta.ModificarCategoriaCuenta nuevo_form = new ABM_Cuenta.ModificarCategoriaCuenta();
             nuevo_form.MdiParent = this;
             nuevo_form.Show();
         }

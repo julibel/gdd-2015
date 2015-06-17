@@ -1,4 +1,4 @@
-﻿namespace PagoElectronico.Consulta_Saldos
+﻿namespace PagoElectronico.ABM_Cuenta
 {
     partial class Baja
     {

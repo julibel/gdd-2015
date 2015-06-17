@@ -27,10 +27,6 @@ namespace PagoElectronico.Consulta_Saldos
         private void Saldo_Load(object sender, EventArgs e)
         {
             textBox_SaldoActual.Text = Convert.ToString(CapaDAO.DAOConsultaSaldos.getSaldo(cuentaID));
-            
-            /*comboBox_Cuenta.ValueMember = "CUE_ID";
-            comboBox_Cuenta.DisplayMember = "CUE_ID";
-            comboBox_Cuenta.DataSource = CapaDAO.DAOTransferencia.getCuentas();*/
 
             dataGridView_Depositos.DataSource = CapaDAO.DAOConsultaSaldos.getUltimosDepositos(cuentaID);
             dataGridView_Retiros.DataSource = CapaDAO.DAOConsultaSaldos.getUltimosRetiros(cuentaID);

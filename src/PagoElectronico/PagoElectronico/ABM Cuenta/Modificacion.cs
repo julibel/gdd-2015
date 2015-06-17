@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PagoElectronico.Consulta_Saldos
+namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Modificacion : Form
     {
