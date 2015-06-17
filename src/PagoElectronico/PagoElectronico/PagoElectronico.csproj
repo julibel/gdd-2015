@@ -264,6 +264,12 @@
     <Compile Include="Tarjeta Credito\Asociar.Designer.cs">
       <DependentUpon>Asociar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tarjeta Credito\Desasociar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tarjeta Credito\Desasociar.Designer.cs">
+      <DependentUpon>Desasociar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tarjeta Credito\ModificarDatos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tarjeta Credito\Asociar.resx">
       <DependentUpon>Asociar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tarjeta Credito\Desasociar.resx">
+      <DependentUpon>Desasociar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tarjeta Credito\ModificarDatos.resx">
       <DependentUpon>ModificarDatos.cs</DependentUpon>

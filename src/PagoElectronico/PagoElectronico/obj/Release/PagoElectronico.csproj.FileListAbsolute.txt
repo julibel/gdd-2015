@@ -112,3 +112,5 @@ D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_C
 D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.ABM_Cuenta.ModificarCategoriaCuenta.resources
 C:\Users\Maximiliano Felice\Desktop\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.SeleccionCliente.resources
 C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Consulta_Saldos.SeleccionCliente.resources
+C:\Users\JuliBel\Documents\GitHub\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Tarjeta_Credito.Desasociar.resources
+D:\GDD\gdd\src\PagoElectronico\PagoElectronico\obj\Release\PagoElectronico.Tarjeta_Credito.Desasociar.resources

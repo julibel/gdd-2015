@@ -81,5 +81,10 @@ namespace PagoElectronico.Tarjeta_Credito
         {
             textBox_numeroTarjeta_KeyPress(sender, e);
         }
+
+        private void Seleccion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
