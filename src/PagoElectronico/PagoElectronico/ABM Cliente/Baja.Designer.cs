@@ -351,6 +351,8 @@
             // 
             // dataGridView_Tarjetas
             // 
+            this.dataGridView_Tarjetas.AllowUserToAddRows = false;
+            this.dataGridView_Tarjetas.AllowUserToDeleteRows = false;
             this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 95);
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";

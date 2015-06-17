@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data;
 using PagoElectronico.Model;
 
 
@@ -31,6 +32,21 @@ namespace PagoElectronico.CapaDAO
                 Globals.getFechaSistema(),
                 Globals.getFechaSistema() 
                 );
+        }
+
+        public static Tarjeta dataRowToTarjetas(DataRow tarjeta)
+        {
+            return new Tarjeta(
+                Convert.ToInt32(tarjeta["TAR_ID"]),
+               Convert.ToInt32(tarjeta["CLIENTE"]),
+               Convert.ToInt32(tarjeta["LIMPIO"]),
+               tarjeta["EMISOR"] as string
+               );
+        }
+
+        public static void BajarTarjeta(int idTarjeta)
+        {
+            executeProcedure("DESASOCIAR_TARJETA", idTarjeta);
         }
     }
 }
