@@ -69,9 +69,10 @@ namespace PagoElectronico.Modificar_contrasenia
                 if (!Validaciones()) return;
                 try
                 {
-                    DAOUsuario.modificarContrasenia(Globals.userID,
-                        Encriptacion.Encriptar(textBox_NuevaPassword.Text));
+                   // DAOUsuario.modificarContrasenia(Globals.userID,
+                    //Encriptacion.Encriptar(textBox_NuevaPassword.Text));
                     Mensaje_OK("Los datos han sido almacenados con exito", "");
+                    LimpiarCampos();
                 }
                 catch (Exception ex)
                 {
