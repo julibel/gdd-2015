@@ -21,7 +21,7 @@ namespace PagoElectronico.CapaDAO
 
         public static void modificarCostosTipo(int idTipo, double costoMant, double costoTransf)
         {
-            executeProcedure("MODIFICAR_COSTOS_TIPO", idTipo, costoMant, costoTransf);
+            executeProcedure("MODIFICAR_COSTOS_TIPO", idTipo, costoMant, costoTransf,10);
         }
 
         public static void bajaCuenta(long numero, int pais, int moneda, int tipoCuenta)
@@ -36,7 +36,7 @@ namespace PagoElectronico.CapaDAO
 
         public static DataTable getCostoTipo(int id)
         {
-            return retrieveDataTable("GET_COSTOS_TIPOS",id);
+            return retrieveDataTable("GET_COSTOS_TIPO",id);
         }
 
         public static object getTiposCuenta()

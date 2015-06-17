@@ -52,16 +52,16 @@ namespace PagoElectronico.ABM_Cuenta
             {
                 if (!Validaciones()) return;
 
-                try
-                {
+                //try
+                //{
                     CapaDAO.DAOCuenta.modificarCostosTipo(Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToDouble(textBox_CostoMantModificado.Text), Convert.ToDouble(textBox_CostoTranModificado.Text));
                     Mensaje_OK("Los datos han sido almacenados con exito", "");
                     LimpiarCampos();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("ERROR.-" + ex.Message);
-                }       
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("ERROR.-" + ex.Message);
+                //}       
 
             }
         }
@@ -106,6 +106,7 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void comboBox_TipoCuenta_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox_TipoCuenta.SelectedIndex == -1) return;
             DataTable cuenta = CapaDAO.DAOCuenta.getCostoTipo(Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
             textBox_CostoMantActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_MANTENIMIENTO"]);
             textBox_CostTranActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_TRANSACCION"]);
