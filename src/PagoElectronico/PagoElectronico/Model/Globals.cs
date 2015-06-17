@@ -18,12 +18,12 @@ namespace PagoElectronico
 
         public static int userID
         {
-            get { return 162; }//_userID; }
+            get { return 176; }//_userID; }
             set { _userID = value; }
         }
         public static string username
         {
-            get { return "huilen_ramírez@gmail.com"; }
+            get { return "juli"; }
             set{_username = value;}
         }
         public static string getConnectionString()

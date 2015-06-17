@@ -48,5 +48,10 @@ namespace PagoElectronico.CapaDAO
         {
             executeProcedure("DESASOCIAR_TARJETA", idTarjeta);
         }
+
+        public static int getClienteId(int idUsuario)
+        {
+            return executeProcedureWithReturnValue("GET_CLIENTE_ID", idUsuario);
+        }
     }
 }
