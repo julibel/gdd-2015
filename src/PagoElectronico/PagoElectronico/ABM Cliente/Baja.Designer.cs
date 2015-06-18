@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
+            this.textBox_Fecha_Nacimiento = new System.Windows.Forms.TextBox();
             this.textBox_Pais = new System.Windows.Forms.TextBox();
             this.textBox_Calle = new System.Windows.Forms.TextBox();
             this.label_Domicilio = new System.Windows.Forms.Label();
@@ -55,8 +57,6 @@
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
-            this.textBox_Fecha_Nacimiento = new System.Windows.Forms.TextBox();
-            this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
             this.paner_Alta.SuspendLayout();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
@@ -97,6 +97,30 @@
             this.paner_Alta.TabStop = false;
             this.paner_Alta.Text = "Datos del Cliente";
             // 
+            // comboBox_Tipo_doc
+            // 
+            this.comboBox_Tipo_doc.Enabled = false;
+            this.comboBox_Tipo_doc.FormattingEnabled = true;
+            this.comboBox_Tipo_doc.Items.AddRange(new object[] {
+            "DNI",
+            "CI",
+            "LC",
+            "LE",
+            "PAS"});
+            this.comboBox_Tipo_doc.Location = new System.Drawing.Point(136, 118);
+            this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
+            this.comboBox_Tipo_doc.Size = new System.Drawing.Size(129, 21);
+            this.comboBox_Tipo_doc.TabIndex = 2;
+            // 
+            // textBox_Fecha_Nacimiento
+            // 
+            this.textBox_Fecha_Nacimiento.Enabled = false;
+            this.textBox_Fecha_Nacimiento.Location = new System.Drawing.Point(136, 323);
+            this.textBox_Fecha_Nacimiento.MaxLength = 50;
+            this.textBox_Fecha_Nacimiento.Name = "textBox_Fecha_Nacimiento";
+            this.textBox_Fecha_Nacimiento.Size = new System.Drawing.Size(232, 20);
+            this.textBox_Fecha_Nacimiento.TabIndex = 11;
+            // 
             // textBox_Pais
             // 
             this.textBox_Pais.Enabled = false;
@@ -104,7 +128,7 @@
             this.textBox_Pais.MaxLength = 50;
             this.textBox_Pais.Name = "textBox_Pais";
             this.textBox_Pais.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Pais.TabIndex = 32;
+            this.textBox_Pais.TabIndex = 9;
             // 
             // textBox_Calle
             // 
@@ -113,7 +137,7 @@
             this.textBox_Calle.MaxLength = 255;
             this.textBox_Calle.Name = "textBox_Calle";
             this.textBox_Calle.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Calle.TabIndex = 31;
+            this.textBox_Calle.TabIndex = 5;
             // 
             // label_Domicilio
             // 
@@ -133,7 +157,7 @@
             this.textBox_Nacionalidad.MaxLength = 50;
             this.textBox_Nacionalidad.Name = "textBox_Nacionalidad";
             this.textBox_Nacionalidad.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Nacionalidad.TabIndex = 29;
+            this.textBox_Nacionalidad.TabIndex = 10;
             // 
             // label_Nacionalidad
             // 
@@ -153,7 +177,7 @@
             this.textBox_Localidad.MaxLength = 50;
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Localidad.TabIndex = 27;
+            this.textBox_Localidad.TabIndex = 8;
             // 
             // label_Localidad
             // 
@@ -173,7 +197,7 @@
             this.textBox_Depto.MaxLength = 50;
             this.textBox_Depto.Name = "textBox_Depto";
             this.textBox_Depto.Size = new System.Drawing.Size(94, 20);
-            this.textBox_Depto.TabIndex = 25;
+            this.textBox_Depto.TabIndex = 7;
             // 
             // label1
             // 
@@ -193,7 +217,7 @@
             this.textBox_Piso.MaxLength = 50;
             this.textBox_Piso.Name = "textBox_Piso";
             this.textBox_Piso.Size = new System.Drawing.Size(90, 20);
-            this.textBox_Piso.TabIndex = 23;
+            this.textBox_Piso.TabIndex = 6;
             // 
             // label_Piso
             // 
@@ -213,7 +237,7 @@
             this.textBox_Mail.MaxLength = 255;
             this.textBox_Mail.Name = "textBox_Mail";
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Mail.TabIndex = 20;
+            this.textBox_Mail.TabIndex = 4;
             // 
             // textBox_Documento
             // 
@@ -222,7 +246,7 @@
             this.textBox_Documento.MaxLength = 18;
             this.textBox_Documento.Name = "textBox_Documento";
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
-            this.textBox_Documento.TabIndex = 13;
+            this.textBox_Documento.TabIndex = 3;
             // 
             // textBox_Apellido
             // 
@@ -231,7 +255,7 @@
             this.textBox_Apellido.MaxLength = 255;
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Apellido.TabIndex = 10;
+            this.textBox_Apellido.TabIndex = 1;
             // 
             // label_FechaNacimiento
             // 
@@ -324,7 +348,7 @@
             this.button_Borrar.Location = new System.Drawing.Point(660, 428);
             this.button_Borrar.Name = "button_Borrar";
             this.button_Borrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Borrar.TabIndex = 29;
+            this.button_Borrar.TabIndex = 13;
             this.button_Borrar.Text = "Borrar";
             this.button_Borrar.UseVisualStyleBackColor = true;
             this.button_Borrar.Click += new System.EventHandler(this.button_Borrar_Click);
@@ -334,7 +358,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(741, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 28;
+            this.button_Cerrar.TabIndex = 14;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -358,31 +382,7 @@
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
             this.dataGridView_Tarjetas.ReadOnly = true;
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(383, 192);
-            this.dataGridView_Tarjetas.TabIndex = 0;
-            // 
-            // textBox_Fecha_Nacimiento
-            // 
-            this.textBox_Fecha_Nacimiento.Enabled = false;
-            this.textBox_Fecha_Nacimiento.Location = new System.Drawing.Point(136, 323);
-            this.textBox_Fecha_Nacimiento.MaxLength = 50;
-            this.textBox_Fecha_Nacimiento.Name = "textBox_Fecha_Nacimiento";
-            this.textBox_Fecha_Nacimiento.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Fecha_Nacimiento.TabIndex = 33;
-            // 
-            // comboBox_Tipo_doc
-            // 
-            this.comboBox_Tipo_doc.Enabled = false;
-            this.comboBox_Tipo_doc.FormattingEnabled = true;
-            this.comboBox_Tipo_doc.Items.AddRange(new object[] {
-            "DNI",
-            "CI",
-            "LC",
-            "LE",
-            "PAS"});
-            this.comboBox_Tipo_doc.Location = new System.Drawing.Point(136, 118);
-            this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
-            this.comboBox_Tipo_doc.Size = new System.Drawing.Size(129, 21);
-            this.comboBox_Tipo_doc.TabIndex = 34;
+            this.dataGridView_Tarjetas.TabIndex = 12;
             // 
             // Baja
             // 
@@ -401,7 +401,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Baja";
-            this.Load += new System.EventHandler(this.Baja_Load);
             this.paner_Alta.ResumeLayout(false);
             this.paner_Alta.PerformLayout();
             this.groupBox_AsociarTarjetas.ResumeLayout(false);

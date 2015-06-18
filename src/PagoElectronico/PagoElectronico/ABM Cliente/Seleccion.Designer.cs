@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView_Seleccion = new System.Windows.Forms.DataGridView();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button_Buscar = new System.Windows.Forms.Button();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.paner_Filtros = new System.Windows.Forms.GroupBox();
@@ -43,7 +44,6 @@
             this.textBox_Documento = new System.Windows.Forms.TextBox();
             this.label_Mail = new System.Windows.Forms.Label();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
             this.paner_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -58,25 +58,32 @@
             this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
             this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
             this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
-            this.dataGridView_Seleccion.TabIndex = 15;
+            this.dataGridView_Seleccion.TabIndex = 7;
             this.dataGridView_Seleccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Seleccion_CellContentClick);
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.Text = "Seleccionar";
+            this.Seleccionar.UseColumnTextForButtonValue = true;
             // 
             // button_Buscar
             // 
-            this.button_Buscar.Location = new System.Drawing.Point(715, 125);
+            this.button_Buscar.Location = new System.Drawing.Point(634, 125);
             this.button_Buscar.Name = "button_Buscar";
             this.button_Buscar.Size = new System.Drawing.Size(75, 23);
-            this.button_Buscar.TabIndex = 14;
+            this.button_Buscar.TabIndex = 5;
             this.button_Buscar.Text = "Buscar";
             this.button_Buscar.UseVisualStyleBackColor = true;
             this.button_Buscar.Click += new System.EventHandler(this.button_Buscar_Click);
             // 
             // button_Limpiar
             // 
-            this.button_Limpiar.Location = new System.Drawing.Point(634, 125);
+            this.button_Limpiar.Location = new System.Drawing.Point(715, 125);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 13;
+            this.button_Limpiar.TabIndex = 6;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -85,7 +92,6 @@
             // 
             this.paner_Filtros.Controls.Add(this.comboBox_TipoDocumento);
             this.paner_Filtros.Controls.Add(this.textBox_Nombre);
-            this.paner_Filtros.Controls.Add(this.button_Buscar);
             this.paner_Filtros.Controls.Add(this.textBox_Apellido);
             this.paner_Filtros.Controls.Add(this.button_Limpiar);
             this.paner_Filtros.Controls.Add(this.label_Nombre);
@@ -95,6 +101,7 @@
             this.paner_Filtros.Controls.Add(this.label_TipoDocumento);
             this.paner_Filtros.Controls.Add(this.textBox_Documento);
             this.paner_Filtros.Controls.Add(this.label_Mail);
+            this.paner_Filtros.Controls.Add(this.button_Buscar);
             this.paner_Filtros.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.paner_Filtros.ForeColor = System.Drawing.SystemColors.ControlText;
             this.paner_Filtros.Location = new System.Drawing.Point(12, 12);
@@ -116,21 +123,21 @@
             this.comboBox_TipoDocumento.Location = new System.Drawing.Point(523, 38);
             this.comboBox_TipoDocumento.Name = "comboBox_TipoDocumento";
             this.comboBox_TipoDocumento.Size = new System.Drawing.Size(129, 21);
-            this.comboBox_TipoDocumento.TabIndex = 31;
+            this.comboBox_TipoDocumento.TabIndex = 3;
             // 
             // textBox_Nombre
             // 
             this.textBox_Nombre.Location = new System.Drawing.Point(180, 39);
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Nombre.TabIndex = 22;
+            this.textBox_Nombre.TabIndex = 0;
             // 
             // textBox_Apellido
             // 
             this.textBox_Apellido.Location = new System.Drawing.Point(180, 65);
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Apellido.TabIndex = 28;
+            this.textBox_Apellido.TabIndex = 1;
             // 
             // label_Nombre
             // 
@@ -159,7 +166,7 @@
             this.textBox_Mail.Location = new System.Drawing.Point(180, 92);
             this.textBox_Mail.Name = "textBox_Mail";
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Mail.TabIndex = 30;
+            this.textBox_Mail.TabIndex = 2;
             // 
             // label_Documento
             // 
@@ -188,7 +195,7 @@
             this.textBox_Documento.Location = new System.Drawing.Point(523, 65);
             this.textBox_Documento.Name = "textBox_Documento";
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
-            this.textBox_Documento.TabIndex = 29;
+            this.textBox_Documento.TabIndex = 4;
             // 
             // label_Mail
             // 
@@ -206,17 +213,10 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 34;
+            this.button_Cerrar.TabIndex = 8;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Text = "Seleccionar";
-            this.Seleccionar.UseColumnTextForButtonValue = true;
             // 
             // Seleccion
             // 

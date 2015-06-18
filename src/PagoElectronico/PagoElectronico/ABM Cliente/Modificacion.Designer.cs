@@ -63,14 +63,14 @@
             this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
-            this.paner_Alta = new System.Windows.Forms.GroupBox();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ult_Digitos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
             this.paner_Alta.SuspendLayout();
@@ -81,7 +81,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(661, 428);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 31;
+            this.button_Limpiar.TabIndex = 18;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -91,7 +91,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(580, 428);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 30;
+            this.button_Guardar.TabIndex = 17;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -101,7 +101,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(742, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 28;
+            this.button_Cerrar.TabIndex = 19;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -208,7 +208,7 @@
             this.textBox_Apellido.MaxLength = 255;
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Apellido.TabIndex = 10;
+            this.textBox_Apellido.TabIndex = 1;
             // 
             // textBox_Calle
             // 
@@ -216,7 +216,7 @@
             this.textBox_Calle.MaxLength = 255;
             this.textBox_Calle.Name = "textBox_Calle";
             this.textBox_Calle.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Calle.TabIndex = 11;
+            this.textBox_Calle.TabIndex = 5;
             // 
             // textBox_Documento
             // 
@@ -224,7 +224,7 @@
             this.textBox_Documento.MaxLength = 18;
             this.textBox_Documento.Name = "textBox_Documento";
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
-            this.textBox_Documento.TabIndex = 13;
+            this.textBox_Documento.TabIndex = 3;
             // 
             // textBox_Mail
             // 
@@ -232,14 +232,14 @@
             this.textBox_Mail.MaxLength = 255;
             this.textBox_Mail.Name = "textBox_Mail";
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Mail.TabIndex = 20;
+            this.textBox_Mail.TabIndex = 4;
             // 
             // dateTimePicker_FechaNacimiento
             // 
             this.dateTimePicker_FechaNacimiento.Location = new System.Drawing.Point(136, 324);
             this.dateTimePicker_FechaNacimiento.Name = "dateTimePicker_FechaNacimiento";
             this.dateTimePicker_FechaNacimiento.Size = new System.Drawing.Size(232, 20);
-            this.dateTimePicker_FechaNacimiento.TabIndex = 21;
+            this.dateTimePicker_FechaNacimiento.TabIndex = 11;
             // 
             // label_Piso
             // 
@@ -258,7 +258,7 @@
             this.textBox_Piso.MaxLength = 50;
             this.textBox_Piso.Name = "textBox_Piso";
             this.textBox_Piso.Size = new System.Drawing.Size(90, 20);
-            this.textBox_Piso.TabIndex = 23;
+            this.textBox_Piso.TabIndex = 6;
             // 
             // label1
             // 
@@ -277,7 +277,7 @@
             this.textBox_Depto.MaxLength = 50;
             this.textBox_Depto.Name = "textBox_Depto";
             this.textBox_Depto.Size = new System.Drawing.Size(94, 20);
-            this.textBox_Depto.TabIndex = 25;
+            this.textBox_Depto.TabIndex = 7;
             // 
             // label_Localidad
             // 
@@ -296,7 +296,7 @@
             this.textBox_Localidad.MaxLength = 50;
             this.textBox_Localidad.Name = "textBox_Localidad";
             this.textBox_Localidad.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Localidad.TabIndex = 27;
+            this.textBox_Localidad.TabIndex = 8;
             // 
             // label_Nacionalidad
             // 
@@ -510,7 +510,7 @@
             this.comboBox_Pais.Location = new System.Drawing.Point(136, 271);
             this.comboBox_Pais.Name = "comboBox_Pais";
             this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Pais.TabIndex = 33;
+            this.comboBox_Pais.TabIndex = 9;
             // 
             // comboBox_Tipo_doc
             // 
@@ -524,7 +524,7 @@
             this.comboBox_Tipo_doc.Location = new System.Drawing.Point(136, 118);
             this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
             this.comboBox_Tipo_doc.Size = new System.Drawing.Size(129, 21);
-            this.comboBox_Tipo_doc.TabIndex = 35;
+            this.comboBox_Tipo_doc.TabIndex = 2;
             // 
             // groupBox_AsociarTarjetas
             // 
@@ -549,7 +549,7 @@
             this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
             this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
             this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(118, 20);
-            this.maskedTextBox_numeroTarjeta.TabIndex = 61;
+            this.maskedTextBox_numeroTarjeta.TabIndex = 13;
             // 
             // maskedTextBox_codigo
             // 
@@ -557,7 +557,7 @@
             this.maskedTextBox_codigo.Mask = "999";
             this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
             this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
-            this.maskedTextBox_codigo.TabIndex = 60;
+            this.maskedTextBox_codigo.TabIndex = 14;
             // 
             // label5
             // 
@@ -599,14 +599,14 @@
             this.comboBox_Emisor.Location = new System.Drawing.Point(202, 276);
             this.comboBox_Emisor.Name = "comboBox_Emisor";
             this.comboBox_Emisor.Size = new System.Drawing.Size(186, 21);
-            this.comboBox_Emisor.TabIndex = 50;
+            this.comboBox_Emisor.TabIndex = 15;
             // 
             // button_Agregar
             // 
             this.button_Agregar.Location = new System.Drawing.Point(313, 319);
             this.button_Agregar.Name = "button_Agregar";
             this.button_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.button_Agregar.TabIndex = 27;
+            this.button_Agregar.TabIndex = 16;
             this.button_Agregar.Text = "Agregar";
             this.button_Agregar.UseVisualStyleBackColor = true;
             this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click_1);
@@ -626,8 +626,44 @@
             this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 28);
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(403, 212);
-            this.dataGridView_Tarjetas.TabIndex = 0;
+            this.dataGridView_Tarjetas.TabIndex = 12;
             this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick_1);
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Ult_Digitos
+            // 
+            this.Ult_Digitos.HeaderText = "Ult_Digitos";
+            this.Ult_Digitos.Name = "Ult_Digitos";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Emisor
+            // 
+            this.Emisor.HeaderText = "Emisor";
+            this.Emisor.Name = "Emisor";
+            this.Emisor.ReadOnly = true;
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar fila";
+            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // paner_Alta
             // 
@@ -865,43 +901,7 @@
             this.comboBox_Nacionalidad.Location = new System.Drawing.Point(136, 297);
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Nacionalidad.TabIndex = 36;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Ult_Digitos
-            // 
-            this.Ult_Digitos.HeaderText = "Ult_Digitos";
-            this.Ult_Digitos.Name = "Ult_Digitos";
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Emisor
-            // 
-            this.Emisor.HeaderText = "Emisor";
-            this.Emisor.Name = "Emisor";
-            this.Emisor.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar fila";
-            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.comboBox_Nacionalidad.TabIndex = 10;
             // 
             // Modificacion
             // 

@@ -11,7 +11,7 @@ using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Cliente
 {
-    public partial class Modificacion : Form
+    public partial class Modificacion : FormBase
     {
         private Persona cliente;
         private List<int> tarjetasEliminadas = new List<int>();
@@ -36,8 +36,8 @@ namespace PagoElectronico.ABM_Cliente
             {
                 string columna1 = tarjeta.ID.ToString();
                 string columna2 = tarjeta.cod_seguridad.ToString();
-                string columna3 = "xxxxxxxxxxxxxxxx";
-                string columna4 = "xxx";
+                string columna3 = "************";
+                string columna4 = "***";
                 string columna5 = tarjeta.Emisor;
 
                 string[] row = { columna1, columna2, columna3, columna4, columna5 };
@@ -53,18 +53,6 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Pais.Text = "";
             dataGridView_Tarjetas.Rows.Clear();
             dateTimePicker_FechaNacimiento.Value = DateTime.Now;
-        }
-
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
         }
 
         
@@ -91,7 +79,7 @@ namespace PagoElectronico.ABM_Cliente
             if (listaDeErrores.Count < 1) return true;
 
             var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-            MessageBox.Show(mensaje);
+            Mensaje_Error(mensaje);
             return false;
         }
 
@@ -153,12 +141,12 @@ namespace PagoElectronico.ABM_Cliente
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
             if (resultado == DialogResult.Yes)
             {
                 if (!Validaciones()) return;
-                //try
-                //{
+                try
+                {
                     DAOCliente.ModificarCliente(GenerarCliente(), cliente.ID);
 
                     //lista tarjeta
@@ -184,12 +172,12 @@ namespace PagoElectronico.ABM_Cliente
                         DAOTarjeta.BajarTarjeta(idTarjeta);
                     }
 
-                    Mensaje_OK("Los datos han sido almacenados con exito", "");
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("ERROR.-" + ex.Message);
-                //}
+                    Mensaje_OK("Los datos han sido almacenados con éxito");
+                }
+                catch (Exception ex)
+                {
+                    Mensaje_Error("ERROR.-" + ex.Message);
+                }
             }
         }
 
@@ -257,7 +245,7 @@ namespace PagoElectronico.ABM_Cliente
             else
             {
                 var mensaje = listaDeErrores2.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-                MessageBox.Show(mensaje);
+                Mensaje_Error(mensaje);
             }
 
 
@@ -310,7 +298,7 @@ namespace PagoElectronico.ABM_Cliente
             else
             {
                 var mensaje = listaDeErrores2.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-                MessageBox.Show(mensaje);
+                Mensaje_Error(mensaje);
             }
         }
 

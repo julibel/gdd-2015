@@ -11,7 +11,7 @@ using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Cliente
 {
-    public partial class Seleccion : Form
+    public partial class Seleccion : FormBase
     {
         private Form caller = null;
 
@@ -98,8 +98,8 @@ namespace PagoElectronico.ABM_Cliente
         private void dataGridView_Seleccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int id = Convert.ToInt32(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value);
-            DataTable table = CapaDAO.DAOCliente.getCliente(id);
-            DataTable tarjetas = CapaDAO.DAOCliente.getTarjetasCliente(id);
+            DataTable table = DAOCliente.getCliente(id);
+            DataTable tarjetas = DAOCliente.getTarjetasCliente(id);
             Persona cliente = DAOCliente.dataRowToCliente(table.Rows[0]);
 
             this.id = cliente.ID;
