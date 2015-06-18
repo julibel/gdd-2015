@@ -1054,6 +1054,7 @@ GO
 CREATE PROCEDURE BOBBY_TABLES.GET_PAISES AS
 BEGIN
 	SELECT PAI_ID, NOMBRE FROM BOBBY_TABLES.PAISES
+	ORDER BY NOMBRE
 END
 ------------------------------------------------------------------------------------
 ----------------------------------GETS_BY_STRING------------------------------------
@@ -1862,4 +1863,3 @@ BEGIN
 	GROUP BY T.TIP_ID, T.NOMBRE
 	ORDER BY FACTURADO DESC
 END
-select * from BOBBY_TABLES.USUARIOS
