@@ -69,7 +69,8 @@
             this.textBox_RespuestaSecreta.Name = "textBox_RespuestaSecreta";
             this.textBox_RespuestaSecreta.PasswordChar = '*';
             this.textBox_RespuestaSecreta.Size = new System.Drawing.Size(202, 20);
-            this.textBox_RespuestaSecreta.TabIndex = 9;
+            this.textBox_RespuestaSecreta.TabIndex = 0;
+            this.textBox_RespuestaSecreta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_RespuestaSecreta_KeyDown);
             // 
             // textBox_Username
             // 
@@ -110,7 +111,7 @@
             this.button_IniciarSesion.Location = new System.Drawing.Point(385, 317);
             this.button_IniciarSesion.Name = "button_IniciarSesion";
             this.button_IniciarSesion.Size = new System.Drawing.Size(79, 27);
-            this.button_IniciarSesion.TabIndex = 13;
+            this.button_IniciarSesion.TabIndex = 1;
             this.button_IniciarSesion.Text = "Iniciar sesion";
             this.button_IniciarSesion.UseVisualStyleBackColor = true;
             this.button_IniciarSesion.Click += new System.EventHandler(this.button_IniciarSesion_Click);
@@ -121,7 +122,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(470, 317);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(86, 27);
-            this.button_Cerrar.TabIndex = 12;
+            this.button_Cerrar.TabIndex = 2;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);

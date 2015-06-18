@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox_Funcionalidad = new System.Windows.Forms.ComboBox();
@@ -84,7 +84,7 @@
             this.comboBox_Funcionalidad.Location = new System.Drawing.Point(112, 54);
             this.comboBox_Funcionalidad.Name = "comboBox_Funcionalidad";
             this.comboBox_Funcionalidad.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Funcionalidad.TabIndex = 6;
+            this.comboBox_Funcionalidad.TabIndex = 1;
             // 
             // button_Agregar
             // 
@@ -92,7 +92,7 @@
             this.button_Agregar.Location = new System.Drawing.Point(296, 126);
             this.button_Agregar.Name = "button_Agregar";
             this.button_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.button_Agregar.TabIndex = 8;
+            this.button_Agregar.TabIndex = 2;
             this.button_Agregar.Text = "Agregar";
             this.button_Agregar.UseVisualStyleBackColor = true;
             this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
@@ -129,8 +129,8 @@
             // Indice
             // 
             this.Indice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            this.Indice.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.Indice.DefaultCellStyle = dataGridViewCellStyle1;
             this.Indice.HeaderText = "Índice";
             this.Indice.Name = "Indice";
             this.Indice.ReadOnly = true;
@@ -139,8 +139,8 @@
             // Funcionalidad
             // 
             this.Funcionalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.Funcionalidad.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.Funcionalidad.DefaultCellStyle = dataGridViewCellStyle2;
             this.Funcionalidad.HeaderText = "Funcionalidad";
             this.Funcionalidad.Name = "Funcionalidad";
             this.Funcionalidad.ReadOnly = true;
@@ -176,7 +176,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 34;
+            this.button_Limpiar.TabIndex = 5;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -186,7 +186,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(585, 426);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 33;
+            this.button_Guardar.TabIndex = 4;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -196,7 +196,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 32;
+            this.button_Cerrar.TabIndex = 6;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);

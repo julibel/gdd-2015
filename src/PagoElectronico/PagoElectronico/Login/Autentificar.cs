@@ -30,11 +30,16 @@ namespace PagoElectronico.Login
         {
             if(CapaDAO.DAOLogin.iniciarSesionConRespuesta(textBox_Username.Text, rolID, textBox_RespuestaSecreta.Text))
             {
-                new FormBase().Show();
+                new MenuPrincipal().Show();
                 this.Close();
             }
             else
                 MessageBox.Show("Respuesta incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void textBox_RespuestaSecreta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) button_IniciarSesion_Click(sender, e);
         }
     }
 }

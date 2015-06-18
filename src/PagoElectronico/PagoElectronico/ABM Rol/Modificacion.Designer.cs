@@ -54,7 +54,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 38;
+            this.button_Limpiar.TabIndex = 5;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -64,7 +64,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(585, 426);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 37;
+            this.button_Guardar.TabIndex = 4;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -74,7 +74,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 36;
+            this.button_Cerrar.TabIndex = 6;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -114,7 +114,7 @@
             this.comboBox_Funcionalidad.Location = new System.Drawing.Point(112, 67);
             this.comboBox_Funcionalidad.Name = "comboBox_Funcionalidad";
             this.comboBox_Funcionalidad.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Funcionalidad.TabIndex = 10;
+            this.comboBox_Funcionalidad.TabIndex = 1;
             // 
             // label_Funcionalidad
             // 
@@ -133,7 +133,7 @@
             this.button_Agregar.Location = new System.Drawing.Point(296, 126);
             this.button_Agregar.Name = "button_Agregar";
             this.button_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.button_Agregar.TabIndex = 8;
+            this.button_Agregar.TabIndex = 2;
             this.button_Agregar.Text = "Agregar";
             this.button_Agregar.UseVisualStyleBackColor = true;
             this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
@@ -219,7 +219,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificacion";
-            this.Load += new System.EventHandler(this.Modificacion_Load);
             this.paner_Alta.ResumeLayout(false);
             this.paner_Alta.PerformLayout();
             this.groupBox1.ResumeLayout(false);

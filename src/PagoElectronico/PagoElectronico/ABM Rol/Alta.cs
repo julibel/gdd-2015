@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Rol
 {
-    public partial class Alta : Form
+    public partial class Alta : FormBase
     {
         private bool CamposCorrectos()
         {
@@ -24,18 +26,6 @@ namespace PagoElectronico.ABM_Rol
             dataGridView_ListaFuncionalidades.Rows.Clear();
         }
 
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
-        }
-
         public Alta()
         {
             InitializeComponent();
@@ -48,7 +38,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void Alta_Load(object sender, EventArgs e)
         {
-            DataTable funcionalidades = CapaDAO.DAORol.getFuncionalidades();
+            DataTable funcionalidades = DAORol.getFuncionalidades();
 
             comboBox_Funcionalidad.ValueMember = "FUN_ID";
             comboBox_Funcionalidad.DisplayMember = "NOMBRE";
@@ -62,28 +52,28 @@ namespace PagoElectronico.ABM_Rol
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            if (CapaDAO.DAORol.existeRol(textBox_Nombre.Text))
+            if (DAORol.existeRol(textBox_Nombre.Text))
             {
                 var res = Mensaje_Pregunta("El Rol ya existe pero está desactivado ¿Desea activarlo?", "Activar Rol");
                 if (res == DialogResult.Yes)
                 {
                     CapaDAO.DAORol.activarRol(textBox_Nombre.Text);
-                    Mensaje_OK("El Rol ha sido activado", "");
+                    Mensaje_OK("El Rol ha sido activado");
                 }
                 return;
             }
 
             if (!CamposCorrectos())
             {
-                Mensaje_OK("No están todos los datos obligatorios", "");
+                Mensaje_Error("No están todos los datos obligatorios");
                 return;
             }
             var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
             if (resultado == DialogResult.Yes)
             {
-                CapaDAO.DAORol.agregarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
+                DAORol.agregarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
 
-                Mensaje_OK("Los datos han sido almacenados con éxito", "");
+                Mensaje_OK("Los datos han sido almacenados con éxito");
             }
         }
 

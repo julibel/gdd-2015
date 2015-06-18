@@ -6,24 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Rol
 {
-    public partial class Baja : Form
+    public partial class Baja : FormBase
     {
         private int idRol;
-
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
-        }
 
         public Baja(string id)
         {
@@ -34,11 +24,11 @@ namespace PagoElectronico.ABM_Rol
 
         private void ArmarPorId(string id)
         {
-            DataTable rol = CapaDAO.DAORol.getRol(id);
+            DataTable rol = DAORol.getRol(id);
 
             textBox_Nombre.Text = Convert.ToString(rol.Rows[0]["NOMBRE"]);
 
-            DataTable dt = CapaDAO.DAORol.getFuncionalidades();
+            DataTable dt = DAORol.getFuncionalidades();
 
             for (int i = 0; i < rol.Rows.Count; i++)
             {
@@ -58,19 +48,9 @@ namespace PagoElectronico.ABM_Rol
             var resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar el Rol del sistema?", "Eliminar Rol");
             if (resultado == DialogResult.Yes)
             {
-                CapaDAO.DAORol.eliminarRol(idRol);
+                DAORol.eliminarRol(idRol);
                 Mensaje_OK("Los datos han sido eliminados con éxito", "");
             }
-        }
-
-        private void Baja_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView_ListaFuncionalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

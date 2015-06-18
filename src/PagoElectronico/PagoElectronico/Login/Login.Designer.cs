@@ -48,7 +48,7 @@
             this.button_IniciarSesion.Location = new System.Drawing.Point(385, 317);
             this.button_IniciarSesion.Name = "button_IniciarSesion";
             this.button_IniciarSesion.Size = new System.Drawing.Size(79, 27);
-            this.button_IniciarSesion.TabIndex = 11;
+            this.button_IniciarSesion.TabIndex = 3;
             this.button_IniciarSesion.Text = "Iniciar sesion";
             this.button_IniciarSesion.UseVisualStyleBackColor = true;
             this.button_IniciarSesion.Click += new System.EventHandler(this.button_IniciarSesion_Click);
@@ -59,7 +59,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(470, 317);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(86, 27);
-            this.button_Cerrar.TabIndex = 10;
+            this.button_Cerrar.TabIndex = 4;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -70,15 +70,17 @@
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(202, 20);
-            this.textBox_password.TabIndex = 9;
+            this.textBox_password.TabIndex = 1;
+            this.textBox_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
             // 
             // textBox_Username
             // 
             this.textBox_Username.Location = new System.Drawing.Point(202, 156);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.Size = new System.Drawing.Size(202, 20);
-            this.textBox_Username.TabIndex = 8;
+            this.textBox_Username.TabIndex = 0;
             this.textBox_Username.TextChanged += new System.EventHandler(this.textBox_Username_TextChanged);
+            this.textBox_Username.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_password_KeyDown);
             // 
             // label_Contrasenia
             // 
@@ -122,7 +124,7 @@
             this.comboBox_Roles.Location = new System.Drawing.Point(202, 225);
             this.comboBox_Roles.Name = "comboBox_Roles";
             this.comboBox_Roles.Size = new System.Drawing.Size(202, 21);
-            this.comboBox_Roles.TabIndex = 14;
+            this.comboBox_Roles.TabIndex = 2;
             // 
             // label_Rol
             // 
@@ -142,7 +144,7 @@
             this.button_OlvidoContrasenia.Location = new System.Drawing.Point(275, 253);
             this.button_OlvidoContrasenia.Name = "button_OlvidoContrasenia";
             this.button_OlvidoContrasenia.Size = new System.Drawing.Size(129, 23);
-            this.button_OlvidoContrasenia.TabIndex = 12;
+            this.button_OlvidoContrasenia.TabIndex = 5;
             this.button_OlvidoContrasenia.Text = "¿Olvido su contraseña?";
             this.button_OlvidoContrasenia.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button_OlvidoContrasenia.UseVisualStyleBackColor = true;

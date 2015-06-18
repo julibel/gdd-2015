@@ -67,5 +67,10 @@ namespace PagoElectronico.Login
             comboBox_Roles.DisplayMember = "NOMBRE";
             comboBox_Roles.DataSource = roles;
         }
+
+        private void textBox_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) button_IniciarSesion_Click(sender, e);
+        }
     }
 }

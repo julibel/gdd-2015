@@ -71,8 +71,7 @@
             this.dataGridView_ListaFuncionalidades.Name = "dataGridView_ListaFuncionalidades";
             this.dataGridView_ListaFuncionalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(379, 373);
-            this.dataGridView_ListaFuncionalidades.TabIndex = 3;
-            this.dataGridView_ListaFuncionalidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ListaFuncionalidades_CellContentClick);
+            this.dataGridView_ListaFuncionalidades.TabIndex = 1;
             // 
             // Indice
             // 
@@ -118,7 +117,7 @@
             this.button_Borrar.Location = new System.Drawing.Point(666, 426);
             this.button_Borrar.Name = "button_Borrar";
             this.button_Borrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Borrar.TabIndex = 33;
+            this.button_Borrar.TabIndex = 2;
             this.button_Borrar.Text = "Borrar";
             this.button_Borrar.UseVisualStyleBackColor = true;
             this.button_Borrar.Click += new System.EventHandler(this.button_Borrar_Click);
@@ -128,7 +127,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 32;
+            this.button_Cerrar.TabIndex = 3;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -149,7 +148,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Baja";
-            this.Load += new System.EventHandler(this.Baja_Load);
             this.paner_Alta.ResumeLayout(false);
             this.paner_Alta.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListaFuncionalidades)).EndInit();
