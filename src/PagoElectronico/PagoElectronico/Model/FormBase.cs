@@ -11,6 +11,7 @@ namespace PagoElectronico.Model
 {
     public class FormBase : Form
     {
+        //MENSAJES GENÉRICOS
         public void Mensaje_OK(String mensaje, String resumen)
         {
             MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
@@ -30,6 +31,13 @@ namespace PagoElectronico.Model
         {
             var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             return resultado;
+        }
+
+        //MOSTRAR
+        public virtual void mostrar(Form parent, params object [] values)
+        {
+            this.MdiParent = parent;
+            this.Show();
         }
     }
 }

@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Consulta_Saldos
 {
-    public partial class Saldo : Form
+    public partial class Saldo : FormBase
     {
         private long cuentaID;
 

@@ -11,25 +11,13 @@ using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Modificar_contrasenia
 {
-    public partial class ModificarContrasenia : Form
+    public partial class ModificarContrasenia : FormBase
     {
         
         private void LimpiarCampos()
         {
             textBox_NuevaPassword.Text = "";
             textBox_PasswordActual.Text = "";
-        }
-
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
         }
 
         public ModificarContrasenia()

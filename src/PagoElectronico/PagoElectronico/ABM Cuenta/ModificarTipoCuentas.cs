@@ -7,27 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Cuenta
 {
-    public partial class ModificarTipoCuentas : Form
+    public partial class ModificarTipoCuentas : FormBase
     {
         private void LimpiarCampos()
         {
             foreach (var control in this.paner_TipoCuentas.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_TipoCuentas.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
-        }
-
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
         }
 
         public ModificarTipoCuentas()

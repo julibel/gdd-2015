@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Listados
 {
-    public partial class ListadoEstadistico : Form
+    public partial class ListadoEstadistico : FormBase
     {
         private void LimpiarCampos()
         {

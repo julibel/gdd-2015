@@ -6,22 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Rol
 {
-    public partial class Seleccion : Form
+    public partial class Seleccion : FormBase
     {
-        private bool esBaja;
+        private FormBase caller;
 
-        public Seleccion(bool esBaja)
+        public Seleccion(FormBase caller)
         {
             InitializeComponent();
-            this.esBaja = esBaja;
-
-            if (esBaja)
-            {
-                dataGridView_SeleccionRol.Columns[2].HeaderText = "Eliminar";
-            }
+            this.caller = caller;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -31,11 +28,11 @@ namespace PagoElectronico.ABM_Rol
 
         private void Seleccion_Load(object sender, EventArgs e)
         {
-            DataTable dt = CapaDAO.DAORol.getRoles();
+            DataTable roles = DAORol.getRoles();
 
-            dataGridView_SeleccionRol.Rows.Add(dt.Rows.Count);
+            dataGridView_SeleccionRol.Rows.Add(roles.Rows.Count);
             Int32 i = 0;
-            foreach (DataRow rw in dt.Rows)
+            foreach (DataRow rw in roles.Rows)
             {
                 dataGridView_SeleccionRol.Rows[i].Cells[0].Value = rw["Indice"].ToString();
                 dataGridView_SeleccionRol.Rows[i].Cells[1].Value = rw["Rol"].ToString();
@@ -49,22 +46,7 @@ namespace PagoElectronico.ABM_Rol
 
             id = Convert.ToString(dataGridView_SeleccionRol.Rows[e.RowIndex].Cells[0].Value);
             
-            if (ActiveMdiChild != null) ActiveMdiChild.Close();
-
-            Form nuevo_form;
-            
-            if (esBaja)
-            {
-                nuevo_form = new ABM_Rol.Baja(id);
-            }
-            else
-            {
-                nuevo_form = new ABM_Rol.Modificacion(id);
-            }
-            
-            
-            nuevo_form.MdiParent = this.MdiParent;
-            nuevo_form.Show();
+            caller.mostrar(this.MdiParent, id);
             this.Close();
         }
     }

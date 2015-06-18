@@ -7,10 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Facturacion
 {
-    public partial class Facturar : Form
+    public partial class Facturar : FormBase
     {
         private Seleccionar_Operacion seleccionar;
 
@@ -18,16 +19,6 @@ namespace PagoElectronico.Facturacion
         {
             InitializeComponent();
            
-        }
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
-        }
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

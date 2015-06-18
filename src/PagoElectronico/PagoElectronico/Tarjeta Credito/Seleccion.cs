@@ -11,7 +11,7 @@ using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Tarjeta_Credito
 {
-    public partial class Seleccion : Form
+    public partial class Seleccion : FormBase
     {
         private Form formCaller;
 
@@ -26,9 +26,6 @@ namespace PagoElectronico.Tarjeta_Credito
 
         public Seleccion(Form caller, TextBox textTarjeta)
         {
-            comboBox_Numero_Tarjeta.ValueMember = "NUMERO_TARJETA".Substring(12, 16);
-            comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
-            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId(Globals.userID));
             InitializeComponent();
             formCaller = caller;
             textCaller = textTarjeta;
@@ -36,11 +33,7 @@ namespace PagoElectronico.Tarjeta_Credito
         }
 
         public Seleccion()
-        {
-            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId(Globals.userID));
-            comboBox_Numero_Tarjeta.ValueMember = "NUMERO_TARJETA";
-            comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
-            
+        {   
             InitializeComponent();
         }
 
@@ -51,14 +44,6 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void button_Aceptar_Click(object sender, EventArgs e)
         {
-            int idTarjeta = CapaDAO.DAOTarjeta.getID(comboBox_Numero_Tarjeta.SelectedValue.ToString(), textBox_CodigoSeguridad.Text);
-
-            if (idTarjeta <= 0)
-            {
-                MessageBox.Show("No posee tal tarjeta o expiró", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            tarjetaID = idTarjeta;
             textCaller.Text = comboBox_Numero_Tarjeta.SelectedValue.ToString();
             Cerrar();
         }
@@ -84,7 +69,9 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void Seleccion_Load(object sender, EventArgs e)
         {
-
+            comboBox_Numero_Tarjeta.ValueMember = "TAR_ID";
+            comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
+            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId());
         }
     }
 }

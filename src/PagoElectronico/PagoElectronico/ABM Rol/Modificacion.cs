@@ -15,6 +15,13 @@ namespace PagoElectronico.ABM_Rol
     {
         private int idRol;
 
+        public override void mostrar(Form parent, params object[] values)
+        {
+            string id = values[0].ToString();
+            ArmarPorId(id);
+            base.mostrar(parent);
+        }
+
         private bool CamposCorrectos()
         {
             return textBox_Nombre.Text != "" &&
@@ -28,11 +35,9 @@ namespace PagoElectronico.ABM_Rol
             dataGridView_ListaFuncionalidades.Rows.Clear();
         }
 
-        public Modificacion(string id)
+        public Modificacion()
         {
             InitializeComponent();
-
-            ArmarPorId(id);
         }
 
         private void ArmarPorId(string id)

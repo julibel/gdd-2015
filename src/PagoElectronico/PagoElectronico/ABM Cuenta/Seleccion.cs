@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Cuenta
 {
-    public partial class Seleccion : Form
+    public partial class Seleccion : FormBase
     {
         private bool esBaja;
 

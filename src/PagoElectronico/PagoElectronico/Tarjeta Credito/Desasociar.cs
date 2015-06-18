@@ -6,16 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
 using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Tarjeta_Credito
 {
-    public partial class Desasociar : Form
+    public partial class Desasociar : FormBase
     {
         public Desasociar()
         {
             InitializeComponent();
-            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId(Globals.userID));
+            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId());
             comboBox_Numero_Tarjeta.ValueMember = "NUMERO_TARJETA";
             comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
         }

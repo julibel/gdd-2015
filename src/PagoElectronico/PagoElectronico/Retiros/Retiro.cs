@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Retiros
 {
-    public partial class Retiro : Form
+    public partial class Retiro : FormBase
     {
         public Retiro()
         {

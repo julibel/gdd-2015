@@ -12,20 +12,8 @@ using PagoElectronico.Model;
 namespace PagoElectronico.Tarjeta_Credito
 {
     
-    public partial class Asociar : Form
+    public partial class Asociar : FormBase
     {
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
-        }
-
         public Asociar()
         {
             InitializeComponent();
@@ -41,7 +29,7 @@ namespace PagoElectronico.Tarjeta_Credito
             var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
             if (resultado == DialogResult.Yes)
             {
-                int id = CapaDAO.DAOTarjeta.getClienteId(Globals.userID);
+                int id = CapaDAO.DAOTarjeta.getClienteId();
                 Tarjeta tarjeta = new Tarjeta(Convert.ToInt64(maskedTextBox_numeroTarjeta.Text),
                                               Convert.ToInt32(maskedTextBox_codigo.Text),
                                               comboBox_Emisor.Text);

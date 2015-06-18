@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Transferencias
 {
-    public partial class Transferencia : Form
+    public partial class Transferencia : FormBase
     {
         private ABM_Cuenta.Seleccion selec;
 

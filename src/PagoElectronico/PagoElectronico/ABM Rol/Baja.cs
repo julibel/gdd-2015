@@ -15,24 +15,29 @@ namespace PagoElectronico.ABM_Rol
     {
         private int idRol;
 
-        public Baja(string id)
+        public override void mostrar(Form parent, params object[] values)
+        {
+            string id = values[0].ToString();
+            ArmarPorId(id);
+            base.mostrar(parent);
+        }
+
+        public Baja()
         {
             InitializeComponent();
-
-            ArmarPorId(id);
         }
 
         private void ArmarPorId(string id)
         {
-            DataTable rol = DAORol.getRol(id);
+            DataTable roles = DAORol.getRol(id);
 
-            textBox_Nombre.Text = Convert.ToString(rol.Rows[0]["NOMBRE"]);
+            textBox_Nombre.Text = Convert.ToString(roles.Rows[0]["NOMBRE"]);
 
-            DataTable dt = DAORol.getFuncionalidades();
+            DataTable funcionalidades = DAORol.getFuncionalidades();
 
-            for (int i = 0; i < rol.Rows.Count; i++)
+            for (int i = 0; i < roles.Rows.Count; i++)
             {
-                dataGridView_ListaFuncionalidades.Rows.Add(Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]), dt.Rows[Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]) - 1]["NOMBRE"]);
+                dataGridView_ListaFuncionalidades.Rows.Add(Convert.ToInt32(roles.Rows[i]["FUNCIONALIDAD"]), funcionalidades.Rows[Convert.ToInt32(roles.Rows[i]["FUNCIONALIDAD"]) - 1]["NOMBRE"]);
             }
 
             this.idRol = Convert.ToInt32(id);
@@ -49,7 +54,7 @@ namespace PagoElectronico.ABM_Rol
             if (resultado == DialogResult.Yes)
             {
                 DAORol.eliminarRol(idRol);
-                Mensaje_OK("Los datos han sido eliminados con éxito", "");
+                Mensaje_OK("Los datos han sido eliminados con éxito");
             }
         }
     }

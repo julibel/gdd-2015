@@ -11,19 +11,8 @@ using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Tarjeta_Credito
 {
-    public partial class ModificarDatos : Form
+    public partial class ModificarDatos : FormBase
     {
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
-
-        }
         private void LimpiarCampos()
         {
             foreach (var control in this.groupBox1.Controls.OfType<TextBox>()) control.Text = "";
@@ -34,7 +23,7 @@ namespace PagoElectronico.Tarjeta_Credito
         {
             
             InitializeComponent();
-            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId(Globals.userID));
+            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId());
             comboBox_Numero_Tarjeta.ValueMember = "NUMERO_TARJETA";
             comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
         }
