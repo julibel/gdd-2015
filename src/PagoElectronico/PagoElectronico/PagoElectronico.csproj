@@ -206,11 +206,11 @@
     <Compile Include="Facturacion\Seleccionar_Operacion.Designer.cs">
       <DependentUpon>Seleccionar_Operacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormBase.cs">
+    <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormBase.Designer.cs">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Listados\ListadoEstadistico.cs">
       <SubType>Form</SubType>
@@ -231,6 +231,9 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Campo.cs" />
+    <Compile Include="Model\FormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Model\Encriptacion.cs" />
     <Compile Include="Model\Error.cs" />
     <Compile Include="Model\Globals.cs" />
@@ -348,8 +351,8 @@
     <EmbeddedResource Include="Facturacion\Seleccionar_Operacion.resx">
       <DependentUpon>Seleccionar_Operacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormBase.resx">
-      <DependentUpon>FormBase.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\ListadoEstadistico.resx">
       <DependentUpon>ListadoEstadistico.cs</DependentUpon>
@@ -359,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Model\FormBase.resx">
+      <DependentUpon>FormBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modificar contrasenia\ModificarContrasenia.resx">
       <DependentUpon>ModificarContrasenia.cs</DependentUpon>

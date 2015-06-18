@@ -663,7 +663,6 @@
             this.comboBox_Pais.Name = "comboBox_Pais";
             this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Pais.TabIndex = 32;
-            this.comboBox_Pais.SelectedIndexChanged += new System.EventHandler(this.comboBox_Pais_SelectedIndexChanged);
             // 
             // textBox_Calle
             // 
@@ -1014,7 +1013,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alta";
-            this.Load += new System.EventHandler(this.Alta_Load);
             this.groupBox_Usuario.ResumeLayout(false);
             this.groupBox_Usuario.PerformLayout();
             this.groupBox_Alta.ResumeLayout(false);

@@ -11,7 +11,7 @@ using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.ABM_Cliente
 {
-    public partial class Alta : Form
+    public partial class Alta : FormBase
     {
         private void LimpiarCampos()
         {
@@ -47,19 +47,6 @@ namespace PagoElectronico.ABM_Cliente
             return (!texto.All(char.IsDigit));
         }
 
-        private void Mensaje_OK(String mensaje, String resumen)
-        {
-            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        private DialogResult Mensaje_Pregunta(String mensaje, String resumen)
-        {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo,MessageBoxIcon.Question);
-            return resultado;
-
-        }
-
-
         public Alta()
         {
             InitializeComponent();
@@ -74,7 +61,7 @@ namespace PagoElectronico.ABM_Cliente
         {
            
 
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
             if (resultado == DialogResult.Yes)
             {
                 if (!Validaciones()) return;
@@ -97,11 +84,11 @@ namespace PagoElectronico.ABM_Cliente
                    {
                        DAOTarjeta.AgregarTarjeta(tarjeta, id);
                    }
-                   Mensaje_OK("Los datos han sido almacenados con exito", "");
+                   Mensaje_OK("Los datos han sido almacenados con éxito");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR.-" + ex.Message);
+                    Mensaje_Error("ERROR: " + ex.Message);
                 }       
             }
         
@@ -119,24 +106,24 @@ namespace PagoElectronico.ABM_Cliente
 
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-            MessageBox.Show(mensaje);
+            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos: ", (current, error) => current + ("\n" + error.Descripcion));
+            Mensaje_Error(mensaje);
             return false;
         }
 
         private Error ValidarDocumento()
         {
-            return DAOCliente.existeDni(textBox_Documento.Text, comboBox_Tipo_doc.SelectedIndex + 1) ? new Error("El documento ingresado ya está asignado a un usuario registrado.") : null;
+            return DAOCliente.existeDni(textBox_Documento.Text, comboBox_Tipo_doc.SelectedIndex + 1) ? new Error("El documento ingresado ya está asignado a un usuario registrado") : null;
         }
 
         private Error ValidarEmail()
         {
-            return DAOCliente.existeMail(textBox_Mail.Text) ? new Error("El email ingresado ya está asignado a un usuario registrado.") : null;
+            return DAOCliente.existeMail(textBox_Mail.Text) ? new Error("El email ingresado ya está asignado a un cliente registrado") : null;
         }
 
         private Error ValidarDatosCompletos()
         {
-            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario."): null;
+            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario"): null;
         }
 
         private Error ValidarNum(string campo, string texto)
@@ -188,24 +175,9 @@ namespace PagoElectronico.ABM_Cliente
 
         }
 
-        private void Alta_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
             LimpiarCampos();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox_Pais_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private Error ValidarTarjeta()
