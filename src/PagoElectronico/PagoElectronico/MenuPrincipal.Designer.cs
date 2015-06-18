@@ -1,6 +1,6 @@
 ﻿namespace PagoElectronico
 {
-    partial class FormBase
+    partial class MenuPrincipal
     {
         /// <summary>
         /// Required designer variable.

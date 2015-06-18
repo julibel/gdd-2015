@@ -52,7 +52,6 @@ namespace PagoElectronico
 
         public static void setUser(int id, string name, List<int> funcs)
         {
-            MessageBox.Show(id.ToString() + ' ' + name);
             userID = id;
             username = name;
             funcionalidades = funcs;

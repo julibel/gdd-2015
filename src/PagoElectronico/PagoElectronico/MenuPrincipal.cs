@@ -10,7 +10,7 @@ using PagoElectronico;
 
 namespace PagoElectronico
 {
-    public partial class FormBase : Form
+    public partial class MenuPrincipal : Form
     {
          void LimpiarCampos()
         {
@@ -21,7 +21,7 @@ namespace PagoElectronico
 
         }
      
-        public FormBase()
+        public MenuPrincipal()
         {
             InitializeComponent();
         }
@@ -44,10 +44,10 @@ namespace PagoElectronico
             if (!puedeIngresar(idFun))
             {
                 MessageBox.Show("No posee acceso a esta funcionalidad");
-                return false;
+                return true;
             }
             else
-                return true;
+                return false;
         }
 
         private bool puedeIngresar(int idFun)
