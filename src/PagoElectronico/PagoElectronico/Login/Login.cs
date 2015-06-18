@@ -6,10 +6,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
+using PagoElectronico.CapaDAO;
 
 namespace PagoElectronico.Login
 {
-    public partial class Login : Form
+    public partial class Login : FormBase
     {
         public Login()
         {
@@ -36,32 +38,32 @@ namespace PagoElectronico.Login
                     this.Close();
                 }
                 else
-                    MessageBox.Show("El usuario no existe", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Mensaje_Error("El usuario no existe");
             }
             else
-                MessageBox.Show("Ingrese el usuario y el rol antes de continuar", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("Ingrese el usuario y el rol antes de continuar");
         }
 
         private void button_IniciarSesion_Click(object sender, EventArgs e)
         {
             string user = textBox_Username.Text;
-            if (!CapaDAO.DAOLogin.existeUsuario(user))
+            if (!DAOLogin.existeUsuario(user))
             {
-                MessageBox.Show("El usuario no existe", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("El usuario no existe");
                 return;
             }
 
-            if (CapaDAO.DAOLogin.iniciarSesionConPassword(user, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
+            if (DAOLogin.iniciarSesionConPassword(user, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
             {
                 this.Close();
             }
             else
-                MessageBox.Show("Contraseña incorrecta", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("Contraseña incorrecta");
         }
 
         private void textBox_Username_TextChanged(object sender, EventArgs e)
         {
-            DataTable roles = CapaDAO.DAOLogin.getRolesUsuario(textBox_Username.Text);
+            DataTable roles = DAOLogin.getRolesUsuario(textBox_Username.Text);
 
             comboBox_Roles.ValueMember = "ROL_ID";
             comboBox_Roles.DisplayMember = "NOMBRE";

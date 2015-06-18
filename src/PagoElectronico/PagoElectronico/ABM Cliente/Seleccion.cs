@@ -123,6 +123,7 @@ namespace PagoElectronico.ABM_Cliente
                         Tarjeta tarjeta = DAOTarjeta.dataRowToTarjetas(row);
                         listaTarjetas.Add(tarjeta);
                     }
+
                     nuevo_form = new ABM_Cliente.Modificacion(cliente, listaTarjetas);
                 }
 
