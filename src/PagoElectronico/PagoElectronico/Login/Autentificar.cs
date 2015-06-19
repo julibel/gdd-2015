@@ -21,6 +21,7 @@ namespace PagoElectronico.Login
             textBox_Username.Text = user;
             textBox_PreguntaSecreta.Text = DAOLogin.getPregunta(user);
             this.rolID = rolID;
+            this.ActiveControl = textBox_RespuestaSecreta;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

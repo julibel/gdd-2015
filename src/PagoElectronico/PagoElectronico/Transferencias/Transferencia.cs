@@ -13,7 +13,18 @@ namespace PagoElectronico.Transferencias
 {
     public partial class Transferencia : FormBase
     {
-        private ABM_Cuenta.Seleccion selec;
+        private bool open = false;
+
+        public override void mostrar(Form parent, params object[] values)
+        {
+            if (open == true)
+            {
+                textBox_Destino.Text = (string)values[0];
+                this.Visible = true;
+            }
+            else
+                base.mostrar(parent);
+        }
 
         public Transferencia()
         {
@@ -39,6 +50,10 @@ namespace PagoElectronico.Transferencias
             comboBox_Moneda.DataSource = monedas;
 
             textBox_Fecha.Text = Globals.getFechaSistema();
+
+            LimpiarCampos();
+
+            open = true;
         }
 
         private void textBox_Importe_KeyPress(object sender, KeyPressEventArgs e)
@@ -90,15 +105,23 @@ namespace PagoElectronico.Transferencias
 
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
             textBox_Importe.Text = "";
             textBox_Fecha.Text = Globals.getFechaSistema();
+            comboBox_Moneda.SelectedIndex = -1;
+            comboBox_Origen.SelectedIndex = -1;
+            this.ActiveControl = comboBox_Origen;
         }
 
         private void button_SeleccionarCuentaDestino_Click(object sender, EventArgs e)
         {
-            selec = new ABM_Cuenta.Seleccion(this, textBox_Destino);
-            selec.MdiParent = this.MdiParent;
-            selec.Show();
+            ABM_Cuenta.Seleccion selec = new ABM_Cuenta.Seleccion(this, 0);
+            selec.mostrar(this.MdiParent);
+            this.Visible = false;
         }
 
     }

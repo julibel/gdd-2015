@@ -74,5 +74,10 @@ namespace PagoElectronico.Login
         {
             if (e.KeyCode == Keys.Enter) button_IniciarSesion_Click(sender, e);
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.ActiveControl = textBox_Username;
+        }
     }
 }

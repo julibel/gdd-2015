@@ -15,10 +15,15 @@ namespace PagoElectronico.ABM_Cuenta
     {
         private long cuenta;
 
-        public Baja(long cuentaID)
+        public override void mostrar(Form parent, params object[] values)
+        {
+            cuenta = Convert.ToInt64(values[0]);
+            base.mostrar(parent);
+        }
+
+        public Baja()
         {
             InitializeComponent();
-            cuenta = cuentaID;
         }
 
         private void paner_DatosCuenta_Enter(object sender, EventArgs e)
@@ -28,7 +33,7 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void Baja_Load(object sender, EventArgs e)
         {
-            DataTable cuenta = CapaDAO.DAOCuenta.getCuenta(this.cuenta);
+            DataTable cuenta = DAOCuenta.getCuenta(this.cuenta);
             textBox_NumeroCuenta.Text = Convert.ToString(cuenta.Rows[0]["CUE_ID"]);
             textBox_Moneda.Text = Convert.ToString(cuenta.Rows[0]["MON_NOM"]);
             textBox_Pais.Text = Convert.ToString(cuenta.Rows[0]["PAI_NOM"]);
@@ -45,8 +50,7 @@ namespace PagoElectronico.ABM_Cuenta
             var resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar la cuenta del sistema?", "Eliminar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-
-                CapaDAO.DAOCuenta.eliminarCuenta(cuenta);
+                DAOCuenta.eliminarCuenta(cuenta);
                 LimpiarCampos();
                 Mensaje_OK("Los datos han sido eliminados con éxito", "");
             }

@@ -609,7 +609,7 @@
             this.button_Agregar.TabIndex = 16;
             this.button_Agregar.Text = "Agregar";
             this.button_Agregar.UseVisualStyleBackColor = true;
-            this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click_1);
+            this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
             // 
             // dataGridView_Tarjetas
             // 

@@ -72,7 +72,7 @@ namespace PagoElectronico.ABM_Cliente
 
         private void Modificacion_Load(object sender, EventArgs e)
         {
-
+            this.ActiveControl = textBox_Nombre;
         }
 
         private bool Validaciones()
@@ -243,12 +243,12 @@ namespace PagoElectronico.ABM_Cliente
             if (listaDeErrores2.Count < 1)
             {
                 string columna1 = "0";
-                string columna2 = maskedTextBox_numeroTarjeta.Text.Substring(12,4);
+                string columna2 = maskedTextBox_numeroTarjeta.Text.Substring(12, 4);
                 string columna3 = maskedTextBox_numeroTarjeta.Text;
                 string columna4 = maskedTextBox_codigo.Text;
                 string columna5 = Convert.ToString(comboBox_Emisor.Text);
 
-                string[] row = { columna1, columna2, columna3, columna4 };
+                string[] row = { columna1, columna2, columna3, columna4, columna5 };
                 dataGridView_Tarjetas.Rows.Add(row);
             }
             else
@@ -256,8 +256,6 @@ namespace PagoElectronico.ABM_Cliente
                 var mensaje = listaDeErrores2.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
                 Mensaje_Error(mensaje);
             }
-
-
         }
 
         private bool ValidarDatosTarjeta()
@@ -286,33 +284,10 @@ namespace PagoElectronico.ABM_Cliente
             return vacio;
         }
 
-
-        private void button_Agregar_Click_1(object sender, EventArgs e)
-        {
-            var listaDeErrores2 = new List<Error>();
-            if (ValidarTarjeta() != null) listaDeErrores2.Add(ValidarTarjeta());
-            if (ValidarLong() != null) listaDeErrores2.Add(ValidarLong());
-
-            if (listaDeErrores2.Count < 1)
-            {
-                string columna1 = "0";
-                string columna2 = maskedTextBox_numeroTarjeta.Text.Substring(12, 4);
-                string columna3 = maskedTextBox_numeroTarjeta.Text;
-                string columna4 = maskedTextBox_codigo.Text;
-                string columna5 = Convert.ToString(comboBox_Emisor.Text);
-
-                string[] row = { columna1, columna2, columna3, columna4, columna5 };
-                dataGridView_Tarjetas.Rows.Add(row);
-            }
-            else
-            {
-                var mensaje = listaDeErrores2.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-                Mensaje_Error(mensaje);
-            }
-        }
-
         private void dataGridView_Tarjetas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex != 5) return;
+
             tarjetasEliminadas.Add(Convert.ToInt32(dataGridView_Tarjetas.Rows[e.RowIndex].Cells[0].Value));
             dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
         }

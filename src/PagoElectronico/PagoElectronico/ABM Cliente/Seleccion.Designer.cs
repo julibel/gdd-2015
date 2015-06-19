@@ -113,6 +113,7 @@
             // 
             // comboBox_TipoDocumento
             // 
+            this.comboBox_TipoDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_TipoDocumento.FormattingEnabled = true;
             this.comboBox_TipoDocumento.Items.AddRange(new object[] {
             "DNI",

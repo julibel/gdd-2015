@@ -108,7 +108,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(8)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Cuenta.Seleccion nuevo_form = new ABM_Cuenta.Seleccion(true);
+            ABM_Cuenta.Seleccion nuevo_form = new ABM_Cuenta.Seleccion(new ABM_Cuenta.Baja(), 1);
             nuevo_form.mostrar(this);
         }
 
@@ -116,7 +116,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(9)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Cuenta.Seleccion nuevo_form = new ABM_Cuenta.Seleccion(false);
+            ABM_Cuenta.Seleccion nuevo_form = new ABM_Cuenta.Seleccion(new ABM_Cuenta.Modificacion(), 0);
             nuevo_form.mostrar(this);
         }
 

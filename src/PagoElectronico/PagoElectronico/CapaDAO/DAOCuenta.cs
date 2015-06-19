@@ -46,12 +46,8 @@ namespace PagoElectronico.CapaDAO
         }
 
 
-        public static object getCuentas(string numero, string pais, int tipo, bool esBaja)
+        public static object getCuentas(string numero, string pais, int tipo, int est)
         {
-            int est = 0;
-            if (esBaja)
-                est = 1;
-
             return retrieveDataTable("FIND_CUENTAS", numero, pais, tipo, est);
         }
 

@@ -19,7 +19,6 @@ namespace PagoElectronico.ABM_Cliente
 
         string nombre, apellido, doc, mail;
         int tipoDoc = 0;
-        private bool esBaja;
        
         private void LimpiarCampos()
         {
@@ -28,25 +27,11 @@ namespace PagoElectronico.ABM_Cliente
             dataGridView_Seleccion.DataSource = new DataTable();
         }
 
-        public Seleccion(bool esBaja)
-        {
-            InitializeComponent();
-            this.esBaja = esBaja;
-
-            if (esBaja)
-            {
-                dataGridView_Seleccion.Columns[0].HeaderText = "Eliminar";
-            }
-            else
-            {
-                dataGridView_Seleccion.Columns[0].HeaderText = "Modificar";
-            }
-        }
-
         public Seleccion(FormBase caller)
         {
             InitializeComponent();
             this.caller = caller;
+            this.ActiveControl = textBox_Nombre;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

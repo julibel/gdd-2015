@@ -102,6 +102,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void dataGridView_ListaFuncionalidades_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex < 0 || e.ColumnIndex != 0) return;
             dataGridView_ListaFuncionalidades.Rows.RemoveAt(e.RowIndex);
         }
     }

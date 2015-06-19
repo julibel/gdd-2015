@@ -20,6 +20,7 @@ namespace PagoElectronico.ABM_Cliente
             foreach (var control in this.groupBox_Alta.Controls.OfType<ComboBox>()) control.Text = "";      
             dataGridView_Tarjetas.Rows.Clear();
             dateTimePicker_FechaNacimiento.Value = DateTime.Now;
+            this.ActiveControl = textBox_Nombre;
         }
         private bool ValidarCamposCompletos()
         {
@@ -50,6 +51,7 @@ namespace PagoElectronico.ABM_Cliente
         public Alta()
         {
             InitializeComponent();
+            this.ActiveControl = textBox_Nombre;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -59,8 +61,6 @@ namespace PagoElectronico.ABM_Cliente
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-           
-
             var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
             if (resultado == DialogResult.Yes)
             {
