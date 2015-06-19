@@ -24,6 +24,7 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_TipoCuenta.SelectedIndex = -1;
             dataGridView_Seleccion.DataSource = new DataTable();
             dataGridView_Seleccion.Columns[0].Visible = false;
+            this.ActiveControl = textBox_NumeroCuenta;
         }
 
         public Seleccion(FormBase form, int baja)
@@ -60,6 +61,8 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void dataGridView_Seleccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex > 0 || e.RowIndex < 0) return;
+
             string cuenta = Convert.ToString(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value);
 
             caller.mostrar(this.MdiParent, cuenta);

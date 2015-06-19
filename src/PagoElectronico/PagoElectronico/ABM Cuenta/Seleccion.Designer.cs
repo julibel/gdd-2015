@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView_Seleccion = new System.Windows.Forms.DataGridView();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Buscar = new System.Windows.Forms.Button();
             this.textBox_NumeroCuenta = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.paner_Filtros = new System.Windows.Forms.GroupBox();
             this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).BeginInit();
             this.paner_Filtros.SuspendLayout();
             this.SuspendLayout();
@@ -53,26 +53,38 @@
             this.Seleccionar});
             this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
             this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
+            this.dataGridView_Seleccion.ReadOnly = true;
             this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
-            this.dataGridView_Seleccion.TabIndex = 34;
+            this.dataGridView_Seleccion.TabIndex = 5;
             this.dataGridView_Seleccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Seleccion_CellContentClick);
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
+            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Seleccionar.Text = "Seleccionar";
+            this.Seleccionar.UseColumnTextForButtonValue = true;
+            this.Seleccionar.Visible = false;
             // 
             // button_Limpiar
             // 
-            this.button_Limpiar.Location = new System.Drawing.Point(634, 125);
+            this.button_Limpiar.Location = new System.Drawing.Point(715, 125);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 13;
+            this.button_Limpiar.TabIndex = 4;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Buscar
             // 
-            this.button_Buscar.Location = new System.Drawing.Point(715, 125);
+            this.button_Buscar.Location = new System.Drawing.Point(634, 125);
             this.button_Buscar.Name = "button_Buscar";
             this.button_Buscar.Size = new System.Drawing.Size(75, 23);
-            this.button_Buscar.TabIndex = 14;
+            this.button_Buscar.TabIndex = 3;
             this.button_Buscar.Text = "Buscar";
             this.button_Buscar.UseVisualStyleBackColor = true;
             this.button_Buscar.Click += new System.EventHandler(this.button_Buscar_Click);
@@ -83,7 +95,7 @@
             this.textBox_NumeroCuenta.MaxLength = 255;
             this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
             this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
-            this.textBox_NumeroCuenta.TabIndex = 23;
+            this.textBox_NumeroCuenta.TabIndex = 0;
             // 
             // label_NumeroCuenta
             // 
@@ -123,7 +135,7 @@
             this.comboBox_TipoCuenta.Location = new System.Drawing.Point(340, 97);
             this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
             this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_TipoCuenta.TabIndex = 30;
+            this.comboBox_TipoCuenta.TabIndex = 2;
             // 
             // paner_Filtros
             // 
@@ -345,27 +357,17 @@
             this.comboBox_Pais.Location = new System.Drawing.Point(340, 71);
             this.comboBox_Pais.Name = "comboBox_Pais";
             this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Pais.TabIndex = 34;
+            this.comboBox_Pais.TabIndex = 1;
             // 
             // button_Cerrar
             // 
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 37;
+            this.button_Cerrar.TabIndex = 6;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Seleccionar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Seleccionar.Text = "Seleccionar";
-            this.Seleccionar.UseColumnTextForButtonValue = true;
-            this.Seleccionar.Visible = false;
             // 
             // Seleccion
             // 
