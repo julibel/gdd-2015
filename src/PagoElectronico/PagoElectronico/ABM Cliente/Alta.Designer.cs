@@ -66,6 +66,8 @@
             this.label_Nombre = new System.Windows.Forms.Label();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -77,6 +79,8 @@
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox_Usuario.SuspendLayout();
             this.groupBox_Alta.SuspendLayout();
@@ -89,7 +93,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(661, 428);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 22;
+            this.button_Limpiar.TabIndex = 23;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -99,7 +103,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(580, 428);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 21;
+            this.button_Guardar.TabIndex = 22;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -109,7 +113,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(742, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 23;
+            this.button_Cerrar.TabIndex = 24;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -449,6 +453,7 @@
             // 
             // comboBox_Tipo_doc
             // 
+            this.comboBox_Tipo_doc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Tipo_doc.FormattingEnabled = true;
             this.comboBox_Tipo_doc.Items.AddRange(new object[] {
             "DNI",
@@ -869,6 +874,8 @@
             // 
             // groupBox_AsociarTarjetas
             // 
+            this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox1);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.label8);
             this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox_numeroTarjeta);
             this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox_codigo);
             this.groupBox_AsociarTarjetas.Controls.Add(this.label5);
@@ -884,6 +891,25 @@
             this.groupBox_AsociarTarjetas.TabStop = false;
             this.groupBox_AsociarTarjetas.Text = "Asociar tarjetas de credito";
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(152, 221);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(81, 20);
+            this.maskedTextBox1.TabIndex = 20;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.Click += new System.EventHandler(this.maskedTextBox1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(149, 205);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.TabIndex = 58;
+            this.label8.Text = "Fecha de emisión";
+            // 
             // maskedTextBox_numeroTarjeta
             // 
             this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(42, 181);
@@ -891,6 +917,7 @@
             this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
             this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(118, 20);
             this.maskedTextBox_numeroTarjeta.TabIndex = 17;
+            this.maskedTextBox_numeroTarjeta.Click += new System.EventHandler(this.maskedTextBox_numeroTarjeta_Click);
             // 
             // maskedTextBox_codigo
             // 
@@ -899,6 +926,7 @@
             this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
             this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
             this.maskedTextBox_codigo.TabIndex = 18;
+            this.maskedTextBox_codigo.Click += new System.EventHandler(this.maskedTextBox_codigo_Click);
             // 
             // label5
             // 
@@ -947,7 +975,7 @@
             this.button_Agregar.Location = new System.Drawing.Point(321, 221);
             this.button_Agregar.Name = "button_Agregar";
             this.button_Agregar.Size = new System.Drawing.Size(75, 23);
-            this.button_Agregar.TabIndex = 20;
+            this.button_Agregar.TabIndex = 21;
             this.button_Agregar.Text = "Agregar";
             this.button_Agregar.UseVisualStyleBackColor = true;
             this.button_Agregar.Click += new System.EventHandler(this.button_Agregar_Click);
@@ -961,6 +989,8 @@
             this.Numero,
             this.Codigo,
             this.Emisor,
+            this.FechaEmision,
+            this.FechaVencimiento,
             this.Eliminar});
             this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 28);
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
@@ -985,6 +1015,16 @@
             this.Emisor.HeaderText = "Emisor";
             this.Emisor.Name = "Emisor";
             this.Emisor.ReadOnly = true;
+            // 
+            // FechaEmision
+            // 
+            this.FechaEmision.HeaderText = "Fecha Emisión";
+            this.FechaEmision.Name = "FechaEmision";
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.HeaderText = "Fecha Vencimiento";
+            this.FechaVencimiento.Name = "FechaVencimiento";
             // 
             // Eliminar
             // 
@@ -1070,11 +1110,15 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox comboBox_Emisor;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_numeroTarjeta;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_codigo;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Emisor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox_numeroTarjeta;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox_codigo;
     }
 }

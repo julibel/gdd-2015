@@ -15,9 +15,14 @@ namespace PagoElectronico.ABM_Cliente
     {
         private void LimpiarCampos()
         {
-            foreach (var control in this.groupBox_Alta.Controls.OfType<TextBox>()) control.Text = "";
-            foreach (var control in this.groupBox_Usuario.Controls.OfType<TextBox>()) control.Text = "";
-            foreach (var control in this.groupBox_Alta.Controls.OfType<ComboBox>()) control.Text = "";      
+            foreach (var panel in this.Controls.OfType<GroupBox>())
+            {
+                foreach (var control in panel.Controls.OfType<TextBox>()) control.Text = "";
+                foreach (var control in panel.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
+                foreach (var control in panel.Controls.OfType<MaskedTextBox>()) control.Text = "";
+            }
+            comboBox_Nacionalidad.Text = "";
+            comboBox_Pais.Text = "";
             dataGridView_Tarjetas.Rows.Clear();
             dateTimePicker_FechaNacimiento.Value = DateTime.Now;
             this.ActiveControl = textBox_Nombre;
@@ -156,9 +161,11 @@ namespace PagoElectronico.ABM_Cliente
         private Tarjeta GenerarTarjeta(DataGridViewRow row)
         {
             return new Tarjeta(
-                Convert.ToInt64(row.Cells[0].Value),
-                Convert.ToInt32(row.Cells[1].Value),
-                Convert.ToString(row.Cells[3].Value)
+                Convert.ToInt64(row.Cells["Numero"].Value),
+                Convert.ToInt32(row.Cells["Codigo"].Value),
+                Convert.ToString(row.Cells["Emisor"].Value),
+                Convert.ToString(row.Cells["FechaEmision"].Value),
+                Convert.ToString(row.Cells["FechaVencimiento"].Value)
                 );
         }
 
@@ -199,17 +206,21 @@ namespace PagoElectronico.ABM_Cliente
 
             if (listaDeErrores2.Count < 1)
             {
-                string columna1 = maskedTextBox_numeroTarjeta.Text;
-                string columna2 = maskedTextBox_codigo.Text;
-                string columna3 = Convert.ToString(comboBox_Emisor.Text);
-              
-                string[] row = { columna1, columna2, columna3 };
+                string numero = maskedTextBox_numeroTarjeta.Text;
+                string codSeg = maskedTextBox_codigo.Text;
+                string emisor = Convert.ToString(comboBox_Emisor.Text);
+                string fechaEmision = maskedTextBox1.Text;
+                string fechaVencimiento = calcularVencimiento();
+
+                if (fechaVencimiento == "") return;
+
+                string[] row = {numero, codSeg, emisor, fechaEmision, fechaVencimiento};
                 dataGridView_Tarjetas.Rows.Add(row);
             }
             else
             {
-                var mensaje = listaDeErrores2.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-                MessageBox.Show(mensaje);
+                var mensaje = listaDeErrores2.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
+                Mensaje_Error(mensaje);
             }
 
 
@@ -244,6 +255,32 @@ namespace PagoElectronico.ABM_Cliente
         private void dataGridView_Tarjetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
+        }
+
+        private void maskedTextBox1_Click(object sender, EventArgs e)
+        {
+            maskedStart(maskedTextBox1);
+        }
+
+        private string calcularVencimiento()
+        {
+            string fecha = maskedTextBox1.Text;
+
+            if (fecha.Length < 10)
+                Mensaje_Error("Fecha inválida");
+            else
+                return fecha.Substring(0, 6) + (Convert.ToInt32(fecha.Substring(6, 4)) + 3).ToString();
+            return "";
+        }
+
+        private void maskedTextBox_codigo_Click(object sender, EventArgs e)
+        {
+            maskedStart(maskedTextBox_codigo);
+        }
+
+        private void maskedTextBox_numeroTarjeta_Click(object sender, EventArgs e)
+        {
+            maskedStart(maskedTextBox_numeroTarjeta);
         }
     }
 }

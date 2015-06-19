@@ -55,6 +55,8 @@
             this.comboBox_Pais = new System.Windows.Forms.ComboBox();
             this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
             this.groupBox_AsociarTarjetas = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -63,14 +65,16 @@
             this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
+            this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ult_Digitos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Emisor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.paner_Alta = new System.Windows.Forms.GroupBox();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
             this.paner_Alta.SuspendLayout();
@@ -514,6 +518,7 @@
             // 
             // comboBox_Tipo_doc
             // 
+            this.comboBox_Tipo_doc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Tipo_doc.FormattingEnabled = true;
             this.comboBox_Tipo_doc.Items.AddRange(new object[] {
             "DNI",
@@ -528,6 +533,8 @@
             // 
             // groupBox_AsociarTarjetas
             // 
+            this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox1);
+            this.groupBox_AsociarTarjetas.Controls.Add(this.label8);
             this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox_numeroTarjeta);
             this.groupBox_AsociarTarjetas.Controls.Add(this.maskedTextBox_codigo);
             this.groupBox_AsociarTarjetas.Controls.Add(this.label5);
@@ -543,6 +550,25 @@
             this.groupBox_AsociarTarjetas.TabStop = false;
             this.groupBox_AsociarTarjetas.Text = "Asociar tarjetas de credito";
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(34, 360);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(81, 20);
+            this.maskedTextBox1.TabIndex = 59;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.Click += new System.EventHandler(this.maskedTextBox1_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(31, 344);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(90, 13);
+            this.label8.TabIndex = 60;
+            this.label8.Text = "Fecha de emisión";
+            // 
             // maskedTextBox_numeroTarjeta
             // 
             this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(34, 279);
@@ -550,6 +576,7 @@
             this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
             this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(118, 20);
             this.maskedTextBox_numeroTarjeta.TabIndex = 13;
+            this.maskedTextBox_numeroTarjeta.Click += new System.EventHandler(this.maskedTextBox_numeroTarjeta_Click);
             // 
             // maskedTextBox_codigo
             // 
@@ -558,6 +585,7 @@
             this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
             this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
             this.maskedTextBox_codigo.TabIndex = 14;
+            this.maskedTextBox_codigo.Click += new System.EventHandler(this.maskedTextBox_codigo_Click);
             // 
             // label5
             // 
@@ -622,48 +650,14 @@
             this.Numero,
             this.Codigo,
             this.Emisor,
+            this.FechaEmision,
+            this.FechaVencimiento,
             this.Eliminar});
             this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 28);
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(403, 212);
             this.dataGridView_Tarjetas.TabIndex = 12;
             this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick_1);
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            // 
-            // Ult_Digitos
-            // 
-            this.Ult_Digitos.HeaderText = "Ult_Digitos";
-            this.Ult_Digitos.Name = "Ult_Digitos";
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Emisor
-            // 
-            this.Emisor.HeaderText = "Emisor";
-            this.Emisor.Name = "Emisor";
-            this.Emisor.ReadOnly = true;
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar fila";
-            this.Eliminar.UseColumnTextForButtonValue = true;
             // 
             // paner_Alta
             // 
@@ -903,6 +897,52 @@
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Nacionalidad.TabIndex = 10;
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Ult_Digitos
+            // 
+            this.Ult_Digitos.HeaderText = "Ult_Digitos";
+            this.Ult_Digitos.Name = "Ult_Digitos";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Emisor
+            // 
+            this.Emisor.HeaderText = "Emisor";
+            this.Emisor.Name = "Emisor";
+            this.Emisor.ReadOnly = true;
+            // 
+            // FechaEmision
+            // 
+            this.FechaEmision.HeaderText = "Fecha Emisión";
+            this.FechaEmision.Name = "FechaEmision";
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.HeaderText = "Fecha Vencimiento";
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar fila";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
             // Modificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -969,11 +1009,15 @@
         private System.Windows.Forms.DataGridView dataGridView_Tarjetas;
         private System.Windows.Forms.GroupBox paner_Alta;
         private System.Windows.Forms.ComboBox comboBox_Nacionalidad;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ult_Digitos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Emisor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
     }
 }

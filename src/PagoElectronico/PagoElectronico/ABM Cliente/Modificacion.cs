@@ -34,6 +34,7 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Pais.Text = cliente.Pais_Actual;
             textBox_Piso.Text = cliente.Piso.ToString();
             comboBox_Tipo_doc.SelectedIndex = cliente.TipoDoc - 1;
+
             foreach (Tarjeta tarjeta in tarjetas)
             {
                 string columna1 = tarjeta.ID.ToString();
@@ -41,8 +42,10 @@ namespace PagoElectronico.ABM_Cliente
                 string columna3 = "************";
                 string columna4 = "***";
                 string columna5 = tarjeta.Emisor;
+                string columna6 = tarjeta.Fecha_Emision;
+                string columna7 = tarjeta.Fecha_Vencimiento;
 
-                string[] row = { columna1, columna2, columna3, columna4, columna5 };
+                string[] row = { columna1, columna2, columna3, columna4, columna5, columna6, columna7 };
                 dataGridView_Tarjetas.Rows.Add(row);
             }
 
@@ -57,8 +60,13 @@ namespace PagoElectronico.ABM_Cliente
 
         private void LimpiarCampos()
         {
-            foreach (var control in this.paner_Alta.Controls.OfType<TextBox>()) control.Text = "";
-            foreach (var control in this.paner_Alta.Controls.OfType<RadioButton>()) control.Checked = false;
+            foreach (var panel in this.Controls.OfType<GroupBox>())
+            {
+                foreach (var control in panel.Controls.OfType<TextBox>()) control.Text = "";
+                foreach (var control in panel.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
+                foreach (var control in panel.Controls.OfType<MaskedTextBox>()) control.Text = "";
+            }
+            comboBox_Nacionalidad.Text = "";
             comboBox_Pais.Text = "";
             dataGridView_Tarjetas.Rows.Clear();
             dateTimePicker_FechaNacimiento.Value = DateTime.Now;
@@ -214,9 +222,11 @@ namespace PagoElectronico.ABM_Cliente
         private Tarjeta GenerarTarjeta(DataGridViewRow row)
         {
             return new Tarjeta(
-                Convert.ToInt64(row.Cells[2].Value),
-                Convert.ToInt32(row.Cells[3].Value),
-                Convert.ToString(row.Cells[4].Value)
+                Convert.ToInt64(row.Cells["Numero"].Value),
+                Convert.ToInt32(row.Cells["Codigo"].Value),
+                Convert.ToString(row.Cells["Emisor"].Value),
+                Convert.ToString(row.Cells["FechaEmision"].Value),
+                Convert.ToString(row.Cells["FechaVencimiento"].Value)
                 );
         }
 
@@ -242,18 +252,20 @@ namespace PagoElectronico.ABM_Cliente
 
             if (listaDeErrores2.Count < 1)
             {
-                string columna1 = "0";
-                string columna2 = maskedTextBox_numeroTarjeta.Text.Substring(12, 4);
-                string columna3 = maskedTextBox_numeroTarjeta.Text;
-                string columna4 = maskedTextBox_codigo.Text;
-                string columna5 = Convert.ToString(comboBox_Emisor.Text);
+                string id = "0";
+                string ultimos4 = maskedTextBox_numeroTarjeta.Text.Substring(12, 4);
+                string numero = maskedTextBox_numeroTarjeta.Text;
+                string codSeg = maskedTextBox_codigo.Text;
+                string emisor = Convert.ToString(comboBox_Emisor.Text);
+                string fechaEmision = maskedTextBox1.Text;
+                string fechaVencimiento = calcularVencimiento();
 
-                string[] row = { columna1, columna2, columna3, columna4, columna5 };
+                string[] row = {id, ultimos4, numero, codSeg, emisor, fechaEmision, fechaVencimiento};
                 dataGridView_Tarjetas.Rows.Add(row);
             }
             else
             {
-                var mensaje = listaDeErrores2.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
+                var mensaje = listaDeErrores2.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
                 Mensaje_Error(mensaje);
             }
         }
@@ -290,6 +302,32 @@ namespace PagoElectronico.ABM_Cliente
 
             tarjetasEliminadas.Add(Convert.ToInt32(dataGridView_Tarjetas.Rows[e.RowIndex].Cells[0].Value));
             dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
+        }
+
+        private void maskedTextBox1_Click(object sender, EventArgs e)
+        {
+            maskedStart(maskedTextBox1);
+        }
+
+        private string calcularVencimiento()
+        {
+            string fecha = maskedTextBox1.Text;
+
+            if (fecha.Length < 10)
+                Mensaje_Error("Fecha inválida");
+            else
+                return fecha.Substring(0, 6) + (Convert.ToInt32(fecha.Substring(6, 4)) + 3).ToString();
+            return "";
+        }
+
+        private void maskedTextBox_numeroTarjeta_Click(object sender, EventArgs e)
+        {
+            maskedStart(maskedTextBox_numeroTarjeta);
+        }
+
+        private void maskedTextBox_codigo_Click(object sender, EventArgs e)
+        {
+            maskedStart(maskedTextBox_codigo);
         }
 
     }

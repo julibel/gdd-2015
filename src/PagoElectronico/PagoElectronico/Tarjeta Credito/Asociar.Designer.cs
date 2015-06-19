@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
             this.textBox_NombreTitular = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,18 +40,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
-            this.textBox_FechaEmision = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
             this.groupBox1.Controls.Add(this.maskedTextBox_codigo);
             this.groupBox1.Controls.Add(this.maskedTextBox_numeroTarjeta);
             this.groupBox1.Controls.Add(this.textBox_NombreTitular);
@@ -59,7 +60,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBox_Emisor);
-            this.groupBox1.Controls.Add(this.textBox_FechaEmision);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
@@ -68,21 +68,50 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos de la tarjeta de credito";
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(340, 237);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(81, 20);
+            this.maskedTextBox1.TabIndex = 4;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBox1.TextChanged += new System.EventHandler(this.maskedTextBox1_TextChanged);
+            this.maskedTextBox1.Click += new System.EventHandler(this.maskedTextBox1_Click);
+            // 
+            // maskedTextBox_codigo
+            // 
+            this.maskedTextBox_codigo.Location = new System.Drawing.Point(340, 184);
+            this.maskedTextBox_codigo.Mask = "999";
+            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
+            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
+            this.maskedTextBox_codigo.TabIndex = 2;
+            this.maskedTextBox_codigo.Click += new System.EventHandler(this.maskedTextBox_codigo_Click);
+            // 
+            // maskedTextBox_numeroTarjeta
+            // 
+            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(340, 128);
+            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
+            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
+            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(114, 20);
+            this.maskedTextBox_numeroTarjeta.TabIndex = 0;
+            this.maskedTextBox_numeroTarjeta.Click += new System.EventHandler(this.maskedTextBox_numeroTarjeta_Click);
+            // 
             // textBox_NombreTitular
             // 
             this.textBox_NombreTitular.Location = new System.Drawing.Point(340, 158);
             this.textBox_NombreTitular.Name = "textBox_NombreTitular";
             this.textBox_NombreTitular.Size = new System.Drawing.Size(249, 20);
-            this.textBox_NombreTitular.TabIndex = 46;
+            this.textBox_NombreTitular.TabIndex = 1;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(228, 187);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 13);
+            this.label5.Size = new System.Drawing.Size(104, 13);
             this.label5.TabIndex = 44;
-            this.label5.Text = "Codigo de Seguridad";
+            this.label5.Text = "Código de seguridad";
             // 
             // label4
             // 
@@ -104,11 +133,12 @@
             // 
             // textBox_FechaVencimiento
             // 
-            this.textBox_FechaVencimiento.Enabled = false;
             this.textBox_FechaVencimiento.Location = new System.Drawing.Point(340, 263);
             this.textBox_FechaVencimiento.Name = "textBox_FechaVencimiento";
-            this.textBox_FechaVencimiento.Size = new System.Drawing.Size(186, 20);
+            this.textBox_FechaVencimiento.ReadOnly = true;
+            this.textBox_FechaVencimiento.Size = new System.Drawing.Size(81, 20);
             this.textBox_FechaVencimiento.TabIndex = 41;
+            this.textBox_FechaVencimiento.TabStop = false;
             // 
             // label2
             // 
@@ -141,15 +171,7 @@
             this.comboBox_Emisor.Location = new System.Drawing.Point(340, 210);
             this.comboBox_Emisor.Name = "comboBox_Emisor";
             this.comboBox_Emisor.Size = new System.Drawing.Size(186, 21);
-            this.comboBox_Emisor.TabIndex = 38;
-            // 
-            // textBox_FechaEmision
-            // 
-            this.textBox_FechaEmision.Enabled = false;
-            this.textBox_FechaEmision.Location = new System.Drawing.Point(340, 237);
-            this.textBox_FechaEmision.Name = "textBox_FechaEmision";
-            this.textBox_FechaEmision.Size = new System.Drawing.Size(186, 20);
-            this.textBox_FechaEmision.TabIndex = 35;
+            this.comboBox_Emisor.TabIndex = 3;
             // 
             // label8
             // 
@@ -158,23 +180,24 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(90, 13);
             this.label8.TabIndex = 34;
-            this.label8.Text = "Fecha de emision";
+            this.label8.Text = "Fecha de emisión";
             // 
             // button_Limpiar
             // 
             this.button_Limpiar.Location = new System.Drawing.Point(666, 428);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 44;
+            this.button_Limpiar.TabIndex = 6;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
+            this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // button_Guardar
             // 
             this.button_Guardar.Location = new System.Drawing.Point(585, 428);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 43;
+            this.button_Guardar.TabIndex = 5;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -184,26 +207,10 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 42;
+            this.button_Cerrar.TabIndex = 7;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // maskedTextBox_numeroTarjeta
-            // 
-            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(340, 128);
-            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
-            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
-            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(114, 20);
-            this.maskedTextBox_numeroTarjeta.TabIndex = 62;
-            // 
-            // maskedTextBox_codigo
-            // 
-            this.maskedTextBox_codigo.Location = new System.Drawing.Point(340, 184);
-            this.maskedTextBox_codigo.Mask = "999";
-            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
-            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
-            this.maskedTextBox_codigo.TabIndex = 63;
             // 
             // Asociar
             // 
@@ -222,6 +229,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Asociar";
+            this.Load += new System.EventHandler(this.Asociar_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -235,7 +243,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox_Emisor;
-        private System.Windows.Forms.TextBox textBox_FechaEmision;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button_Limpiar;
         private System.Windows.Forms.Button button_Guardar;
@@ -246,5 +253,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_numeroTarjeta;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_codigo;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }
