@@ -33,12 +33,8 @@ namespace PagoElectronico.ABM_Rol
 
             textBox_Nombre.Text = Convert.ToString(roles.Rows[0]["NOMBRE"]);
 
-            DataTable funcionalidades = DAORol.getFuncionalidades();
-
-            for (int i = 0; i < roles.Rows.Count; i++)
-            {
-                dataGridView_ListaFuncionalidades.Rows.Add(Convert.ToInt32(roles.Rows[i]["FUNCIONALIDAD"]), funcionalidades.Rows[Convert.ToInt32(roles.Rows[i]["FUNCIONALIDAD"]) - 1]["NOMBRE"]);
-            }
+            dataGridView_ListaFuncionalidades.DataSource = DAORol.getFuncionalidades(Convert.ToInt32(id));
+            dataGridView_ListaFuncionalidades.Columns["FUN_ID"].Visible = false;
 
             this.idRol = Convert.ToInt32(id);
         }

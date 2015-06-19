@@ -34,6 +34,13 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("GET_FUNCIONALIDADES");
         }
 
+        //GET FUNCIONALIDADES ROL
+
+        public static DataTable getFuncionalidades(int rol)
+        {
+            return retrieveDataTable("GET_FUNCIONALIDADES_ROL", rol);
+        }
+
 
         //FUNCIONES AUXILIARES
         private static DataTable crearData(DataGridViewRowCollection integers)

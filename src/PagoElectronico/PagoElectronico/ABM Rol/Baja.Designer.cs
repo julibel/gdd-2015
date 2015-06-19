@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
             this.dataGridView_ListaFuncionalidades = new System.Windows.Forms.DataGridView();
-            this.Indice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Funcionalidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
             this.button_Borrar = new System.Windows.Forms.Button();
@@ -62,9 +58,6 @@
             this.dataGridView_ListaFuncionalidades.AllowUserToDeleteRows = false;
             this.dataGridView_ListaFuncionalidades.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_ListaFuncionalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_ListaFuncionalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Indice,
-            this.Funcionalidad});
             this.dataGridView_ListaFuncionalidades.Enabled = false;
             this.dataGridView_ListaFuncionalidades.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridView_ListaFuncionalidades.Location = new System.Drawing.Point(411, 19);
@@ -72,25 +65,6 @@
             this.dataGridView_ListaFuncionalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(379, 373);
             this.dataGridView_ListaFuncionalidades.TabIndex = 1;
-            // 
-            // Indice
-            // 
-            this.Indice.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            this.Indice.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Indice.HeaderText = "Índice";
-            this.Indice.Name = "Indice";
-            this.Indice.ReadOnly = true;
-            this.Indice.Visible = false;
-            // 
-            // Funcionalidad
-            // 
-            this.Funcionalidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            this.Funcionalidad.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Funcionalidad.HeaderText = "Funcionalidad";
-            this.Funcionalidad.Name = "Funcionalidad";
-            this.Funcionalidad.ReadOnly = true;
             // 
             // label_Nombre
             // 
@@ -163,7 +137,5 @@
         private System.Windows.Forms.TextBox textBox_Nombre;
         private System.Windows.Forms.Button button_Borrar;
         private System.Windows.Forms.Button button_Cerrar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Indice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Funcionalidad;
     }
 }

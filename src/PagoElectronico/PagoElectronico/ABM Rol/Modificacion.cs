@@ -32,7 +32,7 @@ namespace PagoElectronico.ABM_Rol
         {
             foreach (var control in this.groupBox1.Controls.OfType<ComboBox>()) control.Text = "";
             foreach (var control in this.paner_Alta.Controls.OfType<TextBox>()) control.Text = "";
-            dataGridView_ListaFuncionalidades.Rows.Clear();
+            dataGridView_ListaFuncionalidades.DataSource = new DataTable();
         }
 
         public Modificacion()
@@ -52,10 +52,9 @@ namespace PagoElectronico.ABM_Rol
             comboBox_Funcionalidad.DisplayMember = "NOMBRE";
             comboBox_Funcionalidad.DataSource = dt;
 
-            for (int i = 0; i < rol.Rows.Count; i++)
-            {
-                dataGridView_ListaFuncionalidades.Rows.Add(Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]), dt.Rows[Convert.ToInt32(rol.Rows[i]["FUNCIONALIDAD"]) - 1]["NOMBRE"]);
-            }
+            dataGridView_ListaFuncionalidades.DataSource = DAORol.getFuncionalidades(Convert.ToInt32(id));
+            dataGridView_ListaFuncionalidades.Columns["FUN_ID"].Visible = false;
+            dataGridView_ListaFuncionalidades.Columns[0].DisplayIndex = 2;
 
             this.idRol = Convert.ToInt32(id);
         }
@@ -92,7 +91,7 @@ namespace PagoElectronico.ABM_Rol
 
             for (int i = 0; i < dataGridView_ListaFuncionalidades.Rows.Count; i++)
             {
-                indices.Add(Convert.ToString(dataGridView_ListaFuncionalidades.Rows[i].Cells[0].Value));
+                indices.Add(Convert.ToString(dataGridView_ListaFuncionalidades.Rows[i].Cells["FUN_ID"].Value));
             }
 
             if (!indices.Contains(Convert.ToString(comboBox_Funcionalidad.SelectedValue)))

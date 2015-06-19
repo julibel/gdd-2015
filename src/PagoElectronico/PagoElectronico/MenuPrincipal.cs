@@ -185,11 +185,11 @@ namespace PagoElectronico
         private void consultaDeSaldosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormBase nuevo_form = null;
-            if (!puedeIngresar(18) && puedeIngresar(118))
+            if (!puedeIngresar(18) && puedeIngresar(22))
             {
                 nuevo_form = new Consulta_Saldos.Seleccion();
             }
-            else if (!puedeIngresar(118) && puedeIngresar(18))
+            else if (!puedeIngresar(22) && puedeIngresar(18))
             {
                 nuevo_form = new Consulta_Saldos.SeleccionCliente();
             }
