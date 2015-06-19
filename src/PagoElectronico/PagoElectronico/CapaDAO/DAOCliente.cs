@@ -95,42 +95,30 @@ namespace PagoElectronico.CapaDAO
 
          public static Persona dataRowToCliente(DataRow row)
         {
+             int pais = Convert.ToInt32(row["PAIS"]);
+             int nac = Convert.ToInt32(row["NACIONALIDAD"]);
 
-            return new Persona(Convert.ToInt32(row["CLI_ID"]),
+             return new Persona(Convert.ToInt32(row["CLI_ID"]),
                                 row["NOMBRE"] as string,
                                 row["APELLIDO"] as string,
-                               row["NUMERO_DOC"] as string,
+                                row["NUMERO_DOC"] as string,
                                 Convert.ToInt32(row["TIPO_DOC"]),
                                 row["CALLE"] as string,
                                 Convert.ToInt32(row["PISO"]),
                                 row["DEPTO"] as string,
                                 row["LOCALIDAD"] as string,
-                                "pais",
-                                Convert.ToInt32(row["PAIS"]),
-                               Convert.ToDateTime(row["FECHA_NACIMIENTO"]),
-                               "pais",
-                                Convert.ToInt32(row["NACIONALIDAD"]),
-                               row["MAIL"] as string);
-      }
-        /*
-        public static Persona dataRowToCliente(DataGridViewRow row)
-        {
-            return new Persona(Convert.ToInt32(row.Cells[1]),//id
-                                Convert.ToString(row.Cells[4]),//nombre
-                                Convert.ToString(row.Cells[5]),//apellido
-                                Convert.ToString(row.Cells[3]),//numero doc
-                                Convert.ToInt32(row.Cells[2]), //tipo_dni
-                                Convert.ToString(row.Cells[7]),//calle
-                                Convert.ToInt32(row.Cells[8]),//piso
-                                Convert.ToString(row.Cells[9]),//departamento
-                                Convert.ToString(row.Cells[10]),//localidad
-                                "pais",
-                                Convert.ToInt32(row.Cells[6]),//pais_actual
-                               DateTime.Today,// Convert.ToDateTime(row.Cells[12]),//fecha_nac
-                                "pais",
-                                Convert.ToInt32(row.Cells[11]),//pais_nacionalidad
-                                Convert.ToString(row.Cells[13])//mail
-                                );
+                                getPais(pais),
+                                pais,
+                                Convert.ToDateTime(row["FECHA_NACIMIENTO"]),
+                                getPais(nac),
+                                nac,
+                                row["MAIL"] as string);
+         }
+
+         public static string getPais(int pais)
+         {
+             return (retrieveDataTable("GET_PAIS", pais)).Rows[0][0].ToString();
+         }
 
 //    CLI_ID INT IDENTITY(1,1) PRIMARY KEY,
 //    TIPO_DOC INT,
@@ -147,8 +135,6 @@ namespace PagoElectronico.CapaDAO
 //    MAIL VARCHAR(255),
 //    USUARIO INT	
 //)
-        }
-        */
 
          public static DataTable getTarjetasCliente(int id)
          {

@@ -13,23 +13,9 @@ namespace PagoElectronico
 {
     public partial class MenuPrincipal : Form
     {
-         void LimpiarCampos()
-        {
-            foreach (var control in Controls.OfType<TextBox>())
-            {
-                control.Text = "";
-            }
-
-        }
-     
         public MenuPrincipal()
         {
             InitializeComponent();
-        }
-
-        private void crearNuevoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void FormBase_Load(object sender, EventArgs e)
@@ -44,7 +30,7 @@ namespace PagoElectronico
         {
             if (!puedeIngresar(idFun))
             {
-                MessageBox.Show("No posee acceso a esta funcionalidad");
+                MessageBox.Show("No posee acceso a esta funcionalidad", "Funcionalidad inaccesible", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return true;
             }
             else
@@ -98,7 +84,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(5)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(true);
+            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(new ABM_Cliente.Baja());
             nuevo_form.mostrar(this);
         }
 
@@ -106,7 +92,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(6)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(false);
+            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(new ABM_Cliente.Modificacion());
             nuevo_form.mostrar(this);
         }
 

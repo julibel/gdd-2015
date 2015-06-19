@@ -15,9 +15,11 @@ namespace PagoElectronico.ABM_Cliente
     {
         private int id_cliente;
 
-        public Baja(Persona cliente, DataTable tarjetas)
+        public override void mostrar(Form parent, params object[] values)
         {
-            InitializeComponent();
+            Persona cliente = (Persona) values[0];
+            DataTable tarjetas = (DataTable)values[1];
+
             id_cliente = cliente.ID;
             textBox_Calle.Text = cliente.Calle;
             textBox_Apellido.Text = cliente.Apellido;
@@ -31,7 +33,15 @@ namespace PagoElectronico.ABM_Cliente
             textBox_Pais.Text = cliente.Pais_Actual;
             textBox_Piso.Text = cliente.Piso.ToString();
             comboBox_Tipo_doc.SelectedIndex = cliente.TipoDoc - 1;
-            dataGridView_Tarjetas.DataSource = tarjetas;   
+            dataGridView_Tarjetas.DataSource = tarjetas; 
+
+            base.mostrar(parent);
+        }
+
+
+        public Baja()
+        {
+            InitializeComponent();
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

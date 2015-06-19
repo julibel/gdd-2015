@@ -13,11 +13,7 @@ namespace PagoElectronico.ABM_Cliente
 {
     public partial class Seleccion : FormBase
     {
-        private Form caller = null;
-
-        private TextBox text;
-
-        public int id;
+        private FormBase caller;
 
         private string clienteNom;
 
@@ -47,12 +43,10 @@ namespace PagoElectronico.ABM_Cliente
             }
         }
 
-        public Seleccion(Form caller, TextBox textbox)
+        public Seleccion(FormBase caller)
         {
             InitializeComponent();
             this.caller = caller;
-            this.text = textbox;
-            caller.Visible = false;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -62,19 +56,7 @@ namespace PagoElectronico.ABM_Cliente
 
         private void cerrar()
         {
-            if (caller == null)
-                this.Close();
-            else
-            {
-                text.Text = clienteNom;
-                caller.Visible = true;
-            }
             this.Close();
-        }
-
-        private void Seleccion_Load(object sender, EventArgs e)
-        {
-            
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
@@ -90,8 +72,6 @@ namespace PagoElectronico.ABM_Cliente
             tipoDoc = comboBox_TipoDocumento.SelectedIndex + 1;
             doc = textBox_Documento.Text;
             
-            
-            
             dataGridView_Seleccion.DataSource = CapaDAO.DAOCliente.getClientes(nombre, apellido, mail, tipoDoc, doc);
         }
 
@@ -102,35 +82,24 @@ namespace PagoElectronico.ABM_Cliente
             DataTable tarjetas = DAOCliente.getTarjetasCliente(id);
             Persona cliente = DAOCliente.dataRowToCliente(table.Rows[0]);
 
-            this.id = cliente.ID;
             clienteNom = cliente.Nombre + ' ' + cliente.Apellido;
-
-            if (ActiveMdiChild != null) ActiveMdiChild.Close();
-
-            if (caller == null)
+ 
+            List<Tarjeta> listaTarjetas = new List<Tarjeta>();
+            foreach (DataRow row in tarjetas.Rows)
             {
-                Form nuevo_form;
-                
-                if (esBaja)
-                {
-                    nuevo_form = new ABM_Cliente.Baja(cliente, tarjetas);
-                }
-                else
-                {
-                    List<Tarjeta> listaTarjetas = new List<Tarjeta>();
-                    foreach (DataRow row in tarjetas.Rows)
-                    {
-                        Tarjeta tarjeta = DAOTarjeta.dataRowToTarjetas(row);
-                        listaTarjetas.Add(tarjeta);
-                    }
-
-                    nuevo_form = new ABM_Cliente.Modificacion(cliente, listaTarjetas);
-                }
-
-
-                nuevo_form.Show();
+                Tarjeta tarjeta = DAOTarjeta.dataRowToTarjetas(row);
+                listaTarjetas.Add(tarjeta);
             }
+
+            caller.mostrar(this.MdiParent, cliente, tarjetas, listaTarjetas);
+
             cerrar();
+        }
+
+        private void textBox_Nombre_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button_Buscar_Click(sender, e);
         }
     }
 }

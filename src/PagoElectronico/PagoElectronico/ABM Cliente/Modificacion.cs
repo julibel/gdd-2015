@@ -16,9 +16,11 @@ namespace PagoElectronico.ABM_Cliente
         private Persona cliente;
         private List<int> tarjetasEliminadas = new List<int>();
 
-        public Modificacion(Persona cliente, List<Tarjeta> tarjetas)
+        public override void mostrar(Form parent, params object[] values)
         {
-            InitializeComponent();
+            Persona cliente = (Persona)values[0];
+            List<Tarjeta> tarjetas = (List<Tarjeta>)values[2];
+
             this.cliente = cliente;
             textBox_Calle.Text = cliente.Calle;
             textBox_Apellido.Text = cliente.Apellido;
@@ -32,7 +34,7 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Pais.Text = cliente.Pais_Actual;
             textBox_Piso.Text = cliente.Piso.ToString();
             comboBox_Tipo_doc.SelectedIndex = cliente.TipoDoc - 1;
-            foreach(Tarjeta tarjeta in tarjetas)
+            foreach (Tarjeta tarjeta in tarjetas)
             {
                 string columna1 = tarjeta.ID.ToString();
                 string columna2 = tarjeta.cod_seguridad.ToString();
@@ -43,7 +45,14 @@ namespace PagoElectronico.ABM_Cliente
                 string[] row = { columna1, columna2, columna3, columna4, columna5 };
                 dataGridView_Tarjetas.Rows.Add(row);
             }
-            
+
+            base.mostrar(parent);
+        }
+
+
+        public Modificacion()
+        {
+            InitializeComponent();
         }
 
         private void LimpiarCampos()

@@ -13,7 +13,23 @@ namespace PagoElectronico.ABM_Cuenta
 {
     public partial class Alta : FormBase
     {
-        private ABM_Cliente.Seleccion seleccion;
+        private int clienteID;
+
+        private bool open = false;
+
+        public override void mostrar(Form parent, params object[] values)
+        {
+            if (open == true)
+            {
+                this.Visible = true;
+                Persona cliente = (Persona) values[0];
+                clienteID = cliente.ID;
+                textBox1.Text = cliente.Nombre + ' ' + cliente.Apellido;
+                return;
+            }
+            else
+                base.mostrar(parent);
+        }
 
         private void LimpiarCampos()
         {
@@ -44,7 +60,7 @@ namespace PagoElectronico.ABM_Cuenta
             var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-                CapaDAO.DAOCuenta.agregarCuenta(seleccion.id, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
+                CapaDAO.DAOCuenta.agregarCuenta(clienteID, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
                 Mensaje_OK("Los datos han sido almacenados con exito", "");
                 LimpiarCampos();
             }
@@ -74,15 +90,16 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
             comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
 
+            open = true;
+
             LimpiarCampos();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            seleccion = new ABM_Cliente.Seleccion(this, textBox1);
-            seleccion.MdiParent = this.MdiParent;
+            ABM_Cliente.Seleccion seleccion = new ABM_Cliente.Seleccion(this);
             this.Visible = false;
-            seleccion.Show();
+            seleccion.mostrar(this.MdiParent);
         }
     }
 }

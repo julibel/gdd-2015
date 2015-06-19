@@ -131,6 +131,7 @@
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nombre.TabIndex = 0;
+            this.textBox_Nombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Nombre_KeyDown);
             // 
             // textBox_Apellido
             // 
@@ -138,6 +139,7 @@
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
             this.textBox_Apellido.TabIndex = 1;
+            this.textBox_Apellido.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Nombre_KeyDown);
             // 
             // label_Nombre
             // 
@@ -167,6 +169,7 @@
             this.textBox_Mail.Name = "textBox_Mail";
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
             this.textBox_Mail.TabIndex = 2;
+            this.textBox_Mail.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Nombre_KeyDown);
             // 
             // label_Documento
             // 
@@ -196,6 +199,7 @@
             this.textBox_Documento.Name = "textBox_Documento";
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
             this.textBox_Documento.TabIndex = 4;
+            this.textBox_Documento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_Nombre_KeyDown);
             // 
             // label_Mail
             // 
@@ -234,7 +238,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion";
-            this.Load += new System.EventHandler(this.Seleccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).EndInit();
             this.paner_Filtros.ResumeLayout(false);
             this.paner_Filtros.PerformLayout();

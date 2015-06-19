@@ -907,7 +907,6 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.groupBox_AsociarTarjetas);
             this.Controls.Add(this.paner_Alta);
