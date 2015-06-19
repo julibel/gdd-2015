@@ -26,18 +26,51 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
-            if (resultado == DialogResult.Yes)
+            int idCli = DAOTarjeta.getClienteId();
+
+
+            try
             {
-                int idCli = DAOTarjeta.getClienteId();
-                Tarjeta tarjeta = new Tarjeta(Convert.ToInt64(maskedTextBox_numeroTarjeta.Text),
-                                              Convert.ToInt32(maskedTextBox_codigo.Text),
-                                              comboBox_Emisor.Text,
-                                              maskedTextBox1.Text,
-                                              textBox_FechaVencimiento.Text);
-                DAOTarjeta.AgregarTarjeta(tarjeta, idCli);
-                Mensaje_OK("Los datos han sido almacenados con éxito");
+                if (!camposCorrectos(idCli))
+                {
+                    Mensaje_Error("No están todos los datos obligatorios");
+                    return;
+                }
+                var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
+                if (resultado == DialogResult.Yes)
+                {
+                    Tarjeta tarjeta = new Tarjeta(Convert.ToInt64(maskedTextBox_numeroTarjeta.Text),
+                                                  Convert.ToInt32(maskedTextBox_codigo.Text),
+                                                  comboBox_Emisor.Text,
+                                                  maskedTextBox1.Text,
+                                                  textBox_FechaVencimiento.Text);
+                    
+                     DAOTarjeta.AgregarTarjeta(tarjeta, idCli);
+                 }
             }
+            catch (Exception)
+            {
+                Mensaje_Error("La fecha debe ser una fecha válida");
+                return;
+            }
+                Mensaje_OK("Los datos han sido almacenados con éxito");
+        }
+
+        private bool camposCorrectos(int idCli)
+        {
+            if (Convert.ToDateTime(Globals.getFechaSistema()) > Convert.ToDateTime(textBox_FechaVencimiento.Text))
+            {
+                Mensaje_Error("La tarjeta se encuentra vencida");
+                return false;
+            }
+
+            if (idCli == 0)
+            {
+                Mensaje_Error("Debe tener rol cliente para realizar esta acción");
+                return false;
+            }
+
+            return maskedTextBox_numeroTarjeta.Text != "" && maskedTextBox_codigo.Text != "" && textBox_NombreTitular.Text != "" && comboBox_Emisor.SelectedIndex >= 0 && maskedTextBox1.Text != "";
         }
 
         private void Asociar_Load(object sender, EventArgs e)
@@ -62,7 +95,9 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void LimpiarCampos()
         {
-            throw new NotImplementedException();
+            foreach (var control in this.groupBox1.Controls.OfType<TextBox>()) control.Text = "";
+            foreach (var control in this.groupBox1.Controls.OfType<MaskedTextBox>()) control.Text = "";
+            foreach (var control in this.groupBox1.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
         }
 
         private void maskedTextBox1_TextChanged(object sender, EventArgs e)
