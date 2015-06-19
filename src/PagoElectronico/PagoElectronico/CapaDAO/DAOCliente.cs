@@ -51,7 +51,8 @@ namespace PagoElectronico.CapaDAO
                 cliente.Pais_Actual,
                 cliente.FechaDeNacimiento.ToString("yyyy-MM-dd HH:mm:ss"),
                 cliente.Pais_Nacionalidad,
-                cliente.Mail
+                cliente.Mail,
+                cliente.Activo
                 );
 
 
@@ -74,18 +75,9 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("GET_CLIENTE", id);
         }
         
-        public static DataTable getClientes(string nombre, string apellido, string email, int tipoDoc, string nroDoc)
+        public static DataTable getClientes(string nombre, string apellido, string email, int tipoDoc, string nroDoc, int estado)
         {
-            //List<Persona> clientes = new List<Persona>();
-
-            DataTable table = retrieveDataTable("FIND_CLIENTES", nombre, apellido, email, tipoDoc, nroDoc);
-
-            /*foreach (DataRow row in table.Rows)
-            {
-                Persona cliente = dataRowToCliente(row);
-                clientes.Add(cliente);
-            }*/
-            return table;
+            return retrieveDataTable("FIND_CLIENTES", nombre, apellido, email, tipoDoc, nroDoc, estado);
         }
 
         public static void bajarCliente(int id)
@@ -112,7 +104,8 @@ namespace PagoElectronico.CapaDAO
                                 Convert.ToDateTime(row["FECHA_NACIMIENTO"]),
                                 getPais(nac),
                                 nac,
-                                row["MAIL"] as string);
+                                row["MAIL"] as string,
+                                Convert.ToInt32(row["ESTADO"]));
          }
 
          public static string getPais(int pais)

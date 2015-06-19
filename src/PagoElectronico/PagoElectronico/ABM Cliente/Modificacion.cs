@@ -34,18 +34,25 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Pais.Text = cliente.Pais_Actual;
             textBox_Piso.Text = cliente.Piso.ToString();
             comboBox_Tipo_doc.SelectedIndex = cliente.TipoDoc - 1;
+            checkBox_Estado.Checked = Convert.ToBoolean(cliente.Activo);
+
+            if (checkBox_Estado.Checked) //Si está habilitado no permitir deshabilitar
+            {
+                checkBox_Estado.Visible = false;
+                label2.Visible = false;
+            }
 
             foreach (Tarjeta tarjeta in tarjetas)
             {
-                string columna1 = tarjeta.ID.ToString();
-                string columna2 = tarjeta.cod_seguridad.ToString();
-                string columna3 = "************";
-                string columna4 = "***";
-                string columna5 = tarjeta.Emisor;
-                string columna6 = tarjeta.Fecha_Emision;
-                string columna7 = tarjeta.Fecha_Vencimiento;
+                string id = tarjeta.ID.ToString();
+                string codSeg = tarjeta.cod_seguridad.ToString();
+                string encriptado = "************";
+                string codSegEnc = "***";
+                string emisor = tarjeta.Emisor;
+                string fechaEmision = tarjeta.Fecha_Emision;
+                string fechaVencimiento = tarjeta.Fecha_Vencimiento;
 
-                string[] row = { columna1, columna2, columna3, columna4, columna5, columna6, columna7 };
+                string[] row = {id, codSeg, encriptado, codSegEnc, emisor, fechaEmision, fechaVencimiento};
                 dataGridView_Tarjetas.Rows.Add(row);
             }
 
@@ -215,7 +222,8 @@ namespace PagoElectronico.ABM_Cliente
                     dateTimePicker_FechaNacimiento.Value,
                     comboBox_Nacionalidad.Text,
                     0,
-                    textBox_Mail.Text
+                    textBox_Mail.Text,
+                    Convert.ToInt32(checkBox_Estado.Checked)
                     );
         }
 

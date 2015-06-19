@@ -75,10 +75,28 @@ namespace PagoElectronico.Model
             Pais_Nacionalidad = pais_actual;
             Paid_Nacionalidad_Id = pais_nacionalidad_id;
             Mail = mail;
-            Activo = 1;
-            
         }
 
+        public Persona(int id, string nombre, string apellido, string doc, int tipo, string calle, int piso, string departamento,
+               string loc, string pais_actual, int pais_actual_id, DateTime fecha_nac, string pais_nacionalidad, int pais_nacionalidad_id, string mail, int activo)
+        {
+            ID = id;
+            Nombre = nombre;
+            Apellido = apellido;
+            Documento = doc;
+            TipoDoc = tipo;
+            Calle = calle;
+            Piso = piso;
+            Departamento = departamento;
+            Localidad = loc;
+            Pais_Actual = pais_actual;
+            Paid_Actual_Id = pais_actual_id;
+            FechaDeNacimiento = fecha_nac;
+            Pais_Nacionalidad = pais_actual;
+            Paid_Nacionalidad_Id = pais_nacionalidad_id;
+            Mail = mail;
+            Activo = activo;
+        }
 
     }
 }

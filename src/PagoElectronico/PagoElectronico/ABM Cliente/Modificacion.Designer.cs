@@ -65,8 +65,6 @@
             this.comboBox_Emisor = new System.Windows.Forms.ComboBox();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_Tarjetas = new System.Windows.Forms.DataGridView();
-            this.paner_Alta = new System.Windows.Forms.GroupBox();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ult_Digitos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,6 +73,10 @@
             this.FechaEmision = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.checkBox_Estado = new System.Windows.Forms.CheckBox();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
             this.paner_Alta.SuspendLayout();
@@ -659,8 +661,56 @@
             this.dataGridView_Tarjetas.TabIndex = 12;
             this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick_1);
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // Ult_Digitos
+            // 
+            this.Ult_Digitos.HeaderText = "Ult_Digitos";
+            this.Ult_Digitos.Name = "Ult_Digitos";
+            // 
+            // Numero
+            // 
+            this.Numero.HeaderText = "Numero";
+            this.Numero.Name = "Numero";
+            this.Numero.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Emisor
+            // 
+            this.Emisor.HeaderText = "Emisor";
+            this.Emisor.Name = "Emisor";
+            this.Emisor.ReadOnly = true;
+            // 
+            // FechaEmision
+            // 
+            this.FechaEmision.HeaderText = "Fecha Emisión";
+            this.FechaEmision.Name = "FechaEmision";
+            // 
+            // FechaVencimiento
+            // 
+            this.FechaVencimiento.HeaderText = "Fecha Vencimiento";
+            this.FechaVencimiento.Name = "FechaVencimiento";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
+            this.Eliminar.Text = "Eliminar fila";
+            this.Eliminar.UseColumnTextForButtonValue = true;
+            // 
             // paner_Alta
             // 
+            this.paner_Alta.Controls.Add(this.checkBox_Estado);
+            this.paner_Alta.Controls.Add(this.label2);
             this.paner_Alta.Controls.Add(this.comboBox_Nacionalidad);
             this.paner_Alta.Controls.Add(this.comboBox_Tipo_doc);
             this.paner_Alta.Controls.Add(this.comboBox_Pais);
@@ -897,51 +947,26 @@
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Nacionalidad.TabIndex = 10;
             // 
-            // ID
+            // label2
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(91, 351);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Estado";
             // 
-            // Ult_Digitos
+            // checkBox_Estado
             // 
-            this.Ult_Digitos.HeaderText = "Ult_Digitos";
-            this.Ult_Digitos.Name = "Ult_Digitos";
-            // 
-            // Numero
-            // 
-            this.Numero.HeaderText = "Numero";
-            this.Numero.Name = "Numero";
-            this.Numero.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Emisor
-            // 
-            this.Emisor.HeaderText = "Emisor";
-            this.Emisor.Name = "Emisor";
-            this.Emisor.ReadOnly = true;
-            // 
-            // FechaEmision
-            // 
-            this.FechaEmision.HeaderText = "Fecha Emisión";
-            this.FechaEmision.Name = "FechaEmision";
-            // 
-            // FechaVencimiento
-            // 
-            this.FechaVencimiento.HeaderText = "Fecha Vencimiento";
-            this.FechaVencimiento.Name = "FechaVencimiento";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.ReadOnly = true;
-            this.Eliminar.Text = "Eliminar fila";
-            this.Eliminar.UseColumnTextForButtonValue = true;
+            this.checkBox_Estado.AutoSize = true;
+            this.checkBox_Estado.Location = new System.Drawing.Point(142, 351);
+            this.checkBox_Estado.Name = "checkBox_Estado";
+            this.checkBox_Estado.Size = new System.Drawing.Size(73, 17);
+            this.checkBox_Estado.TabIndex = 30;
+            this.checkBox_Estado.Text = "Habilitado";
+            this.checkBox_Estado.UseVisualStyleBackColor = true;
             // 
             // Modificacion
             // 
@@ -1019,5 +1044,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaEmision;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaVencimiento;
         private System.Windows.Forms.DataGridViewButtonColumn Eliminar;
+        private System.Windows.Forms.CheckBox checkBox_Estado;
+        private System.Windows.Forms.Label label2;
     }
 }

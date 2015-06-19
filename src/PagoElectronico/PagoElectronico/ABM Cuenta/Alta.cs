@@ -99,7 +99,7 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ABM_Cliente.Seleccion seleccion = new ABM_Cliente.Seleccion(this);
+            ABM_Cliente.Seleccion seleccion = new ABM_Cliente.Seleccion(this, 0);
             this.Visible = false;
             seleccion.mostrar(this.MdiParent);
         }

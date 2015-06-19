@@ -15,6 +15,8 @@ namespace PagoElectronico.ABM_Cliente
     {
         private FormBase caller;
 
+        private int esBaja;
+
         private string clienteNom;
 
         string nombre, apellido, doc, mail;
@@ -27,10 +29,11 @@ namespace PagoElectronico.ABM_Cliente
             dataGridView_Seleccion.DataSource = new DataTable();
         }
 
-        public Seleccion(FormBase caller)
+        public Seleccion(FormBase caller, int esBaja)
         {
             InitializeComponent();
             this.caller = caller;
+            this.esBaja = esBaja;
             this.ActiveControl = textBox_Nombre;
         }
 
@@ -57,7 +60,7 @@ namespace PagoElectronico.ABM_Cliente
             tipoDoc = comboBox_TipoDocumento.SelectedIndex + 1;
             doc = textBox_Documento.Text;
             
-            dataGridView_Seleccion.DataSource = CapaDAO.DAOCliente.getClientes(nombre, apellido, mail, tipoDoc, doc);
+            dataGridView_Seleccion.DataSource = DAOCliente.getClientes(nombre, apellido, mail, tipoDoc, doc, esBaja);
         }
 
         private void dataGridView_Seleccion_CellContentClick(object sender, DataGridViewCellEventArgs e)

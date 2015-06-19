@@ -84,7 +84,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(5)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(new ABM_Cliente.Baja());
+            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(new ABM_Cliente.Baja(), 1);
             nuevo_form.mostrar(this);
         }
 
@@ -92,7 +92,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(6)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(new ABM_Cliente.Modificacion());
+            ABM_Cliente.Seleccion nuevo_form = new ABM_Cliente.Seleccion(new ABM_Cliente.Modificacion(), 0);
             nuevo_form.mostrar(this);
         }
 
