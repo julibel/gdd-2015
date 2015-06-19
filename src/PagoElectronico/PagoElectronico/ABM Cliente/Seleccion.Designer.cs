@@ -57,6 +57,7 @@
             this.Seleccionar});
             this.dataGridView_Seleccion.Location = new System.Drawing.Point(12, 190);
             this.dataGridView_Seleccion.Name = "dataGridView_Seleccion";
+            this.dataGridView_Seleccion.ReadOnly = true;
             this.dataGridView_Seleccion.Size = new System.Drawing.Size(810, 230);
             this.dataGridView_Seleccion.TabIndex = 7;
             this.dataGridView_Seleccion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Seleccion_CellContentClick);
@@ -65,6 +66,7 @@
             // 
             this.Seleccionar.HeaderText = "Seleccionar";
             this.Seleccionar.Name = "Seleccionar";
+            this.Seleccionar.ReadOnly = true;
             this.Seleccionar.Text = "Seleccionar";
             this.Seleccionar.UseColumnTextForButtonValue = true;
             // 

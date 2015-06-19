@@ -28,7 +28,6 @@ namespace PagoElectronico.Tarjeta_Credito
         {
             int idCli = DAOTarjeta.getClienteId();
 
-
             try
             {
                 if (!camposCorrectos(idCli))

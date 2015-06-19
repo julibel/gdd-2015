@@ -62,6 +62,8 @@ namespace PagoElectronico.ABM_Cliente
 
         private void dataGridView_Seleccion_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex > 0 || e.RowIndex < 0) return;
+            
             int id = Convert.ToInt32(dataGridView_Seleccion.Rows[e.RowIndex].Cells[1].Value);
             DataTable table = DAOCliente.getCliente(id);
             DataTable tarjetas = DAOCliente.getTarjetasCliente(id);

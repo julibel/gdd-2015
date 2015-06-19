@@ -36,10 +36,10 @@
             this.label_Moneda = new System.Windows.Forms.Label();
             this.label_Importe = new System.Windows.Forms.Label();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
+            this.comboBox_Tarjetas = new System.Windows.Forms.ComboBox();
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.comboBox_Tarjetas = new System.Windows.Forms.ComboBox();
             this.paner_DatosCuenta.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +69,7 @@
             this.comboBox_Cuentas.Location = new System.Drawing.Point(297, 156);
             this.comboBox_Cuentas.Name = "comboBox_Cuentas";
             this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Cuentas.TabIndex = 27;
+            this.comboBox_Cuentas.TabIndex = 0;
             // 
             // label_Tarjeta
             // 
@@ -89,7 +89,7 @@
             this.comboBox_Moneda.Location = new System.Drawing.Point(297, 209);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_Moneda.TabIndex = 20;
+            this.comboBox_Moneda.TabIndex = 2;
             // 
             // textBox_Importe
             // 
@@ -97,7 +97,7 @@
             this.textBox_Importe.MaxLength = 50;
             this.textBox_Importe.Name = "textBox_Importe";
             this.textBox_Importe.Size = new System.Drawing.Size(121, 20);
-            this.textBox_Importe.TabIndex = 19;
+            this.textBox_Importe.TabIndex = 1;
             this.textBox_Importe.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBox_Importe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Importe_KeyPress);
             // 
@@ -134,12 +134,21 @@
             this.label_NumeroCuenta.TabIndex = 1;
             this.label_NumeroCuenta.Text = "Cuenta";
             // 
+            // comboBox_Tarjetas
+            // 
+            this.comboBox_Tarjetas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Tarjetas.FormattingEnabled = true;
+            this.comboBox_Tarjetas.Location = new System.Drawing.Point(297, 236);
+            this.comboBox_Tarjetas.Name = "comboBox_Tarjetas";
+            this.comboBox_Tarjetas.Size = new System.Drawing.Size(232, 21);
+            this.comboBox_Tarjetas.TabIndex = 3;
+            // 
             // button_Limpiar
             // 
             this.button_Limpiar.Location = new System.Drawing.Point(666, 428);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 35;
+            this.button_Limpiar.TabIndex = 5;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -149,7 +158,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(585, 428);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 34;
+            this.button_Guardar.TabIndex = 4;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -159,19 +168,10 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 33;
+            this.button_Cerrar.TabIndex = 6;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // comboBox_Tarjetas
-            // 
-            this.comboBox_Tarjetas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_Tarjetas.FormattingEnabled = true;
-            this.comboBox_Tarjetas.Location = new System.Drawing.Point(297, 236);
-            this.comboBox_Tarjetas.Name = "comboBox_Tarjetas";
-            this.comboBox_Tarjetas.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Tarjetas.TabIndex = 28;
             // 
             // DepositoNuevo
             // 

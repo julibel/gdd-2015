@@ -40,24 +40,32 @@ namespace PagoElectronico.Depositos
             comboBox_Moneda.ValueMember = "MON_ID";
             comboBox_Moneda.DisplayMember = "NOMBRE";
             comboBox_Moneda.DataSource = monedas;
+
+            LimpiarCampos();
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
-            textBox_Importe.Text = "";
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            foreach (var control in paner_DatosCuenta.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
+            foreach (var control in paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
         }
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
             if (!camposCorrectos())
             {
-                MessageBox.Show("No están todos los datos obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("No están todos los datos obligatorios");
                 return;
             }
 
             CapaDAO.DAODeposito.realizarDeposito(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToInt32(comboBox_Tarjetas.SelectedValue), Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue));
 
-            MessageBox.Show("El depósito fue registrado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            Mensaje_OK("El depósito fue registrado correctamente");
         }
 
         private bool camposCorrectos()
@@ -68,7 +76,7 @@ namespace PagoElectronico.Depositos
             }
             catch (Exception)
             {
-                MessageBox.Show("El importe debe tener formato numérico", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("El importe debe ser mayor a 0");
                 return false;
             }
         }

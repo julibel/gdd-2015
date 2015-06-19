@@ -25,6 +25,7 @@ namespace PagoElectronico.ABM_Cuenta
                 Persona cliente = (Persona) values[0];
                 clienteID = cliente.ID;
                 textBox1.Text = cliente.Nombre + ' ' + cliente.Apellido;
+                comboBox_Pais.Text = cliente.Pais_Actual;
                 return;
             }
             else
