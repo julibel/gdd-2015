@@ -58,10 +58,10 @@
             this.dataGridView_ListaFuncionalidades.AllowUserToDeleteRows = false;
             this.dataGridView_ListaFuncionalidades.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_ListaFuncionalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_ListaFuncionalidades.Enabled = false;
             this.dataGridView_ListaFuncionalidades.GridColor = System.Drawing.SystemColors.ControlText;
             this.dataGridView_ListaFuncionalidades.Location = new System.Drawing.Point(411, 19);
             this.dataGridView_ListaFuncionalidades.Name = "dataGridView_ListaFuncionalidades";
+            this.dataGridView_ListaFuncionalidades.ReadOnly = true;
             this.dataGridView_ListaFuncionalidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(379, 373);
             this.dataGridView_ListaFuncionalidades.TabIndex = 1;
@@ -79,10 +79,10 @@
             // 
             // textBox_Nombre
             // 
-            this.textBox_Nombre.Enabled = false;
             this.textBox_Nombre.Location = new System.Drawing.Point(105, 86);
             this.textBox_Nombre.MaxLength = 15;
             this.textBox_Nombre.Name = "textBox_Nombre";
+            this.textBox_Nombre.ReadOnly = true;
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nombre.TabIndex = 0;
             // 

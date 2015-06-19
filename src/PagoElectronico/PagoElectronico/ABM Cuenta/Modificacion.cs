@@ -43,7 +43,7 @@ namespace PagoElectronico.ABM_Cuenta
         {
             if (!camposCorrectos())
             {
-                MessageBox.Show("No están todos los datos obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("No están todos los datos obligatorios");
                 return;
             }
 
@@ -51,7 +51,7 @@ namespace PagoElectronico.ABM_Cuenta
             if (resultado == DialogResult.Yes)
             {
                 DAOCuenta.modificarCuenta(cuenta, cliente, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_Pais.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToInt32(comboBox_EstadoCuenta.SelectedValue));
-                Mensaje_OK("Los datos han sido almacenados con exito", "");
+                Mensaje_OK("Los datos han sido almacenados con exito");
             }
         }
 

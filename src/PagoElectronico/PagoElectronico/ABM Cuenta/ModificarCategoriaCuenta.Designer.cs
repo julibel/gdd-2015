@@ -50,7 +50,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 32;
+            this.button_Limpiar.TabIndex = 3;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -88,15 +88,16 @@
             this.comboBox_TipoCuenta.Location = new System.Drawing.Point(357, 247);
             this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
             this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_TipoCuenta.TabIndex = 37;
+            this.comboBox_TipoCuenta.TabIndex = 1;
             // 
             // textBox_Pais
             // 
-            this.textBox_Pais.Enabled = false;
             this.textBox_Pais.Location = new System.Drawing.Point(357, 167);
             this.textBox_Pais.Name = "textBox_Pais";
+            this.textBox_Pais.ReadOnly = true;
             this.textBox_Pais.Size = new System.Drawing.Size(121, 20);
             this.textBox_Pais.TabIndex = 36;
+            this.textBox_Pais.TabStop = false;
             // 
             // comboBox_Cuentas
             // 
@@ -105,25 +106,27 @@
             this.comboBox_Cuentas.Location = new System.Drawing.Point(357, 139);
             this.comboBox_Cuentas.Name = "comboBox_Cuentas";
             this.comboBox_Cuentas.Size = new System.Drawing.Size(232, 21);
-            this.comboBox_Cuentas.TabIndex = 35;
+            this.comboBox_Cuentas.TabIndex = 0;
             this.comboBox_Cuentas.SelectedIndexChanged += new System.EventHandler(this.comboBox_Cuentas_SelectedIndexChanged);
             this.comboBox_Cuentas.TextChanged += new System.EventHandler(this.comboBox_Cuentas_SelectedIndexChanged);
             // 
             // textBox_TipoCuentaActual
             // 
-            this.textBox_TipoCuentaActual.Enabled = false;
             this.textBox_TipoCuentaActual.Location = new System.Drawing.Point(357, 220);
             this.textBox_TipoCuentaActual.Name = "textBox_TipoCuentaActual";
+            this.textBox_TipoCuentaActual.ReadOnly = true;
             this.textBox_TipoCuentaActual.Size = new System.Drawing.Size(121, 20);
             this.textBox_TipoCuentaActual.TabIndex = 33;
+            this.textBox_TipoCuentaActual.TabStop = false;
             // 
             // textBox_Moneda
             // 
-            this.textBox_Moneda.Enabled = false;
             this.textBox_Moneda.Location = new System.Drawing.Point(357, 193);
             this.textBox_Moneda.Name = "textBox_Moneda";
+            this.textBox_Moneda.ReadOnly = true;
             this.textBox_Moneda.Size = new System.Drawing.Size(121, 20);
             this.textBox_Moneda.TabIndex = 32;
+            this.textBox_Moneda.TabStop = false;
             // 
             // label_TipoCuenta
             // 
@@ -181,7 +184,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(585, 426);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 31;
+            this.button_Guardar.TabIndex = 2;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -191,7 +194,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 30;
+            this.button_Cerrar.TabIndex = 4;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);

@@ -17,6 +17,7 @@ namespace PagoElectronico.ABM_Cuenta
         {
             foreach (var control in this.paner_TipoCuentas.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_TipoCuentas.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
+            this.ActiveControl = comboBox_Cuentas;
         }
 
         public ModificarCategoriaCuenta()
@@ -43,13 +44,13 @@ namespace PagoElectronico.ABM_Cuenta
                 if (!Validaciones()) return;
                 try
                 {
-                    CapaDAO.DAOCuenta.modificarTipoCuenta(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));                 
-                    Mensaje_OK("Los datos han sido almacenados con exito", "");
+                    DAOCuenta.modificarTipoCuenta(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));                 
+                    Mensaje_OK("Los datos han sido almacenados con exito");
                     LimpiarCampos();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR.-" + ex.Message);
+                    Mensaje_Error("ERROR: " + ex.Message);
                 } 
             }
         }
@@ -64,7 +65,7 @@ namespace PagoElectronico.ABM_Cuenta
             if (listaDeErrores.Count < 1) return true;
 
             var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-            MessageBox.Show(mensaje);
+            Mensaje_Error(mensaje);
             return false;
         }
 
@@ -90,13 +91,13 @@ namespace PagoElectronico.ABM_Cuenta
         {
             comboBox_Cuentas.ValueMember = "CUE_ID";
             comboBox_Cuentas.DisplayMember = "CUE_ID";
-            comboBox_Cuentas.DataSource = CapaDAO.DAOOperacion.getCuentas();
+            comboBox_Cuentas.DataSource = DAOOperacion.getCuentas();
 
             comboBox_TipoCuenta.ValueMember = "TIP_ID";
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
-            comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
+            comboBox_TipoCuenta.DataSource = DAOCuenta.getTiposCuenta();
 
-            comboBox_Cuentas.SelectedIndex = -1;
+            LimpiarCampos();
         }
 
         private void comboBox_Cuentas_SelectedIndexChanged(object sender, EventArgs e)
@@ -106,7 +107,7 @@ namespace PagoElectronico.ABM_Cuenta
                 LimpiarCampos();
                 return;
             }
-           DataTable cuenta = CapaDAO.DAOCuenta.getCuenta(Convert.ToInt64(comboBox_Cuentas.SelectedValue));
+           DataTable cuenta = DAOCuenta.getCuenta(Convert.ToInt64(comboBox_Cuentas.SelectedValue));
            textBox_Moneda.Text = Convert.ToString(cuenta.Rows[0]["MON_NOM"]);
            textBox_Pais.Text = Convert.ToString(cuenta.Rows[0]["PAI_NOM"]);
            comboBox_TipoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["TIPO"]);

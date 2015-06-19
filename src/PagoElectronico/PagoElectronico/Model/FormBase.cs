@@ -39,5 +39,11 @@ namespace PagoElectronico.Model
             this.MdiParent = parent;
             this.Show();
         }
+
+        //MASKED TEXT BOX
+        public void maskedStart(MaskedTextBox text)
+        {
+            text.SelectionStart = 0;
+        }
     }
 }

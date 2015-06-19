@@ -52,7 +52,7 @@ namespace PagoElectronico.ABM_Cuenta
             {
                 DAOCuenta.eliminarCuenta(cuenta);
                 LimpiarCampos();
-                Mensaje_OK("Los datos han sido eliminados con éxito", "");
+                Mensaje_OK("Los datos han sido eliminados con éxito");
             }
         }
 

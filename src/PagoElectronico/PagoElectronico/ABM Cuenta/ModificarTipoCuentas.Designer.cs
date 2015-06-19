@@ -29,6 +29,15 @@
         private void InitializeComponent()
         {
             this.paner_TipoCuentas = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox_VigenciaModificada = new System.Windows.Forms.TextBox();
+            this.textBox_VigenciaActual = new System.Windows.Forms.TextBox();
+            this.textBox_CostoTranModificado = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_CostTranActual = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
             this.textBox_CostoMantModificado = new System.Windows.Forms.TextBox();
             this.label_CostoModificado = new System.Windows.Forms.Label();
             this.textBox_CostoMantActual = new System.Windows.Forms.TextBox();
@@ -37,15 +46,6 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.comboBox_TipoCuenta = new System.Windows.Forms.ComboBox();
-            this.textBox_CostoTranModificado = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_CostTranActual = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_VigenciaModificada = new System.Windows.Forms.TextBox();
-            this.textBox_VigenciaActual = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.paner_TipoCuentas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,13 +74,98 @@
             this.paner_TipoCuentas.TabStop = false;
             this.paner_TipoCuentas.Text = "Modificacion de tipo de cuenta";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(289, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(102, 13);
+            this.label4.TabIndex = 31;
+            this.label4.Text = "Vigencia modificado";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(311, 175);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "Vigencia actual";
+            // 
+            // textBox_VigenciaModificada
+            // 
+            this.textBox_VigenciaModificada.Location = new System.Drawing.Point(397, 198);
+            this.textBox_VigenciaModificada.Name = "textBox_VigenciaModificada";
+            this.textBox_VigenciaModificada.Size = new System.Drawing.Size(121, 20);
+            this.textBox_VigenciaModificada.TabIndex = 1;
+            this.textBox_VigenciaModificada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_VigenciaModificada_KeyPress);
+            // 
+            // textBox_VigenciaActual
+            // 
+            this.textBox_VigenciaActual.Location = new System.Drawing.Point(397, 172);
+            this.textBox_VigenciaActual.Name = "textBox_VigenciaActual";
+            this.textBox_VigenciaActual.ReadOnly = true;
+            this.textBox_VigenciaActual.Size = new System.Drawing.Size(121, 20);
+            this.textBox_VigenciaActual.TabIndex = 28;
+            this.textBox_VigenciaActual.TabStop = false;
+            // 
+            // textBox_CostoTranModificado
+            // 
+            this.textBox_CostoTranModificado.Location = new System.Drawing.Point(573, 270);
+            this.textBox_CostoTranModificado.Name = "textBox_CostoTranModificado";
+            this.textBox_CostoTranModificado.Size = new System.Drawing.Size(121, 20);
+            this.textBox_CostoTranModificado.TabIndex = 3;
+            this.textBox_CostoTranModificado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CostoTranModificado_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(421, 273);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 13);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "Costo transaccion modificado";
+            // 
+            // textBox_CostTranActual
+            // 
+            this.textBox_CostTranActual.Location = new System.Drawing.Point(573, 244);
+            this.textBox_CostTranActual.Name = "textBox_CostTranActual";
+            this.textBox_CostTranActual.ReadOnly = true;
+            this.textBox_CostTranActual.Size = new System.Drawing.Size(121, 20);
+            this.textBox_CostTranActual.TabIndex = 25;
+            this.textBox_CostTranActual.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(443, 247);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(124, 13);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "Costo transaccion actual";
+            // 
+            // comboBox_TipoCuenta
+            // 
+            this.comboBox_TipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_TipoCuenta.FormattingEnabled = true;
+            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
+            "Oro",
+            "Plata",
+            "Bronce",
+            "Gratuita"});
+            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(397, 118);
+            this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
+            this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_TipoCuenta.TabIndex = 0;
+            this.comboBox_TipoCuenta.SelectedIndexChanged += new System.EventHandler(this.comboBox_TipoCuenta_SelectedIndexChanged);
+            // 
             // textBox_CostoMantModificado
             // 
             this.textBox_CostoMantModificado.Location = new System.Drawing.Point(286, 270);
             this.textBox_CostoMantModificado.Name = "textBox_CostoMantModificado";
             this.textBox_CostoMantModificado.Size = new System.Drawing.Size(121, 20);
-            this.textBox_CostoMantModificado.TabIndex = 5;
-            this.textBox_CostoMantModificado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CostoMantModificado_KeyPress);
+            this.textBox_CostoMantModificado.TabIndex = 2;
+            this.textBox_CostoMantModificado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CostoTranModificado_KeyPress);
             // 
             // label_CostoModificado
             // 
@@ -93,11 +178,12 @@
             // 
             // textBox_CostoMantActual
             // 
-            this.textBox_CostoMantActual.Enabled = false;
             this.textBox_CostoMantActual.Location = new System.Drawing.Point(286, 244);
             this.textBox_CostoMantActual.Name = "textBox_CostoMantActual";
+            this.textBox_CostoMantActual.ReadOnly = true;
             this.textBox_CostoMantActual.Size = new System.Drawing.Size(121, 20);
             this.textBox_CostoMantActual.TabIndex = 3;
+            this.textBox_CostoMantActual.TabStop = false;
             // 
             // label_CostoActual
             // 
@@ -122,7 +208,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 28;
+            this.button_Limpiar.TabIndex = 5;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -132,7 +218,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(585, 426);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 27;
+            this.button_Guardar.TabIndex = 4;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -142,93 +228,10 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 26;
+            this.button_Cerrar.TabIndex = 6;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // comboBox_TipoCuenta
-            // 
-            this.comboBox_TipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_TipoCuenta.FormattingEnabled = true;
-            this.comboBox_TipoCuenta.Items.AddRange(new object[] {
-            "Oro",
-            "Plata",
-            "Bronce",
-            "Gratuita"});
-            this.comboBox_TipoCuenta.Location = new System.Drawing.Point(397, 118);
-            this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
-            this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_TipoCuenta.TabIndex = 23;
-            this.comboBox_TipoCuenta.SelectedIndexChanged += new System.EventHandler(this.comboBox_TipoCuenta_SelectedIndexChanged);
-            // 
-            // textBox_CostoTranModificado
-            // 
-            this.textBox_CostoTranModificado.Location = new System.Drawing.Point(573, 270);
-            this.textBox_CostoTranModificado.Name = "textBox_CostoTranModificado";
-            this.textBox_CostoTranModificado.Size = new System.Drawing.Size(121, 20);
-            this.textBox_CostoTranModificado.TabIndex = 27;
-            this.textBox_CostoTranModificado.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_CostoTranModificado_KeyPress);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(421, 273);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 13);
-            this.label2.TabIndex = 26;
-            this.label2.Text = "Costo transaccion modificado";
-            // 
-            // textBox_CostTranActual
-            // 
-            this.textBox_CostTranActual.Enabled = false;
-            this.textBox_CostTranActual.Location = new System.Drawing.Point(573, 244);
-            this.textBox_CostTranActual.Name = "textBox_CostTranActual";
-            this.textBox_CostTranActual.Size = new System.Drawing.Size(121, 20);
-            this.textBox_CostTranActual.TabIndex = 25;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(443, 247);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 13);
-            this.label3.TabIndex = 24;
-            this.label3.Text = "Costo transaccion actual";
-            // 
-            // textBox_VigenciaModificada
-            // 
-            this.textBox_VigenciaModificada.Location = new System.Drawing.Point(397, 198);
-            this.textBox_VigenciaModificada.Name = "textBox_VigenciaModificada";
-            this.textBox_VigenciaModificada.Size = new System.Drawing.Size(121, 20);
-            this.textBox_VigenciaModificada.TabIndex = 29;
-            this.textBox_VigenciaModificada.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_VigenciaModificada_KeyPress);
-            // 
-            // textBox_VigenciaActual
-            // 
-            this.textBox_VigenciaActual.Enabled = false;
-            this.textBox_VigenciaActual.Location = new System.Drawing.Point(397, 172);
-            this.textBox_VigenciaActual.Name = "textBox_VigenciaActual";
-            this.textBox_VigenciaActual.Size = new System.Drawing.Size(121, 20);
-            this.textBox_VigenciaActual.TabIndex = 28;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(289, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 13);
-            this.label4.TabIndex = 31;
-            this.label4.Text = "Vigencia modificado";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(311, 175);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Vigencia actual";
             // 
             // ModificarTipoCuentas
             // 

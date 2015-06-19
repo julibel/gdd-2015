@@ -37,6 +37,7 @@ namespace PagoElectronico.ABM_Cuenta
             foreach (var control in this.paner_DatosCuenta.Controls.OfType<ComboBox>()) control.Text = "";
             comboBox_Moneda.SelectedValue = -1;
             comboBox_TipoCuenta.SelectedValue = -1;
+            this.ActiveControl = textBox1;
         }
 
         public Alta()
@@ -53,15 +54,15 @@ namespace PagoElectronico.ABM_Cuenta
         {
             if (!camposCorrectos())
             {
-                MessageBox.Show("No están todos los datos obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("No están todos los datos obligatorios");
                 return;
             }
 
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
                 CapaDAO.DAOCuenta.agregarCuenta(clienteID, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
-                Mensaje_OK("Los datos han sido almacenados con exito", "");
+                Mensaje_OK("Los datos han sido almacenados con éxito");
                 LimpiarCampos();
             }
         }

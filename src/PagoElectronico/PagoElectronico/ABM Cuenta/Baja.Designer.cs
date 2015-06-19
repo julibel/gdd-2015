@@ -64,28 +64,28 @@
             // 
             // textBox_Tipo_Cuenta
             // 
-            this.textBox_Tipo_Cuenta.Enabled = false;
             this.textBox_Tipo_Cuenta.Location = new System.Drawing.Point(340, 235);
             this.textBox_Tipo_Cuenta.MaxLength = 255;
             this.textBox_Tipo_Cuenta.Name = "textBox_Tipo_Cuenta";
+            this.textBox_Tipo_Cuenta.ReadOnly = true;
             this.textBox_Tipo_Cuenta.Size = new System.Drawing.Size(121, 20);
             this.textBox_Tipo_Cuenta.TabIndex = 25;
             // 
             // textBox_Moneda
             // 
-            this.textBox_Moneda.Enabled = false;
             this.textBox_Moneda.Location = new System.Drawing.Point(340, 208);
             this.textBox_Moneda.MaxLength = 255;
             this.textBox_Moneda.Name = "textBox_Moneda";
+            this.textBox_Moneda.ReadOnly = true;
             this.textBox_Moneda.Size = new System.Drawing.Size(121, 20);
             this.textBox_Moneda.TabIndex = 24;
             // 
             // textBox_Pais
             // 
-            this.textBox_Pais.Enabled = false;
             this.textBox_Pais.Location = new System.Drawing.Point(340, 181);
             this.textBox_Pais.MaxLength = 255;
             this.textBox_Pais.Name = "textBox_Pais";
+            this.textBox_Pais.ReadOnly = true;
             this.textBox_Pais.Size = new System.Drawing.Size(232, 20);
             this.textBox_Pais.TabIndex = 23;
             // 
@@ -133,10 +133,10 @@
             // 
             // textBox_NumeroCuenta
             // 
-            this.textBox_NumeroCuenta.Enabled = false;
             this.textBox_NumeroCuenta.Location = new System.Drawing.Point(340, 155);
             this.textBox_NumeroCuenta.MaxLength = 255;
             this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
+            this.textBox_NumeroCuenta.ReadOnly = true;
             this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
             this.textBox_NumeroCuenta.TabIndex = 0;
             // 

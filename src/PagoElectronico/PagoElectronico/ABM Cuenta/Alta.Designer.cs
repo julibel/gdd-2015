@@ -69,7 +69,7 @@
             this.button1.Location = new System.Drawing.Point(514, 149);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 38;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Seleccionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -89,8 +89,9 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(340, 151);
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(157, 20);
-            this.textBox1.TabIndex = 36;
+            this.textBox1.TabIndex = 0;
             // 
             // comboBox_Pais
             // 
@@ -293,7 +294,7 @@
             this.comboBox_Pais.Location = new System.Drawing.Point(340, 181);
             this.comboBox_Pais.Name = "comboBox_Pais";
             this.comboBox_Pais.Size = new System.Drawing.Size(135, 21);
-            this.comboBox_Pais.TabIndex = 33;
+            this.comboBox_Pais.TabIndex = 2;
             // 
             // comboBox_TipoCuenta
             // 
@@ -302,7 +303,7 @@
             this.comboBox_TipoCuenta.Location = new System.Drawing.Point(340, 235);
             this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
             this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_TipoCuenta.TabIndex = 22;
+            this.comboBox_TipoCuenta.TabIndex = 4;
             // 
             // label_TipoCuenta
             // 
@@ -320,7 +321,7 @@
             this.comboBox_Moneda.Location = new System.Drawing.Point(340, 208);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_Moneda.TabIndex = 20;
+            this.comboBox_Moneda.TabIndex = 3;
             // 
             // label_Moneda
             // 
@@ -349,7 +350,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(661, 428);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 31;
+            this.button_Limpiar.TabIndex = 6;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -359,7 +360,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(580, 428);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 30;
+            this.button_Guardar.TabIndex = 5;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -369,7 +370,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(742, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 28;
+            this.button_Cerrar.TabIndex = 7;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);

@@ -85,6 +85,7 @@ namespace PagoElectronico.ABM_Cliente
                        DAOTarjeta.AgregarTarjeta(tarjeta, id);
                    }
                    Mensaje_OK("Los datos han sido almacenados con éxito");
+                   LimpiarCampos();
                 }
                 catch (Exception ex)
                 {

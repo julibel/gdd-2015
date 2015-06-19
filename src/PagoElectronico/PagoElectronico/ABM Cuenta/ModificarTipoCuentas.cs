@@ -36,21 +36,21 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Tipo de Cuenta");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Tipo de Cuenta");
             if (resultado == DialogResult.Yes)
             {
                 if (!Validaciones()) return;
 
-                //try
-                //{
+                try
+                {
                     CapaDAO.DAOCuenta.modificarCostosTipo(Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToDouble(textBox_CostoMantModificado.Text), Convert.ToDouble(textBox_CostoTranModificado.Text),Convert.ToInt32(textBox_VigenciaModificada.Text));
-                    Mensaje_OK("Los datos han sido almacenados con exito", "");
+                    Mensaje_OK("Los datos han sido almacenados con exito");
                     LimpiarCampos();
-                //}
-                //catch (Exception ex)
-                //{
-                //    MessageBox.Show("ERROR.-" + ex.Message);
-                //}       
+                }
+                catch (Exception ex)
+                {
+                    Mensaje_Error("ERROR: " + ex.Message);
+                }       
 
             }
         }
@@ -62,14 +62,14 @@ namespace PagoElectronico.ABM_Cuenta
             
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-            MessageBox.Show(mensaje);
+            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos: ", (current, error) => current + ("\n" + error.Descripcion));
+            Mensaje_Error(mensaje);
             return false;
         }
 
         private Error ValidarDatosCompletos()
         {
-            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario.") : null;
+            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario ") : null;
         }
 
         private bool ValidarCamposCompletos()
@@ -100,19 +100,6 @@ namespace PagoElectronico.ABM_Cuenta
             textBox_CostoMantActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_MANTENIMIENTO"]);
             textBox_CostTranActual.Text = Convert.ToString(cuenta.Rows[0]["COSTO_TRANSACCION"]);
             textBox_VigenciaActual.Text = Convert.ToString(cuenta.Rows[0]["VIGENCIA"]);
-        }
-
-        private void textBox_CostoMantModificado_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
-            {
-                e.Handled = true;
-            }
-
-            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
-            {
-                e.Handled = true;
-            }
         }
 
         private void textBox_CostoTranModificado_KeyPress(object sender, KeyPressEventArgs e)

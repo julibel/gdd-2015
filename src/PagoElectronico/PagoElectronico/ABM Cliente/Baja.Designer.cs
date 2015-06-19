@@ -99,6 +99,7 @@
             // 
             // comboBox_Tipo_doc
             // 
+            this.comboBox_Tipo_doc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
             this.comboBox_Tipo_doc.Enabled = false;
             this.comboBox_Tipo_doc.FormattingEnabled = true;
             this.comboBox_Tipo_doc.Items.AddRange(new object[] {
@@ -114,28 +115,28 @@
             // 
             // textBox_Fecha_Nacimiento
             // 
-            this.textBox_Fecha_Nacimiento.Enabled = false;
             this.textBox_Fecha_Nacimiento.Location = new System.Drawing.Point(136, 323);
             this.textBox_Fecha_Nacimiento.MaxLength = 50;
             this.textBox_Fecha_Nacimiento.Name = "textBox_Fecha_Nacimiento";
+            this.textBox_Fecha_Nacimiento.ReadOnly = true;
             this.textBox_Fecha_Nacimiento.Size = new System.Drawing.Size(232, 20);
             this.textBox_Fecha_Nacimiento.TabIndex = 11;
             // 
             // textBox_Pais
             // 
-            this.textBox_Pais.Enabled = false;
             this.textBox_Pais.Location = new System.Drawing.Point(136, 272);
             this.textBox_Pais.MaxLength = 50;
             this.textBox_Pais.Name = "textBox_Pais";
+            this.textBox_Pais.ReadOnly = true;
             this.textBox_Pais.Size = new System.Drawing.Size(232, 20);
             this.textBox_Pais.TabIndex = 9;
             // 
             // textBox_Calle
             // 
-            this.textBox_Calle.Enabled = false;
             this.textBox_Calle.Location = new System.Drawing.Point(136, 194);
             this.textBox_Calle.MaxLength = 255;
             this.textBox_Calle.Name = "textBox_Calle";
+            this.textBox_Calle.ReadOnly = true;
             this.textBox_Calle.Size = new System.Drawing.Size(232, 20);
             this.textBox_Calle.TabIndex = 5;
             // 
@@ -152,10 +153,10 @@
             // 
             // textBox_Nacionalidad
             // 
-            this.textBox_Nacionalidad.Enabled = false;
             this.textBox_Nacionalidad.Location = new System.Drawing.Point(136, 298);
             this.textBox_Nacionalidad.MaxLength = 50;
             this.textBox_Nacionalidad.Name = "textBox_Nacionalidad";
+            this.textBox_Nacionalidad.ReadOnly = true;
             this.textBox_Nacionalidad.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nacionalidad.TabIndex = 10;
             // 
@@ -172,10 +173,10 @@
             // 
             // textBox_Localidad
             // 
-            this.textBox_Localidad.Enabled = false;
             this.textBox_Localidad.Location = new System.Drawing.Point(136, 246);
             this.textBox_Localidad.MaxLength = 50;
             this.textBox_Localidad.Name = "textBox_Localidad";
+            this.textBox_Localidad.ReadOnly = true;
             this.textBox_Localidad.Size = new System.Drawing.Size(232, 20);
             this.textBox_Localidad.TabIndex = 8;
             // 
@@ -192,10 +193,10 @@
             // 
             // textBox_Depto
             // 
-            this.textBox_Depto.Enabled = false;
             this.textBox_Depto.Location = new System.Drawing.Point(274, 220);
             this.textBox_Depto.MaxLength = 50;
             this.textBox_Depto.Name = "textBox_Depto";
+            this.textBox_Depto.ReadOnly = true;
             this.textBox_Depto.Size = new System.Drawing.Size(94, 20);
             this.textBox_Depto.TabIndex = 7;
             // 
@@ -212,10 +213,10 @@
             // 
             // textBox_Piso
             // 
-            this.textBox_Piso.Enabled = false;
             this.textBox_Piso.Location = new System.Drawing.Point(136, 220);
             this.textBox_Piso.MaxLength = 50;
             this.textBox_Piso.Name = "textBox_Piso";
+            this.textBox_Piso.ReadOnly = true;
             this.textBox_Piso.Size = new System.Drawing.Size(90, 20);
             this.textBox_Piso.TabIndex = 6;
             // 
@@ -232,28 +233,28 @@
             // 
             // textBox_Mail
             // 
-            this.textBox_Mail.Enabled = false;
             this.textBox_Mail.Location = new System.Drawing.Point(136, 168);
             this.textBox_Mail.MaxLength = 255;
             this.textBox_Mail.Name = "textBox_Mail";
+            this.textBox_Mail.ReadOnly = true;
             this.textBox_Mail.Size = new System.Drawing.Size(232, 20);
             this.textBox_Mail.TabIndex = 4;
             // 
             // textBox_Documento
             // 
-            this.textBox_Documento.Enabled = false;
             this.textBox_Documento.Location = new System.Drawing.Point(136, 142);
             this.textBox_Documento.MaxLength = 18;
             this.textBox_Documento.Name = "textBox_Documento";
+            this.textBox_Documento.ReadOnly = true;
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
             this.textBox_Documento.TabIndex = 3;
             // 
             // textBox_Apellido
             // 
-            this.textBox_Apellido.Enabled = false;
             this.textBox_Apellido.Location = new System.Drawing.Point(136, 93);
             this.textBox_Apellido.MaxLength = 255;
             this.textBox_Apellido.Name = "textBox_Apellido";
+            this.textBox_Apellido.ReadOnly = true;
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
             this.textBox_Apellido.TabIndex = 1;
             // 
@@ -336,10 +337,10 @@
             // 
             // textBox_Nombre
             // 
-            this.textBox_Nombre.Enabled = false;
             this.textBox_Nombre.Location = new System.Drawing.Point(136, 67);
             this.textBox_Nombre.MaxLength = 255;
             this.textBox_Nombre.Name = "textBox_Nombre";
+            this.textBox_Nombre.ReadOnly = true;
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nombre.TabIndex = 0;
             // 
@@ -348,7 +349,7 @@
             this.button_Borrar.Location = new System.Drawing.Point(660, 428);
             this.button_Borrar.Name = "button_Borrar";
             this.button_Borrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Borrar.TabIndex = 13;
+            this.button_Borrar.TabIndex = 0;
             this.button_Borrar.Text = "Borrar";
             this.button_Borrar.UseVisualStyleBackColor = true;
             this.button_Borrar.Click += new System.EventHandler(this.button_Borrar_Click);
@@ -358,7 +359,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(741, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 14;
+            this.button_Cerrar.TabIndex = 1;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
