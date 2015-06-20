@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridView_ListadoOperaciones = new System.Windows.Forms.DataGridView();
+            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.button_Aceptar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.Seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListadoOperaciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,9 +44,13 @@
             this.Seleccionar});
             this.dataGridView_ListadoOperaciones.Location = new System.Drawing.Point(12, 12);
             this.dataGridView_ListadoOperaciones.Name = "dataGridView_ListadoOperaciones";
-            this.dataGridView_ListadoOperaciones.ReadOnly = true;
             this.dataGridView_ListadoOperaciones.Size = new System.Drawing.Size(615, 395);
             this.dataGridView_ListadoOperaciones.TabIndex = 0;
+            // 
+            // Seleccionar
+            // 
+            this.Seleccionar.HeaderText = "Seleccionar";
+            this.Seleccionar.Name = "Seleccionar";
             // 
             // button_Aceptar
             // 
@@ -67,12 +71,6 @@
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // Seleccionar
-            // 
-            this.Seleccionar.HeaderText = "Seleccionar";
-            this.Seleccionar.Name = "Seleccionar";
-            this.Seleccionar.ReadOnly = true;
             // 
             // Seleccionar_Operacion
             // 

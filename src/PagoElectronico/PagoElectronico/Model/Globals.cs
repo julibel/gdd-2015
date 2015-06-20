@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Configuration;
 using System.Windows.Forms;
-using System.Security.Cryptography;
+using System.Data;
 
 namespace PagoElectronico
 {
@@ -25,20 +25,6 @@ namespace PagoElectronico
             return ConfigurationManager.AppSettings["fechaSistema"];
         }
 
-        public static string getHashSHA256(string text)
-        {
-            byte[] bytes = Encoding.UTF8.GetBytes(text);
-            SHA256Managed hashstring = new SHA256Managed();
-            byte[] hash = hashstring.ComputeHash(bytes);
-            string hashString = string.Empty;
-            foreach (byte x in hash)
-            {
-                hashString += String.Format("{0:x2}", x);
-            }
-            return hashString;
-        }
-
-
         public static void setUser(int id, string name, List<int> funcs)
         {
             userID = id;
@@ -56,6 +42,22 @@ namespace PagoElectronico
             userID = 0;
             username = "";
             funcionalidades = new List<int>();
+        }
+
+        public static DataTable intsToDataTable(List<int> ints)
+        {
+            DataTable data = new DataTable();
+            data.Columns.Add("ITEM");
+
+            foreach (int num in ints)
+            {
+                var row = data.NewRow();
+
+                row["ITEM"] = Convert.ToString(num);
+
+                data.Rows.Add(row);
+            }
+            return data;
         }
     }
 }

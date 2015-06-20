@@ -13,7 +13,20 @@ namespace PagoElectronico.Facturacion
 {
     public partial class Facturar : FormBase
     {
-        private Seleccionar_Operacion seleccionar;
+        private bool open = false;
+
+        public override void mostrar(Form parent, params object[] values)
+        {
+            if (open)
+            {
+                List<int> comisionesID = (List<int>)values[0];
+                dataGridView_ComisionesARendir.DataSource = DAOFactura.getComisionesID(comisionesID);
+                this.Visible = true;
+            }
+            else
+                base.mostrar(parent);
+
+        }
 
         public Facturar()
         {
@@ -126,30 +139,27 @@ namespace PagoElectronico.Facturacion
 
         private void LimpiarCampos()
         {
-            foreach (var control in this.groupBox3.Controls.OfType<TextBox>()) control.Text = "";
-            foreach (var control in this.groupBox2.Controls.OfType<TextBox>()) control.Text = "";
-            foreach (var control in this.groupBox2.Controls.OfType<RadioButton>()) control.Checked = false;
-            foreach (var control in this.groupBox2.Controls.OfType<MaskedTextBox>()) control.Clear();
-            foreach (var control in this.groupBox1.Controls.OfType<TextBox>()) control.Text = "";
+            foreach (var panel in this.Controls.OfType<GroupBox>())
+            {
+                foreach (var control in panel.Controls.OfType<TextBox>()) control.Text = "";
+                foreach (var control in panel.Controls.OfType<RadioButton>()) control.Checked = false;
+                foreach (var control in panel.Controls.OfType<MaskedTextBox>()) control.Clear();
+            }
             textBox_Numero.Text = "A generar";
-            dataGridView_ComisionesARendir.Rows.Clear();
-           
+            textBox_Fecha.Text = Globals.getFechaSistema();
         }
 
         private void Facturar_Load(object sender, EventArgs e)
         {
-            textBox_Fecha.Text = Globals.getFechaSistema();
+            open = true;
+            LimpiarCampos();
         }
 
         private void button_Seleccion_Click(object sender, EventArgs e)
         {
-            seleccionar = new Seleccionar_Operacion(this);
-
-            seleccionar.MdiParent = this.MdiParent;
-
+            Seleccionar_Operacion seleccionar = new Seleccionar_Operacion(this);
             this.Visible = false;
-            seleccionar.Show();
-           
+            seleccionar.mostrar(this.MdiParent);
         }
 
     }

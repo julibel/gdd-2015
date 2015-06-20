@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using PagoElectronico.Model;
 
 namespace PagoElectronico.CapaDAO
 {
@@ -26,7 +27,7 @@ namespace PagoElectronico.CapaDAO
 
         public static bool iniciarSesionConPassword(string user, int rol, string pass)
         {
-            if (executeProcedureWithReturnValue("PASSWORD_CORRECTA", user, Globals.getHashSHA256(pass)) != 0)
+            if (executeProcedureWithReturnValue("PASSWORD_CORRECTA", user, Encriptacion.getSHA256(pass)) != 0)
             {
                 loginCorrecto(user);
                 return iniciarSesion(user, rol);
@@ -38,9 +39,9 @@ namespace PagoElectronico.CapaDAO
         
         public static bool iniciarSesionConRespuesta(string user, int rol, string resp)
         {
-            if (executeProcedureWithReturnValue("RESPUESTA_CORRECTA", user, Globals.getHashSHA256(resp)) != 0)
+            if (executeProcedureWithReturnValue("RESPUESTA_CORRECTA", user, Encriptacion.getSHA256(resp)) != 0)
             {
-                executeProcedure("SET_PASSWORD", user, Globals.getHashSHA256("default"));
+                executeProcedure("SET_PASSWORD", user, Encriptacion.getSHA256("default"));
                 MessageBox.Show("Su nueva contraseña es 'default', cámbiela por seguridad", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return iniciarSesion(user, rol);
             }

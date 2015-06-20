@@ -39,6 +39,8 @@
             this.textBox_montoTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.radioButton_MASTERCARD = new System.Windows.Forms.RadioButton();
             this.radioButton_VISA = new System.Windows.Forms.RadioButton();
             this.radioButton_AMEX = new System.Windows.Forms.RadioButton();
@@ -51,8 +53,6 @@
             this.button_Seleccionar = new System.Windows.Forms.Button();
             this.dataGridView_ComisionesARendir = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox_numeroTarjeta = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox_codigo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ComisionesARendir)).BeginInit();
@@ -70,11 +70,12 @@
             // 
             // textBox_Numero
             // 
-            this.textBox_Numero.Enabled = false;
             this.textBox_Numero.Location = new System.Drawing.Point(131, 79);
             this.textBox_Numero.Name = "textBox_Numero";
+            this.textBox_Numero.ReadOnly = true;
             this.textBox_Numero.Size = new System.Drawing.Size(85, 20);
             this.textBox_Numero.TabIndex = 33;
+            this.textBox_Numero.TabStop = false;
             this.textBox_Numero.Text = "A generar";
             // 
             // label8
@@ -88,11 +89,11 @@
             // 
             // textBox_Fecha
             // 
-            this.textBox_Fecha.Enabled = false;
             this.textBox_Fecha.Location = new System.Drawing.Point(131, 105);
             this.textBox_Fecha.Name = "textBox_Fecha";
             this.textBox_Fecha.Size = new System.Drawing.Size(186, 20);
             this.textBox_Fecha.TabIndex = 29;
+            this.textBox_Fecha.TabStop = false;
             // 
             // button_Limpiar
             // 
@@ -157,6 +158,22 @@
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pago";
+            // 
+            // maskedTextBox_numeroTarjeta
+            // 
+            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(131, 82);
+            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
+            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
+            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(113, 20);
+            this.maskedTextBox_numeroTarjeta.TabIndex = 63;
+            // 
+            // maskedTextBox_codigo
+            // 
+            this.maskedTextBox_codigo.Location = new System.Drawing.Point(131, 138);
+            this.maskedTextBox_codigo.Mask = "999";
+            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
+            this.maskedTextBox_codigo.Size = new System.Drawing.Size(37, 20);
+            this.maskedTextBox_codigo.TabIndex = 62;
             // 
             // radioButton_MASTERCARD
             // 
@@ -265,6 +282,7 @@
             this.dataGridView_ComisionesARendir.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dataGridView_ComisionesARendir.Location = new System.Drawing.Point(6, 19);
             this.dataGridView_ComisionesARendir.Name = "dataGridView_ComisionesARendir";
+            this.dataGridView_ComisionesARendir.ReadOnly = true;
             this.dataGridView_ComisionesARendir.Size = new System.Drawing.Size(381, 334);
             this.dataGridView_ComisionesARendir.TabIndex = 0;
             // 
@@ -280,22 +298,6 @@
             this.groupBox3.TabIndex = 34;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de factura";
-            // 
-            // maskedTextBox_numeroTarjeta
-            // 
-            this.maskedTextBox_numeroTarjeta.Location = new System.Drawing.Point(131, 82);
-            this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
-            this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
-            this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(249, 20);
-            this.maskedTextBox_numeroTarjeta.TabIndex = 63;
-            // 
-            // maskedTextBox_codigo
-            // 
-            this.maskedTextBox_codigo.Location = new System.Drawing.Point(131, 138);
-            this.maskedTextBox_codigo.Mask = "999";
-            this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
-            this.maskedTextBox_codigo.Size = new System.Drawing.Size(66, 20);
-            this.maskedTextBox_codigo.TabIndex = 62;
             // 
             // Facturar
             // 
