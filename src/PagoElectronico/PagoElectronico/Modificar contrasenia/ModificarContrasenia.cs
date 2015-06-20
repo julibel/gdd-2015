@@ -58,7 +58,7 @@ namespace PagoElectronico.Modificar_contrasenia
                 try
                 {
                     DAOUsuario.modificarContrasenia(Globals.userID,
-                    Encriptacion.Encriptar(textBox_NuevaPassword.Text));
+                    Encriptacion.getSHA256(textBox_NuevaPassword.Text));
                     Mensaje_OK("Los datos han sido almacenados con exito", "");
                     LimpiarCampos();
                 }

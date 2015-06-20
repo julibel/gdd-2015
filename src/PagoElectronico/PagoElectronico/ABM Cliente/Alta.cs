@@ -175,9 +175,9 @@ namespace PagoElectronico.ABM_Cliente
             return new Usuario(
                 0,
                 textBox_Username.Text,
-                Encriptacion.Encriptar(textBox_Password.Text),
+                Encriptacion.getSHA256(textBox_Password.Text),
                 textBox_PreguntaSecreta.Text,
-                Encriptacion.Encriptar(textBox_RespuestaSecreta.Text),
+                Encriptacion.getSHA256(textBox_RespuestaSecreta.Text),
                 listaDeRoles
                 );
 
