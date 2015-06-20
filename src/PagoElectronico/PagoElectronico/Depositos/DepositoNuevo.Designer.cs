@@ -60,7 +60,7 @@
             this.paner_DatosCuenta.Size = new System.Drawing.Size(810, 410);
             this.paner_DatosCuenta.TabIndex = 36;
             this.paner_DatosCuenta.TabStop = false;
-            this.paner_DatosCuenta.Text = "Deposito de dinero";
+            this.paner_DatosCuenta.Text = "Depósito de dinero";
             // 
             // comboBox_Cuentas
             // 

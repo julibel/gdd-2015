@@ -42,7 +42,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.paner_TipoCuentas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Limpiar
@@ -50,13 +53,15 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 3;
+            this.button_Limpiar.TabIndex = 4;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
             // 
             // paner_TipoCuentas
             // 
+            this.paner_TipoCuentas.Controls.Add(this.numericUpDown1);
+            this.paner_TipoCuentas.Controls.Add(this.label2);
             this.paner_TipoCuentas.Controls.Add(this.comboBox_TipoCuenta);
             this.paner_TipoCuentas.Controls.Add(this.textBox_Pais);
             this.paner_TipoCuentas.Controls.Add(this.comboBox_Cuentas);
@@ -184,7 +189,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(585, 426);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 2;
+            this.button_Guardar.TabIndex = 3;
             this.button_Guardar.Text = "Guardar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -194,10 +199,38 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 4;
+            this.button_Cerrar.TabIndex = 5;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(305, 277);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 37;
+            this.label2.Text = "Periodos";
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(357, 274);
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(59, 20);
+            this.numericUpDown1.TabIndex = 2;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // ModificarCategoriaCuenta
             // 
@@ -219,6 +252,7 @@
             this.Load += new System.EventHandler(this.ModificarCategoriaCuenta_Load);
             this.paner_TipoCuentas.ResumeLayout(false);
             this.paner_TipoCuentas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -239,6 +273,8 @@
         private System.Windows.Forms.ComboBox comboBox_Cuentas;
         private System.Windows.Forms.TextBox textBox_Pais;
         private System.Windows.Forms.ComboBox comboBox_TipoCuenta;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
 
     }
 }

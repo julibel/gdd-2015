@@ -25,7 +25,7 @@ namespace PagoElectronico.Retiros
 
         private void Retiro_Load(object sender, EventArgs e)
         {
-            DataTable cuentas = CapaDAO.DAORetiro.getCuentas();
+            DataTable cuentas = CapaDAO.DAORetiro.getCuentasHabilitadas();
             DataTable monedas = CapaDAO.DAORetiro.getMonedas();
             DataTable bancos = CapaDAO.DAORetiro.getBancos();
 
@@ -41,14 +41,25 @@ namespace PagoElectronico.Retiros
             comboBox_Bancos.DisplayMember = "NOMBRE";
             comboBox_Bancos.DataSource = bancos;
 
-            textBox_Fecha.Text = Globals.getFechaSistema();
+            LimpiarCampos();
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
-            foreach (var control in this.groupBox1.Controls.OfType<TextBox>()) control.Text = "";
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            foreach (var panel in this.Controls.OfType<GroupBox>())
+            {
+                foreach (var control in panel.Controls.OfType<TextBox>()) control.Text = "";
+                foreach (var control in panel.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
+            }
             textBox_Numero.Text = "A generar";
+            comboBox_Bancos.Text = "";
             textBox_Fecha.Text = Globals.getFechaSistema();
+            this.ActiveControl = comboBox_Cuentas;
         }
 
         private void textBox_Importe_KeyPress(object sender, KeyPressEventArgs e)
@@ -65,26 +76,31 @@ namespace PagoElectronico.Retiros
         }
 
         private void button_Aceptar_Click(object sender, EventArgs e)
-        {
+        { 
             if (!camposCorrectos())
             {
-                MessageBox.Show("No están todos los datos obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("No están todos los datos obligatorios");
                 return;
             }
             if (textBox_Numero.Text != "A generar")
             {
-                MessageBox.Show("Limpie los datos de la última operación", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("Limpie los datos de la última operación");
+                return;
+            }
+            if (!DAOCliente.coincideDocumento(comboBox_Tipo_doc.SelectedIndex + 1, textBox_Documento.Text))
+            {
+                Mensaje_Error("No coincide el documento con el del usuario actual");
                 return;
             }
 
-            string ret = CapaDAO.DAORetiro.realizarRetiro(Convert.ToInt64(comboBox_Cuentas.SelectedValue), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue), comboBox_Bancos.Text);
+            string ret = DAORetiro.realizarRetiro(Convert.ToInt64(comboBox_Cuentas.SelectedValue), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue), comboBox_Bancos.Text, textBox_Nombre.Text + " " + textBox_Apellido.Text);
 
             if (ret == "s")
-                MessageBox.Show("Saldo insuficiente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("Saldo insuficiente");
             else
             {
                 textBox_Numero.Text = ret;
-                MessageBox.Show("El cheque fue generado correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                Mensaje_OK("El cheque fue generado correctamente");
             }
         }
 
@@ -94,13 +110,13 @@ namespace PagoElectronico.Retiros
             {
                 if (Convert.ToDouble(textBox_Importe.Text) <= 0)
                 {
-                    MessageBox.Show("El importe debe ser mayor a 0", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Mensaje_Error("El importe debe ser mayor a 0");
                     return false;
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("El importe debe tener formato numérico", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("El importe debe tener formato numérico");
                 return false;
             } 
             return comboBox_Bancos.Text != "" && comboBox_Cuentas.Text != "" && comboBox_Moneda.Text != "";

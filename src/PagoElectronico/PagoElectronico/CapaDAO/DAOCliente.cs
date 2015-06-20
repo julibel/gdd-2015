@@ -60,14 +60,12 @@ namespace PagoElectronico.CapaDAO
         
         public static bool existeDni(string dni, int tipo)
         {
-            var dt = retrieveDataTable("GET_CLIENTE_DNI", dni, tipo);
-            return dt.Rows.Count > 0;
+            return checkIfExists("GET_CLIENTE_DNI", dni, tipo);
         }
 
         public static bool existeMail(string mail)
         {
-            var dt = retrieveDataTable("GET_CLIENTE_MAIL", mail);
-            return dt.Rows.Count > 0;
+            return  checkIfExists("GET_CLIENTE_MAIL", mail);
         }
 
         public static DataTable getCliente(int id)
@@ -113,28 +111,14 @@ namespace PagoElectronico.CapaDAO
              return (retrieveDataTable("GET_PAIS", pais)).Rows[0][0].ToString();
          }
 
-//    CLI_ID INT IDENTITY(1,1) PRIMARY KEY,
-//    TIPO_DOC INT,
-//    NUMERO_DOC VARCHAR(10),
-//    NOMBRE VARCHAR(255),
-//    APELLIDO VARCHAR(255),
-//    PAIS INT,
-//    CALLE VARCHAR(255),
-//    PISO INT,
-//    DEPTO VARCHAR(10),
-//    LOCALIDAD VARCHAR(60),
-//    NACIONALIDAD INT,
-//    FECHA_NACIMIENTO DATETIME,
-//    MAIL VARCHAR(255),
-//    USUARIO INT	
-//)
-
          public static DataTable getTarjetasCliente(int id)
          {
              return retrieveDataTable("GET_TARJETAS_CLIENTE", id);
          }
 
-
-         
+         public static bool coincideDocumento(int tipo, string documento)
+         {
+             return checkIfExists("COINCIDE_DOCUMENTO", Globals.userID, tipo, documento);
+         }
     }
 }

@@ -25,9 +25,9 @@ namespace PagoElectronico.Depositos
 
         private void DepositoNuevo_Load(object sender, EventArgs e)
         {
-            DataTable cuentas = CapaDAO.DAODeposito.getCuentas();
-            DataTable tarjetas = CapaDAO.DAODeposito.getTarjetas();
-            DataTable monedas = CapaDAO.DAODeposito.getMonedas();
+            DataTable cuentas = DAODeposito.getCuentasHabilitadas();
+            DataTable tarjetas = DAODeposito.getTarjetas();
+            DataTable monedas = DAODeposito.getMonedas();
 
             comboBox_Cuentas.ValueMember = "CUE_ID" ;
             comboBox_Cuentas.DisplayMember = "CUE_ID";
@@ -53,6 +53,7 @@ namespace PagoElectronico.Depositos
         {
             foreach (var control in paner_DatosCuenta.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
             foreach (var control in paner_DatosCuenta.Controls.OfType<TextBox>()) control.Text = "";
+            this.ActiveControl = comboBox_Cuentas;
         }
 
         private void button_Guardar_Click(object sender, EventArgs e)
@@ -63,9 +64,10 @@ namespace PagoElectronico.Depositos
                 return;
             }
 
-            CapaDAO.DAODeposito.realizarDeposito(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToInt32(comboBox_Tarjetas.SelectedValue), Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue));
+            DAODeposito.realizarDeposito(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToInt32(comboBox_Tarjetas.SelectedValue), Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue));
 
             Mensaje_OK("El depósito fue registrado correctamente");
+            LimpiarCampos();
         }
 
         private bool camposCorrectos()

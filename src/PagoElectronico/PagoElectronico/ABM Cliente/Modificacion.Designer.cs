@@ -74,9 +74,9 @@
             this.FechaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
-            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.checkBox_Estado = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.comboBox_Nacionalidad = new System.Windows.Forms.ComboBox();
             this.groupBox_AsociarTarjetas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Tarjetas)).BeginInit();
             this.paner_Alta.SuspendLayout();
@@ -227,7 +227,7 @@
             // textBox_Documento
             // 
             this.textBox_Documento.Location = new System.Drawing.Point(136, 142);
-            this.textBox_Documento.MaxLength = 18;
+            this.textBox_Documento.MaxLength = 10;
             this.textBox_Documento.Name = "textBox_Documento";
             this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
             this.textBox_Documento.TabIndex = 3;
@@ -744,6 +744,27 @@
             this.paner_Alta.TabStop = false;
             this.paner_Alta.Text = "Datos del Cliente";
             // 
+            // checkBox_Estado
+            // 
+            this.checkBox_Estado.AutoSize = true;
+            this.checkBox_Estado.Location = new System.Drawing.Point(142, 351);
+            this.checkBox_Estado.Name = "checkBox_Estado";
+            this.checkBox_Estado.Size = new System.Drawing.Size(73, 17);
+            this.checkBox_Estado.TabIndex = 30;
+            this.checkBox_Estado.Text = "Habilitado";
+            this.checkBox_Estado.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(91, 351);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Estado";
+            // 
             // comboBox_Nacionalidad
             // 
             this.comboBox_Nacionalidad.FormattingEnabled = true;
@@ -946,27 +967,6 @@
             this.comboBox_Nacionalidad.Name = "comboBox_Nacionalidad";
             this.comboBox_Nacionalidad.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Nacionalidad.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(91, 351);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Estado";
-            // 
-            // checkBox_Estado
-            // 
-            this.checkBox_Estado.AutoSize = true;
-            this.checkBox_Estado.Location = new System.Drawing.Point(142, 351);
-            this.checkBox_Estado.Name = "checkBox_Estado";
-            this.checkBox_Estado.Size = new System.Drawing.Size(73, 17);
-            this.checkBox_Estado.TabIndex = 30;
-            this.checkBox_Estado.Text = "Habilitado";
-            this.checkBox_Estado.UseVisualStyleBackColor = true;
             // 
             // Modificacion
             // 

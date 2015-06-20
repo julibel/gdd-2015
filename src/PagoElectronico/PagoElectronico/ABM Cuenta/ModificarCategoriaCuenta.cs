@@ -17,6 +17,7 @@ namespace PagoElectronico.ABM_Cuenta
         {
             foreach (var control in this.paner_TipoCuentas.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_TipoCuentas.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
+            numericUpDown1.Value = 1;
             this.ActiveControl = comboBox_Cuentas;
         }
 
@@ -37,15 +38,15 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Categoria de Cuenta");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Cambiar Categoría de Cuenta");
             if (resultado == DialogResult.Yes)
             {
 
                 if (!Validaciones()) return;
                 try
                 {
-                    DAOCuenta.modificarTipoCuenta(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));                 
-                    Mensaje_OK("Los datos han sido almacenados con exito");
+                    DAOCuenta.modificarTipoCuenta(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), (int) numericUpDown1.Value);                 
+                    Mensaje_OK("Los datos han sido almacenados con éxito");
                     LimpiarCampos();
                 }
                 catch (Exception ex)
@@ -64,14 +65,14 @@ namespace PagoElectronico.ABM_Cuenta
             
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
+            var mensaje = listaDeErrores.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
             Mensaje_Error(mensaje);
             return false;
         }
 
         private Error ValidarDatosCompletos()
         {
-            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario.") : null;
+            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario") : null;
         }
 
         private bool ValidarCamposCompletos()

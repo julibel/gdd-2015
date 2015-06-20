@@ -77,6 +77,7 @@ namespace PagoElectronico.Login
 
         private void Login_Load(object sender, EventArgs e)
         {
+            textBox_Username.Text = "ilva_cruz@gmail.com";
             this.ActiveControl = textBox_Username;
         }
     }

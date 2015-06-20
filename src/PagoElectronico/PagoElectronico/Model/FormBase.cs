@@ -29,8 +29,7 @@ namespace PagoElectronico.Model
 
         public DialogResult Mensaje_Pregunta(String mensaje, String resumen)
         {
-            var resultado = MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            return resultado;
+            return MessageBox.Show(mensaje, resumen, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
         }
 
         //MOSTRAR

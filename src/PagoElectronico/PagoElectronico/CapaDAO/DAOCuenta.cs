@@ -30,9 +30,9 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("BAJA_CUENTA", numero, pais, moneda, tipoCuenta);
         }
 
-        public static void modificarTipoCuenta(long numero, int tipo)
+        public static void modificarTipoCuenta(long numero, int tipo, int periodos)
         {
-            executeProcedure("MODIFICAR_TIPO_CUENTA", numero, tipo, Globals.getFechaSistema());
+            executeProcedure("MODIFICAR_TIPO_CUENTA", numero, tipo, periodos, Globals.getFechaSistema());
         }
 
         public static DataTable getCostoTipo(int id)

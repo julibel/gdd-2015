@@ -10,8 +10,20 @@ namespace PagoElectronico.CapaDAO
     {
         public static DataTable getCuentas()
         {
-            return retrieveDataTable("GET_CUENTAS_USUARIO", Globals.userID);
+            return getCuentasPorEstado(0);
         }
+
+        private static DataTable getCuentasPorEstado(int estado)
+        {//0: todas 1:habilitada 2:deshabilitada 3:pendiente 4:cerrada
+            return retrieveDataTable("GET_CUENTAS_USUARIO", Globals.userID, estado);
+        }
+
+        public static DataTable getCuentasHabilitadas()
+        {
+            return getCuentasPorEstado(1);
+        }
+
+
 
         public static DataTable getMonedas()
         {

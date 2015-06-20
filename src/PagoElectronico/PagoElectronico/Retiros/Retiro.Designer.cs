@@ -48,6 +48,10 @@
             this.comboBox_Bancos = new System.Windows.Forms.ComboBox();
             this.label_NumeroCuenta = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBox_Tipo_doc = new System.Windows.Forms.ComboBox();
+            this.textBox_Documento = new System.Windows.Forms.TextBox();
+            this.label_TipoDocumento = new System.Windows.Forms.Label();
+            this.label_Documento = new System.Windows.Forms.Label();
             this.comboBox_Cuentas = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,7 +62,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 428);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 39;
+            this.button_Limpiar.TabIndex = 10;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -68,7 +72,7 @@
             this.button_Aceptar.Location = new System.Drawing.Point(585, 428);
             this.button_Aceptar.Name = "button_Aceptar";
             this.button_Aceptar.Size = new System.Drawing.Size(75, 23);
-            this.button_Aceptar.TabIndex = 38;
+            this.button_Aceptar.TabIndex = 9;
             this.button_Aceptar.Text = "Aceptar";
             this.button_Aceptar.UseVisualStyleBackColor = true;
             this.button_Aceptar.Click += new System.EventHandler(this.button_Aceptar_Click);
@@ -78,7 +82,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 428);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 37;
+            this.button_Cerrar.TabIndex = 11;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -102,7 +106,7 @@
             this.groupBox1.Location = new System.Drawing.Point(425, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(397, 410);
-            this.groupBox1.TabIndex = 35;
+            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos del cheque";
             // 
@@ -123,7 +127,7 @@
             this.textBox_Apellido.MaxLength = 255;
             this.textBox_Apellido.Name = "textBox_Apellido";
             this.textBox_Apellido.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Apellido.TabIndex = 41;
+            this.textBox_Apellido.TabIndex = 7;
             // 
             // label_Apellido
             // 
@@ -153,15 +157,16 @@
             this.textBox_Nombre.MaxLength = 255;
             this.textBox_Nombre.Name = "textBox_Nombre";
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
-            this.textBox_Nombre.TabIndex = 38;
+            this.textBox_Nombre.TabIndex = 6;
             // 
             // textBox_Numero
             // 
-            this.textBox_Numero.Enabled = false;
             this.textBox_Numero.Location = new System.Drawing.Point(108, 116);
             this.textBox_Numero.Name = "textBox_Numero";
+            this.textBox_Numero.ReadOnly = true;
             this.textBox_Numero.Size = new System.Drawing.Size(85, 20);
             this.textBox_Numero.TabIndex = 37;
+            this.textBox_Numero.TabStop = false;
             this.textBox_Numero.Text = "A generar";
             // 
             // label10
@@ -175,11 +180,12 @@
             // 
             // textBox_Fecha
             // 
-            this.textBox_Fecha.Enabled = false;
             this.textBox_Fecha.Location = new System.Drawing.Point(108, 142);
             this.textBox_Fecha.Name = "textBox_Fecha";
-            this.textBox_Fecha.Size = new System.Drawing.Size(186, 20);
-            this.textBox_Fecha.TabIndex = 35;
+            this.textBox_Fecha.ReadOnly = true;
+            this.textBox_Fecha.Size = new System.Drawing.Size(85, 20);
+            this.textBox_Fecha.TabIndex = 3;
+            this.textBox_Fecha.TabStop = false;
             // 
             // label8
             // 
@@ -197,15 +203,15 @@
             this.comboBox_Moneda.Location = new System.Drawing.Point(108, 195);
             this.comboBox_Moneda.Name = "comboBox_Moneda";
             this.comboBox_Moneda.Size = new System.Drawing.Size(121, 21);
-            this.comboBox_Moneda.TabIndex = 24;
+            this.comboBox_Moneda.TabIndex = 5;
             // 
             // textBox_Importe
             // 
             this.textBox_Importe.Location = new System.Drawing.Point(108, 168);
             this.textBox_Importe.MaxLength = 50;
             this.textBox_Importe.Name = "textBox_Importe";
-            this.textBox_Importe.Size = new System.Drawing.Size(121, 20);
-            this.textBox_Importe.TabIndex = 23;
+            this.textBox_Importe.Size = new System.Drawing.Size(85, 20);
+            this.textBox_Importe.TabIndex = 4;
             this.textBox_Importe.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Importe_KeyPress);
             // 
             // label_Moneda
@@ -237,7 +243,7 @@
             this.comboBox_Bancos.MaxLength = 50;
             this.comboBox_Bancos.Name = "comboBox_Bancos";
             this.comboBox_Bancos.Size = new System.Drawing.Size(231, 21);
-            this.comboBox_Bancos.TabIndex = 44;
+            this.comboBox_Bancos.TabIndex = 8;
             // 
             // label_NumeroCuenta
             // 
@@ -252,14 +258,63 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.comboBox_Tipo_doc);
+            this.groupBox2.Controls.Add(this.textBox_Documento);
+            this.groupBox2.Controls.Add(this.label_TipoDocumento);
+            this.groupBox2.Controls.Add(this.label_Documento);
             this.groupBox2.Controls.Add(this.label_NumeroCuenta);
             this.groupBox2.Controls.Add(this.comboBox_Cuentas);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(395, 410);
-            this.groupBox2.TabIndex = 36;
+            this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Seleccionar cuenta para el retiro";
+            // 
+            // comboBox_Tipo_doc
+            // 
+            this.comboBox_Tipo_doc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_Tipo_doc.FormattingEnabled = true;
+            this.comboBox_Tipo_doc.Items.AddRange(new object[] {
+            "DNI",
+            "CI",
+            "LC",
+            "LE",
+            "PAS"});
+            this.comboBox_Tipo_doc.Location = new System.Drawing.Point(122, 198);
+            this.comboBox_Tipo_doc.Name = "comboBox_Tipo_doc";
+            this.comboBox_Tipo_doc.Size = new System.Drawing.Size(66, 21);
+            this.comboBox_Tipo_doc.TabIndex = 1;
+            // 
+            // textBox_Documento
+            // 
+            this.textBox_Documento.Location = new System.Drawing.Point(122, 225);
+            this.textBox_Documento.MaxLength = 10;
+            this.textBox_Documento.Name = "textBox_Documento";
+            this.textBox_Documento.Size = new System.Drawing.Size(129, 20);
+            this.textBox_Documento.TabIndex = 2;
+            // 
+            // label_TipoDocumento
+            // 
+            this.label_TipoDocumento.AutoSize = true;
+            this.label_TipoDocumento.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_TipoDocumento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_TipoDocumento.Location = new System.Drawing.Point(19, 202);
+            this.label_TipoDocumento.Name = "label_TipoDocumento";
+            this.label_TipoDocumento.Size = new System.Drawing.Size(99, 13);
+            this.label_TipoDocumento.TabIndex = 8;
+            this.label_TipoDocumento.Text = "Tipo de documento";
+            // 
+            // label_Documento
+            // 
+            this.label_Documento.AutoSize = true;
+            this.label_Documento.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label_Documento.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label_Documento.Location = new System.Drawing.Point(56, 226);
+            this.label_Documento.Name = "label_Documento";
+            this.label_Documento.Size = new System.Drawing.Size(62, 13);
+            this.label_Documento.TabIndex = 6;
+            this.label_Documento.Text = "Documento";
             // 
             // comboBox_Cuentas
             // 
@@ -268,7 +323,7 @@
             this.comboBox_Cuentas.Location = new System.Drawing.Point(122, 171);
             this.comboBox_Cuentas.Name = "comboBox_Cuentas";
             this.comboBox_Cuentas.Size = new System.Drawing.Size(173, 21);
-            this.comboBox_Cuentas.TabIndex = 2;
+            this.comboBox_Cuentas.TabIndex = 0;
             // 
             // Retiro
             // 
@@ -320,6 +375,10 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ComboBox comboBox_Cuentas;
         private System.Windows.Forms.ComboBox comboBox_Bancos;
+        private System.Windows.Forms.ComboBox comboBox_Tipo_doc;
+        private System.Windows.Forms.TextBox textBox_Documento;
+        private System.Windows.Forms.Label label_TipoDocumento;
+        private System.Windows.Forms.Label label_Documento;
 
     }
 }
