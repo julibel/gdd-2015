@@ -38,8 +38,8 @@ namespace PagoElectronico.Transferencias
 
         private void Transferencia_Load(object sender, EventArgs e)
         {
-            DataTable cuentas = CapaDAO.DAOTransferencia.getCuentas();
-            DataTable monedas = CapaDAO.DAOTransferencia.getMonedas();
+            DataTable cuentas = DAOTransferencia.getCuentas();
+            DataTable monedas = DAOTransferencia.getMonedas();
 
             comboBox_Origen.ValueMember = "CUE_ID";
             comboBox_Origen.DisplayMember = "CUE_ID";
@@ -73,16 +73,16 @@ namespace PagoElectronico.Transferencias
         {
             if (!camposCorrectos())
             {
-                MessageBox.Show("No están todos los datos obligatorios", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("No están todos los datos obligatorios");
                 return;
             }
 
-            string ret = CapaDAO.DAOTransferencia.realizarTransferencia(Convert.ToInt64(comboBox_Origen.SelectedValue), Convert.ToInt64(textBox_Destino.Text), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue));
+            string ret = DAOTransferencia.realizarTransferencia(Convert.ToInt64(comboBox_Origen.SelectedValue), Convert.ToInt64(textBox_Destino.Text), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue));
 
             if (ret == "s")
-                MessageBox.Show("Saldo insuficiente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("Saldo insuficiente");
             else
-                MessageBox.Show("La transferencia fue registrada correctamente", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                Mensaje_OK("La transferencia fue registrada correctamente");
         }
 
         private bool camposCorrectos()
@@ -91,13 +91,13 @@ namespace PagoElectronico.Transferencias
             {
                 if (Convert.ToDouble(textBox_Importe.Text) <= 0)
                 {
-                    MessageBox.Show("El importe debe ser mayor a 0", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Mensaje_Error("El importe debe ser mayor a 0");
                     return false;
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("El importe debe tener formato numérico", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("El importe debe tener formato numérico");
                 return false;
             }
             return comboBox_Origen.Text != "" && textBox_Destino.Text != "" && comboBox_Moneda.Text != "";
@@ -119,7 +119,7 @@ namespace PagoElectronico.Transferencias
 
         private void button_SeleccionarCuentaDestino_Click(object sender, EventArgs e)
         {
-            ABM_Cuenta.Seleccion selec = new ABM_Cuenta.Seleccion(this, 0);
+            ABM_Cuenta.Seleccion selec = new ABM_Cuenta.Seleccion(this, new List<int>(new int[] {(int)EstadoCuenta.Habilitada, (int)EstadoCuenta.Deshabilitada}));
             selec.mostrar(this.MdiParent);
             this.Visible = false;
         }

@@ -57,9 +57,16 @@ namespace PagoElectronico
             funcionalidades = funcs;
         }
 
-        internal static bool tieneFuncionalidad(int idFun)
+        public static bool tieneFuncionalidad(int idFun)
         {
             return funcionalidades.Contains(idFun);
+        }
+
+        public static void cerrarSesion()
+        {
+            userID = 0;
+            username = "";
+            funcionalidades = new List<int>();
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data;
+using PagoElectronico.Model;
 
 namespace PagoElectronico.CapaDAO
 {
@@ -14,16 +15,14 @@ namespace PagoElectronico.CapaDAO
         }
 
         private static DataTable getCuentasPorEstado(int estado)
-        {//0: todas 1:habilitada 2:deshabilitada 3:pendiente 4:cerrada
+        {
             return retrieveDataTable("GET_CUENTAS_USUARIO", Globals.userID, estado);
         }
 
         public static DataTable getCuentasHabilitadas()
         {
-            return getCuentasPorEstado(1);
+            return getCuentasPorEstado((int)EstadoCuenta.Habilitada);
         }
-
-
 
         public static DataTable getMonedas()
         {

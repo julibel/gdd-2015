@@ -24,7 +24,12 @@ namespace PagoElectronico.Model
 
         public void Mensaje_Error(String mensaje)
         {
-            MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Mensaje_Error(mensaje, "Error");
+        }
+
+        public void Mensaje_Error(String mensaje, String resumen)
+        {
+            MessageBox.Show(mensaje, resumen, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public DialogResult Mensaje_Pregunta(String mensaje, String resumen)

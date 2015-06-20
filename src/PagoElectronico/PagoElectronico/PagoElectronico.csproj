@@ -231,6 +231,7 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Campo.cs" />
+    <Compile Include="Model\EstadoCuenta.cs" />
     <Compile Include="Model\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>

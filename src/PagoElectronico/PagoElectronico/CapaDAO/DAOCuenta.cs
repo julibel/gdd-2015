@@ -45,12 +45,6 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("GET_TIPOS_CUENTA");
         }
 
-
-        public static object getCuentas(string numero, string pais, int tipo, int est)
-        {
-            return retrieveDataTable("FIND_CUENTAS", numero, pais, tipo, est);
-        }
-
         public static DataTable getCuenta(long cuenta)
         {
             return retrieveDataTable("GET_CUENTA", cuenta);
@@ -74,6 +68,22 @@ namespace PagoElectronico.CapaDAO
         public static DataTable getEstadosCuenta()
         {
             return retrieveDataTable("GET_ESTADOS");
+        }
+
+        public static object getCuentas(string numero, string pais, int tipo, List<int> estados)
+        {
+            DataTable est = new DataTable();
+            est.Columns.Add("ITEM");
+            foreach (int num in estados)
+            {
+                var row = est.NewRow();
+
+                row["ITEM"] = Convert.ToString(num);
+
+                est.Rows.Add(row);
+            }
+            
+            return retrieveDataTable("FIND_CUENTAS", numero, pais, tipo, est);
         }
     }
 }

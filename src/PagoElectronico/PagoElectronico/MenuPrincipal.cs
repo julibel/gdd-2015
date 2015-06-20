@@ -11,7 +11,7 @@ using PagoElectronico.Model;
 
 namespace PagoElectronico
 {
-    public partial class MenuPrincipal : Form
+    public partial class MenuPrincipal : FormBase
     {
         public MenuPrincipal()
         {
@@ -30,7 +30,7 @@ namespace PagoElectronico
         {
             if (!puedeIngresar(idFun))
             {
-                MessageBox.Show("No posee acceso a esta funcionalidad", "Funcionalidad inaccesible", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                Mensaje_Error("No posee acceso a esta funcionalidad", "Funcionalidad inaccesible");
                 return true;
             }
             else
@@ -231,6 +231,23 @@ namespace PagoElectronico
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Tarjeta_Credito.Seleccion nuevo_form = new Tarjeta_Credito.Seleccion();
             nuevo_form.mostrar(this);
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Globals.userID == 0)
+            {
+                Mensaje_Error("¡Todavía no inicio sesión!");
+                return;
+            }
+            var mensaje = Mensaje_Pregunta("¿Desea cerrar la sesión actual: " + Globals.username + "?", "Cerrar sesión");
+            if (mensaje == DialogResult.No) return;
+            
+            Globals.cerrarSesion();
+            if (ActiveMdiChild != null) ActiveMdiChild.Close();
+            Login.Login login = new Login.Login();
+            login.MdiParent = this;
+            login.Show();
         }
     }
 }

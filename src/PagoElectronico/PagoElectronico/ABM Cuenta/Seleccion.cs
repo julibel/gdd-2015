@@ -15,7 +15,7 @@ namespace PagoElectronico.ABM_Cuenta
     {
         private FormBase caller;
 
-        private int esBaja;
+        private List<int> estados;
 
         private void LimpiarCampos()
         {
@@ -31,7 +31,17 @@ namespace PagoElectronico.ABM_Cuenta
         {
             InitializeComponent();
             caller = form;
-            esBaja = baja;
+            if (baja == 1)
+                estados = new List<int>(new int[] {(int)EstadoCuenta.Habilitada, (int)EstadoCuenta.Deshabilitada, (int)EstadoCuenta.PendienteDeActivacion});
+            else
+                estados = new List<int>(new int[] {(int)EstadoCuenta.Habilitada, (int)EstadoCuenta.Deshabilitada, (int)EstadoCuenta.PendienteDeActivacion, (int)EstadoCuenta.Cerrada});
+        }
+
+        public Seleccion(FormBase form, List<int> estados)
+        {
+            InitializeComponent();
+            caller = form;
+            this.estados = estados;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -48,14 +58,15 @@ namespace PagoElectronico.ABM_Cuenta
         {
             comboBox_TipoCuenta.ValueMember = "TIP_ID";
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
-            comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
+            comboBox_TipoCuenta.DataSource = DAOCuenta.getTiposCuenta();
 
             LimpiarCampos();
         }
 
         private void button_Buscar_Click(object sender, EventArgs e)
         {
-            dataGridView_Seleccion.DataSource = DAOCuenta.getCuentas(textBox_NumeroCuenta.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), esBaja);
+            dataGridView_Seleccion.DataSource = DAOCuenta.getCuentas(textBox_NumeroCuenta.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), estados);
+            //dataGridView_Seleccion.DataSource = DAOCuenta.getCuentas(textBox_NumeroCuenta.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), esBaja);
             dataGridView_Seleccion.Columns[0].Visible = true;
         }
 
