@@ -237,7 +237,7 @@ namespace PagoElectronico
         {
             if (Globals.userID == 0)
             {
-                Mensaje_Error("¡Todavía no inicio sesión!");
+                Mensaje_Error("¡Todavía no inicio sesión!", "Inicie una sesión");
                 return;
             }
             var mensaje = Mensaje_Pregunta("¿Desea cerrar la sesión actual: " + Globals.username + "?", "Cerrar sesión");

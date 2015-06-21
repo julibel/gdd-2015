@@ -101,7 +101,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 28;
+            this.button_Limpiar.TabIndex = 9;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);
@@ -111,7 +111,7 @@
             this.button_Aceptar.Location = new System.Drawing.Point(585, 426);
             this.button_Aceptar.Name = "button_Aceptar";
             this.button_Aceptar.Size = new System.Drawing.Size(75, 23);
-            this.button_Aceptar.TabIndex = 27;
+            this.button_Aceptar.TabIndex = 8;
             this.button_Aceptar.Text = "Aceptar";
             this.button_Aceptar.UseVisualStyleBackColor = true;
             this.button_Aceptar.Click += new System.EventHandler(this.button_Aceptar_Click);
@@ -121,7 +121,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 26;
+            this.button_Cerrar.TabIndex = 10;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -130,8 +130,10 @@
             // 
             this.textBox_montoTotal.Location = new System.Drawing.Point(287, 372);
             this.textBox_montoTotal.Name = "textBox_montoTotal";
+            this.textBox_montoTotal.ReadOnly = true;
             this.textBox_montoTotal.Size = new System.Drawing.Size(100, 20);
             this.textBox_montoTotal.TabIndex = 23;
+            this.textBox_montoTotal.TabStop = false;
             // 
             // label6
             // 
@@ -156,7 +158,7 @@
             this.groupBox2.Location = new System.Drawing.Point(12, 223);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(398, 197);
-            this.groupBox2.TabIndex = 21;
+            this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pago";
             // 
@@ -166,7 +168,7 @@
             this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
             this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
             this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(113, 20);
-            this.maskedTextBox_numeroTarjeta.TabIndex = 63;
+            this.maskedTextBox_numeroTarjeta.TabIndex = 3;
             // 
             // maskedTextBox_codigo
             // 
@@ -174,7 +176,7 @@
             this.maskedTextBox_codigo.Mask = "999";
             this.maskedTextBox_codigo.Name = "maskedTextBox_codigo";
             this.maskedTextBox_codigo.Size = new System.Drawing.Size(37, 20);
-            this.maskedTextBox_codigo.TabIndex = 62;
+            this.maskedTextBox_codigo.TabIndex = 5;
             // 
             // radioButton_MASTERCARD
             // 
@@ -183,7 +185,7 @@
             this.radioButton_MASTERCARD.Location = new System.Drawing.Point(170, 39);
             this.radioButton_MASTERCARD.Name = "radioButton_MASTERCARD";
             this.radioButton_MASTERCARD.Size = new System.Drawing.Size(62, 30);
-            this.radioButton_MASTERCARD.TabIndex = 11;
+            this.radioButton_MASTERCARD.TabIndex = 1;
             this.radioButton_MASTERCARD.TabStop = true;
             this.radioButton_MASTERCARD.UseVisualStyleBackColor = true;
             // 
@@ -194,7 +196,7 @@
             this.radioButton_VISA.Location = new System.Drawing.Point(88, 39);
             this.radioButton_VISA.Name = "radioButton_VISA";
             this.radioButton_VISA.Size = new System.Drawing.Size(62, 30);
-            this.radioButton_VISA.TabIndex = 13;
+            this.radioButton_VISA.TabIndex = 0;
             this.radioButton_VISA.TabStop = true;
             this.radioButton_VISA.UseVisualStyleBackColor = true;
             // 
@@ -205,7 +207,7 @@
             this.radioButton_AMEX.Location = new System.Drawing.Point(249, 39);
             this.radioButton_AMEX.Name = "radioButton_AMEX";
             this.radioButton_AMEX.Size = new System.Drawing.Size(62, 30);
-            this.radioButton_AMEX.TabIndex = 15;
+            this.radioButton_AMEX.TabIndex = 2;
             this.radioButton_AMEX.TabStop = true;
             this.radioButton_AMEX.UseVisualStyleBackColor = true;
             // 
@@ -214,7 +216,7 @@
             this.textBox_NombreTitular.Location = new System.Drawing.Point(131, 112);
             this.textBox_NombreTitular.Name = "textBox_NombreTitular";
             this.textBox_NombreTitular.Size = new System.Drawing.Size(249, 20);
-            this.textBox_NombreTitular.TabIndex = 12;
+            this.textBox_NombreTitular.TabIndex = 4;
             // 
             // label5
             // 
@@ -253,7 +255,7 @@
             this.groupBox1.Location = new System.Drawing.Point(427, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(395, 408);
-            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Comisiones a Rendir";
             // 
@@ -262,7 +264,7 @@
             this.button_Seleccion.Location = new System.Drawing.Point(6, 369);
             this.button_Seleccion.Name = "button_Seleccion";
             this.button_Seleccion.Size = new System.Drawing.Size(75, 23);
-            this.button_Seleccion.TabIndex = 35;
+            this.button_Seleccion.TabIndex = 6;
             this.button_Seleccion.Text = "Seleccionar";
             this.button_Seleccion.UseVisualStyleBackColor = true;
             this.button_Seleccion.Click += new System.EventHandler(this.button_Seleccion_Click);
@@ -285,7 +287,7 @@
             this.dataGridView_ComisionesARendir.Name = "dataGridView_ComisionesARendir";
             this.dataGridView_ComisionesARendir.ReadOnly = true;
             this.dataGridView_ComisionesARendir.Size = new System.Drawing.Size(381, 334);
-            this.dataGridView_ComisionesARendir.TabIndex = 0;
+            this.dataGridView_ComisionesARendir.TabIndex = 7;
             // 
             // groupBox3
             // 
@@ -296,7 +298,7 @@
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(398, 205);
-            this.groupBox3.TabIndex = 34;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos de factura";
             // 

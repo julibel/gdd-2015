@@ -52,7 +52,7 @@
             this.dataGridView_Resultado2.Location = new System.Drawing.Point(12, 133);
             this.dataGridView_Resultado2.Name = "dataGridView_Resultado2";
             this.dataGridView_Resultado2.Size = new System.Drawing.Size(810, 287);
-            this.dataGridView_Resultado2.TabIndex = 5;
+            this.dataGridView_Resultado2.TabIndex = 4;
             // 
             // groupBox_Consultas
             // 
@@ -66,7 +66,7 @@
             this.groupBox_Consultas.Location = new System.Drawing.Point(12, 12);
             this.groupBox_Consultas.Name = "groupBox_Consultas";
             this.groupBox_Consultas.Size = new System.Drawing.Size(810, 115);
-            this.groupBox_Consultas.TabIndex = 3;
+            this.groupBox_Consultas.TabIndex = 0;
             this.groupBox_Consultas.TabStop = false;
             this.groupBox_Consultas.Text = "Consultas";
             this.groupBox_Consultas.Enter += new System.EventHandler(this.groupBox_Consultas_Enter);
@@ -76,7 +76,7 @@
             this.numericUpDown_Anio.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.numericUpDown_Anio.Location = new System.Drawing.Point(191, 34);
             this.numericUpDown_Anio.Maximum = new decimal(new int[] {
-            2030,
+            3000,
             0,
             0,
             0});
@@ -87,10 +87,10 @@
             0});
             this.numericUpDown_Anio.Name = "numericUpDown_Anio";
             this.numericUpDown_Anio.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown_Anio.TabIndex = 11;
+            this.numericUpDown_Anio.TabIndex = 0;
             this.numericUpDown_Anio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.numericUpDown_Anio.Value = new decimal(new int[] {
-            2015,
+            2017,
             0,
             0,
             0});
@@ -118,7 +118,7 @@
             this.comboBox_TipoListado.Location = new System.Drawing.Point(191, 60);
             this.comboBox_TipoListado.Name = "comboBox_TipoListado";
             this.comboBox_TipoListado.Size = new System.Drawing.Size(419, 21);
-            this.comboBox_TipoListado.TabIndex = 0;
+            this.comboBox_TipoListado.TabIndex = 2;
             // 
             // label_TipoListado
             // 
@@ -141,7 +141,7 @@
             this.comboBox_Trimestre.Location = new System.Drawing.Point(373, 33);
             this.comboBox_Trimestre.Name = "comboBox_Trimestre";
             this.comboBox_Trimestre.Size = new System.Drawing.Size(127, 21);
-            this.comboBox_Trimestre.TabIndex = 5;
+            this.comboBox_Trimestre.TabIndex = 1;
             this.comboBox_Trimestre.SelectedIndexChanged += new System.EventHandler(this.comboBox_Trimestre_SelectedIndexChanged);
             // 
             // label_Anio
@@ -158,7 +158,7 @@
             this.button_HacerConsulta.Location = new System.Drawing.Point(627, 40);
             this.button_HacerConsulta.Name = "button_HacerConsulta";
             this.button_HacerConsulta.Size = new System.Drawing.Size(75, 35);
-            this.button_HacerConsulta.TabIndex = 0;
+            this.button_HacerConsulta.TabIndex = 3;
             this.button_HacerConsulta.Text = "Hacer consulta";
             this.button_HacerConsulta.UseVisualStyleBackColor = true;
             this.button_HacerConsulta.Click += new System.EventHandler(this.button_HacerConsulta_Click);
@@ -169,7 +169,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 426);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 2;
+            this.button_Cerrar.TabIndex = 6;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
@@ -179,7 +179,7 @@
             this.button_Limpiar.Location = new System.Drawing.Point(666, 426);
             this.button_Limpiar.Name = "button_Limpiar";
             this.button_Limpiar.Size = new System.Drawing.Size(75, 23);
-            this.button_Limpiar.TabIndex = 1;
+            this.button_Limpiar.TabIndex = 5;
             this.button_Limpiar.Text = "Limpiar";
             this.button_Limpiar.UseVisualStyleBackColor = true;
             this.button_Limpiar.Click += new System.EventHandler(this.button_Limpiar_Click);

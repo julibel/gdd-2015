@@ -10,9 +10,9 @@ namespace PagoElectronico.CapaDAO
 {
     class DAOCuenta:SqlConnector
     {
-        public static void agregarCuenta(int cliente, string pais, int moneda, int tipo)
+        public static long agregarCuenta(int cliente, string pais, int moneda, int tipo)
         {
-            executeProcedure("AGREGAR_CUENTA", cliente, moneda, pais, tipo, Globals.getFechaSistema());
+            return executeProcedureWithLongReturnValue("AGREGAR_CUENTA", cliente, moneda, pais, tipo, Globals.getFechaSistema());
         }
 
         public static void modificarCuenta(long id, int cliente, int moneda, int pais, int tipo_cuenta, int estado)
@@ -71,19 +71,8 @@ namespace PagoElectronico.CapaDAO
         }
 
         public static object getCuentas(string numero, string pais, int tipo, List<int> estados)
-        {
-            DataTable est = new DataTable();
-            est.Columns.Add("ITEM");
-            foreach (int num in estados)
-            {
-                var row = est.NewRow();
-
-                row["ITEM"] = Convert.ToString(num);
-
-                est.Rows.Add(row);
-            }
-            
-            return retrieveDataTable("FIND_CUENTAS", numero, pais, tipo, est);
+        {   
+            return retrieveDataTable("FIND_CUENTAS", numero, pais, tipo, Globals.intsToDataTable(estados));
         }
     }
 }

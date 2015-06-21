@@ -15,11 +15,13 @@ namespace PagoElectronico.Facturacion
     {
         private bool open = false;
 
+        private List<int> comisionesID;
+
         public override void mostrar(Form parent, params object[] values)
         {
             if (open)
             {
-                List<int> comisionesID = (List<int>)values[0];
+                comisionesID = (List<int>)values[0];
                 dataGridView_ComisionesARendir.DataSource = DAOFactura.getComisionesID(comisionesID);
                 setTotal();
                 this.Visible = true;
@@ -68,10 +70,9 @@ namespace PagoElectronico.Facturacion
                 if (!Validaciones()) return;
                 try
                 {
-                    int num_factura =0;
-                    //dao que devuelvafacura
+                    long numFactura = DAOFactura.crearFactura(comisionesID, maskedTextBox_numeroTarjeta.Text, Convert.ToDouble(textBox_montoTotal.Text));
 
-                    textBox_Numero.Text = Convert.ToString(num_factura);
+                    textBox_Numero.Text = Convert.ToString(numFactura);
                     Mensaje_OK("Los datos han sido almacenados con éxito");
                 }
                 catch (Exception ex)
@@ -155,6 +156,7 @@ namespace PagoElectronico.Facturacion
                 foreach (var control in panel.Controls.OfType<RadioButton>()) control.Checked = false;
                 foreach (var control in panel.Controls.OfType<MaskedTextBox>()) control.Clear();
             }
+            dataGridView_ComisionesARendir.DataSource = new DataTable();
             textBox_Numero.Text = "A generar";
             textBox_Fecha.Text = Globals.getFechaSistema();
         }

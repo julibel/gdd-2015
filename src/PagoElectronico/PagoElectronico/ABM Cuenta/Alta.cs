@@ -62,8 +62,8 @@ namespace PagoElectronico.ABM_Cuenta
             var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-                CapaDAO.DAOCuenta.agregarCuenta(clienteID, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
-                Mensaje_OK("Los datos han sido almacenados con éxito");
+                long numCuenta = DAOCuenta.agregarCuenta(clienteID, comboBox_Pais.Text, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue));
+                Mensaje_OK("Los datos han sido almacenados con éxito. El número de cuenta es: " + numCuenta.ToString());
                 LimpiarCampos();
             }
         }

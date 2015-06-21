@@ -46,25 +46,13 @@ namespace PagoElectronico.CapaDAO
         private static DataTable crearData(DataGridViewRowCollection integers)
         {
             List<int> ints = new List<int>();
-            DataTable dataFuncs = new DataTable();
-
-            dataFuncs.Columns.Add("ITEM");
 
             for (int i = 0; i < integers.Count; i++)
             {
                 ints.Add((int)integers[i].Cells[0].Value);
             }
 
-            foreach (int num in ints)
-            {
-                var row = dataFuncs.NewRow();
-
-                row["ITEM"] = Convert.ToString(num);
-
-                dataFuncs.Rows.Add(row);
-            }
-
-            return dataFuncs;
+            return Globals.intsToDataTable(ints);
         }
 
 
@@ -73,7 +61,6 @@ namespace PagoElectronico.CapaDAO
         {
             executeProcedure("AGREGAR_ROL",nombre,crearData(funcionalidades));
         }
-
 
         public static void modificarRol(int id, string nombre, DataGridViewRowCollection funcionalidades)
         {
@@ -85,7 +72,7 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("BAJA_ROL", id);
         }
 
-        internal static void activarRol(string nombre)
+        public static void activarRol(string nombre)
         {
             executeProcedure("ACTIVAR_ROL", nombre);
         }
