@@ -294,6 +294,10 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Nacionalidad.DisplayMember = "NOMBRE";
             comboBox_Nacionalidad.DataSource = DAOCuenta.getPaises();
 
+            comboBox_Emisor.ValueMember = "EMI_ID";
+            comboBox_Emisor.DisplayMember = "NOMBRE";
+            comboBox_Emisor.DataSource = DAOTarjeta.getEmisores();
+
             LimpiarCampos();
         }
     }

@@ -51,9 +51,19 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("DESASOCIAR_TARJETA", idTarjeta);
         }
 
-        public static DataTable getTarjetas()
+        private static DataTable getTarjetas(byte estado)
+        {//0 deshabilitado, 1 habilitado, 2 ambos
+            return retrieveDataTable("GET_TARJETAS", Globals.userID, Globals.getFechaSistema(), estado);
+        }
+
+        public static DataTable getTarjetasHabilitadas()
         {
-            return retrieveDataTable("GET_TARJETAS", Globals.userID, Globals.getFechaSistema());
+            return getTarjetas(1);
+        }
+
+        public static DataTable getAllTarjetas()
+        {
+            return getTarjetas(2);
         }
 
         public static bool coincideTarjeta(int tarID, string numero, string codSeg)
@@ -64,19 +74,27 @@ namespace PagoElectronico.CapaDAO
             return checkIfExists("COINCIDE_TARJETA", tarID, Encriptacion.getSHA1(primeros), ultimos, Encriptacion.getSHA1(codSeg));
         }
 
-        private static DataTable getTajeta(int idTarjeta)
+        public static Tarjeta getTarjeta(int idTarjeta)
         {
-            return retrieveDataTable("GET_TARJETA", idTarjeta);
+            DataTable tarjData = retrieveDataTable("GET_TARJETA", idTarjeta);
+            Tarjeta tarjeta = new Tarjeta();
+            tarjeta.ID = idTarjeta;
+            tarjeta.titular = tarjData.Rows[0]["TITULAR"].ToString();
+            tarjeta.Emisor = tarjData.Rows[0]["NOMBRE"].ToString();
+            tarjeta.estado = Convert.ToBoolean(tarjData.Rows[0]["ESTADO"]);
+            tarjeta.Fecha_Emision = tarjData.Rows[0]["FECHA_EMISION"].ToString();
+            tarjeta.Fecha_Vencimiento = tarjData.Rows[0]["FECHA_VENCIMIENTO"].ToString().Substring(0,10);
+            return tarjeta;
         }
 
-        public static string getEmisor(int tarID)
+        public static object getEmisores()
         {
-            return getTajeta(tarID).Rows[0]["NOMBRE"].ToString();
+            return retrieveDataTable("GET_EMISORES");
         }
 
-        public static string getTitular(int tarID)
+        public static void modificarTarjeta(int tarID, string numero, string titular, string codSeg, string emisor, string fechaEmision, string fechaVencimiento, bool estado)
         {
-            return getTajeta(tarID).Rows[0]["TITULAR"].ToString();
+            executeProcedure("MODIFICAR_TARJETA", tarID, numero, titular, codSeg, emisor, fechaEmision, fechaVencimiento, Convert.ToInt32(estado));
         }
     }
 }

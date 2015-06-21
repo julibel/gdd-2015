@@ -76,6 +76,9 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void Asociar_Load(object sender, EventArgs e)
         {
+            comboBox_Emisor.ValueMember = "EMI_ID";
+            comboBox_Emisor.DisplayMember = "NOMBRE";
+            comboBox_Emisor.DataSource = DAOTarjeta.getEmisores();
             this.ActiveControl = maskedTextBox_numeroTarjeta;
             LimpiarCampos();
         }

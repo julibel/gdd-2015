@@ -22,7 +22,7 @@ namespace PagoElectronico.Tarjeta_Credito
         {
             comboBox_Numero_Tarjeta.ValueMember = "TAR_ID";
             comboBox_Numero_Tarjeta.DisplayMember = "NUMERO";
-            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getTarjetas();
+            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getTarjetasHabilitadas();
             this.ActiveControl = comboBox_Numero_Tarjeta;
             LimpiarCampos();
         }
@@ -57,6 +57,7 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void LimpiarCampos()
         {
+            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getTarjetasHabilitadas();
             foreach (var control in groupBox1.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in groupBox1.Controls.OfType<ComboBox>())
             {
@@ -74,8 +75,10 @@ namespace PagoElectronico.Tarjeta_Credito
         private void comboBox_Numero_Tarjeta_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox_Numero_Tarjeta.SelectedIndex == -1) return;
-            textBox_Emisor.Text = DAOTarjeta.getEmisor(Convert.ToInt32(comboBox_Numero_Tarjeta.SelectedValue));
-            textBox_NombreTitular.Text = DAOTarjeta.getTitular(Convert.ToInt32(comboBox_Numero_Tarjeta.SelectedValue));
+            Tarjeta tarjeta = DAOTarjeta.getTarjeta(Convert.ToInt32(comboBox_Numero_Tarjeta.SelectedValue));
+
+            textBox_Emisor.Text = tarjeta.Emisor;
+            textBox_NombreTitular.Text = tarjeta.titular;
         }
 
         private void maskedTextBox_numeroTarjeta_Click(object sender, EventArgs e)

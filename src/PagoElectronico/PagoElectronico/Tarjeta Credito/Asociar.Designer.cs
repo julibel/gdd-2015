@@ -160,7 +160,6 @@
             // 
             // comboBox_Emisor
             // 
-            this.comboBox_Emisor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_Emisor.FormattingEnabled = true;
             this.comboBox_Emisor.Items.AddRange(new object[] {
             "VISA",

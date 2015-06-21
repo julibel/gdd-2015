@@ -69,7 +69,7 @@
             this.maskedTextBox_numeroTarjeta.Mask = "9999999999999999";
             this.maskedTextBox_numeroTarjeta.Name = "maskedTextBox_numeroTarjeta";
             this.maskedTextBox_numeroTarjeta.Size = new System.Drawing.Size(114, 20);
-            this.maskedTextBox_numeroTarjeta.TabIndex = 46;
+            this.maskedTextBox_numeroTarjeta.TabIndex = 1;
             this.maskedTextBox_numeroTarjeta.Click += new System.EventHandler(this.maskedTextBox_numeroTarjeta_Click);
             // 
             // label2
@@ -159,7 +159,7 @@
             this.button_Guardar.Location = new System.Drawing.Point(666, 427);
             this.button_Guardar.Name = "button_Guardar";
             this.button_Guardar.Size = new System.Drawing.Size(75, 23);
-            this.button_Guardar.TabIndex = 4;
+            this.button_Guardar.TabIndex = 3;
             this.button_Guardar.Text = "Borrar";
             this.button_Guardar.UseVisualStyleBackColor = true;
             this.button_Guardar.Click += new System.EventHandler(this.button_Guardar_Click);
@@ -169,7 +169,7 @@
             this.button_Cerrar.Location = new System.Drawing.Point(747, 427);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(75, 23);
-            this.button_Cerrar.TabIndex = 5;
+            this.button_Cerrar.TabIndex = 4;
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
