@@ -62,8 +62,6 @@ namespace PagoElectronico.Facturacion
                 return;
             }
 
-           
-
             var resultado = Mensaje_Pregunta("¿Está seguro que desea realizar el pago?", "Generar Factura");
             if (resultado == DialogResult.Yes)
             {
@@ -71,8 +69,8 @@ namespace PagoElectronico.Facturacion
                 try
                 {
                     long numFactura = DAOFactura.crearFactura(comisionesID, maskedTextBox_numeroTarjeta.Text, Convert.ToDouble(textBox_montoTotal.Text));
-
                     textBox_Numero.Text = Convert.ToString(numFactura);
+                    revisarCuentas();
                     Mensaje_OK("Los datos han sido almacenados con éxito");
                 }
                 catch (Exception ex)
@@ -84,6 +82,19 @@ namespace PagoElectronico.Facturacion
 
 
 
+        }
+
+        private void revisarCuentas()
+        {
+            foreach (DataGridViewRow comisionRow in dataGridView_ComisionesARendir.Rows)
+            {
+                long cuenta = Convert.ToInt64(comisionRow.Cells["Cuenta"].Value);
+                if (!DAOFactura.tieneImpagas(cuenta))
+                {
+                    if (DAOFactura.habilitarCuenta(Convert.ToInt64(cuenta)) == 0)
+                        Mensaje_OK("Se abonaron todas las comisiones adeudadas, se habilitará la cuenta: " + cuenta, "Comisiones abonadas");
+                }
+            }
         }
 
         private bool Validaciones()

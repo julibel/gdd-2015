@@ -16,12 +16,3 @@ Dudas
 JULIAN	a) Retiros, Tarjeta Credito, Transferencia, Deposito, Facturacion, Consulta Saldo, Login y Form Base
 
 JULIETA	b) ABM Cliente, ABM Rol, ABM Cuenta, Listado, Modificar Contrasenia
-
-
-
-
-Conexiones a la base, metodos, funciones, demas..
-
-
-DUdas para ver con la DB:
-- que tipo de datos tiene tipo de documento?

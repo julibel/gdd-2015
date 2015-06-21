@@ -33,9 +33,14 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("GET_COMISIONES_ID", Globals.intsToDataTable(comisionesID));
         }
 
-        internal static long crearFactura(List<int> comisionesID, string numeroTarjeta, double total)
+        public static long crearFactura(List<int> comisionesID, string numeroTarjeta, double total)
         {
             return executeProcedureWithLongReturnValue("CREAR_FACTURA", Globals.intsToDataTable(comisionesID), Globals.getFechaSistema(), Encriptacion.getSHA1(numeroTarjeta), total);
+        }
+
+        public static bool tieneImpagas(long cuenta)
+        {
+            return checkIfExists("GET_COMISIONES_CUENTA", cuenta);
         }
     }
 }
