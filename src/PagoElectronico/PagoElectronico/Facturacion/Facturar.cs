@@ -79,9 +79,6 @@ namespace PagoElectronico.Facturacion
                 }
             }
 
-
-
-
         }
 
         private void revisarCuentas()
@@ -107,14 +104,14 @@ namespace PagoElectronico.Facturacion
 
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validación de datos:", (current, error) => current + ("\n" + error.Descripcion));
+            var mensaje = listaDeErrores.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
             Mensaje_Error(mensaje);
             return false;
         }
 
         private Error ValidarLong()
         {
-            return (ValidarLongitud()) ? new Error("Debe ingresar un numero de tarjeta de 16 digitos") : null;
+            return (ValidarLongitud()) ? new Error("Debe ingresar un número de tarjeta de 16 dígitos") : null;
         }
 
         private bool ValidarLongitud()

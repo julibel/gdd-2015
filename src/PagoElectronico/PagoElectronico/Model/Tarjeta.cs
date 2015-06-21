@@ -11,6 +11,7 @@ namespace PagoElectronico.Model
         public int ID_Persona { get; set; }
         public int cod_seguridad;
         public long numero;
+        public string titular { get; set; }
         public string Emisor { get; set; }
         public string Fecha_Emision { get; set; }
         public string Fecha_Vencimiento { get; set; }
@@ -28,8 +29,9 @@ namespace PagoElectronico.Model
             Fecha_Vencimiento = fecha_vencimiento;
         }
 
-        public Tarjeta(long num, int cod_seg, string emisor, string fecha_emision, string fecha_vencimiento)
+        public Tarjeta(string titu, long num, int cod_seg, string emisor, string fecha_emision, string fecha_vencimiento)
         {
+            titular = titu;
             numero = num;
             cod_seguridad = cod_seg;
             Emisor = emisor;

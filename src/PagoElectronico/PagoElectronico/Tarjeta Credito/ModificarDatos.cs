@@ -23,9 +23,9 @@ namespace PagoElectronico.Tarjeta_Credito
         {
             
             InitializeComponent();
-            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId());
-            comboBox_Numero_Tarjeta.ValueMember = "NUMERO_TARJETA";
+            comboBox_Numero_Tarjeta.ValueMember = "TAR_ID";
             comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
+            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getTarjetas();
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)

@@ -81,13 +81,13 @@ namespace PagoElectronico.ABM_Cliente
 
                    for (int i = 0; i < dataGridView_Tarjetas.Rows.Count; i++)
                    {
-                       lista_tarjetas.Add(GenerarTarjeta(dataGridView_Tarjetas.Rows[i]));
+                       lista_tarjetas.Add(GenerarTarjeta(dataGridView_Tarjetas.Rows[i], textBox_Nombre.Text + " " + textBox_Apellido.Text));
                    }
 
 
                    foreach (var tarjeta in lista_tarjetas)
                    {
-                       DAOTarjeta.AgregarTarjeta(tarjeta, id);
+                       DAOTarjeta.asociarTarjeta(tarjeta, id);
                    }
                    Mensaje_OK("Los datos han sido almacenados con éxito");
                    LimpiarCampos();
@@ -158,9 +158,10 @@ namespace PagoElectronico.ABM_Cliente
                     );
         }
 
-        private Tarjeta GenerarTarjeta(DataGridViewRow row)
+        private Tarjeta GenerarTarjeta(DataGridViewRow row, string titular)
         {
             return new Tarjeta(
+                titular,
                 Convert.ToInt64(row.Cells["Numero"].Value),
                 Convert.ToInt32(row.Cells["Codigo"].Value),
                 Convert.ToString(row.Cells["Emisor"].Value),

@@ -221,7 +221,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(12)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            Tarjeta_Credito.Seleccion nuevo_form = new Tarjeta_Credito.Seleccion();
+            Tarjeta_Credito.Desasociar nuevo_form = new Tarjeta_Credito.Desasociar();
             nuevo_form.mostrar(this);
         }
 
@@ -229,7 +229,7 @@ namespace PagoElectronico
         {
             if (noPuedeIngresar(13)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
-            Tarjeta_Credito.Seleccion nuevo_form = new Tarjeta_Credito.Seleccion();
+            Tarjeta_Credito.ModificarDatos nuevo_form = new Tarjeta_Credito.ModificarDatos();
             nuevo_form.mostrar(this);
         }
 

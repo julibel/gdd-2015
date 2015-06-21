@@ -18,11 +18,12 @@ namespace PagoElectronico.CapaDAO
             return executeProcedureWithReturnValue("GET_ID_TARJETA", encriptado, limpio, Encriptacion.getSHA1(codSeg), Globals.getFechaSistema(), Globals.userID);
         }
 
-        public static void AgregarTarjeta(Tarjeta tarjeta, int id)
+        public static void asociarTarjeta(Tarjeta tarjeta, int idCli)
         {
             executeProcedure("ASOCIAR_TARJETA",
                 tarjeta.numero,
-                id,
+                idCli,
+                tarjeta.titular,
                 tarjeta.cod_seguridad,
                 tarjeta.Emisor,
                 tarjeta.Fecha_Emision,
@@ -45,14 +46,37 @@ namespace PagoElectronico.CapaDAO
                );
         }
 
-        public static void BajarTarjeta(int idTarjeta)
+        public static void desasociarTarjeta(int idTarjeta)
         {
             executeProcedure("DESASOCIAR_TARJETA", idTarjeta);
         }
 
-        public static int getClienteId()
+        public static DataTable getTarjetas()
         {
-            return executeProcedureWithReturnValue("GET_CLIENTE_ID", Globals.userID);
+            return retrieveDataTable("GET_TARJETAS", Globals.userID, Globals.getFechaSistema());
+        }
+
+        public static bool coincideTarjeta(int tarID, string numero, string codSeg)
+        {
+            string ultimos = numero.Substring(12, 4);
+            string primeros = numero.Substring(0, 12);
+
+            return checkIfExists("COINCIDE_TARJETA", tarID, Encriptacion.getSHA1(primeros), ultimos, Encriptacion.getSHA1(codSeg));
+        }
+
+        private static DataTable getTajeta(int idTarjeta)
+        {
+            return retrieveDataTable("GET_TARJETA", idTarjeta);
+        }
+
+        public static string getEmisor(int tarID)
+        {
+            return getTajeta(tarID).Rows[0]["NOMBRE"].ToString();
+        }
+
+        public static string getTitular(int tarID)
+        {
+            return getTajeta(tarID).Rows[0]["TITULAR"].ToString();
         }
     }
 }

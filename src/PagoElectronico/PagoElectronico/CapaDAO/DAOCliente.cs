@@ -120,5 +120,10 @@ namespace PagoElectronico.CapaDAO
          {
              return checkIfExists("COINCIDE_DOCUMENTO", Globals.userID, tipo, documento);
          }
+
+         public static int getClienteId()
+         {
+             return executeProcedureWithReturnValue("GET_CLIENTE_ID", Globals.userID);
+         }
     }
 }

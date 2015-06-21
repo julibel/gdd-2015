@@ -64,9 +64,9 @@
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(810, 410);
-            this.groupBox1.TabIndex = 40;
+            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos de la tarjeta de credito";
+            this.groupBox1.Text = "Datos de la tarjeta de crédito";
             // 
             // maskedTextBox1
             // 
@@ -129,7 +129,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 13);
             this.label3.TabIndex = 42;
-            this.label3.Text = "Numero de tarjeta";
+            this.label3.Text = "Número de tarjeta";
             // 
             // textBox_FechaVencimiento
             // 

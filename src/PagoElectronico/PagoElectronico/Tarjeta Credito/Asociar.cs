@@ -26,7 +26,7 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            int idCli = DAOTarjeta.getClienteId();
+            int idCli = DAOCliente.getClienteId();
 
             try
             {
@@ -35,16 +35,18 @@ namespace PagoElectronico.Tarjeta_Credito
                     Mensaje_Error("No están todos los datos obligatorios");
                     return;
                 }
-                var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
+                var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Asociar Tarjeta");
                 if (resultado == DialogResult.Yes)
                 {
-                    Tarjeta tarjeta = new Tarjeta(Convert.ToInt64(maskedTextBox_numeroTarjeta.Text),
+                    Tarjeta tarjeta = new Tarjeta(textBox_NombreTitular.Text,
+                                                  Convert.ToInt64(maskedTextBox_numeroTarjeta.Text),
                                                   Convert.ToInt32(maskedTextBox_codigo.Text),
                                                   comboBox_Emisor.Text,
                                                   maskedTextBox1.Text,
                                                   textBox_FechaVencimiento.Text);
                     
-                     DAOTarjeta.AgregarTarjeta(tarjeta, idCli);
+                    DAOTarjeta.asociarTarjeta(tarjeta, idCli);
+                    LimpiarCampos();
                  }
             }
             catch (Exception)
@@ -75,6 +77,7 @@ namespace PagoElectronico.Tarjeta_Credito
         private void Asociar_Load(object sender, EventArgs e)
         {
             this.ActiveControl = maskedTextBox_numeroTarjeta;
+            LimpiarCampos();
         }
 
         private void maskedTextBox_numeroTarjeta_Click(object sender, EventArgs e)

@@ -12,10 +12,5 @@ namespace PagoElectronico.CapaDAO
         {
             executeProcedure("DEPOSITAR", cuenta, tarjeta, importe, moneda, Globals.getFechaSistema());
         }
-
-        public static DataTable getTarjetas()
-        {
-            return retrieveDataTable("GET_TARJETAS", Globals.userID, Globals.getFechaSistema());
-        }
     }
 }

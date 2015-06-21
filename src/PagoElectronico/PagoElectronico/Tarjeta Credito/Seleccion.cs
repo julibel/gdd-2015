@@ -13,23 +13,12 @@ namespace PagoElectronico.Tarjeta_Credito
 {
     public partial class Seleccion : FormBase
     {
-        private Form formCaller;
+        private FormBase caller;
 
-        private TextBox textCaller;
-
-        private int tarjetaID;
-
-        public int getIDTarjeta()
-        {
-            return tarjetaID;
-        }
-
-        public Seleccion(Form caller, TextBox textTarjeta)
+        public Seleccion(FormBase caller)
         {
             InitializeComponent();
-            formCaller = caller;
-            textCaller = textTarjeta;
-            formCaller.Visible = false;
+            this.caller = caller;
         }
 
         public Seleccion()
@@ -44,13 +33,12 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private void button_Aceptar_Click(object sender, EventArgs e)
         {
-            textCaller.Text = comboBox_Numero_Tarjeta.SelectedValue.ToString();
+            caller.mostrar(this.MdiParent, comboBox_Numero_Tarjeta.SelectedValue.ToString());
             Cerrar();
         }
 
         private void Cerrar()
         {
-            formCaller.Visible = true;
             this.Close();
         }
 
@@ -70,8 +58,8 @@ namespace PagoElectronico.Tarjeta_Credito
         private void Seleccion_Load(object sender, EventArgs e)
         {
             comboBox_Numero_Tarjeta.ValueMember = "TAR_ID";
-            comboBox_Numero_Tarjeta.DisplayMember = "NUMERO_TARJETA";
-            comboBox_Numero_Tarjeta.DataSource = DAOCliente.getTarjetasCliente(CapaDAO.DAOTarjeta.getClienteId());
+            comboBox_Numero_Tarjeta.DisplayMember = "NUMERO";
+            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getTarjetas();
         }
     }
 }

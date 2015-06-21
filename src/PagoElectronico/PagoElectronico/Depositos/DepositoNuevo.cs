@@ -26,7 +26,7 @@ namespace PagoElectronico.Depositos
         private void DepositoNuevo_Load(object sender, EventArgs e)
         {
             DataTable cuentas = DAODeposito.getCuentasHabilitadas();
-            DataTable tarjetas = DAODeposito.getTarjetas();
+            DataTable tarjetas = DAOTarjeta.getTarjetas();
             DataTable monedas = DAODeposito.getMonedas();
 
             comboBox_Cuentas.ValueMember = "CUE_ID" ;
