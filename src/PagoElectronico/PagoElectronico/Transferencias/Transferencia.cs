@@ -38,7 +38,7 @@ namespace PagoElectronico.Transferencias
 
         private void Transferencia_Load(object sender, EventArgs e)
         {
-            DataTable cuentas = DAOTransferencia.getCuentas();
+            DataTable cuentas = DAOTransferencia.getCuentasHabilitadas();
             DataTable monedas = DAOTransferencia.getMonedas();
 
             comboBox_Origen.ValueMember = "CUE_ID";

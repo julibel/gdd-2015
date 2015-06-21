@@ -14,18 +14,18 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("COMISIONES_USUARIO", Globals.userID);
         }
 
-        public static void deshabilitarCuenta(long cuenta)
+        public static int deshabilitarCuenta(long cuenta)
         {
-            cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Deshabilitada);
+            return cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Deshabilitada);
         }
-        public static void habilitarCuenta(long cuenta)
+        public static int habilitarCuenta(long cuenta)
         {
-            cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Habilitada);
+            return cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Habilitada);
         }
 
-        public static void cambiarEstadoCuenta(long cuenta, int estado)
+        public static int cambiarEstadoCuenta(long cuenta, int estado)
         {
-            executeProcedure("MODIFICAR_ESTADO_CUENTA", cuenta, estado);
+            return executeProcedureWithReturnValue("MODIFICAR_ESTADO_CUENTA", cuenta, estado);
         }
 
         public static object getComisionesID(List<int> comisionesID)

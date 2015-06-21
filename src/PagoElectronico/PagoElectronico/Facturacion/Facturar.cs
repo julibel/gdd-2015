@@ -21,11 +21,23 @@ namespace PagoElectronico.Facturacion
             {
                 List<int> comisionesID = (List<int>)values[0];
                 dataGridView_ComisionesARendir.DataSource = DAOFactura.getComisionesID(comisionesID);
+                setTotal();
                 this.Visible = true;
             }
             else
                 base.mostrar(parent);
 
+        }
+
+        private void setTotal()
+        {
+            double total = 0;
+            foreach (DataGridViewRow row in dataGridView_ComisionesARendir.Rows)
+            {
+                total += Convert.ToDouble(row.Cells["Importe"].Value);
+            }
+
+            textBox_montoTotal.Text = total.ToString();
         }
 
         public Facturar()
@@ -44,13 +56,13 @@ namespace PagoElectronico.Facturacion
             if (!Validaciones()) return;
             if (textBox_Numero.Text != "A generar")
             {
-                MessageBox.Show("Limpie los datos de la última operación", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Mensaje_Error("Limpie los datos de la última operación");
                 return;
             }
 
            
 
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea realizar el pago?", "Generar Factura");
             if (resultado == DialogResult.Yes)
             {
                 if (!Validaciones()) return;
@@ -60,11 +72,11 @@ namespace PagoElectronico.Facturacion
                     //dao que devuelvafacura
 
                     textBox_Numero.Text = Convert.ToString(num_factura);
-                    Mensaje_OK("Los datos han sido almacenados con exito", "");
+                    Mensaje_OK("Los datos han sido almacenados con éxito");
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR.-" + ex.Message);
+                    Mensaje_Error("ERROR: " + ex.Message);
                 }
             }
 
@@ -83,8 +95,8 @@ namespace PagoElectronico.Facturacion
 
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-            MessageBox.Show(mensaje);
+            var mensaje = listaDeErrores.Aggregate("Error en la validación de datos:", (current, error) => current + ("\n" + error.Descripcion));
+            Mensaje_Error(mensaje);
             return false;
         }
 
@@ -105,7 +117,7 @@ namespace PagoElectronico.Facturacion
 
         private Error ValidarDatosCompletos()
         {
-            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario.") : null;
+            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario: ") : null;
         }
         private bool ValidarCamposCompletos()
         {
@@ -119,10 +131,8 @@ namespace PagoElectronico.Facturacion
             {
                 if (control.Text == String.Empty) vacio = true;
             }
-            foreach (var control in this.groupBox2.Controls.OfType<RadioButton>())
-            {
-                if (control.Text == String.Empty) vacio = true;
-            }
+            if (this.groupBox2.Controls.OfType<RadioButton>().All(radio => radio.Checked == false))
+                vacio = true;
             foreach (var control in this.groupBox2.Controls.OfType<MaskedTextBox>())
             {
                 if (control.Text == String.Empty) vacio = true;

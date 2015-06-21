@@ -60,13 +60,16 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
             comboBox_TipoCuenta.DataSource = DAOCuenta.getTiposCuenta();
 
+            comboBox_Pais.ValueMember = "PAI_ID";
+            comboBox_Pais.DisplayMember = "NOMBRE";
+            comboBox_Pais.DataSource = DAOCuenta.getPaises();
+
             LimpiarCampos();
         }
 
         private void button_Buscar_Click(object sender, EventArgs e)
         {
             dataGridView_Seleccion.DataSource = DAOCuenta.getCuentas(textBox_NumeroCuenta.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), estados);
-            //dataGridView_Seleccion.DataSource = DAOCuenta.getCuentas(textBox_NumeroCuenta.Text, comboBox_Pais.Text, Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), esBaja);
             dataGridView_Seleccion.Columns[0].Visible = true;
         }
 

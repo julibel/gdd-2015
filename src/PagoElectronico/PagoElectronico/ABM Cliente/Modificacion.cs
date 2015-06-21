@@ -76,7 +76,8 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Nacionalidad.Text = "";
             comboBox_Pais.Text = "";
             dataGridView_Tarjetas.Rows.Clear();
-            dateTimePicker_FechaNacimiento.Value = DateTime.Now;
+            dateTimePicker_FechaNacimiento.Value = Convert.ToDateTime(Globals.getFechaSistema());
+            this.ActiveControl = textBox_Nombre;
         }
 
         
@@ -87,6 +88,14 @@ namespace PagoElectronico.ABM_Cliente
 
         private void Modificacion_Load(object sender, EventArgs e)
         {
+            comboBox_Pais.ValueMember = "PAI_ID";
+            comboBox_Pais.DisplayMember = "NOMBRE";
+            comboBox_Pais.DataSource = DAOCuenta.getPaises();
+
+            comboBox_Nacionalidad.ValueMember = "PAI_ID";
+            comboBox_Nacionalidad.DisplayMember = "NOMBRE";
+            comboBox_Nacionalidad.DataSource = DAOCuenta.getPaises();
+
             this.ActiveControl = textBox_Nombre;
         }
 

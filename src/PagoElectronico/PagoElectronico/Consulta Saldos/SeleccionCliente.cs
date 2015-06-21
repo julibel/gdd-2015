@@ -15,8 +15,7 @@ namespace PagoElectronico.Consulta_Saldos
     {
         private void LimpiarCampos()
         {
-            foreach (var control in this.paner_Filtros.Controls.OfType<TextBox>()) control.Text = "";
-            foreach (var control in this.paner_Filtros.Controls.OfType<ComboBox>()) control.Text = "";
+            foreach (var control in this.paner_Filtros.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
         }
 
 
@@ -30,23 +29,19 @@ namespace PagoElectronico.Consulta_Saldos
             this.Close();
         }
 
-        private void button_Limpiar_Click(object sender, EventArgs e)
-        {
-            LimpiarCampos();
-        }
-
         private void SeleccionCliente_Load(object sender, EventArgs e)
         {
             comboBox_Cuentas.ValueMember = "CUE_ID";
             comboBox_Cuentas.DisplayMember = "CUE_ID";
-            comboBox_Cuentas.DataSource = CapaDAO.DAOConsultaSaldos.getCuentas();
+            comboBox_Cuentas.DataSource = DAOConsultaSaldos.getCuentas();
+
+            LimpiarCampos();
         }
 
         private void button_Aceptar_Click(object sender, EventArgs e)
         {
-            Consulta_Saldos.Saldo saldoForm = new Consulta_Saldos.Saldo(Convert.ToInt64(comboBox_Cuentas.SelectedValue));
-            saldoForm.MdiParent = this.MdiParent;
-            saldoForm.Show();
+            Consulta_Saldos.Saldo saldoForm = new Consulta_Saldos.Saldo();
+            saldoForm.mostrar(this.MdiParent, Convert.ToInt64(comboBox_Cuentas.SelectedValue));
             this.Close();
         }
     }

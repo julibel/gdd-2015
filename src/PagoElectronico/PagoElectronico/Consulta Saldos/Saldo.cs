@@ -15,11 +15,17 @@ namespace PagoElectronico.Consulta_Saldos
     {
         private long cuentaID;
 
-        public Saldo(long cuenta)
+        public Saldo()
         {
             InitializeComponent();
-            cuentaID = cuenta;
         }
+
+        public override void mostrar(Form parent, params object[] values)
+        {
+            cuentaID = Convert.ToInt64(values[0]);
+            base.mostrar(parent, values);
+        }
+
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {

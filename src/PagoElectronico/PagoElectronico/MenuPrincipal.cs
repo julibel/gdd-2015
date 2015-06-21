@@ -173,7 +173,7 @@ namespace PagoElectronico
             FormBase nuevo_form = null;
             if (!puedeIngresar(18) && puedeIngresar(22))
             {
-                nuevo_form = new Consulta_Saldos.Seleccion();
+                nuevo_form = new ABM_Cuenta.Seleccion(new Consulta_Saldos.Saldo(), 0);
             }
             else if (!puedeIngresar(22) && puedeIngresar(18))
             {

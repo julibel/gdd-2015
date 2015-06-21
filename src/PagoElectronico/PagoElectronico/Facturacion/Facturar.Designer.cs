@@ -91,6 +91,7 @@
             // 
             this.textBox_Fecha.Location = new System.Drawing.Point(131, 105);
             this.textBox_Fecha.Name = "textBox_Fecha";
+            this.textBox_Fecha.ReadOnly = true;
             this.textBox_Fecha.Size = new System.Drawing.Size(186, 20);
             this.textBox_Fecha.TabIndex = 29;
             this.textBox_Fecha.TabStop = false;

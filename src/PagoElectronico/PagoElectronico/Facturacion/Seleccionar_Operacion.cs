@@ -67,8 +67,8 @@ namespace PagoElectronico.Facturacion
                 string cuenta = cuentaRow["CUE_ID"].ToString();
                 if (contarImpagas(cuenta) > 5)
                 {
-                    Mensaje_Error("Se superaron las 5 comisiones, se inhabilitará la cuenta: " + cuenta + ". Para darla de alta abone los costos adeudados", "Comisiones máximas superadas");
-                    DAOFactura.deshabilitarCuenta(Convert.ToInt64(cuenta));
+                    if (DAOFactura.deshabilitarCuenta(Convert.ToInt64(cuenta)) == 0)
+                        Mensaje_Error("Se superaron las 5 comisiones, se inhabilitará la cuenta: " + cuenta + ". Para darla de alta abone los costos adeudados", "Comisiones máximas superadas");
                 }
             }
         }

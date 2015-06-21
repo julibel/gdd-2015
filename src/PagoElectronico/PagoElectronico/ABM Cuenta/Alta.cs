@@ -82,15 +82,15 @@ namespace PagoElectronico.ABM_Cuenta
         {
             comboBox_Moneda.ValueMember = "MON_ID";
             comboBox_Moneda.DisplayMember = "NOMBRE";
-            comboBox_Moneda.DataSource = CapaDAO.DAOCuenta.getMonedas();
+            comboBox_Moneda.DataSource = DAOCuenta.getMonedas();
 
             comboBox_Pais.ValueMember = "PAI_ID";
             comboBox_Pais.DisplayMember = "NOMBRE";
-            comboBox_Pais.DataSource = CapaDAO.DAOCuenta.getPaises();
+            comboBox_Pais.DataSource = DAOCuenta.getPaises();
 
             comboBox_TipoCuenta.ValueMember = "TIP_ID";
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
-            comboBox_TipoCuenta.DataSource = CapaDAO.DAOCuenta.getTiposCuenta();
+            comboBox_TipoCuenta.DataSource = DAOCuenta.getTiposCuenta();
 
             open = true;
 
