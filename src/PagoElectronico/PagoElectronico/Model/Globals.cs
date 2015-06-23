@@ -4,12 +4,13 @@ using System.Text;
 using System.Configuration;
 using System.Windows.Forms;
 using System.Data;
+using PagoElectronico.Model;
 
 namespace PagoElectronico
 {
     class Globals
     {
-        public static int userID = 0;
+        public static int userID = -1;
         public static string username;
         private static List<int> funcionalidades = new List<int>();
 
@@ -25,9 +26,12 @@ namespace PagoElectronico
             return ConfigurationManager.AppSettings["fechaSistema"];
         }
 
-        public static void setUser(int id, string name, List<int> funcs)
+        public static void setUser(int id, string name, List<int> funcs, int rol)
         {
-            userID = id;
+            if (rol == (int)Roles.Admin)
+                userID = 0;
+            else
+                userID = id;
             username = name;
             funcionalidades = funcs;
         }

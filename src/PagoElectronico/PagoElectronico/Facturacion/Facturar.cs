@@ -177,6 +177,12 @@ namespace PagoElectronico.Facturacion
 
         private void button_Seleccion_Click(object sender, EventArgs e)
         {
+            if (textBox_Numero.Text != "A generar")
+            {
+                Mensaje_Error("Limpie los datos de la última operación");
+                return;
+            }
+
             Seleccionar_Operacion seleccionar = new Seleccionar_Operacion(this);
             this.Visible = false;
             seleccionar.mostrar(this.MdiParent);

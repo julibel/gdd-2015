@@ -33,4 +33,10 @@ namespace PagoElectronico.Model
 
        
     }
+
+    enum Roles : int
+    {
+        Admin = 1,
+        Usuario = 2
+    }
 }

@@ -53,7 +53,7 @@ namespace PagoElectronico.CapaDAO
             List<int> funcionalidades = getFuncionalidades(rol);
             int userID = getUserID(user);
             
-            Globals.setUser(userID, user, funcionalidades);
+            Globals.setUser(userID, user, funcionalidades, rol);
             
             return true;
         }

@@ -235,7 +235,7 @@ namespace PagoElectronico
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Globals.userID == 0)
+            if (Globals.userID == -1)
             {
                 Mensaje_Error("¡Todavía no inicio sesión!", "Inicie una sesión");
                 return;
