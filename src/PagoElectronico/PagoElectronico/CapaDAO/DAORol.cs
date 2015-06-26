@@ -49,7 +49,7 @@ namespace PagoElectronico.CapaDAO
 
             for (int i = 0; i < integers.Count; i++)
             {
-                ints.Add((int)integers[i].Cells[0].Value);
+                ints.Add((int)integers[i].Cells["FUN_ID"].Value);
             }
 
             return Globals.intsToDataTable(ints);

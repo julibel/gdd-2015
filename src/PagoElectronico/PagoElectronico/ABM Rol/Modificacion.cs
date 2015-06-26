@@ -32,7 +32,9 @@ namespace PagoElectronico.ABM_Rol
         {
             foreach (var control in this.groupBox1.Controls.OfType<ComboBox>()) control.Text = "";
             foreach (var control in this.paner_Alta.Controls.OfType<TextBox>()) control.Text = "";
-            dataGridView_ListaFuncionalidades.DataSource = new DataTable();
+            DataTable funcs = (DataTable)dataGridView_ListaFuncionalidades.DataSource;
+            funcs.Rows.Clear();
+            dataGridView_ListaFuncionalidades.DataSource = funcs;
         }
 
         public Modificacion()
@@ -96,7 +98,9 @@ namespace PagoElectronico.ABM_Rol
 
             if (!indices.Contains(Convert.ToString(comboBox_Funcionalidad.SelectedValue)))
             {
-                dataGridView_ListaFuncionalidades.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
+                DataTable funcs = (DataTable)dataGridView_ListaFuncionalidades.DataSource;
+                funcs.Rows.Add(comboBox_Funcionalidad.SelectedValue, comboBox_Funcionalidad.Text);
+                dataGridView_ListaFuncionalidades.DataSource = funcs;
             }
         }
 
