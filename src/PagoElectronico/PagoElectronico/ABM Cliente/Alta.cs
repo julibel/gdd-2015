@@ -258,7 +258,8 @@ namespace PagoElectronico.ABM_Cliente
 
         private void dataGridView_Tarjetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
+            if (e.ColumnIndex == 5 && e.RowIndex > -1)
+                dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
         }
 
         private void maskedTextBox1_Click(object sender, EventArgs e)

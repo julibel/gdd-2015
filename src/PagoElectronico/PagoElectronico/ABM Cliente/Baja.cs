@@ -58,6 +58,7 @@ namespace PagoElectronico.ABM_Cliente
 
                 DAOCliente.bajarCliente(id_cliente);
                 Mensaje_OK("Los datos han sido eliminados con éxito");
+                this.Close();
             }
         }
     }

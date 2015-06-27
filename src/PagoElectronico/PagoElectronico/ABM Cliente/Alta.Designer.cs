@@ -593,6 +593,10 @@
             // 
             this.dataGridView_Tarjetas.AllowUserToAddRows = false;
             this.dataGridView_Tarjetas.AllowUserToDeleteRows = false;
+            this.dataGridView_Tarjetas.AllowUserToResizeColumns = false;
+            this.dataGridView_Tarjetas.AllowUserToResizeRows = false;
+            this.dataGridView_Tarjetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_Tarjetas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView_Tarjetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Tarjetas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Numero,

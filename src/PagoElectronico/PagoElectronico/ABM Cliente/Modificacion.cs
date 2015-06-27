@@ -73,6 +73,7 @@ namespace PagoElectronico.ABM_Cliente
                 foreach (var control in panel.Controls.OfType<ComboBox>()) control.SelectedIndex = -1;
                 foreach (var control in panel.Controls.OfType<MaskedTextBox>()) control.Text = "";
             }
+            comboBox_Emisor.Text = "";
             comboBox_Nacionalidad.Text = "";
             comboBox_Pais.Text = "";
             dataGridView_Tarjetas.Rows.Clear();
@@ -193,7 +194,6 @@ namespace PagoElectronico.ABM_Cliente
                     {
                         if (Convert.ToInt32(dataGridView_Tarjetas.Rows[i].Cells[0].Value) == 0)
                         {
-                            MessageBox.Show(dataGridView_Tarjetas.Rows[i].Cells[0].Value.ToString());
                             lista_tarjetas.Add(GenerarTarjeta(dataGridView_Tarjetas.Rows[i], textBox_Nombre.Text + " " + textBox_Apellido.Text));
                         }
                     }
@@ -210,6 +210,8 @@ namespace PagoElectronico.ABM_Cliente
                     }
 
                     Mensaje_OK("Los datos han sido almacenados con éxito");
+
+                    this.Close();
                 }
                 catch (Exception ex)
                 {

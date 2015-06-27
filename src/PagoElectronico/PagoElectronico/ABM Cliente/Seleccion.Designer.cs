@@ -52,6 +52,10 @@
             // 
             this.dataGridView_Seleccion.AllowUserToAddRows = false;
             this.dataGridView_Seleccion.AllowUserToDeleteRows = false;
+            this.dataGridView_Seleccion.AllowUserToResizeColumns = false;
+            this.dataGridView_Seleccion.AllowUserToResizeRows = false;
+            this.dataGridView_Seleccion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dataGridView_Seleccion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView_Seleccion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Seleccion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Seleccionar});
@@ -69,6 +73,7 @@
             this.Seleccionar.ReadOnly = true;
             this.Seleccionar.Text = "Seleccionar";
             this.Seleccionar.UseColumnTextForButtonValue = true;
+            this.Seleccionar.Width = 69;
             // 
             // button_Buscar
             // 
