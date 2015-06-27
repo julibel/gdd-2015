@@ -36,6 +36,11 @@ namespace PagoElectronico.CapaDAO
             
         }
 
+        public static void HabilitarUsuarioExistente(string usuario)
+        {
+            executeProcedure("HABILITAR_USUARIO", usuario);
+        }
+
         public static void ModificarCliente(Persona cliente, int id)
         {
             executeProcedure("MODIFICAR_CLIENTE",
@@ -57,7 +62,23 @@ namespace PagoElectronico.CapaDAO
 
 
         }
-        
+
+
+
+
+        public static bool existeUsuario(string usuario)
+        {
+            int result = executeProcedureWithReturnValue("GET_ESTADO_USUARIO", usuario);
+            return (result > 0);
+        }
+
+
+        public static bool estaHabilitadoUsuario(string usuario)
+        {
+            int result = executeProcedureWithReturnValue("GET_ID_USUARIO", usuario);
+            return (result > 0);
+        }
+
         public static bool existeDni(string dni, int tipo)
         {
             return checkIfExists("GET_CLIENTE_DNI", dni, tipo);
