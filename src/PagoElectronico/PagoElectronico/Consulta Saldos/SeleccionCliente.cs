@@ -40,6 +40,12 @@ namespace PagoElectronico.Consulta_Saldos
 
         private void button_Aceptar_Click(object sender, EventArgs e)
         {
+            if (comboBox_Cuentas.SelectedIndex == -1)
+            {
+                Mensaje_Error("Seleccione una cuenta");
+                return;
+            }
+
             Consulta_Saldos.Saldo saldoForm = new Consulta_Saldos.Saldo();
             saldoForm.mostrar(this.MdiParent, Convert.ToInt64(comboBox_Cuentas.SelectedValue));
             this.Close();

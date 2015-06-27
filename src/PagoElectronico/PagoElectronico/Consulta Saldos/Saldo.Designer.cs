@@ -60,10 +60,10 @@
             // 
             // textBox_SaldoActual
             // 
-            this.textBox_SaldoActual.Enabled = false;
             this.textBox_SaldoActual.Location = new System.Drawing.Point(172, 53);
             this.textBox_SaldoActual.MaxLength = 15;
             this.textBox_SaldoActual.Name = "textBox_SaldoActual";
+            this.textBox_SaldoActual.ReadOnly = true;
             this.textBox_SaldoActual.Size = new System.Drawing.Size(123, 20);
             this.textBox_SaldoActual.TabIndex = 2;
             // 
