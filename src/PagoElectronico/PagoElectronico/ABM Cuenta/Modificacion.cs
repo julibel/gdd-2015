@@ -62,7 +62,7 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Limpiar_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
+            this.Close();
         }
 
         private void Modificacion_Load(object sender, EventArgs e)

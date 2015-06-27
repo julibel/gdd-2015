@@ -51,8 +51,9 @@ namespace PagoElectronico.ABM_Cuenta
             if (resultado == DialogResult.Yes)
             {
                 DAOCuenta.eliminarCuenta(cuenta);
-                LimpiarCampos();
+               
                 Mensaje_OK("Los datos han sido eliminados con éxito");
+                this.Close();
             }
         }
 
