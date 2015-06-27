@@ -23,6 +23,7 @@ namespace PagoElectronico.ABM_Rol
         {
             foreach (var control in this.groupBox1.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_Alta.Controls.OfType<TextBox>()) control.Text = "";
+            comboBox_Funcionalidad.SelectedIndex = -1;
             dataGridView_ListaFuncionalidades.Rows.Clear();
         }
 
