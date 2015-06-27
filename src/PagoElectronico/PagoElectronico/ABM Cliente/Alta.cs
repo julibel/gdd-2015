@@ -74,8 +74,6 @@ namespace PagoElectronico.ABM_Cliente
                 {
                    int id = DAOCliente.AgregarCliente(GenerarCliente(),GenerarUsuario());
 
-             
-
                    //lista tarjeta
                    var lista_tarjetas = new List<Tarjeta>();
 
@@ -109,12 +107,17 @@ namespace PagoElectronico.ABM_Cliente
             if (ValidarDatosCompletos() != null) listaDeErrores.Add(ValidarDatosCompletos());
             if (ValidarNum("Piso", textBox_Piso.Text) != null) listaDeErrores.Add(ValidarNum("Piso", textBox_Piso.Text));
             if (ValidarNum("Documento", textBox_Documento.Text) != null) listaDeErrores.Add(ValidarNum("Documento", textBox_Documento.Text));
-
+            if (ValidarUsuario() != null) listaDeErrores.Add(ValidarUsuario());
             if (listaDeErrores.Count < 1) return true;
 
             var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos: ", (current, error) => current + ("\n" + error.Descripcion));
             Mensaje_Error(mensaje);
             return false;
+        }
+
+        private Error ValidarUsuario()
+        {
+            return DAOCliente.existeUsuario(textBox_Username.Text) ? new Error("El usuario ingresado ya está asignado") : null;
         }
 
         private Error ValidarDocumento()
@@ -255,7 +258,8 @@ namespace PagoElectronico.ABM_Cliente
 
         private void dataGridView_Tarjetas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
+            if (e.ColumnIndex == 5 && e.RowIndex > -1)
+                dataGridView_Tarjetas.Rows.RemoveAt(e.RowIndex);
         }
 
         private void maskedTextBox1_Click(object sender, EventArgs e)
