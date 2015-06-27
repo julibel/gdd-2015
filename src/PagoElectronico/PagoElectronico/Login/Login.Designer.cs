@@ -45,7 +45,7 @@
             // 
             // button_IniciarSesion
             // 
-            this.button_IniciarSesion.Location = new System.Drawing.Point(385, 317);
+            this.button_IniciarSesion.Location = new System.Drawing.Point(518, 369);
             this.button_IniciarSesion.Name = "button_IniciarSesion";
             this.button_IniciarSesion.Size = new System.Drawing.Size(79, 27);
             this.button_IniciarSesion.TabIndex = 3;
@@ -56,7 +56,7 @@
             // button_Cerrar
             // 
             this.button_Cerrar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button_Cerrar.Location = new System.Drawing.Point(470, 317);
+            this.button_Cerrar.Location = new System.Drawing.Point(603, 369);
             this.button_Cerrar.Name = "button_Cerrar";
             this.button_Cerrar.Size = new System.Drawing.Size(86, 27);
             this.button_Cerrar.TabIndex = 4;
@@ -111,7 +111,7 @@
             this.groupBox1.Controls.Add(this.label_Usuario);
             this.groupBox1.Controls.Add(this.label_Contrasenia);
             this.groupBox1.Controls.Add(this.textBox_Username);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(145, 64);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(544, 299);
             this.groupBox1.TabIndex = 12;
@@ -175,7 +175,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 356);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(834, 461);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_IniciarSesion);
             this.Controls.Add(this.button_Cerrar);
