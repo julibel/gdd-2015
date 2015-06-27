@@ -16,9 +16,9 @@ namespace PagoElectronico.CapaDAO
         }
 
         //GET ALL ROLES
-        public static DataTable getRoles()
+        public static DataTable getRoles(int estado)
         {
-            return retrieveDataTable("GET_ROLES");
+            return retrieveDataTable("GET_ROLES",estado);
         }
 
         //ROL EXISTS
@@ -57,14 +57,14 @@ namespace PagoElectronico.CapaDAO
 
 
         //AGREGAR, MODIFICAR Y DAR DE BAJA
-        public static void agregarRol(string nombre, DataGridViewRowCollection funcionalidades)
+        public static void agregarRol(string nombre, DataGridViewRowCollection funcionalidades,int estado)
         {
-            executeProcedure("AGREGAR_ROL",nombre,crearData(funcionalidades));
+            executeProcedure("AGREGAR_ROL",nombre,crearData(funcionalidades),estado);
         }
 
-        public static void modificarRol(int id, string nombre, DataGridViewRowCollection funcionalidades)
+        public static void modificarRol(int id, string nombre, DataGridViewRowCollection funcionalidades,int estado)
         {
-            executeProcedure("MODIFICAR_ROL", id, nombre, crearData(funcionalidades));
+            executeProcedure("MODIFICAR_ROL", id, nombre, crearData(funcionalidades),estado);
         }
 
         public static void eliminarRol(int id)

@@ -20,8 +20,17 @@ namespace PagoElectronico.Login
             InitializeComponent();
             textBox_Username.Text = user;
             textBox_PreguntaSecreta.Text = DAOLogin.getPregunta(user);
+            if (textBox_PreguntaSecreta.Text == "")
+            {
+                textBox_RespuestaSecreta.Enabled = false;
+                button_IniciarSesion.Hide();
+            }
+            else
+            {
+                
+                this.ActiveControl = textBox_RespuestaSecreta;
+            }
             this.rolID = rolID;
-            this.ActiveControl = textBox_RespuestaSecreta;
         }
 
         private void button_Cerrar_Click(object sender, EventArgs e)
@@ -42,6 +51,11 @@ namespace PagoElectronico.Login
         private void textBox_RespuestaSecreta_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) button_IniciarSesion_Click(sender, e);
+        }
+
+        private void Autentificar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

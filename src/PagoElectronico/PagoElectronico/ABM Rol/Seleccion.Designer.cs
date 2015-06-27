@@ -52,7 +52,10 @@
             // 
             this.dataGridView_SeleccionRol.AllowUserToAddRows = false;
             this.dataGridView_SeleccionRol.AllowUserToDeleteRows = false;
+            this.dataGridView_SeleccionRol.AllowUserToResizeColumns = false;
+            this.dataGridView_SeleccionRol.AllowUserToResizeRows = false;
             this.dataGridView_SeleccionRol.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_SeleccionRol.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView_SeleccionRol.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_SeleccionRol.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Indice,

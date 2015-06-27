@@ -24,6 +24,7 @@ namespace PagoElectronico.ABM_Rol
             foreach (var control in this.groupBox1.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in this.paner_Alta.Controls.OfType<TextBox>()) control.Text = "";
             comboBox_Funcionalidad.SelectedIndex = -1;
+            checkBox1.Checked = true;
             dataGridView_ListaFuncionalidades.Rows.Clear();
         }
 
@@ -41,9 +42,11 @@ namespace PagoElectronico.ABM_Rol
         {
             DataTable funcionalidades = DAORol.getFuncionalidades();
 
+         
             comboBox_Funcionalidad.ValueMember = "FUN_ID";
             comboBox_Funcionalidad.DisplayMember = "NOMBRE";
             comboBox_Funcionalidad.DataSource = funcionalidades;
+            LimpiarCampos();
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
@@ -55,12 +58,8 @@ namespace PagoElectronico.ABM_Rol
         {
             if (DAORol.existeRol(textBox_Nombre.Text))
             {
-                var res = Mensaje_Pregunta("El Rol ya existe pero está desactivado ¿Desea activarlo?", "Activar Rol");
-                if (res == DialogResult.Yes)
-                {
-                    CapaDAO.DAORol.activarRol(textBox_Nombre.Text);
-                    Mensaje_OK("El Rol ha sido activado");
-                }
+
+                Mensaje_Error("El Rol ya existe en la base de datos");
                 return;
             }
 
@@ -72,9 +71,17 @@ namespace PagoElectronico.ABM_Rol
             var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
             if (resultado == DialogResult.Yes)
             {
-                DAORol.agregarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
+                int estado = 0;
+                if (checkBox1.Checked == true)
+                {
+                    estado = 1;
+                }
+
+
+                DAORol.agregarRol(textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows,estado);
 
                 Mensaje_OK("Los datos han sido almacenados con éxito");
+                LimpiarCampos();
             }
         }
 
