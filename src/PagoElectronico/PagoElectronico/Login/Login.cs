@@ -61,6 +61,7 @@ namespace PagoElectronico.Login
 
             if (DAOLogin.iniciarSesionConPassword(user, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
             {
+                MenuPrincipal.showControls();
                 this.Close();
             }
             else
@@ -85,7 +86,6 @@ namespace PagoElectronico.Login
         {
             textBox_Username.Text = "ilva_cruz@gmail.com";
             this.ActiveControl = textBox_Username;
-
         }
     }
 }

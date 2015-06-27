@@ -13,7 +13,9 @@ namespace PagoElectronico
 {
     public partial class MenuPrincipal : FormBase
     {
-        public ToolStripMenuItem[] controles = new ToolStripMenuItem[]{};
+        public static ToolStripMenuItem[] controles = new ToolStripMenuItem[]{};
+        public static List<ToolStripMenuItem> allControles = new List<ToolStripMenuItem>();
+        public static ToolStrip strip = null;
 
         public MenuPrincipal()
         {
@@ -24,8 +26,16 @@ namespace PagoElectronico
         {
             Login.Login login = new Login.Login();
             login.mostrar(this);
+            this.menuStrip1.Visible = false;
 
-            controles = new ToolStripMenuItem[] { altaRol, bajaRol, modificacionRol, altaCliente, bajaCliente, modificacionCliente, altaCuenta, bajaCuenta, modificacionCuenta, modificarCostosCuenta, asociarTarjeta, desasociarTarjeta, modificarTarjeta, deposito, retiroEfectivo, transferencia, facturacion, consultaSaldo, modificacionContrasenia, modificacionCategoriaCuenta, listadoEstadistico };
+            controles = new ToolStripMenuItem[] { altaRol, bajaRol, modificacionRol, altaCliente, bajaCliente, modificacionCliente, altaCuenta, bajaCuenta, modificacionCuenta, modificarCostosCuenta, asociarTarjeta, desasociarTarjeta, modificarTarjeta, deposito, retiroEfectivo, transferencia, facturacion, consultaSaldo, modificacionContrasenia, modificacionCategoriaCuenta, listadoEstadistico, consultaSaldo };
+
+            foreach (ToolStripMenuItem tool in this.menuStrip1.Items/*Controls.OfType<ToolStripMenuItem>()*/)
+                allControles.Add(tool);
+            allControles.Remove(cerrarSesion);
+            allControles.Remove(salir);
+
+            strip = this.menuStrip1;
         }
 
         private bool noPuedeIngresar(int idFun)
@@ -248,12 +258,31 @@ namespace PagoElectronico
             Globals.cerrarSesion();
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             Login.Login login = new Login.Login();
-            login.MdiParent = this;
-            login.Show();
+            login.mostrar(this);
+            this.menuStrip1.Visible = false;
         }
 
-        public static void hideControls()
+        private static void hideControls()
         {
+            foreach (ToolStripMenuItem control in allControles)
+                control.Visible = false;
+        }
+
+        public static void showControls()
+        {
+            strip.Visible = true;
+            hideControls();
+
+            for(int i = 0; i < controles.Count(); i++)
+            {
+                if (Globals.tieneFuncionalidad(i + 1))
+                {
+                    controles[i].Visible = true;
+                    if (controles[i].OwnerItem != null)
+                        controles[i].OwnerItem.Visible = true;
+                }
+            }
+
         }
     }
 }
