@@ -47,17 +47,18 @@ namespace PagoElectronico.ABM_Cuenta
                 return;
             }
 
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cuenta");
             if (resultado == DialogResult.Yes)
             {
-                DAOCuenta.modificarCuenta(cuenta, cliente, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_Pais.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToInt32(comboBox_EstadoCuenta.SelectedValue));
-                Mensaje_OK("Los datos han sido almacenados con exito");
+                DAOCuenta.modificarCuenta(cuenta, cliente, Convert.ToInt32(comboBox_Moneda.SelectedValue), Convert.ToInt32(comboBox_Pais.SelectedValue), Convert.ToInt32(comboBox_TipoCuenta.SelectedValue), Convert.ToInt32(checkBox_Estado.Checked));
+                Mensaje_OK("Los datos han sido almacenados con éxito");
+                this.Close();
             }
         }
 
         private bool camposCorrectos()
         {
-            return textBox_NumeroCuenta.Text != "" && comboBox_Pais.Text != "" && comboBox_Moneda.Text != "" && comboBox_TipoCuenta.Text != "" && comboBox_EstadoCuenta.Text != "";
+            return textBox_NumeroCuenta.Text != "" && comboBox_Pais.Text != "" && comboBox_Moneda.Text != "" && comboBox_TipoCuenta.Text != "";
         }
 
         private void button_Limpiar_Click(object sender, EventArgs e)
@@ -78,10 +79,6 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_TipoCuenta.ValueMember = "TIP_ID";
             comboBox_TipoCuenta.DisplayMember = "NOMBRE";
             comboBox_TipoCuenta.DataSource = DAOCuenta.getTiposCuenta();
-
-            comboBox_EstadoCuenta.ValueMember = "EST_ID";
-            comboBox_EstadoCuenta.DisplayMember = "NOMBRE";
-            comboBox_EstadoCuenta.DataSource = DAOCuenta.getEstadosCuenta();
             
             DataTable cuenta = DAOCuenta.getCuenta(this.cuenta);
             cliente = Convert.ToInt32(cuenta.Rows[0]["CLIENTE"]);
@@ -89,7 +86,14 @@ namespace PagoElectronico.ABM_Cuenta
             comboBox_Moneda.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["MONEDA"]);
             comboBox_Pais.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["PAIS"]);
             comboBox_TipoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["TIPO"]);
-            comboBox_EstadoCuenta.SelectedValue = Convert.ToInt32(cuenta.Rows[0]["ESTADO"]);
+            
+            int estado = Convert.ToInt32(cuenta.Rows[0]["ESTADO"]);
+            if (estado == 4)
+            {
+                checkBox_Estado.Visible = true;
+                checkBox_Estado.Checked = false;
+                label1.Visible = true;
+            }
         }
     }
 }

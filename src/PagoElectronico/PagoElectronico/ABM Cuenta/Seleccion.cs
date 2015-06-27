@@ -82,5 +82,11 @@ namespace PagoElectronico.ABM_Cuenta
             caller.mostrar(this.MdiParent, cuenta);
             this.Close();
         }
+
+        private void textBox_NumeroCuenta_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                button_Buscar_Click(sender, e);
+        }
     }
 }

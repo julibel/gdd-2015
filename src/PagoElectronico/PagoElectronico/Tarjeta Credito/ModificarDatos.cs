@@ -15,6 +15,7 @@ namespace PagoElectronico.Tarjeta_Credito
     {
         private void LimpiarCampos()
         {
+            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getAllTarjetas();
             foreach (var control in groupBox1.Controls.OfType<TextBox>()) control.Text = "";
             foreach (var control in groupBox1.Controls.OfType<ComboBox>())
             {

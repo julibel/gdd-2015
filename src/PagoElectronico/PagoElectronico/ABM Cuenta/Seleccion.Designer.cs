@@ -96,6 +96,7 @@
             this.textBox_NumeroCuenta.Name = "textBox_NumeroCuenta";
             this.textBox_NumeroCuenta.Size = new System.Drawing.Size(232, 20);
             this.textBox_NumeroCuenta.TabIndex = 0;
+            this.textBox_NumeroCuenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_NumeroCuenta_KeyDown);
             // 
             // label_NumeroCuenta
             // 
@@ -136,6 +137,7 @@
             this.comboBox_TipoCuenta.Name = "comboBox_TipoCuenta";
             this.comboBox_TipoCuenta.Size = new System.Drawing.Size(121, 21);
             this.comboBox_TipoCuenta.TabIndex = 2;
+            this.comboBox_TipoCuenta.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_NumeroCuenta_KeyDown);
             // 
             // paner_Filtros
             // 
@@ -163,6 +165,7 @@
             this.comboBox_Pais.Name = "comboBox_Pais";
             this.comboBox_Pais.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Pais.TabIndex = 1;
+            this.comboBox_Pais.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_NumeroCuenta_KeyDown);
             // 
             // button_Cerrar
             // 
