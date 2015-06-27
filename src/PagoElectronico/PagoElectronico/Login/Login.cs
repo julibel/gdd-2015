@@ -20,7 +20,7 @@ namespace PagoElectronico.Login
 
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void button_OlvidoContrasenia_Click(object sender, EventArgs e)
