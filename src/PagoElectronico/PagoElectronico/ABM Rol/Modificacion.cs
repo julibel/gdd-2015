@@ -32,21 +32,31 @@ namespace PagoElectronico.ABM_Rol
         {
             foreach (var control in this.groupBox1.Controls.OfType<ComboBox>()) control.Text = "";
             foreach (var control in this.paner_Alta.Controls.OfType<TextBox>()) control.Text = "";
+            comboBox_Funcionalidad.SelectedIndex = -1;
             DataTable funcs = (DataTable)dataGridView_ListaFuncionalidades.DataSource;
             funcs.Rows.Clear();
             dataGridView_ListaFuncionalidades.DataSource = funcs;
+            checkBox1.Checked = true;
         }
 
         public Modificacion()
         {
             InitializeComponent();
+           
+           
         }
 
         private void ArmarPorId(string id)
         {
             DataTable rol = DAORol.getRol(id);
-
+          
             textBox_Nombre.Text = Convert.ToString(rol.Rows[0]["NOMBRE"]);
+
+            if (Convert.ToInt32(rol.Rows[0]["ESTADO"]) == 1)
+            {
+                checkBox1.Hide();
+                label1.Hide();
+            }
 
             DataTable dt = DAORol.getFuncionalidades();
 
@@ -76,9 +86,16 @@ namespace PagoElectronico.ABM_Rol
             var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Rol");
             if (resultado == DialogResult.Yes)
             {
-                DAORol.modificarRol(idRol, textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows);
+                int estado = 0;
+                if (checkBox1.Checked == true)
+                {
+                    estado = 1;
+                }
+
+                DAORol.modificarRol(idRol, textBox_Nombre.Text, dataGridView_ListaFuncionalidades.Rows,estado);
 
                 Mensaje_OK("Los datos han sido actualizados con éxito");
+                this.Close();
             }
         }
 
@@ -108,6 +125,11 @@ namespace PagoElectronico.ABM_Rol
         {
             if (e.RowIndex < 0 || e.ColumnIndex != 0) return;
             dataGridView_ListaFuncionalidades.Rows.RemoveAt(e.RowIndex);
+        }
+
+        private void Modificacion_Load(object sender, EventArgs e)
+        {
+            comboBox_Funcionalidad.SelectedIndex = -1;
         }
     }
 }

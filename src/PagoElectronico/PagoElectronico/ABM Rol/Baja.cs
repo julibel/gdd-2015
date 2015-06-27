@@ -51,6 +51,7 @@ namespace PagoElectronico.ABM_Rol
             {
                 DAORol.eliminarRol(idRol);
                 Mensaje_OK("Los datos han sido eliminados con éxito");
+                this.Close();
             }
         }
     }

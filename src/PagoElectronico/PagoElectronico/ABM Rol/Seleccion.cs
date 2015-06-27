@@ -14,6 +14,13 @@ namespace PagoElectronico.ABM_Rol
     public partial class Seleccion : FormBase
     {
         private FormBase caller;
+        private int estado;
+
+        public override void mostrar(Form parent, params object[] values)
+        {
+            estado = (int)values[0];
+            base.mostrar(parent);
+        }
 
         public Seleccion(FormBase caller)
         {
@@ -28,7 +35,7 @@ namespace PagoElectronico.ABM_Rol
 
         private void Seleccion_Load(object sender, EventArgs e)
         {
-            DataTable roles = DAORol.getRoles();
+            DataTable roles = DAORol.getRoles(estado);
 
             dataGridView_SeleccionRol.Rows.Add(roles.Rows.Count);
             Int32 i = 0;

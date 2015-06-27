@@ -56,6 +56,10 @@
             // 
             this.dataGridView_ListaFuncionalidades.AllowUserToAddRows = false;
             this.dataGridView_ListaFuncionalidades.AllowUserToDeleteRows = false;
+            this.dataGridView_ListaFuncionalidades.AllowUserToResizeColumns = false;
+            this.dataGridView_ListaFuncionalidades.AllowUserToResizeRows = false;
+            this.dataGridView_ListaFuncionalidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_ListaFuncionalidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView_ListaFuncionalidades.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_ListaFuncionalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_ListaFuncionalidades.GridColor = System.Drawing.SystemColors.ControlText;

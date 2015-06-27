@@ -31,6 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox_Funcionalidad = new System.Windows.Forms.ComboBox();
             this.button_Agregar = new System.Windows.Forms.Button();
@@ -44,8 +46,6 @@
             this.button_Limpiar = new System.Windows.Forms.Button();
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.paner_Alta.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListaFuncionalidades)).BeginInit();
@@ -67,6 +67,27 @@
             this.paner_Alta.TabIndex = 18;
             this.paner_Alta.TabStop = false;
             this.paner_Alta.Text = "Datos del Rol";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(55, 124);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Estado";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(105, 123);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 17);
+            this.checkBox1.TabIndex = 10;
+            this.checkBox1.Text = "Habilitado";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -116,6 +137,10 @@
             // 
             this.dataGridView_ListaFuncionalidades.AllowUserToAddRows = false;
             this.dataGridView_ListaFuncionalidades.AllowUserToDeleteRows = false;
+            this.dataGridView_ListaFuncionalidades.AllowUserToResizeColumns = false;
+            this.dataGridView_ListaFuncionalidades.AllowUserToResizeRows = false;
+            this.dataGridView_ListaFuncionalidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_ListaFuncionalidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView_ListaFuncionalidades.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_ListaFuncionalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_ListaFuncionalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -204,27 +229,6 @@
             this.button_Cerrar.Text = "Cerrar";
             this.button_Cerrar.UseVisualStyleBackColor = true;
             this.button_Cerrar.Click += new System.EventHandler(this.button_Cerrar_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(105, 123);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(73, 17);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Habilitado";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label1.Location = new System.Drawing.Point(55, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Estado";
             // 
             // Alta
             // 

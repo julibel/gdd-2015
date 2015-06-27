@@ -32,14 +32,16 @@
             this.button_Guardar = new System.Windows.Forms.Button();
             this.button_Cerrar = new System.Windows.Forms.Button();
             this.paner_Alta = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBox_Funcionalidad = new System.Windows.Forms.ComboBox();
             this.label_Funcionalidad = new System.Windows.Forms.Label();
             this.button_Agregar = new System.Windows.Forms.Button();
             this.dataGridView_ListaFuncionalidades = new System.Windows.Forms.DataGridView();
+            this.Elimnar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label_Nombre = new System.Windows.Forms.Label();
             this.textBox_Nombre = new System.Windows.Forms.TextBox();
-            this.Elimnar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.paner_Alta.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_ListaFuncionalidades)).BeginInit();
@@ -77,6 +79,8 @@
             // 
             // paner_Alta
             // 
+            this.paner_Alta.Controls.Add(this.label1);
+            this.paner_Alta.Controls.Add(this.checkBox1);
             this.paner_Alta.Controls.Add(this.groupBox1);
             this.paner_Alta.Controls.Add(this.dataGridView_ListaFuncionalidades);
             this.paner_Alta.Controls.Add(this.label_Nombre);
@@ -89,6 +93,27 @@
             this.paner_Alta.TabIndex = 35;
             this.paner_Alta.TabStop = false;
             this.paner_Alta.Text = "Datos del Rol";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(55, 113);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Estado";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(105, 112);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(73, 17);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Habilitado";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -138,6 +163,10 @@
             // 
             this.dataGridView_ListaFuncionalidades.AllowUserToAddRows = false;
             this.dataGridView_ListaFuncionalidades.AllowUserToDeleteRows = false;
+            this.dataGridView_ListaFuncionalidades.AllowUserToResizeColumns = false;
+            this.dataGridView_ListaFuncionalidades.AllowUserToResizeRows = false;
+            this.dataGridView_ListaFuncionalidades.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_ListaFuncionalidades.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView_ListaFuncionalidades.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView_ListaFuncionalidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_ListaFuncionalidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -149,6 +178,13 @@
             this.dataGridView_ListaFuncionalidades.Size = new System.Drawing.Size(378, 370);
             this.dataGridView_ListaFuncionalidades.TabIndex = 3;
             this.dataGridView_ListaFuncionalidades.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_ListaFuncionalidades_CellContentClick);
+            // 
+            // Elimnar
+            // 
+            this.Elimnar.HeaderText = "Eliminar";
+            this.Elimnar.Name = "Elimnar";
+            this.Elimnar.Text = "Eliminar Fila";
+            this.Elimnar.UseColumnTextForButtonValue = true;
             // 
             // label_Nombre
             // 
@@ -169,13 +205,6 @@
             this.textBox_Nombre.Size = new System.Drawing.Size(232, 20);
             this.textBox_Nombre.TabIndex = 0;
             // 
-            // Elimnar
-            // 
-            this.Elimnar.HeaderText = "Eliminar";
-            this.Elimnar.Name = "Elimnar";
-            this.Elimnar.Text = "Eliminar Fila";
-            this.Elimnar.UseColumnTextForButtonValue = true;
-            // 
             // Modificacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,6 +222,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Modificacion";
+            this.Load += new System.EventHandler(this.Modificacion_Load);
             this.paner_Alta.ResumeLayout(false);
             this.paner_Alta.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -216,5 +246,7 @@
         private System.Windows.Forms.ComboBox comboBox_Funcionalidad;
         private System.Windows.Forms.Label label_Funcionalidad;
         private System.Windows.Forms.DataGridViewButtonColumn Elimnar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
