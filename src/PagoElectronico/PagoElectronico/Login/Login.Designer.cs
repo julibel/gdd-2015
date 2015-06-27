@@ -145,7 +145,7 @@
             this.button_OlvidoContrasenia.Name = "button_OlvidoContrasenia";
             this.button_OlvidoContrasenia.Size = new System.Drawing.Size(129, 23);
             this.button_OlvidoContrasenia.TabIndex = 5;
-            this.button_OlvidoContrasenia.Text = "¿Olvido su contraseña?";
+            this.button_OlvidoContrasenia.Text = "¿Olvidó su contraseña?";
             this.button_OlvidoContrasenia.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button_OlvidoContrasenia.UseVisualStyleBackColor = true;
             this.button_OlvidoContrasenia.Click += new System.EventHandler(this.button_OlvidoContrasenia_Click);
@@ -168,7 +168,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(275, 39);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Pago Electronico";
+            this.label1.Text = "Pago Electrónico";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Login

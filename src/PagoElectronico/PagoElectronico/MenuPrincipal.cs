@@ -13,6 +13,8 @@ namespace PagoElectronico
 {
     public partial class MenuPrincipal : FormBase
     {
+        public ToolStripMenuItem[] controles = new ToolStripMenuItem[]{};
+
         public MenuPrincipal()
         {
             InitializeComponent();
@@ -23,7 +25,7 @@ namespace PagoElectronico
             Login.Login login = new Login.Login();
             login.mostrar(this);
 
-            
+            controles = new ToolStripMenuItem[] { altaRol, bajaRol, modificacionRol, altaCliente, bajaCliente, modificacionCliente, altaCuenta, bajaCuenta, modificacionCuenta, modificarCostosCuenta, asociarTarjeta, desasociarTarjeta, modificarTarjeta, deposito, retiroEfectivo, transferencia, facturacion, consultaSaldo, modificacionContrasenia, modificacionCategoriaCuenta, listadoEstadistico };
         }
 
         private bool noPuedeIngresar(int idFun)
@@ -248,6 +250,10 @@ namespace PagoElectronico
             Login.Login login = new Login.Login();
             login.MdiParent = this;
             login.Show();
+        }
+
+        public static void hideControls()
+        {
         }
     }
 }

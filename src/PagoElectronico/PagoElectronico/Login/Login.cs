@@ -53,6 +53,12 @@ namespace PagoElectronico.Login
                 return;
             }
 
+            if (comboBox_Roles.SelectedIndex == -1)
+            {
+                Mensaje_Error("No se seleccionó rol");
+                return;
+            }
+
             if (DAOLogin.iniciarSesionConPassword(user, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
             {
                 this.Close();
@@ -79,6 +85,7 @@ namespace PagoElectronico.Login
         {
             textBox_Username.Text = "ilva_cruz@gmail.com";
             this.ActiveControl = textBox_Username;
+
         }
     }
 }
