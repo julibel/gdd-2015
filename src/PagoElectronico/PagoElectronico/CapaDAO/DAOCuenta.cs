@@ -74,5 +74,10 @@ namespace PagoElectronico.CapaDAO
         {   
             return retrieveDataTable("FIND_CUENTAS", numero, pais, tipo, Globals.intsToDataTable(estados));
         }
+
+        public static bool tieneDeudas(long cuenta)
+        {
+            return checkIfExists("GET_COMISIONES_CUENTA", cuenta);
+        }
     }
 }

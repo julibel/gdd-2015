@@ -47,7 +47,11 @@ namespace PagoElectronico.ABM_Cuenta
 
         private void button_Borrar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar la cuenta del sistema?", "Eliminar Cuenta");
+            DialogResult resultado;
+            if (DAOCuenta.tieneDeudas(cuenta))
+                resultado = Mensaje_Pregunta("La cuenta tiene deudas pendientes. ¿Está seguro que quiere darla de baja?", "Deudas Pendientes");
+            else
+                resultado = Mensaje_Pregunta("¿Está seguro que desea eliminar la cuenta del sistema?", "Eliminar Cuenta");
             if (resultado == DialogResult.Yes)
             {
                 DAOCuenta.eliminarCuenta(cuenta);

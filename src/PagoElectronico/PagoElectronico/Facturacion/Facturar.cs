@@ -71,7 +71,7 @@ namespace PagoElectronico.Facturacion
                     long numFactura = DAOFactura.crearFactura(comisionesID, maskedTextBox_numeroTarjeta.Text, Convert.ToDouble(textBox_montoTotal.Text));
                     textBox_Numero.Text = Convert.ToString(numFactura);
                     revisarCuentas();
-                    Mensaje_OK("Los datos han sido almacenados con éxito");
+                    Mensaje_OK("El pago fue realizado con éxito");
                 }
                 catch (Exception ex)
                 {
