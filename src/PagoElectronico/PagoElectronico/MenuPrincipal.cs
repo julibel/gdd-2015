@@ -21,9 +21,9 @@ namespace PagoElectronico
         private void FormBase_Load(object sender, EventArgs e)
         {
             Login.Login login = new Login.Login();
+            login.mostrar(this);
 
-            login.MdiParent = this;
-            login.Show();
+            
         }
 
         private bool noPuedeIngresar(int idFun)
@@ -61,7 +61,7 @@ namespace PagoElectronico
             if (noPuedeIngresar(2)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             ABM_Rol.Seleccion nuevo_form = new ABM_Rol.Seleccion(new ABM_Rol.Baja());
-            nuevo_form.mostrar(this);
+            nuevo_form.mostrar(this, 1);
         }
 
         private void modificacionToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -69,7 +69,7 @@ namespace PagoElectronico
             if (noPuedeIngresar(3)) return;
             if (ActiveMdiChild != null) ActiveMdiChild.Close();
             ABM_Rol.Seleccion nuevo_form = new ABM_Rol.Seleccion(new ABM_Rol.Modificacion());
-            nuevo_form.mostrar(this); 
+            nuevo_form.mostrar(this, 0); 
         }
 
         private void altaToolStripMenuItem4_Click(object sender, EventArgs e)
