@@ -21,6 +21,14 @@ namespace PagoElectronico.ABM_Cliente
             Persona cliente = (Persona)values[0];
             List<Tarjeta> tarjetas = (List<Tarjeta>)values[2];
 
+            comboBox_Pais.ValueMember = "PAI_ID";
+            comboBox_Pais.DisplayMember = "NOMBRE";
+            comboBox_Pais.DataSource = DAOCuenta.getPaises();
+
+            comboBox_Nacionalidad.ValueMember = "PAI_ID";
+            comboBox_Nacionalidad.DisplayMember = "NOMBRE";
+            comboBox_Nacionalidad.DataSource = DAOCuenta.getPaises();
+
             this.cliente = cliente;
             textBox_Calle.Text = cliente.Calle;
             textBox_Apellido.Text = cliente.Apellido;
@@ -30,8 +38,10 @@ namespace PagoElectronico.ABM_Cliente
             textBox_Localidad.Text = cliente.Localidad;
             textBox_Mail.Text = cliente.Mail;
             comboBox_Nacionalidad.Text = cliente.Pais_Nacionalidad;
+            comboBox_Nacionalidad.SelectedValue = cliente.Paid_Nacionalidad_Id;
             textBox_Nombre.Text = cliente.Nombre;
             comboBox_Pais.Text = cliente.Pais_Actual;
+            comboBox_Pais.SelectedValue = cliente.Paid_Actual_Id;
             textBox_Piso.Text = cliente.Piso.ToString();
             comboBox_Tipo_doc.SelectedIndex = cliente.TipoDoc - 1;
             checkBox_Estado.Checked = Convert.ToBoolean(cliente.Activo);
@@ -89,14 +99,6 @@ namespace PagoElectronico.ABM_Cliente
 
         private void Modificacion_Load(object sender, EventArgs e)
         {
-            comboBox_Pais.ValueMember = "PAI_ID";
-            comboBox_Pais.DisplayMember = "NOMBRE";
-            comboBox_Pais.DataSource = DAOCuenta.getPaises();
-
-            comboBox_Nacionalidad.ValueMember = "PAI_ID";
-            comboBox_Nacionalidad.DisplayMember = "NOMBRE";
-            comboBox_Nacionalidad.DataSource = DAOCuenta.getPaises();
-
             comboBox_Emisor.ValueMember = "EMI_ID";
             comboBox_Emisor.DisplayMember = "NOMBRE";
             comboBox_Emisor.DataSource = DAOTarjeta.getEmisores();
@@ -116,7 +118,7 @@ namespace PagoElectronico.ABM_Cliente
 
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
+            var mensaje = listaDeErrores.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
             Mensaje_Error(mensaje);
             return false;
         }
@@ -125,7 +127,7 @@ namespace PagoElectronico.ABM_Cliente
         {
             if (DAOCliente.existeDni(textBox_Documento.Text, comboBox_Tipo_doc.SelectedIndex + 1) && textBox_Documento.Text != cliente.Documento)
             {
-                 return new Error("El documento ingresado ya está asignado a un usuario registrado.");
+                 return new Error("El documento ingresado ya está asignado a un usuario registrado");
             }
             else 
             {
@@ -137,7 +139,7 @@ namespace PagoElectronico.ABM_Cliente
         {
             if (DAOCliente.existeMail(textBox_Mail.Text) && textBox_Mail.Text != cliente.Mail)
             {
-                return new Error("El email ingresado ya está asignado a un usuario registrado.");
+                return new Error("El email ingresado ya está asignado a un usuario registrado");
             }
             else
             {
@@ -147,12 +149,12 @@ namespace PagoElectronico.ABM_Cliente
 
         private Error ValidarDatosCompletos()
         {
-            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario.") : null;
+            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario") : null;
         }
 
         private Error ValidarNum(string campo, string texto)
         {
-            return (ValidarNumeros(texto)) ? new Error("El campo " + campo + " debe ser tipo numerico") : null;
+            return (ValidarNumeros(texto)) ? new Error("El campo " + campo + " debe ser tipo numérico") : null;
         }
 
         private bool ValidarCamposCompletos()
@@ -215,7 +217,7 @@ namespace PagoElectronico.ABM_Cliente
                 }
                 catch (Exception ex)
                 {
-                    Mensaje_Error("ERROR.-" + ex.Message);
+                    Mensaje_Error("ERROR: " + ex.Message);
                 }
             }
         }

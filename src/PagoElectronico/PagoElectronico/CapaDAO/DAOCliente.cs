@@ -12,6 +12,7 @@ namespace PagoElectronico.CapaDAO
     {
         public static int AgregarCliente(Persona cliente,Usuario usuario)
         {
+            MessageBox.Show(cliente.Pais_Nacionalidad + "     " + cliente.Pais_Actual);
             int id = executeProcedureWithReturnValue("AGREGAR_CLIENTE", 
                 cliente.Nombre, 
                 cliente.Apellido, 

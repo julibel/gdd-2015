@@ -42,6 +42,7 @@ namespace PagoElectronico.Login
         {
             if(DAOLogin.iniciarSesionConRespuesta(textBox_Username.Text, rolID, textBox_RespuestaSecreta.Text))
             {
+                MenuPrincipal.showControls();
                 this.Close();
             }
             else

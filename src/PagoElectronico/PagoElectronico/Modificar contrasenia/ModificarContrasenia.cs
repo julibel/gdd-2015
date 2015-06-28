@@ -51,20 +51,25 @@ namespace PagoElectronico.Modificar_contrasenia
         {
 
 
-            var resultado = Mensaje_Pregunta("¿Esta seguro que desea guardar los datos ingresados en el formulario?", "Guardar nueva contrasenia");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea cambiar la contraseña?", "Cambiar contraseña");
             if (resultado == DialogResult.Yes)
             {
+                if (!DAOLogin.contraseniaCorrecta(Globals.username, textBox_PasswordActual.Text))
+                {
+                    Mensaje_Error("La contraseña actual no coincide con la ingresada");
+                    return;
+                }
                 if (!Validaciones()) return;
                 try
                 {
                     DAOUsuario.modificarContrasenia(Globals.userID,
                     Encriptacion.getSHA256(textBox_NuevaPassword.Text));
-                    Mensaje_OK("Los datos han sido almacenados con exito", "");
+                    Mensaje_OK("La contraseña fue actualizada", "Nueva contraseña");
                     LimpiarCampos();
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR.-" + ex.Message);
+                    Mensaje_Error("ERROR: " + ex.Message);
                 }       
 
               
@@ -79,14 +84,14 @@ namespace PagoElectronico.Modificar_contrasenia
            
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos:", (current, error) => current + ("\n" + error.Descripcion));
-            MessageBox.Show(mensaje);
+            var mensaje = listaDeErrores.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
+            Mensaje_Error(mensaje);
             return false;
         }
 
         private Error ValidarDatosCompletos()
         {
-            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario.") : null;
+            return (ValidarCamposCompletos()) ? new Error("Complete todos los campos del formulario") : null;
         }
 
         private bool ValidarCamposCompletos()

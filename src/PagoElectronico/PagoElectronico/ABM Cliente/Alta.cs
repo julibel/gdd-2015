@@ -110,7 +110,7 @@ namespace PagoElectronico.ABM_Cliente
             if (ValidarUsuario() != null) listaDeErrores.Add(ValidarUsuario());
             if (listaDeErrores.Count < 1) return true;
 
-            var mensaje = listaDeErrores.Aggregate("Error en la validacion de datos: ", (current, error) => current + ("\n" + error.Descripcion));
+            var mensaje = listaDeErrores.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
             Mensaje_Error(mensaje);
             return false;
         }
@@ -137,7 +137,7 @@ namespace PagoElectronico.ABM_Cliente
 
         private Error ValidarNum(string campo, string texto)
         {
-            return (ValidarNumeros(texto)) ? new Error("El campo "+campo+" debe ser tipo numerico") : null;
+            return (ValidarNumeros(texto)) ? new Error("El campo "+campo+" debe ser tipo numérico") : null;
         }
 
         private Persona GenerarCliente()
@@ -198,7 +198,7 @@ namespace PagoElectronico.ABM_Cliente
         }
         private Error ValidarLong()
         {
-            return (ValidarLongitud()) ? new Error("Debe ingresar un numero de tarjeta de 16 digitos") : null;
+            return (ValidarLongitud()) ? new Error("Debe ingresar un numero de tarjeta de 16 dígitos") : null;
         }
 
 
@@ -220,6 +220,7 @@ namespace PagoElectronico.ABM_Cliente
 
                 string[] row = {numero, codSeg, emisor, fechaEmision, fechaVencimiento};
                 dataGridView_Tarjetas.Rows.Add(row);
+                LimpiarTarjetas();
             }
             else
             {
@@ -228,6 +229,13 @@ namespace PagoElectronico.ABM_Cliente
             }
 
 
+        }
+
+        private void LimpiarTarjetas()
+        {
+            foreach (var control in this.groupBox_AsociarTarjetas.Controls.OfType<MaskedTextBox>()) control.Text = "";
+            comboBox_Emisor.SelectedIndex = -1;
+            comboBox_Emisor.Text = "";
         }
 
         private bool ValidarDatosTarjeta()
@@ -270,11 +278,22 @@ namespace PagoElectronico.ABM_Cliente
         private string calcularVencimiento()
         {
             string fecha = maskedTextBox1.Text;
+            string fechaVen = fecha.Substring(0, 6) + (Convert.ToInt32(fecha.Substring(6, 4)) + 3).ToString();
+            try
+            {
+                if (fecha.Length < 10)
+                    throw new Exception();
+                else
 
-            if (fecha.Length < 10)
-                Mensaje_Error("Fecha inválida");
-            else
-                return fecha.Substring(0, 6) + (Convert.ToInt32(fecha.Substring(6, 4)) + 3).ToString();
+                    if (Convert.ToDateTime(fechaVen) < Convert.ToDateTime(Globals.getFechaSistema()))
+                        Mensaje_Error("La tarjeta está vencida");
+                    else
+                        return fechaVen;
+             }
+             catch
+             {
+                    Mensaje_Error("Fecha inválida");
+             }
             return "";
         }
 

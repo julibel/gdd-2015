@@ -27,7 +27,7 @@ namespace PagoElectronico.CapaDAO
 
         public static bool iniciarSesionConPassword(string user, int rol, string pass)
         {
-            if (executeProcedureWithReturnValue("PASSWORD_CORRECTA", user, Encriptacion.getSHA256(pass)) != 0)
+            if (contraseniaCorrecta(user, pass))
             {
                 loginCorrecto(user);
                 return iniciarSesion(user, rol);
@@ -90,6 +90,11 @@ namespace PagoElectronico.CapaDAO
         public static DataTable getRolesUsuario(string user)
         {
             return retrieveDataTable("GET_ROLES_USUARIO", user);
+        }
+
+        public static bool contraseniaCorrecta(string user, string pass)
+        {
+            return executeProcedureWithReturnValue("PASSWORD_CORRECTA", user, Encriptacion.getSHA256(pass)) != 0;
         }
     }
 }

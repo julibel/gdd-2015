@@ -10,7 +10,7 @@ namespace PagoElectronico.CapaDAO
     {
         public static void modificarContrasenia(int usu_id, string pass)
         {
-            executeProcedure("MODIFICAR_CONTRASENIA", usu_id, pass);
+            executeProcedure("MODIFICAR_CONTRASENIA", usu_id, pass, Globals.getFechaSistema());
         }
 
     }

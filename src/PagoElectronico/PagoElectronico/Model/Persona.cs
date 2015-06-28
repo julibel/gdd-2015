@@ -72,7 +72,7 @@ namespace PagoElectronico.Model
             Pais_Actual = pais_actual;
             Paid_Actual_Id = pais_actual_id;
             FechaDeNacimiento = fecha_nac;
-            Pais_Nacionalidad = pais_actual;
+            Pais_Nacionalidad = pais_nacionalidad;
             Paid_Nacionalidad_Id = pais_nacionalidad_id;
             Mail = mail;
         }
@@ -92,7 +92,7 @@ namespace PagoElectronico.Model
             Pais_Actual = pais_actual;
             Paid_Actual_Id = pais_actual_id;
             FechaDeNacimiento = fecha_nac;
-            Pais_Nacionalidad = pais_actual;
+            Pais_Nacionalidad = pais_nacionalidad;
             Paid_Nacionalidad_Id = pais_nacionalidad_id;
             Mail = mail;
             Activo = activo;
