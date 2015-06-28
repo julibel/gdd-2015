@@ -25,14 +25,29 @@ namespace PagoElectronico.CapaDAO
             executeProcedure("MODIFICAR_COSTOS_TIPO", idTipo, costoMant, costoTransf,vigencia);
         }
 
-        public static void bajaCuenta(long numero, int pais, int moneda, int tipoCuenta)
+        public static void eliminarCuenta(long cuenta)
         {
-            executeProcedure("BAJA_CUENTA", numero, pais, moneda, tipoCuenta);
+            executeProcedure("BAJA_CUENTA", cuenta, Globals.getFechaSistema());
         }
 
         public static void modificarTipoCuenta(long numero, int tipo, int periodos)
         {
             executeProcedure("MODIFICAR_TIPO_CUENTA", numero, tipo, periodos, Globals.getFechaSistema());
+        }
+
+        public static int deshabilitarCuenta(long cuenta)
+        {
+            return cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Deshabilitada);
+        }
+
+        public static int habilitarCuenta(long cuenta)
+        {
+            return cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Habilitada);
+        }
+
+        public static int cambiarEstadoCuenta(long cuenta, int estado)
+        {
+            return executeProcedureWithReturnValue("MODIFICAR_ESTADO_CUENTA", cuenta, estado);
         }
 
         public static DataTable getCostoTipo(int id)
@@ -60,11 +75,6 @@ namespace PagoElectronico.CapaDAO
             return DAOOperacion.getMonedas();
         }
 
-        public static void eliminarCuenta(long cuenta)
-        {
-            executeProcedure("BAJA_CUENTA", cuenta, Globals.getFechaSistema());
-        }
-
         public static DataTable getEstadosCuenta()
         {
             return retrieveDataTable("GET_ESTADOS");
@@ -78,6 +88,19 @@ namespace PagoElectronico.CapaDAO
         public static bool tieneDeudas(long cuenta)
         {
             return checkIfExists("GET_COMISIONES_CUENTA", cuenta);
+        }
+
+        public static void deshabilitarCuentasPorVigencia()
+        {
+            DataTable cuentas = DAOOperacion.getCuentas();
+
+            foreach (DataRow cuenta in cuentas.Rows)
+                if ((DateTime)cuenta["FECHA_EXPIRACION"] < Convert.ToDateTime(Globals.getFechaSistema()))
+                {
+                    long cuentaID = Convert.ToInt64(cuenta["CUE_ID"]);
+                    if (deshabilitarCuenta(cuentaID) == 0)
+                        MessageBox.Show("La cuenta " + cuentaID.ToString() + " se ha deshabilitado porque se superó la fecha de expiración. Para habilitarla nuevamente realice un cambio de categoría y abone los gastos necesarios", "Expiración Cuenta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
     }
 }

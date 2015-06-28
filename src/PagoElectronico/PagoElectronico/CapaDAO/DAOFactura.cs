@@ -16,16 +16,12 @@ namespace PagoElectronico.CapaDAO
 
         public static int deshabilitarCuenta(long cuenta)
         {
-            return cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Deshabilitada);
-        }
-        public static int habilitarCuenta(long cuenta)
-        {
-            return cambiarEstadoCuenta(cuenta, (int)EstadoCuenta.Habilitada);
+            return DAOCuenta.deshabilitarCuenta(cuenta);
         }
 
-        public static int cambiarEstadoCuenta(long cuenta, int estado)
+        public static int habilitarCuenta(long cuenta)
         {
-            return executeProcedureWithReturnValue("MODIFICAR_ESTADO_CUENTA", cuenta, estado);
+            return DAOCuenta.habilitarCuenta(cuenta);
         }
 
         public static object getComisionesID(List<int> comisionesID)
