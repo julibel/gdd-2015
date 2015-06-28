@@ -82,7 +82,10 @@ namespace PagoElectronico.Transferencias
             if (ret == "s")
                 Mensaje_Error("Saldo insuficiente");
             else
+            {
                 Mensaje_OK("La transferencia fue registrada correctamente");
+                LimpiarCampos();
+            }
         }
 
         private bool camposCorrectos()

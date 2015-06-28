@@ -62,6 +62,12 @@ namespace PagoElectronico.Facturacion
                 return;
             }
 
+            if (dataGridView_ComisionesARendir.Rows.Count == 0)
+            {
+                Mensaje_Error("No eligió ninguna comisión");
+                return;
+            }
+
             var resultado = Mensaje_Pregunta("¿Está seguro que desea realizar el pago?", "Generar Factura");
             if (resultado == DialogResult.Yes)
             {

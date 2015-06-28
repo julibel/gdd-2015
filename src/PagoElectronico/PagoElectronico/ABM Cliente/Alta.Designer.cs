@@ -607,6 +607,7 @@
             this.Eliminar});
             this.dataGridView_Tarjetas.Location = new System.Drawing.Point(6, 28);
             this.dataGridView_Tarjetas.Name = "dataGridView_Tarjetas";
+            this.dataGridView_Tarjetas.ReadOnly = true;
             this.dataGridView_Tarjetas.Size = new System.Drawing.Size(423, 120);
             this.dataGridView_Tarjetas.TabIndex = 16;
             this.dataGridView_Tarjetas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Tarjetas_CellContentClick);
@@ -633,11 +634,13 @@
             // 
             this.FechaEmision.HeaderText = "Fecha Emisión";
             this.FechaEmision.Name = "FechaEmision";
+            this.FechaEmision.ReadOnly = true;
             // 
             // FechaVencimiento
             // 
             this.FechaVencimiento.HeaderText = "Fecha Vencimiento";
             this.FechaVencimiento.Name = "FechaVencimiento";
+            this.FechaVencimiento.ReadOnly = true;
             // 
             // Eliminar
             // 

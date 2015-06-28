@@ -22,7 +22,7 @@ namespace PagoElectronico.Tarjeta_Credito
         {
             comboBox_Numero_Tarjeta.ValueMember = "TAR_ID";
             comboBox_Numero_Tarjeta.DisplayMember = "NUMERO";
-            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getTarjetasHabilitadas();
+            comboBox_Numero_Tarjeta.DataSource = DAOTarjeta.getAllTarjetas();
             this.ActiveControl = comboBox_Numero_Tarjeta;
             LimpiarCampos();
         }

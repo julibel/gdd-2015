@@ -103,6 +103,8 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Emisor.DisplayMember = "NOMBRE";
             comboBox_Emisor.DataSource = DAOTarjeta.getEmisores();
 
+            LimpiarTarjeta();
+
             this.ActiveControl = textBox_Nombre;
         }
 
@@ -181,7 +183,7 @@ namespace PagoElectronico.ABM_Cliente
 
         private void button_Guardar_Click(object sender, EventArgs e)
         {
-            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Guardar Cliente");
+            var resultado = Mensaje_Pregunta("¿Está seguro que desea guardar los datos ingresados en el formulario?", "Modificar Cliente");
             if (resultado == DialogResult.Yes)
             {
                 if (!Validaciones()) return;
@@ -285,15 +287,25 @@ namespace PagoElectronico.ABM_Cliente
                 string emisor = Convert.ToString(comboBox_Emisor.Text);
                 string fechaEmision = maskedTextBox1.Text;
                 string fechaVencimiento = calcularVencimiento();
+                
+                if (fechaVencimiento == "") return;
 
                 string[] row = {id, ultimos4, numero, codSeg, emisor, fechaEmision, fechaVencimiento};
                 dataGridView_Tarjetas.Rows.Add(row);
+                LimpiarTarjeta();
             }
             else
             {
                 var mensaje = listaDeErrores2.Aggregate("Error en la validación de datos: ", (current, error) => current + ("\n" + error.Descripcion));
                 Mensaje_Error(mensaje);
             }
+        }
+
+        private void LimpiarTarjeta()
+        {
+            foreach (var control in groupBox_AsociarTarjetas.Controls.OfType<MaskedTextBox>()) control.Text = "";
+            comboBox_Emisor.Text = "";
+            comboBox_Emisor.SelectedIndex = -1;
         }
 
         private bool ValidarDatosTarjeta()
@@ -338,11 +350,22 @@ namespace PagoElectronico.ABM_Cliente
         private string calcularVencimiento()
         {
             string fecha = maskedTextBox1.Text;
+            string fechaVen = fecha.Substring(0, 6) + (Convert.ToInt32(fecha.Substring(6, 4)) + 3).ToString();
+            try
+            {
+                if (fecha.Length < 10)
+                    throw new Exception();
+                else
 
-            if (fecha.Length < 10)
-                Mensaje_Error("Fecha inválida");
-            else
-                return fecha.Substring(0, 6) + (Convert.ToInt32(fecha.Substring(6, 4)) + 3).ToString();
+                    if (Convert.ToDateTime(fechaVen) < Convert.ToDateTime(Globals.getFechaSistema()))
+                        Mensaje_Error("La tarjeta está vencida");
+                    else
+                        return fechaVen;
+             }
+             catch
+             {
+                    Mensaje_Error("Fecha inválida");
+             }
             return "";
         }
 
