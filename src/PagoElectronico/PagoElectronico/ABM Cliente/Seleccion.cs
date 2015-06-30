@@ -91,10 +91,5 @@ namespace PagoElectronico.ABM_Cliente
             if (e.KeyCode == Keys.Enter)
                 button_Buscar_Click(sender, e);
         }
-
-        private void Seleccion_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -16,9 +16,8 @@ namespace PagoElectronico.Listados
         private void LimpiarCampos()
         {
             foreach (var control in this.groupBox_Consultas.Controls.OfType<ComboBox>()) control.Text = "";
-            numericUpDown_Anio.Value = 2015;
+            numericUpDown_Anio.Value = 2017;
         }
-
 
         public ListadoEstadistico()
         {
@@ -32,11 +31,6 @@ namespace PagoElectronico.Listados
                     comboBox_TipoListado.Text != "";
         }
 
-        private void groupBox_Consultas_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Cerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -47,16 +41,6 @@ namespace PagoElectronico.Listados
             LimpiarCampos();
         }
 
-        private void numericUpDown_Anio_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox_Trimestre_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_HacerConsulta_Click(object sender, EventArgs e)
         {
             if (!camposCorrectos())
@@ -65,8 +49,8 @@ namespace PagoElectronico.Listados
                 return;
             }
             
-            string fInicio = fechaInicio(comboBox_Trimestre.SelectedIndex, numericUpDown_Anio.Value);
-            string fFin = fechaFin(comboBox_Trimestre.SelectedIndex, numericUpDown_Anio.Value);
+            DateTime fInicio = fechaTrimestre(comboBox_Trimestre.SelectedIndex, numericUpDown_Anio.Value);
+            DateTime fFin = fechaTrimestre(comboBox_Trimestre.SelectedIndex + 1, numericUpDown_Anio.Value);
 
             string listado = getListado(comboBox_TipoListado.SelectedIndex);
 
@@ -88,7 +72,7 @@ namespace PagoElectronico.Listados
             }
         }
 
-        private string fechaInicio(int trimestre, decimal anio)
+        private DateTime fechaTrimestre(int trimestre, decimal anio)
         {
             string fecha = "";
 
@@ -98,29 +82,10 @@ namespace PagoElectronico.Listados
                 case 1: fecha = "01/04/"; break;
                 case 2: fecha = "01/07/"; break;
                 case 3: fecha = "01/10/"; break;
+                case 4: return Convert.ToDateTime("01/01/" + Convert.ToString(anio + 1));
             }
 
-            return fecha + Convert.ToString(anio);
-        }
-
-        private string fechaFin(int trimestre, decimal anio)
-        {
-            string fecha = "";
-
-            switch (trimestre)
-            {
-                case 0: fecha = "31/03/"; break;
-                case 1: fecha = "30/06/"; break;
-                case 2: fecha = "30/09/"; break;
-                case 3: fecha = "31/12/"; break;
-            }
-
-            return fecha + Convert.ToString(anio);
-        }
-
-        private void ListadoEstadistico_Load(object sender, EventArgs e)
-        {
-
+            return Convert.ToDateTime(fecha + Convert.ToString(anio));
         }
     }
 }

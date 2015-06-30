@@ -61,8 +61,8 @@ namespace PagoElectronico.Login
 
             if (DAOLogin.iniciarSesionConPassword(user, Convert.ToInt32(comboBox_Roles.SelectedValue), textBox_password.Text))
             {
-                MenuPrincipal.showControls();
                 DAOCuenta.deshabilitarCuentasPorVigencia();
+                MenuPrincipal.showControls();
                 this.Close();
             }
             else

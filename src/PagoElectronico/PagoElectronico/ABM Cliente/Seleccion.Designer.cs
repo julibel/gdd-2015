@@ -246,7 +246,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Seleccion";
-            this.Load += new System.EventHandler(this.Seleccion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Seleccion)).EndInit();
             this.paner_Filtros.ResumeLayout(false);
             this.paner_Filtros.PerformLayout();

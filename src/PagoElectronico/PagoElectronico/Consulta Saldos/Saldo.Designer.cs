@@ -113,7 +113,6 @@
             this.groupBox_Depositos.TabIndex = 35;
             this.groupBox_Depositos.TabStop = false;
             this.groupBox_Depositos.Text = "Ultimos depositos";
-            this.groupBox_Depositos.Enter += new System.EventHandler(this.groupBox_Depositos_Enter);
             // 
             // groupBox_Transferencias
             // 

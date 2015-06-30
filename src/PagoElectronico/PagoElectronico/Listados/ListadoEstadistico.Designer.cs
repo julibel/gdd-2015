@@ -69,7 +69,6 @@
             this.groupBox_Consultas.TabIndex = 0;
             this.groupBox_Consultas.TabStop = false;
             this.groupBox_Consultas.Text = "Consultas";
-            this.groupBox_Consultas.Enter += new System.EventHandler(this.groupBox_Consultas_Enter);
             // 
             // numericUpDown_Anio
             // 
@@ -94,7 +93,6 @@
             0,
             0,
             0});
-            this.numericUpDown_Anio.ValueChanged += new System.EventHandler(this.numericUpDown_Anio_ValueChanged);
             // 
             // label_Trimestre
             // 
@@ -142,7 +140,6 @@
             this.comboBox_Trimestre.Name = "comboBox_Trimestre";
             this.comboBox_Trimestre.Size = new System.Drawing.Size(127, 21);
             this.comboBox_Trimestre.TabIndex = 1;
-            this.comboBox_Trimestre.SelectedIndexChanged += new System.EventHandler(this.comboBox_Trimestre_SelectedIndexChanged);
             // 
             // label_Anio
             // 
@@ -201,7 +198,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListadoEstadistico";
-            this.Load += new System.EventHandler(this.ListadoEstadistico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resultado2)).EndInit();
             this.groupBox_Consultas.ResumeLayout(false);
             this.groupBox_Consultas.PerformLayout();

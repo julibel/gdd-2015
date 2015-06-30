@@ -8,7 +8,7 @@ namespace PagoElectronico.CapaDAO
 {
     class DAOListado:SqlConnector
     {
-        public static DataTable ejecutarListado(string fInicio, string fFin, string listado)
+        public static DataTable ejecutarListado(DateTime fInicio, DateTime fFin, string listado)
         {
             return retrieveDataTable(listado, fInicio, fFin);
         }
