@@ -201,6 +201,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ListadoEstadistico";
+            this.Load += new System.EventHandler(this.ListadoEstadistico_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Resultado2)).EndInit();
             this.groupBox_Consultas.ResumeLayout(false);
             this.groupBox_Consultas.PerformLayout();

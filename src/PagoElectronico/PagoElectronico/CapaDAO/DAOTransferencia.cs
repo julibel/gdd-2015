@@ -8,7 +8,7 @@ namespace PagoElectronico.CapaDAO
     class DAOTransferencia:DAOOperacion
     {
 
-        public static string realizarTransferencia(long origen, long destino, string fecha, double importe, int moneda)
+        public static string realizarTransferencia(long origen, long destino, DateTime fecha, double importe, int moneda)
         {
             if (saldoSuficiente(origen, importe))
             {

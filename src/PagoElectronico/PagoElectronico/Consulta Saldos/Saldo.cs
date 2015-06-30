@@ -40,5 +40,10 @@ namespace PagoElectronico.Consulta_Saldos
             dataGridView_Retiros.DataSource = CapaDAO.DAOConsultaSaldos.getUltimosRetiros(cuentaID);
             dataGridView_Transferencias.DataSource = CapaDAO.DAOConsultaSaldos.getUltimasTransferencias(cuentaID);
         }
+
+        private void groupBox_Depositos_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

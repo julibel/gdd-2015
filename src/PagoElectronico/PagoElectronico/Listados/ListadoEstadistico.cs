@@ -117,5 +117,10 @@ namespace PagoElectronico.Listados
 
             return fecha + Convert.ToString(anio);
         }
+
+        private void ListadoEstadistico_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -61,5 +61,10 @@ namespace PagoElectronico.ABM_Cliente
                 this.Close();
             }
         }
+
+        private void Baja_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

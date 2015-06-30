@@ -31,7 +31,7 @@ namespace PagoElectronico.CapaDAO
 
         public static long crearFactura(List<int> comisionesID, string numeroTarjeta, double total)
         {
-            return executeProcedureWithLongReturnValue("CREAR_FACTURA", Globals.intsToDataTable(comisionesID), Globals.getFechaSistema(), Encriptacion.getSHA1(numeroTarjeta), total);
+            return executeProcedureWithLongReturnValue("CREAR_FACTURA", Globals.intsToDataTable(comisionesID), Globals.getDateFechaSistema(), Encriptacion.getSHA1(numeroTarjeta), total);
         }
 
         public static bool tieneImpagas(long cuenta)

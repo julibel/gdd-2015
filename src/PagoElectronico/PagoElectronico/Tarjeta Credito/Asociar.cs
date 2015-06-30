@@ -59,7 +59,7 @@ namespace PagoElectronico.Tarjeta_Credito
 
         private bool camposCorrectos(int idCli)
         {
-            if (Convert.ToDateTime(Globals.getFechaSistema()) > Convert.ToDateTime(textBox_FechaVencimiento.Text))
+            if (Globals.getDateFechaSistema() > Convert.ToDateTime(textBox_FechaVencimiento.Text))
             {
                 Mensaje_Error("La tarjeta se encuentra vencida");
                 return false;

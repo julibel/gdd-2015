@@ -93,7 +93,7 @@ namespace PagoElectronico.Retiros
                 return;
             }
 
-            string ret = DAORetiro.realizarRetiro(Convert.ToInt64(comboBox_Cuentas.SelectedValue), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue), comboBox_Bancos.Text, textBox_Nombre.Text + " " + textBox_Apellido.Text);
+            string ret = DAORetiro.realizarRetiro(Convert.ToInt64(comboBox_Cuentas.SelectedValue), Convert.ToDateTime(textBox_Fecha.Text), Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue), comboBox_Bancos.Text, textBox_Nombre.Text + " " + textBox_Apellido.Text);
 
             if (ret == "s")
                 Mensaje_Error("Saldo insuficiente");

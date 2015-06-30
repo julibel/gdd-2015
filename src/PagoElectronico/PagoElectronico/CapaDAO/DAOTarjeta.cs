@@ -15,7 +15,7 @@ namespace PagoElectronico.CapaDAO
             string encriptado = Encriptacion.getSHA1(numero.Substring(0,12));
             string limpio = numero.Substring(12,4);
 
-            return executeProcedureWithReturnValue("GET_ID_TARJETA", encriptado, limpio, Encriptacion.getSHA1(codSeg), Globals.getFechaSistema(), Globals.userID);
+            return executeProcedureWithReturnValue("GET_ID_TARJETA", encriptado, limpio, Encriptacion.getSHA1(codSeg), Globals.getDateFechaSistema(), Globals.userID);
         }
 
         public static void asociarTarjeta(Tarjeta tarjeta, int idCli)
@@ -26,8 +26,8 @@ namespace PagoElectronico.CapaDAO
                 tarjeta.titular,
                 tarjeta.cod_seguridad,
                 tarjeta.Emisor,
-                tarjeta.Fecha_Emision,
-                tarjeta.Fecha_Vencimiento
+                Convert.ToDateTime(tarjeta.Fecha_Emision),
+                Convert.ToDateTime(tarjeta.Fecha_Vencimiento)
                 );
         }
 
@@ -53,7 +53,7 @@ namespace PagoElectronico.CapaDAO
 
         private static DataTable getTarjetas(byte estado)
         {//0 deshabilitado, 1 habilitado, 2 ambos
-            return retrieveDataTable("GET_TARJETAS", Globals.userID, Globals.getFechaSistema(), estado);
+            return retrieveDataTable("GET_TARJETAS", Globals.userID, Globals.getDateFechaSistema(), estado);
         }
 
         public static DataTable getTarjetasHabilitadas()
@@ -92,7 +92,7 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("GET_EMISORES");
         }
 
-        public static void modificarTarjeta(int tarID, string numero, string titular, string codSeg, string emisor, string fechaEmision, string fechaVencimiento, bool estado)
+        public static void modificarTarjeta(int tarID, string numero, string titular, string codSeg, string emisor, DateTime fechaEmision, DateTime fechaVencimiento, bool estado)
         {
             executeProcedure("MODIFICAR_TARJETA", tarID, numero, titular, codSeg, emisor, fechaEmision, fechaVencimiento, Convert.ToInt32(estado));
         }

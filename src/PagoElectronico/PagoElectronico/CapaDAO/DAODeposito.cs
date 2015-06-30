@@ -10,7 +10,7 @@ namespace PagoElectronico.CapaDAO
     {
         public static void realizarDeposito(long cuenta, int tarjeta, double importe, int moneda)
         {
-            executeProcedure("DEPOSITAR", cuenta, tarjeta, importe, moneda, Globals.getFechaSistema());
+            executeProcedure("DEPOSITAR", cuenta, tarjeta, importe, moneda, Globals.getDateFechaSistema());
         }
     }
 }

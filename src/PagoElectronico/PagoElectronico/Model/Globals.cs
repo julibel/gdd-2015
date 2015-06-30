@@ -26,6 +26,16 @@ namespace PagoElectronico
             return ConfigurationManager.AppSettings["fechaSistema"];
         }
 
+        public static DateTime getDateFechaSistema()
+        {
+            return Convert.ToDateTime(ConfigurationManager.AppSettings["fechaSistema"]);
+        }
+
+        public static DateTime getFechaSistemaEnTipoDate()
+        {
+            return DateTime.Today;
+        }
+
         public static void setUser(int id, string name, List<int> funcs, int rol)
         {
             if (rol == (int)Roles.Admin)

@@ -87,7 +87,7 @@ namespace PagoElectronico.ABM_Cliente
             comboBox_Nacionalidad.Text = "";
             comboBox_Pais.Text = "";
             dataGridView_Tarjetas.Rows.Clear();
-            dateTimePicker_FechaNacimiento.Value = Convert.ToDateTime(Globals.getFechaSistema());
+            dateTimePicker_FechaNacimiento.Value = Globals.getDateFechaSistema();
             this.ActiveControl = textBox_Nombre;
         }
 
@@ -357,7 +357,7 @@ namespace PagoElectronico.ABM_Cliente
                     throw new Exception();
                 else
 
-                    if (Convert.ToDateTime(fechaVen) < Convert.ToDateTime(Globals.getFechaSistema()))
+                    if (Convert.ToDateTime(fechaVen) < Globals.getDateFechaSistema())
                         Mensaje_Error("La tarjeta está vencida");
                     else
                         return fechaVen;

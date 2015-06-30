@@ -12,12 +12,12 @@ namespace PagoElectronico.CapaDAO
     {
         public static long agregarCuenta(int cliente, string pais, int moneda, int tipo)
         {
-            return executeProcedureWithLongReturnValue("AGREGAR_CUENTA", cliente, moneda, pais, tipo, Globals.getFechaSistema());
+            return executeProcedureWithLongReturnValue("AGREGAR_CUENTA", cliente, moneda, pais, tipo, Globals.getDateFechaSistema());
         }
 
         public static void modificarCuenta(long id, int cliente, int moneda, int pais, int tipo_cuenta, int estado)
         {
-            executeProcedure("MODIFICAR_CUENTA", id, cliente, moneda, pais, tipo_cuenta, estado, Globals.getFechaSistema());
+            executeProcedure("MODIFICAR_CUENTA", id, cliente, moneda, pais, tipo_cuenta, estado, Globals.getDateFechaSistema());
         }
 
         public static void modificarCostosTipo(int idTipo, double costoMant, double costoTransf, int vigencia)
@@ -27,12 +27,12 @@ namespace PagoElectronico.CapaDAO
 
         public static void eliminarCuenta(long cuenta)
         {
-            executeProcedure("BAJA_CUENTA", cuenta, Globals.getFechaSistema());
+            executeProcedure("BAJA_CUENTA", cuenta, Globals.getDateFechaSistema());
         }
 
         public static void modificarTipoCuenta(long numero, int tipo, int periodos)
         {
-            executeProcedure("MODIFICAR_TIPO_CUENTA", numero, tipo, periodos, Globals.getFechaSistema());
+            executeProcedure("MODIFICAR_TIPO_CUENTA", numero, tipo, periodos, Globals.getDateFechaSistema());
         }
 
         public static int deshabilitarCuenta(long cuenta)
@@ -95,7 +95,7 @@ namespace PagoElectronico.CapaDAO
             DataTable cuentas = DAOOperacion.getCuentas();
 
             foreach (DataRow cuenta in cuentas.Rows)
-                if ((DateTime)cuenta["FECHA_EXPIRACION"] < Convert.ToDateTime(Globals.getFechaSistema()))
+                if ((DateTime)cuenta["FECHA_EXPIRACION"] < Globals.getDateFechaSistema())
                 {
                     long cuentaID = Convert.ToInt64(cuenta["CUE_ID"]);
                     if (deshabilitarCuenta(cuentaID) == 0)

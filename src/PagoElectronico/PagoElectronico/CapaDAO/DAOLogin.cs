@@ -22,7 +22,11 @@ namespace PagoElectronico.CapaDAO
 
         private static void intentoLogin(string user, int estado)
         {
-            executeProcedure("INTENTO_LOGIN", user, estado, Globals.getFechaSistema());
+           
+            executeProcedure("INTENTO_LOGIN", user, estado, Globals.getDateFechaSistema());
+            DateTime fecha = Globals.getDateFechaSistema();
+            MessageBox.Show(Convert.ToString(fecha));
+                
         }
 
         public static bool iniciarSesionConPassword(string user, int rol, string pass)

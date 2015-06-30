@@ -23,12 +23,12 @@ namespace PagoElectronico.CapaDAO
                 cliente.Departamento,
                 cliente.Localidad,
                 cliente.Pais_Actual,
-                cliente.FechaDeNacimiento.ToString("yyyy-dd-MM HH:mm:ss"),
+                cliente.FechaDeNacimiento,
                 cliente.Pais_Nacionalidad,
                 cliente.Mail,
                 usuario.NombreUsuario,
                 usuario.Password,
-                Globals.getFechaSistema(),
+                Globals.getDateFechaSistema(),
                 usuario.Pregunta,
                 usuario.Respuesta
                 );
@@ -55,7 +55,7 @@ namespace PagoElectronico.CapaDAO
                 cliente.Departamento,
                 cliente.Localidad,
                 cliente.Pais_Actual,
-                cliente.FechaDeNacimiento.ToString("yyyy-dd-MM HH:mm:ss"),
+                cliente.FechaDeNacimiento,
                 cliente.Pais_Nacionalidad,
                 cliente.Mail,
                 cliente.Activo

@@ -76,7 +76,7 @@ namespace PagoElectronico.Tarjeta_Credito
             {
                 try
                 {
-                    DAOTarjeta.modificarTarjeta(Convert.ToInt32(comboBox_Numero_Tarjeta.SelectedValue), maskedTextBox_numeroTarjeta.Text, textBox_NombreTitular.Text, maskedTextBox_codigo.Text, comboBox_Emisores.Text, maskedTextBox_fechaEmision.Text, textBox_FechaVencimiento.Text, checkBox_habilitada.Checked);
+                    DAOTarjeta.modificarTarjeta(Convert.ToInt32(comboBox_Numero_Tarjeta.SelectedValue), maskedTextBox_numeroTarjeta.Text, textBox_NombreTitular.Text, maskedTextBox_codigo.Text, comboBox_Emisores.Text, Convert.ToDateTime(maskedTextBox_fechaEmision.Text), Convert.ToDateTime( textBox_FechaVencimiento.Text), checkBox_habilitada.Checked);
                     Mensaje_OK("Los datos han sido almacenados con éxito");
                     LimpiarCampos();
                 }

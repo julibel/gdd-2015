@@ -13,7 +13,7 @@ namespace PagoElectronico.CapaDAO
             return retrieveDataTable("GET_BANCOS");
         }
 
-        public static string realizarRetiro(long cuenta, string fecha, double importe, int moneda, string banco, string acreedor)
+        public static string realizarRetiro(long cuenta, DateTime fecha, double importe, int moneda, string banco, string acreedor)
         {
             if (acreedor == " ") 
                 acreedor = "Al portador";

@@ -77,7 +77,7 @@ namespace PagoElectronico.Transferencias
                 return;
             }
 
-            string ret = DAOTransferencia.realizarTransferencia(Convert.ToInt64(comboBox_Origen.SelectedValue), Convert.ToInt64(textBox_Destino.Text), textBox_Fecha.Text, Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue));
+            string ret = DAOTransferencia.realizarTransferencia(Convert.ToInt64(comboBox_Origen.SelectedValue), Convert.ToInt64(textBox_Destino.Text), Convert.ToDateTime(textBox_Fecha.Text), Convert.ToDouble(textBox_Importe.Text), Convert.ToInt32(comboBox_Moneda.SelectedValue));
 
             if (ret == "s")
                 Mensaje_Error("Saldo insuficiente");
